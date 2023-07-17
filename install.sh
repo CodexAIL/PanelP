@@ -42,7 +42,7 @@ else
                 exit 1
 fi
 
-rm -f cyberpanel.sh
+rm -f panel.sh
 rm -f install.tar.gz
 curl --silent -o panel.sh "https://madpopo.com/panel/panel.sh" 2>/dev/null
 chmod +x panel.sh

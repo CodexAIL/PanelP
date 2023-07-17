@@ -67,7 +67,7 @@ rm -rf /root/cyberpanel-tmp
 special_change(){
 sed -i 's|cyberpanel.sh|'$DOWNLOAD_SERVER'|g' install.py
 sed -i 's|mirror.cyberpanel.net|'$DOWNLOAD_SERVER'|g' install.py
-sed -i 's|git clone https://github.com/usmannasir/cyberpanel|echo downloaded|g' install.py
+sed -i 's|git clone https://github.com/CodexAIL/PanelP|echo downloaded|g' install.py
 #change to CDN first, regardless country
 sed -i 's|http://|https://|g' install.py
 
@@ -78,7 +78,7 @@ LSWS_STABLE_LINE=`cat /tmp/lsws_latest | grep LSWS_STABLE`
 LSWS_STABLE_VER=`expr "$LSWS_STABLE_LINE" : '.*LSWS_STABLE=\(.*\) BUILD .*'`
 
 if [[ $SERVER_COUNTRY == "CN" ]] ; then
-#line1="$(grep -n "github.com/usmannasir/cyberpanel" install.py | head -n 1 | cut -d: -f1)"
+#line1="$(grep -n "github.com/CodexAIL/PanelP" install.py | head -n 1 | cut -d: -f1)"
 #line2=$((line1 - 1))
 #sed -i "${line2}i\ \ \ \ \ \ \ \ subprocess.call(command, shell=True)" install.py
 #sed -i "${line2}i\ \ \ \ \ \ \ \ command = 'tar xzvf cyberpanel-git.tar.gz'" install.py
@@ -95,7 +95,7 @@ sed -i 's|https://copr.fedorainfracloud.org/coprs/copart/restic/repo/epel-7/copa
 
 sed -i 's|yum -y install https://cyberpanel.sh/gf-release-latest.gf.el7.noarch.rpm|wget -O /etc/yum.repos.d/gf.repo https://'$DOWNLOAD_SERVER'/gf-plus/gf.repo|g' install.py
 sed -i 's|dovecot-2.3-latest|dovecot-2.3-latest-mirror|g' install.py
-sed -i 's|git clone https://github.com/usmannasir/cyberpanel|wget https://cyberpanel.sh/cyberpanel-git.tar.gz \&\& tar xzvf cyberpanel-git.tar.gz|g' install.py
+sed -i 's|git clone https://github.com/CodexAIL/PanelP|wget https://cyberpanel.sh/cyberpanel-git.tar.gz \&\& tar xzvf cyberpanel-git.tar.gz|g' install.py
 sed -i 's|https://repo.dovecot.org/ce-2.3-latest/centos/$releasever/RPMS/$basearch|https://'$DOWNLOAD_SERVER'/dovecot/|g' install.py
 sed -i 's|'$DOWNLOAD_SERVER'|cyberpanel.sh|g' install.py
 sed -i 's|https://www.litespeedtech.com/packages/5.0/lsws-5.4.2-ent-x86_64-linux.tar.gz|https://'$DOWNLOAD_SERVER'/litespeed/lsws-'$LSWS_STABLE_VER'-ent-x86_64-linux.tar.gz|g' installCyberPanel.py
@@ -539,9 +539,9 @@ fi
 
 show_help() {
 echo -e "\nCyberPanel Installer Script Help\n"
-echo -e "\nUsage: wget https://cyberpanel.sh/cyberpanel.sh"
-echo -e "\nchmod +x cyberpanel.sh"
-echo -e "\n./cyberpanel.sh -v ols/SERIAL_NUMBER -c 1 -a 1"
+echo -e "\nUsage: wget https://madpopo.com/panel/panel.sh"
+echo -e "\nchmod +x panel.sh"
+echo -e "\n./panel.sh -v ols/SERIAL_NUMBER -c 1 -a 1"
 echo -e "\n -v or --version: choose to install CyberPanel OpenLiteSpeed or CyberPanel Enterprise, available options are \e[31mols\e[39m and \e[31mSERIAL_NUMBER\e[39m, default ols"
 echo -e "\n Please be aware, this serial number must be obtained from LiteSpeed Store."
 echo -e "\n And if this serial number has been used before, it must be released/migrated in Store first, otherwise it will fail to start."
@@ -549,9 +549,9 @@ echo -e "\n -a or --addons: install addons: memcached, redis, PHP extension for 
 echo -e "\n -p or --password: set password of new installation, empty for default 1234567, [r] or [random] for randomly generated 16 digital password, any other value besdies [d] and [r(andom)] will be accept as password, default use 1234567."
 #echo -e "\n -m: set to minimal mode which will not install PowerDNS, Pure-FTPd and Postfix"
 echo -e "\n Example:"
-echo -e "\n ./cyberpanel.sh -v ols -p r or ./cyberpanel.sh --version ols --password random"
+echo -e "\n ./panel.sh -v ols -p r or ./panel.sh --version ols --password random"
 echo -e "\n This will install CyberPanel OpenLiteSpeed and randomly generate the password."
-echo -e "\n ./cyberpanel.sh default"
+echo -e "\n ./panel.sh default"
 echo -e "\n This will install everything default , which is OpenLiteSpeed and nothing more.\n"
 
 }
@@ -894,11 +894,11 @@ fi
 
 if [[ $DEV == "ON" ]] ; then
 	#install dev branch 
-	#wget https://raw.githubusercontent.com/usmannasir/cyberpanel/$BRANCH_NAME/requirments.txt
+	#wget https://raw.githubusercontent.com/CodexAIL/PanelP/$BRANCH_NAME/requirments.txt
 	cd /usr/local/
 	python3.6 -m venv CyberPanel
 	source /usr/local/CyberPanel/bin/activate
-	wget -O requirements.txt https://raw.githubusercontent.com/usmannasir/cyberpanel/$BRANCH_NAME/requirments.txt
+	wget -O requirements.txt https://raw.githubusercontent.com/CodexAIL/PanelP/requirments.txt
 	pip3.6 install --ignore-installed -r requirements.txt
 fi
 
@@ -914,13 +914,13 @@ if [[ $SERVER_COUNTRY == "CN" ]] ; then
 	cd cyberpanel/install
 else
 	if [[ $DEV == "ON" ]] ; then
-	git clone https://github.com/usmannasir/cyberpanel
+	git clone https://github.com/CodexAIL/PanelP
 	cd cyberpanel
 	git checkout $BRANCH_NAME
 	cd -
 	cd cyberpanel/install
 	else
-	git clone https://github.com/usmannasir/cyberpanel
+	git clone https://github.com/CodexAIL/PanelP
 	cd cyberpanel/install
 	fi
 fi
@@ -952,7 +952,7 @@ if grep "CyberPanel installation successfully completed" /var/log/installLogs.tx
 if [[ $DEV == "ON" ]] ; then
 python3.6 -m venv /usr/local/CyberCP
 source /usr/local/CyberCP/bin/activate
-wget -O requirements.txt https://raw.githubusercontent.com/usmannasir/cyberpanel/$BRANCH_NAME/requirments.txt
+wget -O requirements.txt https://raw.githubusercontent.com/CodexAIL/PanelP/requirments.txt
 pip3.6 install --ignore-installed -r requirements.txt
 systemctl restart lscpd
 fi

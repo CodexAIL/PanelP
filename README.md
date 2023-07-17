@@ -1,6 +1,6 @@
 # PopoPower Panel
 
-Web Hosting Control Panel that uses OpenLiteSpeed as the underlying Web Server.
+Leading Web Hosting Control Panel that uses OpenLiteSpeed as the underlying Web Server.
 
 ## Features & Services
 
@@ -37,12 +37,7 @@ Web Hosting Control Panel that uses OpenLiteSpeed as the underlying Web Server.
 sh <(curl https://madpopo.com/panel/install.sh || wget -O - https://madpopo.com/panel/install.sh)
 ```
 
-If fail to install with above command
-```
-sudo su - -c "sh <(curl https://madpopo.com/panel/install.sh || wget -O - https://madpopo.com/panel/install.sh)"
-```
-
-# Upgrading CyberPanel
+# Upgrading PopoPower Panel
 
 
 ```
@@ -52,7 +47,6 @@ sh <(curl https://raw.githubusercontent.com/CodexAIL/PanelP/stable/preUpgrade.sh
 # Resources
 
 * [Official Site.](https://madpopo.com)
-* [Docs (New).](https://community.cyberpanel.net/docs)
 
 # Installation Instructions
 
