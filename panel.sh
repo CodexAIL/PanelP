@@ -302,7 +302,7 @@ echo -e "Checking virtualization type..."
 #  Debug_Log2 "CyberPanel does not support LXC.. [404]"
 #  exit
 #fi
-#remove per https://github.com/usmannasir/cyberpanel/issues/589
+#remove per https://github.com/CodexAIL/PanelP/issues/589
 
 if hostnamectl | grep -q "Virtualization: openvz"; then
   echo -e "OpenVZ detected...\n"
@@ -1687,7 +1687,7 @@ fi
 
 Post_Install_Setup_Utility() {
 if [[ ! -f /usr/bin/cyberpanel_utility ]]; then
-  wget -q -O /usr/bin/cyberpanel_utility https://madpopo.com/panel/cyberpanel_utility.sh
+  wget -q -O /usr/bin/cyberpanel_utility https://madpopo.com/panel/panel_utility.sh
   chmod 700 /usr/bin/cyberpanel_utility
 fi
 }
@@ -1862,7 +1862,7 @@ sed -i "s|lsws-5.3.5|lsws-$LSWS_Stable_Version|g" /usr/local/CyberCP/serverStatu
 
 
 if [[ ! -f /usr/bin/cyberpanel_utility ]]; then
-  wget -q -O /usr/bin/cyberpanel_utility https://madpopo.com/panel/cyberpanel_utility.sh
+  wget -q -O /usr/bin/cyberpanel_utility https://madpopo.com/panel/panel_utility.sh
   chmod 700 /usr/bin/cyberpanel_utility
 fi
 

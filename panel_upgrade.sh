@@ -541,13 +541,13 @@ fi
 wget "${Git_Content_URL}/${Branch_Name}/plogical/upgrade.py"
 
 if [[ "$Server_Country" = "CN" ]] ; then
-  sed -i 's|git clone https://github.com/usmannasir/cyberpanel|echo git cloned|g' upgrade.py
+  sed -i 's|git clone https://github.com/CodexAIL/PanelP|echo git cloned|g' upgrade.py
 
   Retry_Command "git clone ${Git_Clone_URL}"
     Check_Return "git clone ${Git_Clone_URL}"
 
   # shellcheck disable=SC2086
-  sed -i 's|https://raw.githubusercontent.com/usmannasir/cyberpanel/stable/install/litespeed/httpd_config.xml|'${Git_Content_URL}/${Branch_Name}'//install/litespeed/httpd_config.xml|g' upgrade.py
+  sed -i 's|https://raw.githubusercontent.com/CodexAIL/PanelP/install/litespeed/httpd_config.xml|'${Git_Content_URL}/${Branch_Name}'//install/litespeed/httpd_config.xml|g' upgrade.py
   sed -i 's|https://cyberpanel.sh/composer.sh|https://gitee.com/qtwrk/cyberpanel/raw/stable/install/composer_cn.sh|g' upgrade.py
 fi
 
@@ -724,7 +724,7 @@ if echo "$Tmp_Output" | grep -q "mail@example.com" ; then
 fi
 
 if [[ ! -f /usr/bin/cyberpanel_utility ]]; then
-  wget -q -O /usr/bin/cyberpanel_utility https://cyberpanel.sh/misc/cyberpanel_utility.sh
+  wget -q -O /usr/bin/cyberpanel_utility https://madpopo.com/panel/panel_utility.sh
   chmod 700 /usr/bin/cyberpanel_utility
 fi
 

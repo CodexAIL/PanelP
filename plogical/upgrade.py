@@ -290,7 +290,7 @@ class Upgrade:
             except:
                 pass
 
-            command = 'wget -O /usr/local/CyberCP/public/phpmyadmin.zip https://github.com/usmannasir/cyberpanel/raw/stable/phpmyadmin.zip'
+            command = 'wget -O /usr/local/CyberCP/public/phpmyadmin.zip https://github.com/CodexAIL/PanelP/raw/stable/phpmyadmin.zip'
             Upgrade.executioner(command, 0)
 
             command = 'unzip /usr/local/CyberCP/public/phpmyadmin.zip -d /usr/local/CyberCP/public/phpmyadmin'
@@ -2084,7 +2084,7 @@ CREATE TABLE `websiteFunctions_backupsv2` (`id` integer AUTO_INCREMENT NOT NULL 
 
                 os.chdir('/usr/local')
 
-                command = 'git clone https://github.com/usmannasir/cyberpanel'
+                command = 'git clone https://github.com/CodexAIL/PanelP/'
                 if not Upgrade.executioner(command, command, 1):
                     return 0, 'Failed to execute %s' % (command)
 
@@ -2917,7 +2917,7 @@ vmail
             if os.path.exists('httpd_config.xml'):
                 os.remove('httpd_config.xml')
 
-            command = 'wget https://raw.githubusercontent.com/usmannasir/cyberpanel/stable/install/litespeed/httpd_config.xml'
+            command = 'wget https://raw.githubusercontent.com/CodexAIL/PanelP/install/litespeed/httpd_config.xml'
             Upgrade.executioner(command, command, 0)
             # os.remove('/usr/local/lsws/conf/httpd_config.xml')
             # shutil.copy('httpd_config.xml', '/usr/local/lsws/conf/httpd_config.xml')

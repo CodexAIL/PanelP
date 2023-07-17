@@ -107,12 +107,12 @@ SUM=$(md5sum /usr/bin/cyberpanel_utility)
 SUM1=${SUM:0:32}
 #get md5sum of local file
 
-rm -f /usr/local/CyberPanel/cyberpanel_utility.sh
-wget -q -O /usr/local/CyberPanel/cyberpanel_utility.sh https://madpopo.com/panel/cyberpanel_utility.sh
-chmod 600 /usr/local/CyberPanel/cyberpanel_utility.sh
+rm -f /usr/local/CyberPanel/panel_utility.sh
+wget -q -O /usr/local/CyberPanel/panel_utility.sh https://madpopo.com/panel/panel_utility.sh
+chmod 600 /usr/local/CyberPanel/panel_utility.sh
 
 
-SUM=$(md5sum /usr/local/CyberPanel/cyberpanel_utility.sh)
+SUM=$(md5sum /usr/local/CyberPanel/panel_utility.sh)
 SUM2=${SUM:0:32}
 #get md5sum of remote file.
 
@@ -120,12 +120,12 @@ if [[ $SUM1 == $SUM2 ]] ; then
 	echo -e "\nCyberPanel Utility Script is up to date...\n"
 else
 	local_string=$(head -2 /usr/bin/cyberpanel_utility)
-	remote_string=$(head -2 /usr/local/CyberPanel/cyberpanel_utility.sh)
+	remote_string=$(head -2 /usr/local/CyberPanel/panel_utility.sh)
 	#check file content before replacing itself in case failed to download the file.
 	if [[ $local_string == $remote_string ]] ; then
 	echo -e "\nUpdating Popo Power  Utility Script..."
 	rm -f /usr/bin/cyberpanel_utility
-	mv /usr/local/CyberPanel/cyberpanel_utility.sh /usr/bin/cyberpanel_utility
+	mv /usr/local/CyberPanel/panel_utility.sh /usr/bin/cyberpanel_utility
 	chmod 700 /usr/bin/cyberpanel_utility
 	echo -e "\nCPopo Power Panel Utility update compelted..."
 	echo -e "\nPlease execute it again..."
@@ -136,7 +136,7 @@ else
 	fi
 fi
 
-rm -f /usr/local/CyberPanel/cyberpanel_utility.sh
+rm -f /usr/local/CyberPanel/panel_utility.sh
 
 }
 
@@ -159,11 +159,11 @@ fi
 #echo -e "If you want to cancel, please press CTRL + C to cancel it"
 #sleep 10
 echo -e "Popo Power Panel upgrading..."
-rm -f /usr/local/cyberpanel_upgrade.sh
-wget -O /usr/local/cyberpanel_upgrade.sh -q https://$GIT_CONTENT_URL/${BRANCH_NAME}/cyberpanel_upgrade.sh
-chmod 700 /usr/local/cyberpanel_upgrade.sh
-/usr/local/cyberpanel_upgrade.sh
-rm -f /usr/local/cyberpanel_upgrade.sh
+rm -f /usr/local/panel_upgrade.sh
+wget -O /usr/local/panel_upgrade.sh -q https://$GIT_CONTENT_URL/${BRANCH_NAME}/panel_upgrade.sh
+chmod 700 /usr/local/panel_upgrade.sh
+/usr/local/panel_upgrade.sh
+rm -f /usr/local/panel_upgrade.sh
 exit
 }
 
