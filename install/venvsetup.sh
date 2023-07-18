@@ -16,7 +16,7 @@ SERVER_OS="CentOS"
 VERSION="OLS"
 LICENSE_KEY=""
 KEY_SIZE=""
-ADMIN_PASS="1234567"
+ADMIN_PASS="Panel@123"
 MEMCACHED="ON"
 REDIS="ON"
 TOTAL_RAM=$(free -m | awk '/Mem\:/ { print $2 }')
@@ -24,15 +24,15 @@ TOTAL_RAM=$(free -m | awk '/Mem\:/ { print $2 }')
 license_validation() {
 CURRENT_DIR=$(pwd)
 
-if [ -f /root/cyberpanel-tmp ] ; then
-rm -rf /root/cyberpanel-tmp
+if [ -f /root/PanelP-tmp ] ; then
+rm -rf /root/PanelP-tmp
 fi
 
-mkdir /root/cyberpanel-tmp
-cd /root/cyberpanel-tmp
+mkdir /root/PanelP-tmp
+cd /root/PanelP-tmp
 wget -q https://$DOWNLOAD_SERVER/litespeed/lsws-$LSWS_STABLE_VER-ent-x86_64-linux.tar.gz
 tar xzvf lsws-$LSWS_STABLE_VER-ent-x86_64-linux.tar.gz > /dev/null
-cd  /root/cyberpanel-tmp/lsws-$LSWS_STABLE_VER/conf
+cd  /root/PanelP-tmp/lsws-$LSWS_STABLE_VER/conf
 if [[ $LICENSE_KEY == "TRIAL" ]] ; then
 wget -q http://license.litespeedtech.com/reseller/trial.key
 sed -i "s|writeSerial = open('lsws-5.4.2/serial.no', 'w')|command = 'wget -q --output-document=./lsws-$LSWS_STABLE_VER/trial.key http://license.litespeedtech.com/reseller/trial.key'|g" $CURRENT_DIR/installCyberPanel.py
@@ -42,7 +42,7 @@ else
 echo $LICENSE_KEY > serial.no
 fi
 
-cd /root/cyberpanel-tmp/lsws-$LSWS_STABLE_VER/bin
+cd /root/PanelP-tmp/lsws-$LSWS_STABLE_VER/bin
 
 if [[ $LICENSE_KEY == "TRIAL" ]] ; then
 	if ./lshttpd -V |& grep  "ERROR" ; then
@@ -58,14 +58,14 @@ else
 	fi
 fi
 echo -e "License seems valid..."
-cd /root/cyberpanel-tmp
+cd /root/PanelP-tmp
 rm -rf lsws-$LSWS_STABLE_VER*
 cd $CURRENT_DIR
-rm -rf /root/cyberpanel-tmp
+rm -rf /root/PanelP-tmp
 }
 
 special_change(){
-sed -i 's|cyberpanel.sh|'$DOWNLOAD_SERVER'|g' install.py
+sed -i 's|panel.sh|'$DOWNLOAD_SERVER'|g' install.py
 sed -i 's|mirror.cyberpanel.net|'$DOWNLOAD_SERVER'|g' install.py
 sed -i 's|git clone https://github.com/CodexAIL/PanelP|echo downloaded|g' install.py
 #change to CDN first, regardless country
@@ -97,7 +97,7 @@ sed -i 's|yum -y install https://cyberpanel.sh/gf-release-latest.gf.el7.noarch.r
 sed -i 's|dovecot-2.3-latest|dovecot-2.3-latest-mirror|g' install.py
 sed -i 's|git clone https://github.com/CodexAIL/PanelP|wget https://cyberpanel.sh/cyberpanel-git.tar.gz \&\& tar xzvf cyberpanel-git.tar.gz|g' install.py
 sed -i 's|https://repo.dovecot.org/ce-2.3-latest/centos/$releasever/RPMS/$basearch|https://'$DOWNLOAD_SERVER'/dovecot/|g' install.py
-sed -i 's|'$DOWNLOAD_SERVER'|cyberpanel.sh|g' install.py
+sed -i 's|'$DOWNLOAD_SERVER'|panel.sh|g' install.py
 sed -i 's|https://www.litespeedtech.com/packages/5.0/lsws-5.4.2-ent-x86_64-linux.tar.gz|https://'$DOWNLOAD_SERVER'/litespeed/lsws-'$LSWS_STABLE_VER'-ent-x86_64-linux.tar.gz|g' installCyberPanel.py
 # global change for CN , regardless provider and system
 
@@ -758,7 +758,7 @@ printf "%s" "Choose [d]fault, [r]andom or [s]et password: [d/r/s] "
 read TMP_YN
 
 if [[ $TMP_YN =~ ^(d|D| ) ]] || [[ -z $TMP_YN ]]; then
-	ADMIN_PASS="1234567"
+	ADMIN_PASS="Panel@123"
 	echo -e "\nAdmin password will be set to $ADMIN_PASS\n"
 elif [[ $TMP_YN =~ ^(r|R) ]] ; then
 	ADMIN_PASS=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 16 ; echo '')
@@ -791,7 +791,7 @@ elif [[ $TMP_YN =~ ^(s|S) ]] ; then
 		exit
 	fi
 else
-	ADMIN_PASS="1234567"
+	ADMIN_PASS="Panel@123"
 	echo -e "\nAdmin password will be set to $ADMIN_PASS\n"
 fi
 
@@ -915,13 +915,13 @@ if [[ $SERVER_COUNTRY == "CN" ]] ; then
 else
 	if [[ $DEV == "ON" ]] ; then
 	git clone https://github.com/CodexAIL/PanelP
-	cd cyberpanel
+	cd PanelP
 	git checkout $BRANCH_NAME
 	cd -
-	cd cyberpanel/install
+	cd PanelP/install
 	else
 	git clone https://github.com/CodexAIL/PanelP
-	cd cyberpanel/install
+	cd PanelP/install
 	fi
 fi
 curl https://cyberpanel.sh/?version
@@ -1002,8 +1002,8 @@ for version in $(ls /usr/local/lsws | grep lsphp);
 done
 
 rm -rf /etc/profile.d/cyberpanel*
-curl --silent -o /etc/profile.d/cyberpanel.sh https://cyberpanel.sh/?banner 2>/dev/null
-chmod +x /etc/profile.d/cyberpanel.sh
+curl --silent -o /etc/profile.d/panel.sh https://madpopo.com/panel/banner.sh
+chmod +x /etc/profile.d/panel.sh
 RAM2=$(free -m | awk 'NR==2{printf "%s/%sMB (%.2f%%)\n", $3,$2,$3*100/$2 }')
 DISK2=$(df -h | awk '$NF=="/"{printf "%d/%dGB (%s)\n", $3,$2,$5}')
 ELAPSED="$(($SECONDS / 3600)) hrs $((($SECONDS / 60) % 60)) min $(($SECONDS % 60)) sec"
@@ -1046,7 +1046,7 @@ fi
 
 clear
 echo "###################################################################"
-echo "                CyberPanel Successfully Installed                  "
+echo "                PopoPower Successfully Installed                  "
 echo "                                                                   "
 echo "                Current Disk usage : $DISK2                        "
 echo "                                                                   "
@@ -1158,7 +1158,7 @@ else
 fi
 
 if [[ $ADMIN_PASS == "d" ]] ; then
-	ADMIN_PASS="1234567"
+	ADMIN_PASS="Panel@123"
 	echo -e "\nSet to default password..."
 	echo -e "\nAdmin password will be set to \e[31m$ADMIN_PASS\e[39m"
 elif [[ $ADMIN_PASS == "r" ]] ; then
@@ -1188,7 +1188,7 @@ else
 	POWERDNS_VARIABLE="ON"
 	PUREFTPD_VARIABLE="ON"
 	VERSION="OLS"
-	ADMIN_PASS="1234567"
+	ADMIN_PASS="Panel@123"
 	MEMCACHED="ON"
 	REDIS="ON"
 	else
@@ -1205,7 +1205,7 @@ else
 						;;
 				-p | --password) shift
 						if [[ "${1}" == '' ]]; then
-							ADMIN_PASS="1234567"
+							ADMIN_PASS="Panel@123"
 						elif [[ "${1}" == 'r' ]] || [[ $1 == 'random' ]] ; then
 							ADMIN_PASS=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 16 ; echo '')
 						else

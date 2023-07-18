@@ -225,6 +225,12 @@
     </extension>
 
     <extension>
+         <extensionName>lsphp80-bcmath</extensionName>
+         <extensionDescription>A extension for PHP applications for using the bcmath library.</extensionDescription>
+         <status>1</status>
+    </extension>
+
+    <extension>
          <extensionName>lsphp80-tidy</extensionName>
          <extensionDescription>Standard PHP extension provides tidy library support.</extensionDescription>
          <status>1</status>

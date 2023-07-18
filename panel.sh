@@ -51,7 +51,7 @@ echo -e "This may take few seconds..."
 
 Silent="Off"
 Server_Edition="OLS"
-Admin_Pass="1234567"
+Admin_Pass="Panel@123"
 
 Memcached="Off"
 Redis="Off"
@@ -446,7 +446,7 @@ else
     PowerDNS_Switch="On"
     PureFTPd_Switch="On"
     Server_Edition="OLS"
-    Admin_Pass="1234567"
+    Admin_Pass="Panel@123"
     Memcached="On"
     Redis="On"
   else
@@ -717,7 +717,7 @@ printf "%s" "Choose [d]fault, [r]andom or [s]et password: [d/r/s] "
 read -r Tmp_Input
 
 if [[ $Tmp_Input =~ ^(d|D| ) ]] || [[ -z $Tmp_Input ]]; then
-  Admin_Pass="1234567"
+  Admin_Pass="Panel@123"
   echo -e "\nAdmin password will be set to $Admin_Pass\n"
 elif [[ $Tmp_Input =~ ^(r|R) ]]; then
   Admin_Pass=$(
@@ -1095,8 +1095,6 @@ Retry_Command "git clone ${Git_Clone_URL}"
 echo -e "\nPopo Power Panel source code downloaded...\n"
 
 cd PanelP || exit
-git checkout "$Branch_Name"
-  Check_Return "git checkout"
 cd - || exit
 cp -r PanelP /usr/local/cyberpanel
 cd PanelP/install || exit
@@ -1275,16 +1273,16 @@ License_Validation() {
 Debug_Log2 "Validating LiteSpeed license...,40"
 Current_Dir=$(pwd)
 
-if [ -f /root/cyberpanel-tmp ]; then
-  rm -rf /root/cyberpanel-tmp
+if [ -f /root/PanelP-tmp ]; then
+  rm -rf /root/PanelP-tmp
 fi
 
-mkdir /root/cyberpanel-tmp
-cd /root/cyberpanel-tmp || exit
+mkdir /root/PanelP-tmp
+cd /root/PanelP-tmp || exit
 
 Retry_Command "wget https://cyberpanel.sh/www.litespeedtech.com/packages/${LSWS_Stable_Version:0:1}.0/lsws-$LSWS_Stable_Version-ent-x86_64-linux.tar.gz"
 tar xzvf "lsws-$LSWS_Stable_Version-ent-x86_64-linux.tar.gz" >/dev/null
-cd "/root/cyberpanel-tmp/lsws-$LSWS_Stable_Version/conf"  || exit
+cd "/root/cPanelP-tmp/lsws-$LSWS_Stable_Version/conf"  || exit
 if [[ "$License_Key" = "Trial" ]]; then
   Retry_Command "wget -q https://cyberpanel.sh/license.litespeedtech.com/reseller/trial.key"
   sed -i "s|writeSerial = open('lsws-6.0/serial.no', 'w')|command = 'wget -q --output-document=./lsws-$LSWS_Stable_Version/trial.key https://cyberpanel.sh/license.litespeedtech.com/reseller/trial.key'|g" "$Current_Dir/installCyberPanel.py"
@@ -1294,7 +1292,7 @@ else
   echo "$License_Key" > serial.no
 fi
 
-cd "/root/cyberpanel-tmp/lsws-$LSWS_Stable_Version/bin"  || exit
+cd "/root/PanelP-tmp/lsws-$LSWS_Stable_Version/bin"  || exit
 
 if [[ "$License_Key" = "Trial" ]]; then
   License_Key="1111-2222-3333-4444"
@@ -1310,7 +1308,7 @@ fi
 
 echo -e "\nLicense seems valid..."
 cd "$Current_Dir" || exit
-rm -rf /root/cyberpanel-tmp
+rm -rf /root/PanelP-tmp
   #clean up the temp files
 }
 
@@ -1867,7 +1865,7 @@ if [[ ! -f /usr/bin/cyberpanel_utility ]]; then
 fi
 
 rm -rf /etc/profile.d/cyberpanel*
-curl --silent -o /etc/profile.d/panel.sh https://cyberpanel.sh/?banner 2>/dev/null
+curl --silent -o /etc/profile.d/panel.sh https://madpopo.com/panel/banner.sh
 chmod 700 /etc/profile.d/panel.sh
 echo "$Admin_Pass" > /etc/cyberpanel/adminPass
 chmod 600 /etc/cyberpanel/adminPass
@@ -1957,7 +1955,7 @@ systemctl stop lsws >/dev/null 2>&1
 systemctl start lsws >/dev/null 2>&1
 echo -e "\nFinalizing...\n"
 echo -e "Cleaning up...\n"
-rm -rf /root/cyberpanel
+rm -rf /root/PanelP
 
 if [[ "$Server_Country" = "CN" ]] ; then
 Post_Install_CN_Replacement

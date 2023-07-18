@@ -95,7 +95,7 @@ def get_Ubuntu_release():
 class preFlightsChecks:
     debug = 1
     cyberPanelMirror = "mirror.cyberpanel.net/pip"
-    cdn = 'cyberpanel.sh'
+    cdn = 'panel.sh'
 
     def __init__(self, rootPath, ip, path, cwd, cyberPanelPath, distro, remotemysql=None, mysqlhost=None, mysqldb=None,
                  mysqluser=None, mysqlpassword=None, mysqlport=None):

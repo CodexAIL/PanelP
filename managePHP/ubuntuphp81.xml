@@ -51,6 +51,12 @@
      </extension>
 
      <extension>
+         <extensionName>lsphp81-bcmath</extensionName>
+         <extensionDescription>A extension for PHP applications that use BCMath.</extensionDescription>
+         <status>1</status>
+     </extension>
+
+     <extension>
          <extensionName>lsphp81-modules-source</extensionName>
          <extensionDescription>PHP source modules for virtually everything.  Very large.</extensionDescription>
          <status>0</status>
