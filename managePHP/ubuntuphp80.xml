@@ -62,6 +62,12 @@
          <status>1</status>
      </extension>
 
+    <extension>
+         <extensionName>lsphp80-bcmath</extensionName>
+         <extensionDescription>A extension for PHP applications for using the bcmath library.</extensionDescription>
+         <status>1</status>
+    </extension>
+
      <extension>
          <extensionName>lsphp80-opcache</extensionName>
          <extensionDescription>PHP low-level caching of code.  Very important for performance.</extensionDescription>
