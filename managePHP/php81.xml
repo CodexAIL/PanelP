@@ -87,12 +87,6 @@
      </extension>
 
      <extension>
-         <extensionName>lsphp81-bcmath</extensionName>
-         <extensionDescription>A extension for PHP applications that use BCmath.</extensionDescription>
-         <status>1</status>
-     </extension>
-
-     <extension>
          <extensionName>lsphp81-mbstring</extensionName>
          <extensionDescription>A extension for PHP applications which need multi-byte string handling.</extensionDescription>
          <status>1</status>
