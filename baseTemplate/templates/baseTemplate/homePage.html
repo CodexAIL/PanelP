@@ -134,7 +134,9 @@
 
         <div id="page-title">
             <h2 id="domainNamePage">{% trans "List Websites" %}
-                <a class="pull-right btn btn-primary" href="{% url "createWebsite" %}">{% trans "Create Website" %}</a>
+                <a class="pull-right btn btn-primary" style="margin-left: 1%;" href="{% url "createWebsite" %}">{% trans "Create Website" %}</a>
+                <a class="pull-right btn btn-primary" style="margin-left: 1%;" href="{% url "deleteWebsite" %}">{% trans "Delete Website" %}</a>
+                <a class="pull-right btn btn-primary"  href="{% url "modifyWebsite" %}">{% trans "Modify Website" %}</a>
             </h2>
             <img ng-hide="cyberPanelLoading" src="{% static 'images/loading.gif' %}">
             <p>{% trans "On this page you can launch, list, modify and delete websites from your server." %}</p>

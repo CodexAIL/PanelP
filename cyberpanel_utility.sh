@@ -3,9 +3,9 @@
 
 export LC_CTYPE=en_US.UTF-8
 SUDO_TEST=$(set)
-BRANCH_NAME="main"
-GIT_URL="github.com/CodexAIL/PanelP"
-GIT_CONTENT_URL="raw.githubusercontent.com/CodexAIL/PanelP"
+BRANCH_NAME="stable"
+GIT_URL="github.com/codexail/cyberpanel"
+GIT_CONTENT_URL="raw.githubusercontent.com/codexail/cyberpanel"
 
 check_OS() {
 	if [[ ! -f /etc/os-release ]] ; then
@@ -27,7 +27,7 @@ check_OS() {
 	  Server_OS="openEuler"
 	else
 	  echo -e "Unable to detect your system..."
-	  echo -e "\nPopo Panel Panel is supported on x86_64 based Ubuntu 18.04, Ubuntu 20.04, Ubuntu 20.10, Ubuntu 22.04, CentOS 7, CentOS 8, AlmaLinux 8, RockyLinux 8, CloudLinux 7, CloudLinux 8, openEuler 20.03, openEuler 22.03...\n"
+	  echo -e "\nCyberPanel is supported on x86_64 based Ubuntu 18.04, Ubuntu 20.04, Ubuntu 20.10, Ubuntu 22.04, CentOS 7, CentOS 8, AlmaLinux 8, RockyLinux 8, CloudLinux 7, CloudLinux 8, openEuler 20.03, openEuler 22.03...\n"
   	  exit
 	fi
 
@@ -60,7 +60,7 @@ if [[ $TMP_YN == "1" ]] ; then
 	fi
 		rm -f /etc/cyberpanel/watchdog.sh
 		rm -f /usr/local/bin/watchdog
-		wget -O /etc/cyberpanel/watchdog.sh https://$GIT_CONTENT_URL/$BRANCH_NAME/PanelP/watchdog.sh
+		wget -O /etc/cyberpanel/watchdog.sh https://$GIT_CONTENT_URL/$BRANCH_NAME/CPScripts/watchdog.sh
 		chmod 700 /etc/cyberpanel/watchdog.sh
 		ln -s /etc/cyberpanel/watchdog.sh /usr/local/bin/watchdog
 		echo -e "\nWatchDog has been installed/updated..."
@@ -102,17 +102,17 @@ fi
 }
 
 self_check() {
-echo -e "\nChecking Popo Power Panel Utility update..."
+echo -e "\nChecking Cyberpanel Utility update..."
 SUM=$(md5sum /usr/bin/cyberpanel_utility)
 SUM1=${SUM:0:32}
 #get md5sum of local file
 
-rm -f /usr/local/CyberPanel/panel_utility.sh
-wget -q -O /usr/local/CyberPanel/panel_utility.sh https://madpopo.com/panel/panel_utility.sh
-chmod 600 /usr/local/CyberPanel/panel_utility.sh
+rm -f /usr/local/CyberPanel/cyberpanel_utility.sh
+wget -q -O /usr/local/CyberPanel/cyberpanel_utility.sh https://cyberpanel.sh/misc/cyberpanel_utility.sh
+chmod 600 /usr/local/CyberPanel/cyberpanel_utility.sh
 
 
-SUM=$(md5sum /usr/local/CyberPanel/panel_utility.sh)
+SUM=$(md5sum /usr/local/CyberPanel/cyberpanel_utility.sh)
 SUM2=${SUM:0:32}
 #get md5sum of remote file.
 
@@ -120,14 +120,14 @@ if [[ $SUM1 == $SUM2 ]] ; then
 	echo -e "\nCyberPanel Utility Script is up to date...\n"
 else
 	local_string=$(head -2 /usr/bin/cyberpanel_utility)
-	remote_string=$(head -2 /usr/local/CyberPanel/panel_utility.sh)
+	remote_string=$(head -2 /usr/local/CyberPanel/cyberpanel_utility.sh)
 	#check file content before replacing itself in case failed to download the file.
 	if [[ $local_string == $remote_string ]] ; then
-	echo -e "\nUpdating Popo Power  Utility Script..."
+	echo -e "\nUpdating CyberPanel Utility Script..."
 	rm -f /usr/bin/cyberpanel_utility
-	mv /usr/local/CyberPanel/panel_utility.sh /usr/bin/cyberpanel_utility
+	mv /usr/local/CyberPanel/cyberpanel_utility.sh /usr/bin/cyberpanel_utility
 	chmod 700 /usr/bin/cyberpanel_utility
-	echo -e "\nCPopo Power Panel Utility update compelted..."
+	echo -e "\nCyberPanel Utility update compelted..."
 	echo -e "\nPlease execute it again..."
 	exit
 	else
@@ -136,7 +136,7 @@ else
 	fi
 fi
 
-rm -f /usr/local/CyberPanel/panel_utility.sh
+rm -f /usr/local/CyberPanel/cyberpanel_utility.sh
 
 }
 
@@ -158,12 +158,12 @@ fi
 #echo -e "CyberPanel Upgrade will start in 10 seconds"
 #echo -e "If you want to cancel, please press CTRL + C to cancel it"
 #sleep 10
-echo -e "Popo Power Panel upgrading..."
-rm -f /usr/local/panel_upgrade.sh
-wget -O /usr/local/panel_upgrade.sh -q https://$GIT_CONTENT_URL/${BRANCH_NAME}/panel_upgrade.sh
-chmod 700 /usr/local/panel_upgrade.sh
-/usr/local/panel_upgrade.sh
-rm -f /usr/local/panel_upgrade.sh
+echo -e "CyberPanel upgrading..."
+rm -f /usr/local/cyberpanel_upgrade.sh
+wget -O /usr/local/cyberpanel_upgrade.sh -q https://$GIT_CONTENT_URL/${BRANCH_NAME}/cyberpanel_upgrade.sh
+chmod 700 /usr/local/cyberpanel_upgrade.sh
+/usr/local/cyberpanel_upgrade.sh
+rm -f /usr/local/cyberpanel_upgrade.sh
 exit
 }
 
@@ -234,13 +234,13 @@ phpmyadmin_limits() {
 
 install_php_redis() {
 	if [[ $SERVER_OS == "CentOS" ]] ; then
-		yum install -y lsphp74-redis lsphp73-redis lsphp72-redis lsphp71-redis lsphp70-redis lsphp56-redis lsphp55-redis lsphp54-redis lsphp54-bcmath
+		yum install -y lsphp74-redis lsphp73-redis lsphp72-redis lsphp71-redis lsphp70-redis lsphp56-redis lsphp55-redis lsphp54-redis
 	fi
 	if [[ $SERVER_OS == "Ubuntu" ]] ; then
-		DEBIAN_FRONTEND=noninteractive apt install -y lsphp74-redis lsphp73-redis lsphp72-redis lsphp71-redis lsphp70-redis lsphp70-bcmath
+		DEBIAN_FRONTEND=noninteractive apt install -y lsphp74-redis lsphp73-redis lsphp72-redis lsphp71-redis lsphp70-redis
 	fi
 	if [[ $SERVER_OS == "openEuler" ]] ; then
-		dnf install -y lsphp74-redis lsphp73-redis lsphp72-redis lsphp71-redis lsphp71-bcmath
+		dnf install -y lsphp74-redis lsphp73-redis lsphp72-redis lsphp71-redis
 	fi
 	echo -e "\nRedis extension for PHP has been installed..."
 	exit
@@ -371,9 +371,9 @@ install_php_memcached() {
 }
 
 main_page() {
-echo -e "		Popo Power Panel Utility Tools \e[31m(beta)\e[39m
+echo -e "		CyberPanel Utility Tools \e[31m(beta)\e[39m
 
-  1. Upgrade Popo Power Panel.
+  1. Upgrade CyberPanel.
 
   2. Addons.
 
@@ -426,7 +426,7 @@ sudo_check() {
 	fi
 
 	if [[ $(id -u) != 0 ]]  > /dev/null; then
-		echo -e "\nYou must use root user to use Popo Power Panel Utility..."
+		echo -e "\nYou must use root user to use CyberPanel Utility..."
 		exit
 	else
 		echo -e "\nYou are running as root..."
