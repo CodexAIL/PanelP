@@ -336,8 +336,8 @@ class preFlightsChecks:
                 command = "./" + filename
                 preFlightsChecks.call(command, self.distro, command, command, 1, 1, os.EX_OSERR)
             except:
-                logging.InstallLog.writeToFile("[ERROR] Exception during CyberPanel install")
-                preFlightsChecks.stdOut("[ERROR] Exception during CyberPanel install")
+                logging.InstallLog.writeToFile("[ERROR] Exception during PopoPower Panel install")
+                preFlightsChecks.stdOut("[ERROR] Exception during PopoPower Panel install")
                 os._exit(os.EX_SOFTWARE)
 
         elif self.distro == centos:
@@ -515,7 +515,7 @@ password="%s"
 
     def fixCyberPanelPermissions(self):
 
-        ###### fix Core CyberPanel permissions
+        ###### fix Core PopoPower Panel permissions
 
         command = "usermod -G lscpd,lsadm,nobody lscpd"
         preFlightsChecks.call(command, self.distro, command, command, 1, 0, os.EX_OSERR)
@@ -2372,7 +2372,7 @@ vmail
 
 
 def main():
-    parser = argparse.ArgumentParser(description='CyberPanel Installer')
+    parser = argparse.ArgumentParser(description='PopoPower Panel Installer')
     parser.add_argument('publicip', help='Please enter public IP for your VPS or dedicated server.')
     parser.add_argument('--mysql', help='Specify number of MySQL instances to be used.')
     parser.add_argument('--postfix', help='Enable or disable Email Service.')
@@ -2392,8 +2392,8 @@ def main():
     args = parser.parse_args()
 
     logging.InstallLog.ServerIP = args.publicip
-    logging.InstallLog.writeToFile("Starting CyberPanel installation..,10")
-    preFlightsChecks.stdOut("Starting CyberPanel installation..")
+    logging.InstallLog.writeToFile("Starting PopoPower Panel installation..,10")
+    preFlightsChecks.stdOut("Starting PopoPower Panel installation..")
 
     if args.ent is None:
         ent = 0
@@ -2586,7 +2586,7 @@ echo $oConfig->Save() ? 'Done' : 'Error';
 
     checks.fixCyberPanelPermissions()
 
-    logging.InstallLog.writeToFile("CyberPanel installation successfully completed!,80")
+    logging.InstallLog.writeToFile("PopoPower Panel installation successfully completed!,80")
 
 
 if __name__ == "__main__":

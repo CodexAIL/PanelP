@@ -5,7 +5,7 @@
 #set -u
 
 
-#CyberPanel installer script for CentOS 7, CentOS 8, CloudLinux 7, AlmaLinux 8, RockyLinux 8, Ubuntu 18.04, Ubuntu 20.04, Ubuntu 20.10, openEuler 20.03 and openEuler 22.03
+#PopoPower Panel installer script for CentOS 7, CentOS 8, CloudLinux 7, AlmaLinux 8, RockyLinux 8, Ubuntu 18.04, Ubuntu 20.04, Ubuntu 20.10, openEuler 20.03 and openEuler 22.03
 #For whoever may edit this script, please follow:
 #Please use Pre_Install_xxx() and Post_Install_xxx() if you want to something respectively before or after the panel installation
 #and update below accordingly
@@ -46,7 +46,7 @@ Sudo_Test=$(set)
 
 Set_Default_Variables() {
 
-echo -e "Fetching latest data from CyberPanel server...\n"
+echo -e "Fetching latest data from PopoPower Panel server...\n"
 echo -e "This may take few seconds..."
 
 Silent="Off"
@@ -192,7 +192,7 @@ echo -e "\nChecking root privileges..."
   fi
 
   if [[ $(id -u) != 0 ]] >/dev/null; then
-    echo -e "\nYou must run on root user to install CyberPanel...\n"
+    echo -e "\nYou must run on root user to install PopoPower Panel...\n"
     echo -e "or run following command: (do NOT miss the quotes)"
     echo -e "\e[31msudo su -c \"sh <(curl https://cyberpanel.sh || wget -O - https://cyberpanel.sh)\"\e[39m"
     exit 1
@@ -247,8 +247,8 @@ fi
 if [ -z "$XDG_CURRENT_DESKTOP" ]; then
     echo -e "Desktop OS not detected. Proceeding\n"
 else
-    echo "$XDG_CURRENT_DESKTOP defined appears to be a desktop OS. Bailing as CyberPanel is incompatible."
-    echo -e "\nCyberPanel is supported on server OS types only. Such as Ubuntu 18.04 x86_64, Ubuntu 20.04 x86_64, Ubuntu 20.10 x86_64, CentOS 7.x, CentOS 8.x, AlmaLinux 8.x and CloudLinux 7.x...\n"
+    echo "$XDG_CURRENT_DESKTOP defined appears to be a desktop OS. Bailing as PopoPower Panel is incompatible."
+    echo -e "\nPopoPower Panel is supported on server OS types only. Such as Ubuntu 18.04 x86_64, Ubuntu 20.04 x86_64, Ubuntu 20.10 x86_64, CentOS 7.x, CentOS 8.x, AlmaLinux 8.x and CloudLinux 7.x...\n"
     exit
 fi
 
@@ -271,8 +271,8 @@ elif grep -q -E "openEuler 20.03|openEuler 22.03" /etc/os-release ; then
   Server_OS="openEuler"
 else
   echo -e "Unable to detect your system..."
-  echo -e "\nCyberPanel is supported on x86_64 based Ubuntu 18.04, Ubuntu 20.04, Ubuntu 20.10, Ubuntu 22.04, CentOS 7, CentOS 8, AlmaLinux 8, RockyLinux 8, CloudLinux 7, CloudLinux 8, openEuler 20.03, openEuler 22.03...\n"
-  Debug_Log2 "CyberPanel is supported on x86_64 based Ubuntu 18.04, Ubuntu 20.04, Ubuntu 20.10, Ubuntu 22.04, CentOS 7, CentOS 8, AlmaLinux 8, RockyLinux 8, CloudLinux 7, CloudLinux 8, openEuler 20.03, openEuler 22.03... [404]"
+  echo -e "\nPopoPower Panel is supported on x86_64 based Ubuntu 18.04, Ubuntu 20.04, Ubuntu 20.10, Ubuntu 22.04, CentOS 7, CentOS 8, AlmaLinux 8, RockyLinux 8, CloudLinux 7, CloudLinux 8, openEuler 20.03, openEuler 22.03...\n"
+  Debug_Log2 "PopoPower Panel is supported on x86_64 based Ubuntu 18.04, Ubuntu 20.04, Ubuntu 20.10, Ubuntu 22.04, CentOS 7, CentOS 8, AlmaLinux 8, RockyLinux 8, CloudLinux 7, CloudLinux 8, openEuler 20.03, openEuler 22.03... [404]"
   exit
 fi
 
@@ -297,9 +297,9 @@ Check_Virtualization() {
 echo -e "Checking virtualization type..."
 #if hostnamectl | grep -q "Virtualization: lxc"; then
 #  echo -e "\nLXC detected..."
-#  echo -e "CyberPanel does not support LXC"
+#  echo -e "PopoPower Panel does not support LXC"
 #  echo -e "Exiting..."
-#  Debug_Log2 "CyberPanel does not support LXC.. [404]"
+#  Debug_Log2 "PopoPower Panel does not support LXC.. [404]"
 #  exit
 #fi
 #remove per https://github.com/codexail/cyberpanel/issues/589
@@ -408,9 +408,9 @@ fi
 }
 
 Show_Help() {
-echo -e "\nCyberPanel Installer Script Help\n"
+echo -e "\nPopoPower Panel Installer Script Help\n"
 echo -e "\nUsage: sh <(curl cyberpanel.sh) --argument"
-echo -e "\n\e[31m-v\e[39m or \e[31m--version\e[39m : choose to install CyberPanel OpenLiteSpeed or CyberPanel Enterprise, available options are \e[31mols\e[39m , \e[31mTRIAL\e[39m and \e[31mSERIAL_NUMBER\e[39m, default ols"
+echo -e "\n\e[31m-v\e[39m or \e[31m--version\e[39m : choose to install PopoPower Panel OpenLiteSpeed or PopoPower Panel Enterprise, available options are \e[31mols\e[39m , \e[31mTRIAL\e[39m and \e[31mSERIAL_NUMBER\e[39m, default ols"
 echo -e "Please be aware, this serial number must be obtained from LiteSpeed Store."
 echo -e "And if this serial number has been used before, it must be released/migrated in Store first, otherwise it will fail to start."
 echo -e "\n\e[31m-a\e[39m or \e[31m--addons\e[39m : install addons: memcached, redis, PHP extension for memcached and redis"
@@ -427,7 +427,7 @@ echo -e "e.g.  \e[31m-b 2.0.2\e[39m will install 2.0.2 version"
 echo -e "\n\e[31m--mirror\e[39m : this argument force to use mirror server for majority of repositories, only suggest to use for servers within China"
 echo -e "\nExample:"
 echo -e "\nsh <(curl cyberpanel.sh) -v ols -p r or ./cyberpanel.sh --version ols --password random"
-echo -e "\nThis will install CyberPanel OpenLiteSpeed and randomly generate the password."
+echo -e "\nThis will install PopoPower Panel OpenLiteSpeed and randomly generate the password."
 echo -e "\nsh <(curl cyberpanel.sh) -v LICENSE_KEY -a -p my_pass_word"
 echo -e "\nThis will install LiteSpeed Enterise , replace LICENSE_KEY to actual license key and set password to my_pass_word\n"
 }
@@ -577,9 +577,9 @@ fi
 }
 
 Interactive_Mode() {
-echo -e "		CyberPanel Installer v$Panel_Version.$Panel_Build
+echo -e "		PopoPower Panel Installer v$Panel_Version.$Panel_Build
 
-1. Install CyberPanel.
+1. Install PopoPower Panel.
 
 2. Exit.
 
@@ -602,13 +602,13 @@ esac
 
 
 Interactive_Mode_Set_Parameter() {
-echo -e "		CyberPanel Installer v$Panel_Version.$Panel_Build
+echo -e "		PopoPower Panel Installer v$Panel_Version.$Panel_Build
 
 RAM check : $(free -m | awk 'NR==2{printf "%s/%sMB (%.2f%%)\n", $3,$2,$3*100/$2 }')
 
 Disk check : $(df -h | awk '$NF=="/"{printf "%d/%dGB (%s)\n", $3,$2,$5}') (Minimal \e[31m10GB\e[39m free space)
 
-1. Install CyberPanel with \e[31mOpenLiteSpeed\e[39m.
+1. Install PopoPower Panel with \e[31mOpenLiteSpeed\e[39m.
 
 2. Install Cyberpanel with \e[31mLiteSpeed Enterprise\e[39m.
 
@@ -633,7 +633,7 @@ case "$Input_Number" in
   ;;
 esac
 
-echo -e "\nInstall Full service for CyberPanel? This will include PowerDNS, Postfix and Pure-FTPd."
+echo -e "\nInstall Full service for PopoPower Panel? This will include PowerDNS, Postfix and Pure-FTPd."
 echo -e ""
 printf "%s" "Full installation [Y/n]: "
 read -r Tmp_Input
@@ -669,7 +669,7 @@ else
     fi
 fi
 
-  ### Ask if you want to set up this CyberPanel with remote MySQL
+  ### Ask if you want to set up this PopoPower Panel with remote MySQL
 
 echo -e "\nDo you want to setup Remote MySQL? (This will skip installation of local MySQL)"
 echo -e ""
@@ -1087,12 +1087,12 @@ fi
 rm -rf cyberpanel
 echo -e "\nFetching files from ${Git_Clone_URL}...\n"
 
-Debug_Log2 "Getting CyberPanel code..,4"
+Debug_Log2 "Getting PopoPower Panel code..,4"
 
 Retry_Command "git clone ${Git_Clone_URL}"
   Check_Return "git clone ${Git_Clone_URL}"
 
-echo -e "\nCyberPanel source code downloaded...\n"
+echo -e "\nPopoPower Panel source code downloaded...\n"
 
 cd cyberpanel || exit
 git checkout "$Branch_Name"
@@ -1371,8 +1371,8 @@ Retry_Command "/root/.acme.sh/acme.sh --upgrade --auto-upgrade"
 Main_Installation() {
 Debug_Log2 "Starting main installation..,30"
 if [[ -d /usr/local/CyberCP ]] ; then
-  echo -e "\n CyberPanel already installed, exiting..."
-  Debug_Log2 "CyberPanel already installed, exiting... [404]"
+  echo -e "\n PopoPower Panel already installed, exiting..."
+  Debug_Log2 "PopoPower Panel already installed, exiting... [404]"
   exit
 fi
 
@@ -1445,8 +1445,8 @@ fi
 /usr/local/CyberPanel/bin/python install.py "${Final_Flags[@]}"
 
 
-if grep "CyberPanel installation successfully completed" /var/log/installLogs.txt >/dev/null; then
-  echo -e "\nCyberPanel installation sucessfully completed...\n"
+if grep "PopoPower Panel installation successfully completed" /var/log/installLogs.txt >/dev/null; then
+  echo -e "\nPopoPower Panel installation sucessfully completed...\n"
   Debug_Log2 "Main installation completed...,70"
 else
   echo -e "Oops, something went wrong..."
@@ -1696,7 +1696,7 @@ Post_Install_Display_Final_Info() {
 snappymailAdminPass=$(grep SetPassword /usr/local/CyberCP/public/snappymail.php| sed -e 's|$oConfig->SetPassword(||g' -e "s|');||g" -e "s|'||g")
 Elapsed_Time="$((Time_Count / 3600)) hrs $(((SECONDS / 60) % 60)) min $((Time_Count % 60)) sec"
 echo "###################################################################"
-echo "                CyberPanel Successfully Installed                  "
+echo "                PopoPower Panel Successfully Installed                  "
 echo "                                                                   "
 echo "                Current Disk usage : $(df -h | awk '$NF=="/"{printf "%d/%dGB (%s)\n", $3,$2,$5}')                        "
 echo "                                                                   "
@@ -1729,7 +1729,7 @@ echo "              Wikipage: https://docs.cyberpanel.net                "
 echo "              Docs    : https://cyberpanel.net/docs/               "
 echo "                                                                   "
 echo -e "            Enjoy your accelerated Internet by                  "
-echo -e "                CyberPanel & $Word 				                     "
+echo -e "                PopoPower Panel & $Word 				                     "
 echo "###################################################################"
 
 if [[ "$Server_Provider" != "Undefined" ]]; then
@@ -1739,7 +1739,7 @@ else
   echo -e "If your provider has a \e[31mnetwork-level firewall\033[39m"
 fi
 echo -e "Please make sure you have opened following port for both in/out:"
-echo -e "\033[0;32mTCP: 8090\033[39m for CyberPanel"
+echo -e "\033[0;32mTCP: 8090\033[39m for PopoPower Panel"
 echo -e "\033[0;32mTCP: 80\033[39m, \033[0;32mTCP: 443\033[39m and \033[0;32mUDP: 443\033[39m for webserver"
 echo -e "\033[0;32mTCP: 21\033[39m and \033[0;32mTCP: 40110-40210\033[39m for FTP"
 echo -e "\033[0;32mTCP: 25\033[39m, \033[0;32mTCP: 587\033[39m, \033[0;32mTCP: 465\033[39m, \033[0;32mTCP: 110\033[39m, \033[0;32mTCP: 143\033[39m and \033[0;32mTCP: 993\033[39m for mail service"
@@ -1767,20 +1767,20 @@ Post_Install_Regenerate_Cert() {
 cat <<EOF >/root/cyberpanel/cert_conf
 [req]
 prompt=no
-distinguished_name=cyberpanel
+distinguished_name=PopoPower
 [cyberpanel]
 commonName = www.example.com
 countryName = CP
-localityName = CyberPanel
-organizationName = CyberPanel
-organizationalUnitName = CyberPanel
+localityName = PopoPower
+organizationName = PopoPower
+organizationalUnitName = PopoPower
 stateOrProvinceName = CP
 emailAddress = mail@example.com
-name = CyberPanel
-surname = CyberPanel
-givenName = CyberPanel
+name = PopoPower
+surname = PopoPower
+givenName = PopoPower
 initials = CP
-dnQualifier = CyberPanel
+dnQualifier = PopoPower
 [server_exts]
 extendedKeyUsage = 1.3.6.1.5.5.7.3.1
 EOF

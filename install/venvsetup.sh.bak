@@ -486,7 +486,7 @@ elif echo $OUTPUT | grep -q "Ubuntu 18.04" ; then
 else
 	cat /etc/*release
 	echo -e "\nUnable to detect your OS...\n"
-	echo -e "\nCyberPanel is supported on Ubuntu 18.04, CentOS 7.x and CloudLinux 7.x...\n"
+	echo -e "\nPopoPower Panel is supported on Ubuntu 18.04, CentOS 7.x and CloudLinux 7.x...\n"
 	exit 1
 fi
 }
@@ -538,7 +538,7 @@ fi
 }
 
 show_help() {
-echo -e "\nCyberPanel Installer Script Help\n"
+echo -e "\nPopoPower Panel Installer Script Help\n"
 echo -e "\nUsage: wget https://cyberpanel.sh/cyberpanel.sh"
 echo -e "\nchmod +x cyberpanel.sh"
 echo -e "\n./cyberpanel.sh -v ols/SERIAL_NUMBER -c 1 -a 1"
@@ -852,7 +852,7 @@ if [[ $debug == "1" ]] ; then
 	fi
 	
 	if grep "CyberPanel installation successfully completed" /var/log/installLogs.txt > /dev/null; then 
-		echo -e "\nCyberPanel installation sucessfully completed..."
+		echo -e "\nPopoPower Panel installation sucessfully completed..."
 else
 	echo -e "Oops, something went wrong..."
 	exit

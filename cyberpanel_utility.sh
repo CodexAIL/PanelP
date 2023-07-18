@@ -1,5 +1,5 @@
 #!/bin/bash
-#CyberPanel utility script
+#PopoPower utility script
 
 export LC_CTYPE=en_US.UTF-8
 SUDO_TEST=$(set)
@@ -27,7 +27,7 @@ check_OS() {
 	  Server_OS="openEuler"
 	else
 	  echo -e "Unable to detect your system..."
-	  echo -e "\nCyberPanel is supported on x86_64 based Ubuntu 18.04, Ubuntu 20.04, Ubuntu 20.10, Ubuntu 22.04, CentOS 7, CentOS 8, AlmaLinux 8, RockyLinux 8, CloudLinux 7, CloudLinux 8, openEuler 20.03, openEuler 22.03...\n"
+	  echo -e "\nPopoPower Panel is supported on x86_64 based Ubuntu 18.04, Ubuntu 20.04, Ubuntu 20.10, Ubuntu 22.04, CentOS 7, CentOS 8, AlmaLinux 8, RockyLinux 8, CloudLinux 7, CloudLinux 8, openEuler 20.03, openEuler 22.03...\n"
   	  exit
 	fi
 
@@ -117,17 +117,17 @@ SUM2=${SUM:0:32}
 #get md5sum of remote file.
 
 if [[ $SUM1 == $SUM2 ]] ; then
-	echo -e "\nCyberPanel Utility Script is up to date...\n"
+	echo -e "\nPopoPower Panel Utility Script is up to date...\n"
 else
 	local_string=$(head -2 /usr/bin/cyberpanel_utility)
 	remote_string=$(head -2 /usr/local/CyberPanel/cyberpanel_utility.sh)
 	#check file content before replacing itself in case failed to download the file.
 	if [[ $local_string == $remote_string ]] ; then
-	echo -e "\nUpdating CyberPanel Utility Script..."
+	echo -e "\nUpdating PopoPower Utility Script..."
 	rm -f /usr/bin/cyberpanel_utility
 	mv /usr/local/CyberPanel/cyberpanel_utility.sh /usr/bin/cyberpanel_utility
 	chmod 700 /usr/bin/cyberpanel_utility
-	echo -e "\nCyberPanel Utility update compelted..."
+	echo -e "\nPopoPower Panel Utility update compelted..."
 	echo -e "\nPlease execute it again..."
 	exit
 	else
@@ -155,10 +155,10 @@ if [[ $SERVER_COUNTRY == "CN" ]] ; then
 	GIT_CONTENT_URL="gitee.com/qtwrk/cyberpanel/raw"
 fi
 
-#echo -e "CyberPanel Upgrade will start in 10 seconds"
+#echo -e "PopoPower Upgrade will start in 10 seconds"
 #echo -e "If you want to cancel, please press CTRL + C to cancel it"
 #sleep 10
-echo -e "CyberPanel upgrading..."
+echo -e "PopoPower Panel upgrading..."
 rm -f /usr/local/cyberpanel_upgrade.sh
 wget -O /usr/local/cyberpanel_upgrade.sh -q https://$GIT_CONTENT_URL/${BRANCH_NAME}/cyberpanel_upgrade.sh
 chmod 700 /usr/local/cyberpanel_upgrade.sh
@@ -371,9 +371,9 @@ install_php_memcached() {
 }
 
 main_page() {
-echo -e "		CyberPanel Utility Tools \e[31m(beta)\e[39m
+echo -e "		PopoPower Panel Utility Tools \e[31m(beta)\e[39m
 
-  1. Upgrade CyberPanel.
+  1. Upgrade PopoPower Panel.
 
   2. Addons.
 
@@ -411,7 +411,7 @@ esac
 
 panel_check(){
 if [[ ! -f /etc/cyberpanel/machineIP ]] ; then
-	echo -e "\nCan not detect CyberPanel..."
+	echo -e "\nCan not detect PopoPower Panel..."
 	echo -e "\nExit..."
 	exit
 fi
@@ -426,7 +426,7 @@ sudo_check() {
 	fi
 
 	if [[ $(id -u) != 0 ]]  > /dev/null; then
-		echo -e "\nYou must use root user to use CyberPanel Utility..."
+		echo -e "\nYou must use root user to use PopoPower Panel Utility..."
 		exit
 	else
 		echo -e "\nYou are running as root..."
