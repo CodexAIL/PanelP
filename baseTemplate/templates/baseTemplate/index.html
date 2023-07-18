@@ -200,6 +200,44 @@
             text-align: center;
             border-color: transparent;
           }
+          #backup-data{
+            font-size: 14px;
+            text-transform: uppercase;
+            margin: -1px -1px 0;
+            padding: 0px;
+            text-align: center;
+            border-color: transparent;
+            margin-top: 1%;
+          }
+          #backup-data{
+            font-size: 14px;
+            text-transform: uppercase;
+            margin: -1px -1px 0;
+            padding: 0px;
+            text-align: center;
+            border-color: transparent;
+            margin-top: 1%;
+            font-weight: 500;
+          }
+          .custom-row{
+            display: flex;
+            flex-wrap: wrap;
+          }
+          #manage-topics{
+            color:#ff6a00;
+            font-weight:900;
+            font-size:large
+
+          }
+          .manage-btn{
+            margin-top: 6%;
+            margin-right: 8%;
+            align-self: center;
+            text-align: center;
+          }
+          .manage-btn-name{
+            text-align: center;
+          }
     </style>
 
 
@@ -438,7 +476,7 @@
             <!-- #header-nav-right -->
 
         </div>
-        <div id="page-sidebar">
+        <div id="page-sidebar" style="height: 2729px;background-color: rgb(255, 247, 243);">
             <div class="scroll-sidebar" style="background-color: #fff7f3;">
                 <ul id="sidebar-menu">
                     <li class="header"><span>{% trans "Overview" %}</span></li>
@@ -502,9 +540,9 @@
                     </li>
 
                     <!-------------WordPress--------------------------->
-                    <!-- <li id="sidebar-menu-item-wordpress">
+                    <li id="sidebar-menu-item-wordpress">
                         <a href="{% url 'loadWebsitesHome' %}" title="{% trans 'WordPress' %}">
-                            <div class="glyph-icon icon-wordpress" title="{% trans 'WordPress' %}"></div>
+                            <div class="glyph-icon icon-wordpress" title="{% trans 'WordPress Popo Toolkit' %}"></div>
                             <span>{% trans "WordPress" %}</span>
                         </a>
                         <div class="sidebar-submenu">
@@ -512,19 +550,15 @@
                             <ul>
                                 {% if admin or createWebsite %}
                                 <li><a href="{% url 'createWordpress' %}"
-                                        title="{% trans 'Deploy WordPress' %}"><span>{% trans "Deploy WordPress"
-                                            %}</span></a>
+                                        title="{% trans 'Deploy WordPress' %}"><span>{% trans "Deploy WordPress"%}</span></a>
                                 </li>
                                 {% endif %}
-                                <li><a href="{% url 'ListWPSites' %}" title="{% trans 'List WordPress' %}"><span>{%
-                                            trans "List WordPress" %}</span></a>
+                                <li><a href="{% url 'ListWPSites' %}" title="{% trans 'List WordPress' %}"><span>{%trans "List WordPress" %}</span></a>
                                 </li>
                                 <li><a href="{% url 'ConfigurePlugins' %}"
-                                        title="{% trans 'ConfigurePlugins' %}"><span>{% trans "Configure Plugins"
-                                            %}</span></a>
+                                        title="{% trans 'ConfigurePlugins' %}"><span>{% trans "Configure Plugins"%}</span></a>
                                 </li>
-                                <li><a href="{% url 'RestoreBackups' %}" title="{% trans 'RestoreBackups' %}"><span>{%
-                                            trans "Restore Backups" %}</span></a>
+                                <li><a href="{% url 'RestoreBackups' %}" title="{% trans 'RestoreBackups' %}"><span>{%trans "Restore Backups" %}</span></a>
                                 </li>
                                 <li><a href="{% url 'RemoteBackupConfig' %}"
                                         title="{% trans 'Remote Backup' %}"><span>{% trans "Remote Backup" %}</span></a>
@@ -532,7 +566,7 @@
                             </ul>
 
                         </div>
-                    </li> -->
+                    </li>
 
 
                     <li id="sidebar-menu-item-websites">
@@ -547,42 +581,44 @@
 
                             <ul>
                                 {% if admin or createWebsite %}
-                                <li><a href="{% url 'createWebsite' %}" title="{% trans 'Create Website' %}"><span>{% trans "Create Website" %}</span></a>
-                                </li>
+                                <!-- <li><a href="{% url 'createWebsite' %}" title="{% trans 'Create Website' %}"><span>{% trans "Create Website" %}</span></a>
+                                </li> -->
                                 {% endif %}
 
                                 <li><a href="{% url 'listWebsites' %}" title="{% trans 'List Websites' %}"><span>{% trans "List Websites" %}</span></a>
                                 </li>
                                 <li><a href="{% url 'CreateNewDomain' %}"
-                                        title="{% trans 'Create New Domain' %}"><span>{% trans "Create New Domain" %}</span></a>
+                                        title="{% trans 'Create New Domain' %}"><span>{% trans "Create AddOn Domain" %}</span></a>
                                 </li>
-                                <li><a href="{% url 'listChildDomains' %}" title="{% trans 'List Domains' %}"><span>{% trans "List Domains" %}</span></a>
+                                <li><a href="{% url 'listChildDomains' %}" title="{% trans 'List Domains' %}"><span>{% trans "List AddOn Domains" %}</span></a>
                                 </li>
                                 {% if admin or modifyWebsite %}
-                                <li><a href="{% url 'modifyWebsite' %}" title="{% trans 'Modify Website' %}"><span>{% trans "Modify Website" %}</span></a>
-                                </li>
+                                <!-- <li><a href="{% url 'modifyWebsite' %}" title="{% trans 'Modify Website' %}"><span>{% trans "Modify Website" %}</span></a>
+                                </li> -->
                                 {% endif %}
                                 {% if admin or suspendWebsite %}
                                 <li><a href="{% url 'siteState' %}" title="{% trans 'Suspend/Unsuspend' %}"><span>{% trans "Suspend/Unsuspend" %}</span></a>
                                 </li>
                                 {% endif %}
                                 {% if admin or deleteWebsite %}
-                                <li><a href="{% url 'deleteWebsite' %}" title="{% trans 'Delete Website' %}"><span>{% trans "Delete Website" %}</span></a>
-                                </li>
+                                <!-- <li><a href="{% url 'deleteWebsite' %}" title="{% trans 'Delete Website' %}"><span>{% trans "Delete Website" %}</span></a>
+                                </li> -->
                                 {% endif %}
                             </ul>
 
                         </div><!-- .sidebar-submenu -->
                     </li>
                     <li id="sidebar-menu-item-packages">
-                        <a id="packageHome" href="{% url 'packagesHome' %}" title="{% trans 'Packages' %}">
+                        <!-- <a id="packageHome" href="{% url 'packagesHome' %}" title="{% trans 'Packages' %}"> -->
+                        <a id="packageHome" href="{% url 'listPackages' %}" title="{% trans 'Packages' %}">
+
                             <span class="icon-container">
                                 <img src="https://generation-sessions.s3.amazonaws.com/f2610a6a5d447429defe5f026c03f265/img/vector-6.svg" alt="Icon" class="menu-icon">
                                 <span class="background-circle"></span>
                             </span>
-                            <span class="sidebar-name">{% trans "Packages" %}</span>
+                            <span href="{% url 'listPackages' %}" class="sidebar-name">{% trans "Packages" %}</span>
                         </a>
-                        <div id="packageSub" class="sidebar-submenu">
+                        <!-- <div id="packageSub" class="sidebar-submenu">
 
                             <ul>
                                 {% if admin or createPackage %}
@@ -604,7 +640,7 @@
                                 {% endif %}
                             </ul>
 
-                        </div><!-- .sidebar-submenu -->
+                        </div> -->
                     </li>
                     <li id="sidebar-menu-item-databases">
                         <a title="{% trans 'Databases' %}">
@@ -703,18 +739,18 @@
 
                             <ul>
                                 {% if admin or createEmail %}
-                                <li><a href="{% url 'createEmailAccount' %}"
+                                <!-- <li><a href="{% url 'createEmailAccount' %}"
                                         title="{% trans 'Create Email Account' %}"><span>{% trans "Create Email" %}</span></a>
-                                </li>
+                                </li> -->
                                 {% endif %}
                                 {% if admin or listEmails %}
-                                <li><a href="{% url 'listEmails' %}" title="{% trans 'List Emails' %}"><span>{% trans "List Emails" %}</span></a>
+                                <li><a href="{% url 'listEmails' %}" title="{% trans 'List Emails' %}" ><span>{% trans "List Emails" %}</span></a>
                                 </li>
                                 {% endif %}
                                 {% if admin or deleteEmail %}
-                                <li><a href="{% url 'deleteEmailAccount' %}"
-                                        title="{% trans 'Delete Email Account' %}"><span>{% trans "Delete Email" %}</span></a>
-                                </li>
+                                <!-- <li><a href="{% url 'deleteEmailAccount' %}"
+                                        title="{% trans 'Delete Email Account' %}"><span>{% trans "Delete Email"%}</span></a>
+                                </li> -->
                                 {% endif %}
                                 {% if admin or emailForwarding %}
                                 <li><a href="{% url 'emailForwarding' %}"
@@ -1273,7 +1309,23 @@
     <script src="{% static 'WebTerminal/term.js' %}?ver={{ version }}"></script>
     <script src="{% static 'WebTerminal/ws.js' %}?ver={{ version }}"></script>
     <script src="{% static 'WebTerminal/main.js' %}?ver={{ version }}"></script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+    <script>
+      angular.module('myApp', [])
+        .controller('myController', function($scope, $location) {
+          // Get the value from the query parameter
+          const value = $location.search().value;
+    
+          // Set the selected value in the AngularJS model
+          $scope.selectedDomain = value;
+    
+          // Your populateCurrentRecords function
+          $scope.populateCurrentRecords = function() {
+            // Code for populating current records
+          };
+        });
+    </script>
+      
     {% endwith %}
 
     </div>

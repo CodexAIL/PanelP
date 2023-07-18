@@ -46,12 +46,12 @@ Sudo_Test=$(set)
 
 Set_Default_Variables() {
 
-echo -e "Fetching latest data from Popo Power Panel server...\n"
+echo -e "Fetching latest data from CyberPanel server...\n"
 echo -e "This may take few seconds..."
 
 Silent="Off"
 Server_Edition="OLS"
-Admin_Pass="Panel@123"
+Admin_Pass="1234567"
 
 Memcached="Off"
 Redis="Off"
@@ -192,7 +192,7 @@ echo -e "\nChecking root privileges..."
   fi
 
   if [[ $(id -u) != 0 ]] >/dev/null; then
-    echo -e "\nYou must run on root user to install Popo Power Panel...\n"
+    echo -e "\nYou must run on root user to install CyberPanel...\n"
     echo -e "or run following command: (do NOT miss the quotes)"
     echo -e "\e[31msudo su -c \"sh <(curl https://cyberpanel.sh || wget -O - https://cyberpanel.sh)\"\e[39m"
     exit 1
@@ -247,8 +247,8 @@ fi
 if [ -z "$XDG_CURRENT_DESKTOP" ]; then
     echo -e "Desktop OS not detected. Proceeding\n"
 else
-    echo "$XDG_CURRENT_DESKTOP defined appears to be a desktop OS. Bailing as Popo Power Panel is incompatible."
-    echo -e "\nPopo Power Panel is supported on server OS types only. Such as Ubuntu 18.04 x86_64, Ubuntu 20.04 x86_64, Ubuntu 20.10 x86_64, CentOS 7.x, CentOS 8.x, AlmaLinux 8.x and CloudLinux 7.x...\n"
+    echo "$XDG_CURRENT_DESKTOP defined appears to be a desktop OS. Bailing as CyberPanel is incompatible."
+    echo -e "\nCyberPanel is supported on server OS types only. Such as Ubuntu 18.04 x86_64, Ubuntu 20.04 x86_64, Ubuntu 20.10 x86_64, CentOS 7.x, CentOS 8.x, AlmaLinux 8.x and CloudLinux 7.x...\n"
     exit
 fi
 
@@ -271,8 +271,8 @@ elif grep -q -E "openEuler 20.03|openEuler 22.03" /etc/os-release ; then
   Server_OS="openEuler"
 else
   echo -e "Unable to detect your system..."
-  echo -e "\nPopo Power Panel is supported on x86_64 based Ubuntu 18.04, Ubuntu 20.04, Ubuntu 20.10, Ubuntu 22.04, CentOS 7, CentOS 8, AlmaLinux 8, RockyLinux 8, CloudLinux 7, CloudLinux 8, openEuler 20.03, openEuler 22.03...\n"
-  Debug_Log2 "Popo Power Panel is supported on x86_64 based Ubuntu 18.04, Ubuntu 20.04, Ubuntu 20.10, Ubuntu 22.04, CentOS 7, CentOS 8, AlmaLinux 8, RockyLinux 8, CloudLinux 7, CloudLinux 8, openEuler 20.03, openEuler 22.03... [404]"
+  echo -e "\nCyberPanel is supported on x86_64 based Ubuntu 18.04, Ubuntu 20.04, Ubuntu 20.10, Ubuntu 22.04, CentOS 7, CentOS 8, AlmaLinux 8, RockyLinux 8, CloudLinux 7, CloudLinux 8, openEuler 20.03, openEuler 22.03...\n"
+  Debug_Log2 "CyberPanel is supported on x86_64 based Ubuntu 18.04, Ubuntu 20.04, Ubuntu 20.10, Ubuntu 22.04, CentOS 7, CentOS 8, AlmaLinux 8, RockyLinux 8, CloudLinux 7, CloudLinux 8, openEuler 20.03, openEuler 22.03... [404]"
   exit
 fi
 
@@ -302,7 +302,7 @@ echo -e "Checking virtualization type..."
 #  Debug_Log2 "CyberPanel does not support LXC.. [404]"
 #  exit
 #fi
-#remove per https://github.com/CodexAIL/PanelP/issues/589
+#remove per https://github.com/codexail/cyberpanel/issues/589
 
 if hostnamectl | grep -q "Virtualization: openvz"; then
   echo -e "OpenVZ detected...\n"
@@ -408,9 +408,9 @@ fi
 }
 
 Show_Help() {
-echo -e "\nPopo Power Panel Installer Script Help\n"
-echo -e "\nUsage: sh <(curl panel.sh) --argument"
-echo -e "\n\e[31m-v\e[39m or \e[31m--version\e[39m : choose to install Popo Power Panel OpenLiteSpeed or Popo Power Panel Enterprise, available options are \e[31mols\e[39m , \e[31mTRIAL\e[39m and \e[31mSERIAL_NUMBER\e[39m, default ols"
+echo -e "\nCyberPanel Installer Script Help\n"
+echo -e "\nUsage: sh <(curl cyberpanel.sh) --argument"
+echo -e "\n\e[31m-v\e[39m or \e[31m--version\e[39m : choose to install CyberPanel OpenLiteSpeed or CyberPanel Enterprise, available options are \e[31mols\e[39m , \e[31mTRIAL\e[39m and \e[31mSERIAL_NUMBER\e[39m, default ols"
 echo -e "Please be aware, this serial number must be obtained from LiteSpeed Store."
 echo -e "And if this serial number has been used before, it must be released/migrated in Store first, otherwise it will fail to start."
 echo -e "\n\e[31m-a\e[39m or \e[31m--addons\e[39m : install addons: memcached, redis, PHP extension for memcached and redis"
@@ -426,9 +426,9 @@ echo -e "\n\e[31m-b\e[39m or \e[31m--branch\e[39m : install with given branch/ve
 echo -e "e.g.  \e[31m-b 2.0.2\e[39m will install 2.0.2 version"
 echo -e "\n\e[31m--mirror\e[39m : this argument force to use mirror server for majority of repositories, only suggest to use for servers within China"
 echo -e "\nExample:"
-echo -e "\nsh <(curl panel.sh) -v ols -p r or ./panel.sh --version ols --password random"
-echo -e "\nThis will install Popo Power Panel OpenLiteSpeed and randomly generate the password."
-echo -e "\nsh <(curl panel.sh) -v LICENSE_KEY -a -p my_pass_word"
+echo -e "\nsh <(curl cyberpanel.sh) -v ols -p r or ./cyberpanel.sh --version ols --password random"
+echo -e "\nThis will install CyberPanel OpenLiteSpeed and randomly generate the password."
+echo -e "\nsh <(curl cyberpanel.sh) -v LICENSE_KEY -a -p my_pass_word"
 echo -e "\nThis will install LiteSpeed Enterise , replace LICENSE_KEY to actual license key and set password to my_pass_word\n"
 }
 
@@ -446,7 +446,7 @@ else
     PowerDNS_Switch="On"
     PureFTPd_Switch="On"
     Server_Edition="OLS"
-    Admin_Pass="Panel@123"
+    Admin_Pass="1234567"
     Memcached="On"
     Redis="On"
   else
@@ -472,14 +472,14 @@ else
       -p | --password)
       shift
       if [[ ${1} = "" ]]; then
-        Admin_Pass="Panel@123"
+        Admin_Pass="1234567"
       elif [[ ${1} = "r" ]] || [[ $1 = "random" ]]; then
         Admin_Pass=$(
         head /dev/urandom | tr -dc A-Za-z0-9 | head -c 16
         echo ''
         )
       elif [[ ${1} = "d" ]]; then
-        Admin_Pass="Panel@123"
+        Admin_Pass="1234567"
       else
         if [[ ${#1} -lt 8 ]]; then
           echo -e "\nPassword length less than 8 digital, please choose a more complicated password.\n"
@@ -561,7 +561,7 @@ else
 fi
 
 if [[ $Admin_Pass = "d" ]]; then
-  Admin_Pass="Panel@123"
+  Admin_Pass="1234567"
   echo -e "\nSet to default password..."
   echo -e "\nAdmin password will be set to \e[31m$Admin_Pass\e[39m\n"
 elif [[ $Admin_Pass = "r" ]]; then
@@ -577,9 +577,9 @@ fi
 }
 
 Interactive_Mode() {
-echo -e "   Popo Power Panel Installer v$Panel_Version.$Panel_Build
+echo -e "		CyberPanel Installer v$Panel_Version.$Panel_Build
 
-1. Install Popo Power Panel.
+1. Install CyberPanel.
 
 2. Exit.
 
@@ -602,15 +602,15 @@ esac
 
 
 Interactive_Mode_Set_Parameter() {
-echo -e "   Popo Power Panel Installer v$Panel_Version.$Panel_Build
+echo -e "		CyberPanel Installer v$Panel_Version.$Panel_Build
 
 RAM check : $(free -m | awk 'NR==2{printf "%s/%sMB (%.2f%%)\n", $3,$2,$3*100/$2 }')
 
 Disk check : $(df -h | awk '$NF=="/"{printf "%d/%dGB (%s)\n", $3,$2,$5}') (Minimal \e[31m10GB\e[39m free space)
 
-1. Install Popo Power Panel with \e[31mOpenLiteSpeed\e[39m.
+1. Install CyberPanel with \e[31mOpenLiteSpeed\e[39m.
 
-2. Install Popo Power Panel with \e[31mLiteSpeed Enterprise\e[39m.
+2. Install Cyberpanel with \e[31mLiteSpeed Enterprise\e[39m.
 
 3. Exit.
 
@@ -633,7 +633,7 @@ case "$Input_Number" in
   ;;
 esac
 
-echo -e "\nInstall Full service for Popo Power Panel? This will include PowerDNS, Postfix and Pure-FTPd."
+echo -e "\nInstall Full service for CyberPanel? This will include PowerDNS, Postfix and Pure-FTPd."
 echo -e ""
 printf "%s" "Full installation [Y/n]: "
 read -r Tmp_Input
@@ -712,12 +712,12 @@ else
   Branch_Check "$Tmp_Input"
 fi
 
-echo -e "\nPlease choose to use default admin password \e[31mPanel@123\e[39m, randomly generate one \e[31m(recommended)\e[39m or specify the admin password?"
+echo -e "\nPlease choose to use default admin password \e[31m1234567\e[39m, randomly generate one \e[31m(recommended)\e[39m or specify the admin password?"
 printf "%s" "Choose [d]fault, [r]andom or [s]et password: [d/r/s] "
 read -r Tmp_Input
 
 if [[ $Tmp_Input =~ ^(d|D| ) ]] || [[ -z $Tmp_Input ]]; then
-  Admin_Pass="Panel@123"
+  Admin_Pass="1234567"
   echo -e "\nAdmin password will be set to $Admin_Pass\n"
 elif [[ $Tmp_Input =~ ^(r|R) ]]; then
   Admin_Pass=$(
@@ -751,7 +751,7 @@ elif [[ $Tmp_Input =~ ^(s|S) ]]; then
     exit
   fi
 else
-  Admin_Pass="Panel@123"
+  Admin_Pass="1234567"
   echo -e "\nAdmin password will be set to $Admin_Pass\n"
 fi
 
@@ -1017,7 +1017,7 @@ if [[ "$Server_OS" = "CentOS" ]] || [[ "$Server_OS" = "openEuler" ]] ; then
 else
   apt update -y
   DEBIAN_FRONTEND=noninteractive apt upgrade -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold"
-  if [[ "$Server_Provider" = "Alibaba Cloud" ]] ; then
+	if [[ "$Server_Provider" = "Alibaba Cloud" ]] ; then
     apt install -y --allow-downgrades libgnutls30=3.6.13-2ubuntu1.3
   fi
 
@@ -1084,20 +1084,22 @@ if [[ "$Server_OS" = "Ubuntu" ]] && [[ "$Server_OS_Version" = "22" ]] ; then
   cp /usr/bin/python3.10 /usr/local/CyberCP/bin/python3
 fi
 
-rm -rf PanelP
+rm -rf cyberpanel
 echo -e "\nFetching files from ${Git_Clone_URL}...\n"
 
-Debug_Log2 "Getting Popo Power Panel code..,4"
+Debug_Log2 "Getting CyberPanel code..,4"
 
 Retry_Command "git clone ${Git_Clone_URL}"
   Check_Return "git clone ${Git_Clone_URL}"
 
-echo -e "\nPopo Power Panel source code downloaded...\n"
+echo -e "\nCyberPanel source code downloaded...\n"
 
-cd PanelP || exit
+cd cyberpanel || exit
+git checkout "$Branch_Name"
+  Check_Return "git checkout"
 cd - || exit
-cp -r PanelP /usr/local/cyberpanel
-cd PanelP/install || exit
+cp -r cyberpanel /usr/local/cyberpanel
+cd cyberpanel/install || exit
 
 Debug_Log2 "Necessary components installed..,5"
 }
@@ -1130,7 +1132,7 @@ if [[ "$Server_OS" = "CentOS" ]] ; then
     fi
     #CentOS 7 specific change
     if [[ "$Server_OS_Version" = "8" ]] ; then
-        if grep -q -E "Rocky Linux" /etc/os-release ; then
+	      if grep -q -E "Rocky Linux" /etc/os-release ; then
         if [[ "$Server_Country" = "CN" ]] ; then
           sed -i 's|rpm -Uvh http://rpms.litespeedtech.com/centos/litespeed-repo-1.1-1.el8.noarch.rpm|curl -o /etc/yum.repos.d/litespeed.repo https://cyberpanel.sh/litespeed/litespeed_cn.repo|g' install.py
         else
@@ -1169,7 +1171,7 @@ if ! grep -q "pid_max" /etc/rc.local 2>/dev/null ; then
     systemctl enable rc-local  >/dev/null 2>&1
     systemctl start rc-local  >/dev/null 2>&1
   fi
-  if grep -q "nf_conntrack_max" /etc/sysctl.conf ; then
+	if grep -q "nf_conntrack_max" /etc/sysctl.conf ; then
     sysctl -w net.netfilter.nf_conntrack_max=2097152 > /dev/null
     sysctl -w net.nf_conntrack_max=2097152 > /dev/null
     echo "net.netfilter.nf_conntrack_max=2097152" >> /etc/sysctl.conf
@@ -1248,7 +1250,7 @@ if ! grep -q "pid_max" /etc/rc.local 2>/dev/null ; then
   #take a break ,or installer will break
 
   # Check Connectivity
-  if ping -q -c 1 -W 1 panel.sh >/dev/null; then
+  if ping -q -c 1 -W 1 cyberpanel.sh >/dev/null; then
     echo -e "\nSuccessfully set up nameservers..\n"
     echo -e "\nThe network is up.. :)\n"
     echo -e "\nContinue installation..\n"
@@ -1273,16 +1275,16 @@ License_Validation() {
 Debug_Log2 "Validating LiteSpeed license...,40"
 Current_Dir=$(pwd)
 
-if [ -f /root/PanelP-tmp ]; then
-  rm -rf /root/PanelP-tmp
+if [ -f /root/cyberpanel-tmp ]; then
+  rm -rf /root/cyberpanel-tmp
 fi
 
-mkdir /root/PanelP-tmp
-cd /root/PanelP-tmp || exit
+mkdir /root/cyberpanel-tmp
+cd /root/cyberpanel-tmp || exit
 
 Retry_Command "wget https://cyberpanel.sh/www.litespeedtech.com/packages/${LSWS_Stable_Version:0:1}.0/lsws-$LSWS_Stable_Version-ent-x86_64-linux.tar.gz"
 tar xzvf "lsws-$LSWS_Stable_Version-ent-x86_64-linux.tar.gz" >/dev/null
-cd "/root/cPanelP-tmp/lsws-$LSWS_Stable_Version/conf"  || exit
+cd "/root/cyberpanel-tmp/lsws-$LSWS_Stable_Version/conf"  || exit
 if [[ "$License_Key" = "Trial" ]]; then
   Retry_Command "wget -q https://cyberpanel.sh/license.litespeedtech.com/reseller/trial.key"
   sed -i "s|writeSerial = open('lsws-6.0/serial.no', 'w')|command = 'wget -q --output-document=./lsws-$LSWS_Stable_Version/trial.key https://cyberpanel.sh/license.litespeedtech.com/reseller/trial.key'|g" "$Current_Dir/installCyberPanel.py"
@@ -1292,7 +1294,7 @@ else
   echo "$License_Key" > serial.no
 fi
 
-cd "/root/PanelP-tmp/lsws-$LSWS_Stable_Version/bin"  || exit
+cd "/root/cyberpanel-tmp/lsws-$LSWS_Stable_Version/bin"  || exit
 
 if [[ "$License_Key" = "Trial" ]]; then
   License_Key="1111-2222-3333-4444"
@@ -1308,7 +1310,7 @@ fi
 
 echo -e "\nLicense seems valid..."
 cd "$Current_Dir" || exit
-rm -rf /root/PanelP-tmp
+rm -rf /root/cyberpanel-tmp
   #clean up the temp files
 }
 
@@ -1369,8 +1371,8 @@ Retry_Command "/root/.acme.sh/acme.sh --upgrade --auto-upgrade"
 Main_Installation() {
 Debug_Log2 "Starting main installation..,30"
 if [[ -d /usr/local/CyberCP ]] ; then
-  echo -e "\n Popo Power Panel already installed, exiting..."
-  Debug_Log2 "Popo Power Panel already installed, exiting... [404]"
+  echo -e "\n CyberPanel already installed, exiting..."
+  Debug_Log2 "CyberPanel already installed, exiting... [404]"
   exit
 fi
 
@@ -1389,8 +1391,8 @@ if [[ $Server_Edition = "Enterprise" ]] ; then
   Enterprise_Flag="--ent ent --serial "
 fi
 
-sed -i 's|git clone https://github.com/CodexAIL/PanelP|echo downloaded|g' install.py
-sed -i 's|mirror.cyberpanel.net|panel.sh|g' install.py
+sed -i 's|git clone https://github.com/codexail/cyberpanel|echo downloaded|g' install.py
+sed -i 's|mirror.cyberpanel.net|cyberpanel.sh|g' install.py
 
 
 if [[ $Server_Country = "CN" ]] ; then
@@ -1443,8 +1445,8 @@ fi
 /usr/local/CyberPanel/bin/python install.py "${Final_Flags[@]}"
 
 
-if grep "Popo Power Panel installation successfully completed" /var/log/installLogs.txt >/dev/null; then
-  echo -e "\nCPopo Power Panel installation sucessfully completed...\n"
+if grep "CyberPanel installation successfully completed" /var/log/installLogs.txt >/dev/null; then
+  echo -e "\nCyberPanel installation sucessfully completed...\n"
   Debug_Log2 "Main installation completed...,70"
 else
   echo -e "Oops, something went wrong..."
@@ -1685,7 +1687,7 @@ fi
 
 Post_Install_Setup_Utility() {
 if [[ ! -f /usr/bin/cyberpanel_utility ]]; then
-  wget -q -O /usr/bin/cyberpanel_utility https://madpopo.com/panel/panel_utility.sh
+  wget -q -O /usr/bin/cyberpanel_utility https://cyberpanel.sh/misc/cyberpanel_utility.sh
   chmod 700 /usr/bin/cyberpanel_utility
 fi
 }
@@ -1694,7 +1696,7 @@ Post_Install_Display_Final_Info() {
 snappymailAdminPass=$(grep SetPassword /usr/local/CyberCP/public/snappymail.php| sed -e 's|$oConfig->SetPassword(||g' -e "s|');||g" -e "s|'||g")
 Elapsed_Time="$((Time_Count / 3600)) hrs $(((SECONDS / 60) % 60)) min $((Time_Count % 60)) sec"
 echo "###################################################################"
-echo "                Popo Power Panel Successfully Installed                  "
+echo "                CyberPanel Successfully Installed                  "
 echo "                                                                   "
 echo "                Current Disk usage : $(df -h | awk '$NF=="/"{printf "%d/%dGB (%s)\n", $3,$2,$5}')                        "
 echo "                                                                   "
@@ -1717,17 +1719,17 @@ fi
 #echo "                snappymail Admin username: admin                     "
 #echo "                snappymail Admin password: $snappymailAdminPass        "
 echo "                                                                   "
-echo -e "             Run \e[31mPopoPowerPanel help\e[39m to get FAQ info"
-echo -e "             Run \e[31mPopoPowerPanel upgrade\e[39m to upgrade it to latest version."
-echo -e "             Run \e[31mPopoPowerPanel utility\e[39m to access some handy tools ."
+echo -e "             Run \e[31mcyberpanel help\e[39m to get FAQ info"
+echo -e "             Run \e[31mcyberpanel upgrade\e[39m to upgrade it to latest version."
+echo -e "             Run \e[31mcyberpanel utility\e[39m to access some handy tools ."
 echo "                                                                   "
-echo "              Website : https://www.madopopo.com                   "
-echo "              Forums  : https://forums.madopopo.com                "
-echo "              Wikipage: https://docs.madopopo.com                  "
-echo "              Docs    : https://madopopo.com/docs/                 "
+echo "              Website : https://www.cyberpanel.net                 "
+echo "              Forums  : https://forums.cyberpanel.net              "
+echo "              Wikipage: https://docs.cyberpanel.net                "
+echo "              Docs    : https://cyberpanel.net/docs/               "
 echo "                                                                   "
 echo -e "            Enjoy your accelerated Internet by                  "
-echo -e "                Popo Power Panel & $Word                              "
+echo -e "                CyberPanel & $Word 				                     "
 echo "###################################################################"
 
 if [[ "$Server_Provider" != "Undefined" ]]; then
@@ -1737,7 +1739,7 @@ else
   echo -e "If your provider has a \e[31mnetwork-level firewall\033[39m"
 fi
 echo -e "Please make sure you have opened following port for both in/out:"
-echo -e "\033[0;32mTCP: 8090\033[39m for Popo Power Panel"
+echo -e "\033[0;32mTCP: 8090\033[39m for CyberPanel"
 echo -e "\033[0;32mTCP: 80\033[39m, \033[0;32mTCP: 443\033[39m and \033[0;32mUDP: 443\033[39m for webserver"
 echo -e "\033[0;32mTCP: 21\033[39m and \033[0;32mTCP: 40110-40210\033[39m for FTP"
 echo -e "\033[0;32mTCP: 25\033[39m, \033[0;32mTCP: 587\033[39m, \033[0;32mTCP: 465\033[39m, \033[0;32mTCP: 110\033[39m, \033[0;32mTCP: 143\033[39m and \033[0;32mTCP: 993\033[39m for mail service"
@@ -1762,27 +1764,27 @@ fi
 
 
 Post_Install_Regenerate_Cert() {
-cat <<EOF >/root/PanelP/cert_conf
+cat <<EOF >/root/cyberpanel/cert_conf
 [req]
 prompt=no
-distinguished_name=popopanel
-[popopanel]
+distinguished_name=cyberpanel
+[cyberpanel]
 commonName = www.example.com
-countryName = IN
-localityName = PopoPanel
-organizationName = PopoPanel
-organizationalUnitName = PopoPanel
-stateOrProvinceName = IN
+countryName = CP
+localityName = CyberPanel
+organizationName = CyberPanel
+organizationalUnitName = CyberPanel
+stateOrProvinceName = CP
 emailAddress = mail@example.com
-name = PoppoPanel
-surname = PopoPanel
-givenName = PopoPanel
-initials = IN
-dnQualifier = PopoPanel
+name = CyberPanel
+surname = CyberPanel
+givenName = CyberPanel
+initials = CP
+dnQualifier = CyberPanel
 [server_exts]
 extendedKeyUsage = 1.3.6.1.5.5.7.3.1
 EOF
-openssl req -x509 -config /root/PanelP/cert_conf -extensions 'server_exts' -nodes -days 820 -newkey rsa:2048 -keyout /usr/local/lscp/conf/key.pem -out /usr/local/lscp/conf/cert.pem
+openssl req -x509 -config /root/cyberpanel/cert_conf -extensions 'server_exts' -nodes -days 820 -newkey rsa:2048 -keyout /usr/local/lscp/conf/key.pem -out /usr/local/lscp/conf/cert.pem
 
 if [[ "$Server_Edition" = "OLS" ]]; then
   Key_Path="/usr/local/lsws/admin/conf/webadmin.key"
@@ -1791,8 +1793,8 @@ else
   Key_Path="/usr/local/lsws/admin/conf/cert/admin.key"
   Cert_Path="/usr/local/lsws/admin/conf/cert/admin.crt"
 fi
-openssl req -x509 -config /root/PanelP/cert_conf -extensions 'server_exts' -nodes -days 820 -newkey rsa:2048 -keyout "$Key_Path" -out "$Cert_Path"
-rm -f /root/PanelP/cert_conf
+openssl req -x509 -config /root/cyberpanel/cert_conf -extensions 'server_exts' -nodes -days 820 -newkey rsa:2048 -keyout "$Key_Path" -out "$Cert_Path"
+rm -f /root/cyberpanel/cert_conf
 }
 
 Post_Install_Required_Components() {
@@ -1830,13 +1832,13 @@ chown -R cyberpanel:cyberpanel /usr/local/CyberCP/lib64 || true
 
 Pre_Install_Setup_Git_URL() {
 if [[ $Server_Country != "CN" ]] ; then
-  Git_User="CodexAIL"
-  Git_Content_URL="https://raw.githubusercontent.com/${Git_User}/PanelP"
-  Git_Clone_URL="https://github.com/${Git_User}/PanelP.git"
+  Git_User="codexail"
+  Git_Content_URL="https://raw.githubusercontent.com/${Git_User}/cyberpanel"
+  Git_Clone_URL="https://github.com/${Git_User}/cyberpanel.git"
 else
   Git_User="qtwrk"
-  Git_Content_URL="https://gitee.com/${Git_User}/PanelP/raw"
-  Git_Clone_URL="https://gitee.com/${Git_User}/PanelP.git"
+  Git_Content_URL="https://gitee.com/${Git_User}/cyberpanel/raw"
+  Git_Clone_URL="https://gitee.com/${Git_User}/cyberpanel.git"
 fi
 
 if [[ "$Debug" = "On" ]] ; then
@@ -1860,13 +1862,13 @@ sed -i "s|lsws-5.3.5|lsws-$LSWS_Stable_Version|g" /usr/local/CyberCP/serverStatu
 
 
 if [[ ! -f /usr/bin/cyberpanel_utility ]]; then
-  wget -q -O /usr/bin/cyberpanel_utility https://madpopo.com/panel/panel_utility.sh
+  wget -q -O /usr/bin/cyberpanel_utility https://cyberpanel.sh/misc/cyberpanel_utility.sh
   chmod 700 /usr/bin/cyberpanel_utility
 fi
 
 rm -rf /etc/profile.d/cyberpanel*
-curl --silent -o /etc/profile.d/panel.sh https://madpopo.com/panel/banner.sh
-chmod 700 /etc/profile.d/panel.sh
+curl --silent -o /etc/profile.d/cyberpanel.sh https://cyberpanel.sh/?banner 2>/dev/null
+chmod 700 /etc/profile.d/cyberpanel.sh
 echo "$Admin_Pass" > /etc/cyberpanel/adminPass
 chmod 600 /etc/cyberpanel/adminPass
 /usr/local/CyberPanel/bin/python /usr/local/CyberCP/plogical/adminPass.py --password "$Admin_Pass"
@@ -1955,7 +1957,7 @@ systemctl stop lsws >/dev/null 2>&1
 systemctl start lsws >/dev/null 2>&1
 echo -e "\nFinalizing...\n"
 echo -e "Cleaning up...\n"
-rm -rf /root/PanelP
+rm -rf /root/cyberpanel
 
 if [[ "$Server_Country" = "CN" ]] ; then
 Post_Install_CN_Replacement

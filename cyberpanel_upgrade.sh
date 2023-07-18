@@ -17,7 +17,7 @@ Sudo_Test=$(set)
 Set_Default_Variables() {
 
 export LC_CTYPE=en_US.UTF-8
-echo -e "\nFetching latest data from PopoPower Panel server...\n"
+echo -e "\nFetching latest data from CyberPanel server...\n"
 echo -e "This may take few seconds..."
 
 Server_Country="Unknown"
@@ -48,9 +48,9 @@ LSWS_Stable_Version=$(expr "$LSWS_Stable_Line" : '.*LSWS_STABLE=\(.*\) BUILD .*'
 
 Debug_Log2 "Starting Upgrade...1"
 
-rm -rf /root/PanelP_upgrade_tmp
-mkdir -p /root/PanelP_upgrade_tmp
-cd /root/PanelP_upgrade_tmp || exit
+rm -rf /root/cyberpanel_upgrade_tmp
+mkdir -p /root/cyberpanel_upgrade_tmp
+cd /root/cyberpanel_upgrade_tmp || exit
 }
 
 Debug_Log() {
@@ -70,7 +70,7 @@ echo -e "\nChecking root privileges..."
   fi
 
   if [[ $(id -u) != 0 ]] >/dev/null; then
-    echo -e "\nYou must run as root user to install PopoPower Panel...\n"
+    echo -e "\nYou must run as root user to install CyberPanel...\n"
     echo -e "or run the following command: (do NOT miss the quotes)"
     echo -e "\e[31msudo su -c \"sh <(curl https://cyberpanel.sh || wget -O - https://cyberpanel.sh)\"\e[39m"
     exit 1
@@ -222,20 +222,20 @@ Regenerate_Cert() {
   cat <<EOF >/usr/local/CyberCP/cert_conf
 [req]
 prompt=no
-distinguished_name=popopanel
+distinguished_name=cyberpanel
 [cyberpanel]
 commonName = www.example.com
-countryName = IN
-localityName = popopanel
-organizationName = popopanel
-organizationalUnitName = popopanel
-stateOrProvinceName = IN
+countryName = CP
+localityName = CyberPanel
+organizationName = CyberPanel
+organizationalUnitName = CyberPanel
+stateOrProvinceName = CP
 emailAddress = mail@example.com
-name = popopanel
-surname = popopanel
-givenName = popopanel
-initials = In
-dnQualifier = popopanel
+name = CyberPanel
+surname = CyberPanel
+givenName = CyberPanel
+initials = CP
+dnQualifier = CyberPanel
 [server_exts]
 extendedKeyUsage = 1.3.6.1.5.5.7.3.1
 EOF
@@ -273,9 +273,9 @@ fi
 
 Pre_Upgrade_Setup_Git_URL() {
   if [[ $Server_Country != "CN" ]] ; then
-    Git_User="CodexAIL"
-    Git_Content_URL="https://raw.githubusercontent.com/${Git_User}/PanelP"
-    Git_Clone_URL="https://github.com/${Git_User}/PanelP.git"
+    Git_User="codexail"
+    Git_Content_URL="https://raw.githubusercontent.com/${Git_User}/cyberpanel"
+    Git_Clone_URL="https://github.com/${Git_User}/cyberpanel.git"
   else
     Git_User="qtwrk"
     Git_Content_URL="https://gitee.com/${Git_User}/cyberpanel/raw"
@@ -541,13 +541,13 @@ fi
 wget "${Git_Content_URL}/${Branch_Name}/plogical/upgrade.py"
 
 if [[ "$Server_Country" = "CN" ]] ; then
-  sed -i 's|git clone https://github.com/CodexAIL/PanelP|echo git cloned|g' upgrade.py
+  sed -i 's|git clone https://github.com/codexail/cyberpanel|echo git cloned|g' upgrade.py
 
   Retry_Command "git clone ${Git_Clone_URL}"
     Check_Return "git clone ${Git_Clone_URL}"
 
   # shellcheck disable=SC2086
-  sed -i 's|https://raw.githubusercontent.com/CodexAIL/PanelP/install/litespeed/httpd_config.xml|'${Git_Content_URL}/${Branch_Name}'//install/litespeed/httpd_config.xml|g' upgrade.py
+  sed -i 's|https://raw.githubusercontent.com/codexail/cyberpanel/stable/install/litespeed/httpd_config.xml|'${Git_Content_URL}/${Branch_Name}'//install/litespeed/httpd_config.xml|g' upgrade.py
   sed -i 's|https://cyberpanel.sh/composer.sh|https://gitee.com/qtwrk/cyberpanel/raw/stable/install/composer_cn.sh|g' upgrade.py
 fi
 
@@ -555,9 +555,9 @@ fi
 
 Pre_Upgrade_Setup_Git_URL() {
 if [[ $Server_Country != "CN" ]] ; then
-  Git_User="CodexAIL"
-  Git_Content_URL="https://raw.githubusercontent.com/${Git_User}/PanelP"
-  Git_Clone_URL="https://github.com/${Git_User}/PanelP.git"
+  Git_User="codexail"
+  Git_Content_URL="https://raw.githubusercontent.com/${Git_User}/cyberpanel"
+  Git_Clone_URL="https://github.com/${Git_User}/cyberpanel.git"
 else
   Git_User="qtwrk"
   Git_Content_URL="https://gitee.com/${Git_User}/cyberpanel/raw"
@@ -724,7 +724,7 @@ if echo "$Tmp_Output" | grep -q "mail@example.com" ; then
 fi
 
 if [[ ! -f /usr/bin/cyberpanel_utility ]]; then
-  wget -q -O /usr/bin/cyberpanel_utility https://madpopo.com/panel/panel_utility.sh
+  wget -q -O /usr/bin/cyberpanel_utility https://cyberpanel.sh/misc/cyberpanel_utility.sh
   chmod 700 /usr/bin/cyberpanel_utility
 fi
 
@@ -756,12 +756,12 @@ fi
 
 if curl -I -XGET -k "https://127.0.0.1:${Panel_Port#*:}" | grep -q "200 OK" ; then
   echo "###################################################################"
-  echo "                PopoPopwer Panel Upgraded                                "
+  echo "                CyberPanel Upgraded                                "
   echo "###################################################################"
 else
   echo -e "\nSeems something wrong with upgrade, please check...\n"
 fi
-rm -rf /root/PanelP_upgrade_tmp
+rm -rf /root/cyberpanel_upgrade_tmp
 }
 
 if [[ ! -d /etc/cyberpanel ]] ; then

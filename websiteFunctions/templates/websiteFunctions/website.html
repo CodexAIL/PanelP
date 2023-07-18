@@ -27,15 +27,15 @@
                     <h3 class="content-box-header">
                         {% trans "Resource Usage" %} <img ng-hide="domainLoading" src="/static/images/loading.gif">
 
-                        <a style="float: right; margin-left: 2%" class="btn btn-border btn-alt border-orange btn-link font-orange" href="/websites/{{ domain }}/manageGIT" title="Manage Git"><span>{% trans "Manage Git" %}</span></a>
+                        <!-- <a style="float: right; margin-left: 2%" class="btn btn-primary " href="/websites/{{ domain }}/manageGIT" title="Manage Git"><span>{% trans "Manage Git" %}</span></a>
 
                         <a style="float: right; margin-left: 2%"
-                           class="btn btn-border btn-alt border-azure btn-link font-azure"
+                           class="btn  btn-primary"
                            href="/websites/{{ domain }}/setupStaging" title=""><span>{% trans "Clone/Staging" %}</span></a>
-                        <a style="float: right; margin-left: 2%" class="btn btn-border btn-alt border-blue-alt btn-link font-blue-alt"
+                        <a style="float: right; margin-left: 2%" class="btn btn-primary"
                            href="/websites/{{ domain }}/sshAccess" title=""><span>{% trans "Set up SSH/SFTP Access" %}</span></a>
-                        <a style="float: right" class="btn btn-border btn-alt border-black btn-link font-black"
-                           href="https://go.cyberpanel.net/StessTest" title=""><span>{% trans "Stress Test" %}</span></a>
+                        <a style="float: right" class="btn btn-primary"
+                           href="https://go.cyberpanel.net/StessTest" title=""><span>{% trans "Stress Test" %}</span></a> -->
                     </h3>
 
                     <div class="content-box-wrapper">
@@ -73,10 +73,20 @@
                                     </tr>
                                     </tbody>
                                 </table>
-                            </div>
+                                <div class="manage-btn">
+                                <a style="float: right; margin-left: 2%" class="btn btn-primary " href="/websites/{{ domain }}/manageGIT" title="Manage Git"><span class="manage-btn-name">{% trans "Manage Git" %}</span></a>
 
+                        <a style="float: right; margin-left: 2%"
+                           class="btn  btn-primary"
+                           href="/websites/{{ domain }}/setupStaging" title=""><span class="manage-btn-name">{% trans "Clone/Staging" %}</span></a>
+                        <a style="float: right; margin-left: 2%;" class="btn btn-primary"
+                           href="/websites/{{ domain }}/sshAccess" title=""><span class="manage-btn-name">{% trans "Set up SSH/SFTP Access" %}</span></a>
+                        <a style="float: right;" class="btn btn-primary"
+                           href="https://go.cyberpanel.net/StessTest" title=""><span class="manage-btn-name">{% trans "Stress Test" %}</span></a>
+                            </div>
+                        </div>
                             <div class="col-md-6">
-                                <div style="margin-top: 4%" class="content-box mt-5 mx-10">
+                                <div style="margin-top: 0%" class="content-box mt-5 mx-10">
                                     <div class="panel-body">
                                         {% if viewSSL == 1 %}
                                             <div style="margin-top: 2%" class="alert alert-success">
@@ -87,24 +97,59 @@
                                             </div>
                                         {% endif %}
                                         <div class="example-box-wrapper">
-                                            <h3 class="title-hero">
+                                            <!-- <h3 class="title-hero">
                                                 {% trans "Disk Usage" %}
                                             </h3>
+                                            
+                                              
                                             <div class="progressbar" data-value="{{ diskUsage }}">
                                                 <div class="progressbar-value bg-primary">
                                                     <div class="progress-overlay"></div>
                                                     <div class="progress-label">{{ diskUsage }}%</div>
                                                 </div>
-                                            </div>
-                                            <h3 class="title-hero">
-                                                {% trans "Bandwidth Usage" %}
-                                            </h3>
-                                            <div class="progressbar" data-value="{{ bwUsage }}">
-                                                <div class="progressbar-value bg-primary">
-                                                    <div class="progress-overlay"></div>
-                                                    <div class="progress-label">{{ bwUsage }}%</div>
+                                            </div> -->
+                                            <div class="col-md-12">
+                                            <div class="col-md-6" >
+                                                <div class="mb-10" style="align-content: center;">
+                                                    <h3 class="title-hero clearfix text-muted ml-9">
+                                                        {% trans "Disk Usage" %}
+                                                    </h3>
+                                                    <div class="content-box-wrapper">
+                                                        <div class="row flex">
+                                                            <div class="">
+                                                                <div id="redcircle" class="c100 red cpu">
+                                                                    <span>{{diskUsage}}%</span>
+                                                                    <div class="slice">
+                                                                        <div class="bar"></div>
+                                                                        <div class="fill"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
+                                            <div class="col-md-6">
+                                                <div class="mb-10">
+                                                    <h3 class="title-hero clearfix text-muted ml-3">
+                                                        {% trans "Bandwidth Usage" %}
+                                                    </h3>
+                                                    <div class="content-box-wrapper">
+                                                        <div class="row flex">
+                                                            <div class="">
+                                                                <div id="redcircle" class="c100 red cpu">
+                                                                    <span>{{bwUsage}}%</span>
+                                                                    <div class="slice">
+                                                                        <div class="bar"></div>
+                                                                        <div class="fill"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                         </div>
                                     </div>
                                 </div>
@@ -117,7 +162,7 @@
 
             <div class="example-box-wrapper my-10">
                 <div class="panel panel-body">
-                    <h3 class="content-box-header">
+                    <h3 class="content-box-header" id="manage-topics">
                         {% trans "Logs" %} <img ng-hide="logFileLoading" src="/static/images/loading.gif">
                     </h3>
 
@@ -236,7 +281,7 @@
 
             <div class="example-box-wrapper my-10">
                 <div class="panel panel-body">
-                    <h3 class="content-box-header">
+                    <h3 class="content-box-header" id="manage-topics">
                         {% trans "Domains" %} <img ng-hide="domainLoading" src="/static/images/loading.gif">
                     </h3>
                     <div class="content-box-wrapper">
@@ -527,7 +572,7 @@
 
             <div class="example-box-wrapper my-10">
                 <div class="panel panel-body">
-                    <h3 class="content-box-header">
+                    <h3 class="content-box-header" id="manage-topics">
                         {% trans "Configurations" %} <img ng-hide="configFileLoading" src="/static/images/loading.gif">
                     </h3>
                     <div class="content-box-wrapper">
@@ -815,7 +860,7 @@
 
             <div class="example-box-wrapper my-10">
                 <div class="panel panel-body">
-                    <h3 class="content-box-header">
+                    <h3 class="content-box-header" id="manage-topics">
                         {% trans "Files" %}
                     </h3>
                     <div class="content-box-wrapper">
@@ -929,7 +974,7 @@
 
                     <div class="example-box-wrapper my-10">
                         <div class="panel panel-body">
-                            <h3 class="content-box-header">
+                            <h3 class="content-box-header" id="manage-topics">
                                 {% trans "Email Marketing" %}
                             </h3>
 
@@ -968,7 +1013,7 @@
                                     <div class="col-md-3 panel-body">
                                         <a id="composeEmails" target="_self" title="{% trans 'Compose Message' %}">
                                             <img src="{% static 'emailMarketing/compose.png' %}" width="65"
-                                                 class="mr-10">
+                                                 class="mr-10">Git
                                         </a>
                                         <a id="composeEmailsChild" target="_self"
                                            title="{% trans 'Compose Message' %}">
@@ -994,10 +1039,90 @@
                 {% endif %}
 
             {% endif %}
+            <div class="example-box-wrapper my-10">
+                <div class="panel panel-body">
+                    <h3 class="content-box-header" id="manage-topics">
+                        {% trans "Emails" %} <img ng-hide="applicationInstallerLoading"
+                                                                 src="/static/images/loading.gif">
+                    </h3>
+
+                    <div class="content-box-wrapper">
+                        <div class="row mx-10">
+                            <div class="col-md-3 panel-body">
+                                <a href="/email/listEmails?value={{domain}}" target="_self"
+                                   title="{% trans 'Install wordpress with LSCache' %}">
+                                    <img src="{% static 'images/icons/wordpress.png' %}" width="65" class="mr-10">
+                                </a>
+                                <a href="/email/listEmails?value={{domain}}" target="_self"
+                                   title="{% trans 'Install wordpress with LSCache' %}">
+                                    <span class="h4">{% trans "Manage Emails" %}</span>
+                                </a>
+                            </div>
+
+                            <div class="col-md-3 panel-body">
+                                <a href="/email/emailForwarding" target="_self"
+                                   title="{% trans 'Install Joomla with LSCache' %}">
+                                    <img src="{% static 'images/icons/joomla-logo.png' %}" width="65" class="mr-10">
+                                </a>
+                                <a href="/email/emailForwarding" target="_self"
+                                   title="{% trans 'Install Joomla with LSCache' %}">
+                                    <span class="h4">{% trans "Email Forwading" %}</span>
+                                </a>
+                            </div>
+
+                            <div class="col-md-3 panel-body">
+                                <a href="email/changeEmailAccountPassword" target="_self"
+                                   title="{% trans 'Attach Git with this website!' %}">
+                                    <img src="{% static 'images/icons/git-logo.png' %}" width="65" class="mr-10">
+                                </a>
+                                <a href="email/changeEmailAccountPassword" target="_self"
+                                   title="{% trans 'Attach Git with this website!' %}">
+                                    <span class="h4">{% trans "Change Password" %}</span>
+                                </a>
+                            </div>
+
+                            <div class="col-md-3 panel-body">
+                                <a href="/email/dkimManager" target="_self"
+                                   title="{% trans 'Install Prestashop' %}">
+                                    <img src="{% static 'images/icons/prestashop.png' %}" width="65" class="mr-10">
+                                </a>
+                                <a href="/email/dkimManager" target="_self"
+                                   title="{% trans 'Install Prestashop' %}">
+                                    <span class="h4">{% trans "DKIM Manager" %}</span>
+                                </a>
+                            </div>
+
+                            <div class="col-md-3 panel-body">
+                                <a href="/emailPremium/EmailDebugger" target="_self"
+                                   title="{% trans 'Install Magento' %}">
+                                    <img src="{% static 'images/icons/magento.png' %}" width="65" class="mr-10">
+                                </a>
+                                <a href="/emailPremium/EmailDebugger" target="_self"
+                                   title="{% trans 'Install Magento' %}">
+                                    <span class="h4">{% trans "Email Debugger" %}</span>
+                                </a>
+                            </div>
+
+                            <div class="col-md-3 panel-body">
+                                <a href="/snappymail/index.php" target="_self"
+                                   title="{% trans 'Install Mautic' %}">
+                                    <img src="{% static 'baseTemplate/images/icons/mautic.png' %}" width="65" class="mr-10">
+                                </a>
+                                <a href="/snappymail/index.php" target="_self"
+                                   title="{% trans 'Install Mautic' %}">
+                                    <span class="h4">{% trans "Access WebMail" %}</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
 
             <div class="example-box-wrapper my-10">
                 <div class="panel panel-body">
-                    <h3 class="content-box-header">
+                    <h3 class="content-box-header" id="manage-topics">
                         {% trans "Application Installer" %} <img ng-hide="applicationInstallerLoading"
                                                                  src="/static/images/loading.gif">
                     </h3>
