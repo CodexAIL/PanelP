@@ -338,7 +338,7 @@ class remoteTransferUtilities:
 
 def main():
 
-    parser = argparse.ArgumentParser(description='CyberPanel Installer')
+    parser = argparse.ArgumentParser(description='Popo PowerPanel Installer')
     parser.add_argument('function', help='Specific function to call!')
     parser.add_argument('--pathToKey', help='')
 

@@ -9,7 +9,7 @@
     {% get_current_language as LANGUAGE_CODE %}
     <!-- Current language: {{ LANGUAGE_CODE }} -->
 
-    <div class="container">
+    <div class="container"></div>
         <div id="page-title">
             <h2>{% trans "Set up Incremental Backup Destinations" %} - <a target="_blank"
                                                                            href="https://cyberpanel.net/docs/1-add-remove-destinations-for-incremental-backups/"
@@ -17,7 +17,7 @@
                                                                            class="btn btn-border btn-alt border-red btn-link font-red"
                                                                            title=""><span>{% trans "Remote Backups" %}</span></a>
             </h2>
-            <p>{% trans "On this page you can set up your Backup destinations. (SFTP and AWS)" %}</p>
+            <p>{% trans "On divis page you can set up your Backup destinations. (SFTP and AWS)" %}</p>
         </div>
 
         <div ng-controller="incrementalDestinations" class="panel">
@@ -41,7 +41,7 @@
                             </div>
                         </div>
 
-                        <!--- SFTP --->
+                        
 
                         <div ng-hide="sftpHide" class="form-group">
                             <label class="col-sm-3 control-label">{% trans "IP Address" %}</label>
@@ -74,42 +74,35 @@
                             </div>
                         </div>
 
-                        <!--- SFTP --->
-
-
-                        <!------ List of Destinations --------------->
+        
+                       
 
                         <div ng-hide="sftpHide" class="form-group">
 
                             <div class="col-sm-12">
 
-                                <table class="table">
-                                    <thead>
+                                <div class="div">
+                                    <div>
                                     <tr>
-                                        <th>{% trans "IP" %}</th>
-                                        <th>{% trans "Port" %}</th>
-                                        <th>{% trans "Delete" %}</th>
+                                        <div>{% trans "IP" %}</div>
+                                        <div>{% trans "Port" %}</div>
+                                        <div>{% trans "Delete" %}</div>
                                     </tr>
-                                    </thead>
+                                    </div>
                                     <tbody>
                                     <tr ng-repeat="record in records track by $index">
-                                        <td ng-bind="record.ip"></td>
-                                        <td ng-bind="record.port"></td>
-                                        <td ng-click="removeDestination('SFTP',record.ip)"><img src="{% static 'images/delete.png' %}">
-                                        </td>
+                                        <div ng-bind="record.ip"></div>
+                                        <div ng-bind="record.port"></div>
+                                        <div ng-click="removeDestination('SFTP',record.ip)"><img src="{% static 'images/delete.png' %}">
+                                        </div>
 
                                     </tr>
                                     </tbody>
-                                </table>
+                                </div>
                             </div>
                         </div>
 
-                        <!------ List of records --------------->
-
-
-                        <!--- SFTP  End --->
-
-                        <!--- AWS Start --->
+                       
 
                         <div ng-hide="awsHide" class="form-group">
                             <label class="col-sm-3 control-label">{% trans "AWS_ACCESS_KEY_ID" %}</label>
@@ -133,52 +126,53 @@
 
                             </div>
                         </div>
-
-                        <!--- SFTP --->
-
-
-
-
-                        <!------ List of Destinations --------------->
+                    </div>
+                </div>
+                        
 
                         <div ng-hide="awsHide" class="form-group">
 
-                            <div class="col-sm-12">
+                            <div class="col-sm-12" style="margin-top: 3%;">
 
-                                <table class="table">
-                                    <thead>
-                                    <tr>
-                                        <th>{% trans "AWS_ACCESS_KEY_ID" %}</th>
-                                        <th>{% trans "Delete" %}</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr ng-repeat="record in records track by $index">
-                                        <td ng-bind="record.AWS_ACCESS_KEY_ID"></td>
-                                        <td ng-click="removeDestination('AWS', record.AWS_ACCESS_KEY_ID)"><img src="{% static 'images/delete.png' %}">
-                                        </td>
+                                
+                                    
+                                   
+                                        <div class="col-md-8 content-box-header" id="">{% trans "AWS_ACCESS_KEY_ID" %}</div>
+                                        <div class="col-md-4 content-box-header" id="backup-data">{% trans "Delete" %}</div>
+                                    
+                                    </div>
 
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+                                    
+                                    <div ng-repeat="record in records track by $index" class="panel col-md-12"
+                                    style="padding: 0px; box-shadow: 0px 0px 1px 0px #888888;" >
+                                        <div class="table-responsive no-gutter text-nowrap" style="overflow-x: hidden;"> 
+                                        
+                                         
+                                        <div class="col-md-8 content-box-header" ng-bind="record.AWS_ACCESS_KEY_ID" style="padding-left: 3%;"></div>
+                                        <div class="col-md-4 content-box-header" id="backup-data" ng-click="removeDestination('AWS', record.AWS_ACCESS_KEY_ID)"><img  src="{% static 'images/delete.png' %}"
+                                            style="padding-left: 47%;">
+                                       
+                                         </div>
+                                        </div>
+
+                                        </div>
+
+                                    </div>
+                                
+                                
                         </div>
 
-                        <!------ List of records --------------->
-
-
-                        <!--- AWS  End --->
-
+                        
 
                     </form>
 
 
                 </div>
-            </div>
-        </div>
+            
+        
 
 
-    </div>
+    
 
 
 {% endblock %}

@@ -286,7 +286,7 @@ class IncScheduler(multi.Thread):
                         folderIDIP = gDriveData['folderIDIP']
                     except:
 
-                        ## Create CyberPanel Folder
+                        ## Create Popo PowerPanel Folder
 
                         file_metadata = {
                             'name': '%s-%s' % (items.name, ipAddress),
@@ -1467,7 +1467,7 @@ Automatic Backupv2 failed for %s on %s.
 
 
 def main():
-    parser = argparse.ArgumentParser(description='CyberPanel Installer')
+    parser = argparse.ArgumentParser(description='Popo PowerPanel Installer')
     parser.add_argument('function', help='Specific a function to call!')
     parser.add_argument('--planName', help='Plan name for AWS!')
     args = parser.parse_args()

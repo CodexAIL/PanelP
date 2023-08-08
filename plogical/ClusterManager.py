@@ -191,7 +191,7 @@ class ClusterManager:
             ChildData = '/home/cyberpanel/childaata'
             data = json.loads(open(ChildData, 'r').read())
 
-            ## CyberPanel DB Creds
+            ## Popo PowerPanel DB Creds
 
             ## Update settings file using the data fetched from master
 
@@ -445,7 +445,7 @@ password=%s""" % (rootdbpassword, rootdbpassword)
 
 
 def main():
-    parser = argparse.ArgumentParser(description='CyberPanel Installer')
+    parser = argparse.ArgumentParser(description='Popo PowerPanel Installer')
     parser.add_argument('--function', help='Function to run.')
     parser.add_argument('--type', help='Type of detach.')
 

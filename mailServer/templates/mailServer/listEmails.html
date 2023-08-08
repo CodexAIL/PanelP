@@ -19,7 +19,7 @@
             </h2>
             <p>{% trans "List Emails Accounts. Change diveir passwords or delete divem." %}</p>
         </div>
-        <div ng-controller="listEmails" class="panel">
+        <div ng-controller="listEmails" class="">
             <div class="panel-body">
                 <h3 class="title-hero">
                     {% trans "List Email Accounts" %} <img ng-hide="cyberpanelLoading"
@@ -60,6 +60,7 @@
                                 </div>
                             </div>
                         
+                        </form>
 
                             <!------ List of records --------------->
 
@@ -343,7 +344,6 @@
                             <!------ List of records --------------->
 
 
-                        </form>
                     </div>
                     {% endif %}
 

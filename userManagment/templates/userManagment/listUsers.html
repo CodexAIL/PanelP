@@ -9,61 +9,66 @@
 
 
     <div class="container">
+    </div>
+
         <div id="page-title">
             <h2>{% trans "List Users" %}
                 <a class="pull-right btn btn-primary" href="{% url "createUser" %}">{% trans "Create User" %}</a>
             </h2>
             <p>{% trans "List Users that you own." %}</p>
         </div>
-        <div ng-controller="listTableUsers" class="panel">
-            <div class="panel-body">
+        <div ng-controller="listTableUsers" >
+            <div class="panel-body panel">
                 <h3 class="content-box-header">
                     {% trans "List Users" %} <img ng-hide="cyberpanelLoading" src="{% static 'images/loading.gif' %}">
                 </h3>
                 <div class="example-box-wrapper">
+                </div>
+            </div>
 
                     <!------ List of records --------------->
 
                     <div class="form-group">
 
-                        <div class="col-sm-12">
 
-                            <table class="table">
-                                <thead>
-                                <tr>
-                                    <th>{% trans "Username" %}</th>
-                                    <th>{% trans "Websites Limit" %}</th>
-                                    <th>{% trans "Disk Usage" %}</th>
-                                    <th>{% trans "ACL" %}</th>
-                                    <th>{% trans "Owner" %}</th>
-                                    <th>{% trans "State" %}</th>
-                                    <th>{% trans "Actions" %}</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr ng-repeat="record in records track by $index">
-                                    <td ng-bind="record.name"></td>
-                                    <td ng-bind="record.websites"></td>
-                                    <td ng-bind="record.diskUsage"></td>
-                                    <td ng-bind="record.acl"></td>
-                                    <td ng-bind="record.owner"></td>
-                                    <td ng-bind="record.state"></td>
-                                    <td>
+                           
+                                
+                                <div class="col-md-12 mb-5" >
+                                    <div class="col-md-2 content-box-header" id="backup-data">{% trans "Username" %}</div>
+                                    <div class="col-md-2 content-box-header" id="backup-data">{% trans "Websites Limit" %}</div>
+                                    <div class="col-md-2 content-box-header" id="backup-data">{% trans "Disk Usage" %}</div>
+                                    <div class="col-md-1 content-box-header" id="backup-data">{% trans "ACL" %}</div>
+                                    <div class="col-md-1 content-box-header" id="backup-data">{% trans "Owner" %}</div>
+                                    <div class="col-md-1 content-box-header" id="backup-data">{% trans "State" %}</div>
+                                    <div class="col-md-3 content-box-header" id="backup-data">{% trans "Actions" %}</div>
+                                </div>
+                                
+                                
+                                <div ng-repeat="record in records track by $index" class="panel col-md-12"
+                                style="padding: 0px; box-shadow: 0px 0px 1px 0px #888888;" >
+                                    <div class="table-responsive no-gutter text-nowrap" style="overflow-x: hidden;"> 
+                                    <div class="col-md-2 content-box-header" id="backup-data" ng-bind="record.name"></div>
+                                    <div class="col-md-2 content-box-header" id="backup-data" ng-bind="record.websites"></div>
+                                    <div class="col-md-2 content-box-header" id="backup-data" ng-bind="record.diskUsage"></div>
+                                    <div class="col-md-1 content-box-header" id="backup-data" ng-bind="record.acl"></div>
+                                    <div class="col-md-1 content-box-header" id="backup-data" ng-bind="record.owner"></div>
+                                    <div class="col-md-1 content-box-header" id="backup-data" ng-bind="record.state"></div>
+                                    <div class="col-md-3 content-box-header" id="backup-data" style="margin-bottom: 1%;">
                                         <a ng-show="record.state=='ACTIVE'"
-                                           class="btn btn-border btn-alt border-red btn-link font-red" href="#"
+                                           class="btn btn-border btn-primary btn-link" href="#"
                                            ng-click="controlUserState(record.name, 'SUSPEND')"
                                            title=""><span>{% trans 'Suspend' %}</span></a>
                                         <a ng-show="record.state=='SUSPENDED'"
-                                           class="btn btn-border btn-alt border-green btn-link font-green" href="#"
+                                           class="btn btn-border btn-primary btn-link" href="#"
                                            ng-click="controlUserState(record.name, 'ACTIVATE')"
                                            title=""><span>{% trans 'Activate' %}</span></a>
                                         <a data-toggle="modal" data-target="#settings"
                                            ng-click="editInitial(record.name)"
-                                           class="btn btn-border btn-alt border-purple btn-link font-purple" href="#"
+                                           class="btn btn-border btn-primary btn-link" href="#"
                                            title=""><span>{% trans 'Edit' %}</span></a>
                                         <a data-toggle="modal" data-target="#DeleteUserModal"
                                            ng-click="deleteUserInitial(record.name)"
-                                           class="btn btn-border btn-alt border-red btn-link font-red" href="#"
+                                           class="btn btn-border btn-primary btn-link" href="#"
                                            title=""><span>{% trans 'Delete' %}</span></a>
 
                                         <!--- Delete User Modal --->
@@ -161,21 +166,17 @@
                                             </div>
                                         </div>
                                         <!--- Modal End--->
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                                    </div>
+                                </div>
+                    </div>
+                            
                     </div>
 
                     <!------ List of records --------------->
 
-                </div>
-            </div>
         </div>
 
 
-    </div>
 
 
 {% endblock %}

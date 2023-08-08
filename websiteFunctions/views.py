@@ -595,8 +595,65 @@ def dataintegrity(request):
     except KeyError:
         return redirect(loadLoginPage)
 
+def handleSuccessHttp(request):
+    try:
+        userID = request.session['userID']
+
+        result = pluginManager.preWebsiteCreation(request)
+        
+        if result != 200:
+            return result
+
+        wm = WebsiteManager()
+        coreResult = wm.handleSuccessHttp(userID, json.loads(request.body))
+        result = pluginManager.postWebsiteCreation(request, coreResult)
+        if result != 200:
+            return result
+
+        return coreResult
+    except KeyError:
+        return redirect(loadLoginPage)
+    
+def handleSuccess(request):
+    try:
+        userID = request.session['userID']
+
+        result = pluginManager.preWebsiteCreation(request)
+        
+        if result != 200:
+            return result
+
+        wm = WebsiteManager()
+        coreResult = wm.handleSuccess(userID, json.loads(request.body))
+        result = pluginManager.postWebsiteCreation(request, coreResult)
+        if result != 200:
+            return result
+
+        return coreResult
+    except KeyError:
+        return redirect(loadLoginPage)
 
 
+    
+def handleCheckbox(request):
+    try:
+        userID = request.session['userID']
+
+        result = pluginManager.preWebsiteCreation(request)
+        
+        if result != 200:
+            return result
+
+        wm = WebsiteManager()
+        coreResult = wm.handleCheckbox(userID, json.loads(request.body))
+        result = pluginManager.postWebsiteCreation(request, coreResult)
+        if result != 200:
+            return result
+
+        return coreResult
+    except KeyError:
+        return redirect(loadLoginPage)
+    
 def GetCurrentThemes(request):
     try:
         userID = request.session['userID']

@@ -232,7 +232,7 @@ class FTPUtilities:
 
 def main():
 
-    parser = argparse.ArgumentParser(description='CyberPanel Installer')
+    parser = argparse.ArgumentParser(description='Popo PowerPanel Installer')
     parser.add_argument('function', help='Specific a function to call!')
     parser.add_argument('--domainName', help='Domain to create FTP for!')
     parser.add_argument('--userName', help='Username for FTP Account')

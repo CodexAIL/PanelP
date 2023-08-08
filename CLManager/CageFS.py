@@ -242,7 +242,7 @@ ui_path_owner = lscpd:lscpd
 
 def main():
 
-    parser = argparse.ArgumentParser(description='CyberPanel CageFS Manager')
+    parser = argparse.ArgumentParser(description='Popo PowerPanel CageFS Manager')
     parser.add_argument('--function', help='Function')
     parser.add_argument('--key', help='Imunify Key')
 

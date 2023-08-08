@@ -90,7 +90,7 @@ def main():
         # Needs updated to glob all /home/*/logs/
         path = '/home/*/logs/*'
         domlogs_path = glob.glob("/home/*/logs/")
-        print('Root CyberPanel Detected')
+        print('Root Popo PowerPanel Detected')
         # Get list of dir contents
         # logs_path_contents = glob.glob("/home/*/logs/*.access_log", recursive=True)
 

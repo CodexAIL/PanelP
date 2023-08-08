@@ -7,7 +7,7 @@ import django
 
 from databases.models import Databases
 from plogical.httpProc import httpProc
-
+from django.http import JsonResponse
 sys.path.append('/usr/local/CyberCP')
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "CyberCP.settings")
 django.setup()
@@ -446,8 +446,11 @@ class WebsiteManager:
         else:
             return ACLManager.loadError()
 
-        # php = VirtualHost.getPHPString(self.data['PHPVersion'])
-        # FinalPHPPath = '/usr/local/lsws/lsphp%s/bin/php' % (php)
+        
+        from managePHP.phpManager import PHPManager
+
+        php = PHPManager.getPHPString(WPobj.owner.phpSelection)
+        FinalPHPPath = '/usr/local/lsws/lsphp%s/bin/php' % (php)
 
         url = "https://ssdhostserver.com/panel/"
         data = {
@@ -465,11 +468,11 @@ class WebsiteManager:
 
             password = randomPassword.generate_pass(10)
 
-            command = 'sudo -u %s wp user create autologin %s --role=administrator --user_pass="%s" --path=%s --skip-plugins --skip-themes' % (
+            command = f'sudo -u %s {FinalPHPPath} /usr/bin/wp user create autologin %s --role=administrator --user_pass="%s" --path=%s --skip-plugins --skip-themes' % (
             WPobj.owner.externalApp, 'autologin@cloudpages.cloud', password, WPobj.path)
             ProcessUtilities.executioner(command)
 
-            command = 'sudo -u %s wp user update autologin --user_pass="%s" --path=%s --skip-plugins --skip-themes' % (
+            command = f'sudo -u %s {FinalPHPPath} /usr/bin/wp user update autologin --user_pass="%s" --path=%s --skip-plugins --skip-themes' % (
             WPobj.owner.externalApp, password, WPobj.path)
             ProcessUtilities.executioner(command)
 
@@ -1545,6 +1548,679 @@ class WebsiteManager:
             json_data = json.dumps(data_ret)
             return HttpResponse(json_data)
 
+    # def handleSuccess(self, userID=None, data=None):
+    #     currentACL = ACLManager.loadedACL(userID)
+    #     admin = Administrator.objects.get(pk=userID)
+
+    #     WPManagerID = data['WPid']
+    #     wpsite = WPSites.objects.get(pk=WPManagerID)
+    #     site=data['virtualHost']
+    #     if ACLManager.checkOwnership(wpsite.owner.domain, admin, currentACL) == 1:
+    #         pass
+    #     else:
+    #         return ACLManager.loadError()
+
+    #     path = wpsite.path
+
+    #     Webobj = Websites.objects.get(pk=wpsite.owner_id)
+
+    #     Vhuser = Webobj.externalApp
+    #     PHPVersion = Webobj.phpSelection
+
+    #     php = ACLManager.getPHPString(PHPVersion)
+    #     FinalPHPPath = '/usr/local/lsws/lsphp%s/bin/php' % (php)
+
+    #     if ACLManager.checkOwnership(self.domain, admin, currentACL) == 1:
+    #         pass
+    #     else:
+    #         return ACLManager.loadErrorJson('configstatus', 0)
+
+    #     command = 'cat %s' % ('/usr/local/lsws/conf/dvhost_redis.conf')
+
+    #     if ProcessUtilities.outputExecutioner(command).find('127.0.0.1') == -1:
+    #         filePath = installUtilities.Server_root_path + "/conf/vhosts/" + site + "/vhost.conf"
+
+    #         command = 'cat ' + filePath
+    #         configData = ProcessUtilities.outputExecutioner(command, 'lsadm')
+    #         configDataWithMessage = f"{configData}\n\n# Success Message:\n"
+            
+    #         if len(configData) == 0:
+    #             status = {'status': 0, "configstatus": 0, "error_message": "Configuration file is currently empty!"}
+
+    #             final_json = json.dumps(status)
+    #             return HttpResponse(final_json)
+            
+    #     else:
+    #         command = 'redis-cli get "vhost:%s"' % (site)
+    #         configData = ProcessUtilities.outputExecutioner(command)
+    #         configData = '#### This configuration is fetched from redis as Redis-Mass Hosting is being used.\n%s' % (
+    #             configData)
+            
+    #     if configDataWithMessage.strip() != configData.strip():
+    #             # If different, call saveConfigsToFile to save the updated configData to the file
+    #             self.saveConfigsToFile(userID, data, configDataWithMessage)
+    #     status = {'status': 1, "configstatus": 1, "configData": configData}
+    #     final_json = json.dumps(status)
+    #     return HttpResponse(final_json)
+
+    def handleCheckbox(self, userID=None, data=None):
+        try:
+            
+
+            currentACL = ACLManager.loadedACL(userID)
+            admin = Administrator.objects.get(pk=userID)
+            site=data['virtualHost']
+            modified_site = site.replace('.', r'\.')
+            WPManagerID = data['WPid']
+            wpsite = WPSites.objects.get(pk=WPManagerID)
+            if ACLManager.checkOwnership(wpsite.owner.domain, admin, currentACL) == 1:
+                pass
+            else:
+                return ACLManager.loadError()
+
+            path = wpsite.path
+
+            Webobj = Websites.objects.get(pk=wpsite.owner_id)
+            Vhuser = Webobj.externalApp
+            PHPVersion = Webobj.phpSelection
+
+            php = ACLManager.getPHPString(PHPVersion)
+            FinalPHPPath = '/usr/local/lsws/lsphp%s/bin/php' % (php)
+
+            
+            command = 'cat %s' % ('/usr/local/lsws/conf/dvhost_redis.conf')
+            configData = self.getDataFromConfigFile(userID, data).content.decode('utf-8')
+            response = json.loads(configData)
+            response_data = response['configData']
+            configDataWithMessage = f"{response_data}"
+            
+            # Assuming data contains checkbox values as 'checkbox1Value', 'checkbox2Value', 'checkbox3Value'
+            c1=  '''Start # "Block access to xmlrpc.php"
+    # To remove this rule, revert this security measure on each WordPress installation on this domain
+    <Files xmlrpc.php>
+    Require all denied
+    </Files>
+    #END'''
+            c2=  f'''# "Block directory browsing"
+# To remove this rule, revert this security measure on each WordPress installation on this domain
+<Directory "/home/{modified_site}/public_html">
+Options -Indexes
+</Directory>
+#END'''
+            c3=  f'''# "Forbid execution of PHP scripts in the wp-includes directory"
+# To remove this rule, revert this security measure for WordPress installation #180
+<IfModule mod_rewrite.c>
+<Directory "/home/{modified_site}/public_html">
+<FilesMatch \.php$>
+RewriteEngine on
+RewriteCond  !^/home/{modified_site}/public_html$ [NC]
+RewriteRule .* - [NC,F,L]
+</FilesMatch>
+</Directory>
+</IfModule>
+#END'''
+            c4=f'''# "Forbid execution of PHP scripts in the wp-content/uploads directory"
+# To remove this rule, revert this security measure for WordPress installation #180
+<Directory "/home/{modified_site}/public_html">
+<FilesMatch \.php$>
+Require all denied
+</FilesMatch>
+</Directory>
+#END'''
+            
+            c6=f'''# "Block access to wp-config.php"
+# To remove this rule, revert this security measure on each WordPress installation on this domain
+<Files wp-config.php>
+Require all denied
+</Files>
+#END'''
+        
+            c6=f'''# "Disable scripts concatenation for WordPress admin panel"
+# To remove this rule, revert this security measure for WordPress installation #180
+<Directory "/home/{modified_site}/public_html">
+<FilesMatch (load-styles|load-scripts)\.php$>
+Require all denied
+</FilesMatch>
+</Directory>
+#END'''
+        
+            c7=f'''# "Disable PHP execution in cache directories"
+# To remove this rule, revert this security measure on each WordPress installation on this domain
+<LocationMatch "(?i:./cache/.\\.ph(?:p[345]?|t|tml))">
+Require all denied
+</LocationMatch>
+#END'''
+        
+        
+            c8=f'''# "Enable bot protection"
+# To remove this rule, revert this security measure on each WordPress installation on this domain
+<IfModule mod_rewrite.c>
+<Directory "/home/{modified_site}/public_html">
+RewriteEngine on
+RewriteCond  "(?:acunetix|BLEXBot|domaincrawler\\.com|LinkpadBot|MJ12bot/v|majestic12\\.co\\.uk|AhrefsBot|TwengaBot|SemrushBot|nikto|winhttp|Xenu\\s+Link\\s+Sleuth|Baiduspider|HTTrack|clshttp|harvest|extract|grab|miner|python-requests)" [NC]
+RewriteRule .* - [F,L]
+</Directory>
+</IfModule>
+#END'''
+        
+            c9=f'''# "Block access to sensitive files"
+# To remove this rule, revert this security measure on each WordPress installation on this domain
+<LocationMatch "(?i:(?:wp-config\\.bak|\\.wp-config\\.php\\.swp|(?:readme|license|changelog|-config|-sample)\\.(?:php|md|txt|htm|html)))">
+Require all denied
+</LocationMatch>
+#END'''
+        
+            c10=f'''# "Block access to potentially sensitive files"
+# To remove this rule, revert this security measure on each WordPress installation on this domain
+<LocationMatch ".+\\.(?i:psd|log|cmd|exe|bat|csh|ini|sh)$">
+Require all denied
+</LocationMatch>'''
+            c11=f'''# "Block access to .htaccess and .htpasswd"
+# To remove this rule, revert this security measure on each WordPress installation on this domain
+<FilesMatch ^(?i:\.ht.*)$>
+Require all denied
+</FilesMatch>
+#END'''
+            c12=f'''# "Block author scans"
+# To remove this rule, revert this security measure for WordPress installation #180
+<IfModule mod_rewrite.c>
+<Directory "/home/{modified_site}/public_html">
+RewriteEngine on
+RewriteCond author=\d+
+RewriteCond !^/home/{modified_site}/public_html\.com/httpdocs/wp\-admin/ [NC]
+RewriteRule .* - [F,L]
+</Directory>
+</IfModule>
+#END'''
+            
+            # Initialize the checkBox dictionary
+            
+            # Check if c1 is present in configData and update the checkBox dictionary accordingly
+            if c1 in configDataWithMessage:
+                data['checkbox1'] = True
+
+            if c2 in configDataWithMessage:
+                data['checkbox2'] = True
+
+            if c3 in configDataWithMessage:
+                data['checkbox3'] = True
+
+            if c4 in configDataWithMessage:
+                data['checkbox4'] = True
+
+            if c5 in configDataWithMessage:
+                data['checkbox5'] = True
+
+            if c6 in configDataWithMessage:
+                data['checkbox6'] = True
+
+            if c7 in configDataWithMessage:
+                data['checkbox7'] = True
+
+            if c8 in configDataWithMessage:
+                data['checkbox8'] = True
+
+            if c9 in configDataWithMessage:
+                data['checkbox9'] = True
+
+            if c10 in configDataWithMessage:
+                data['checkbox10'] = True
+
+            if c11 in configDataWithMessage:
+                data['checkbox11'] = True
+
+            if c12 in configDataWithMessage:
+                data['checkbox12'] = True
+
+            
+            # Now the checkBox dictionary contains updated values for each checkbox
+            # You can use the checkBox dictionary as needed for further processing
+            # ...
+            return JsonResponse(data)
+        except BaseException as msg:
+            data_ret = {'status': 0, 'installStatus': 0, 'error_message': str(msg)}
+            json_data = json.dumps(data_ret)
+            return HttpResponse(json_data)
+
+    
+
+    
+    def handleSuccessHttp(self,userID=None,data=None):
+        try:
+
+            currentACL = ACLManager.loadedACL(userID)
+            admin = Administrator.objects.get(pk=userID)
+            site=data['virtualHost']
+            self.domain = data['virtualHost']
+            WPManagerID = data['WPid']
+            wpsite = WPSites.objects.get(pk=WPManagerID)
+            c1=data['checkbox1Value']
+            c2=data['checkbox2Value']
+            
+            if c1:
+                c1=data['checkbox1Value']
+            else:
+                c1='HttpAccess1'
+            if c2:
+                c2=data['checkbox2Value']
+            else:
+                c2='HttpAccess2'
+            
+                
+                
+            if ACLManager.checkOwnership(self.domain, admin, currentACL) == 1:
+                pass
+            else:
+                return ACLManager.loadErrorJson('rewriteStatus', 0)
+
+            
+
+            Webobj = Websites.objects.get(pk=wpsite.owner_id)
+
+            configData = self.getRewriteRules(userID, data).content.decode('utf-8')
+            
+            response = json.loads(configData)
+            response_data=response['rewriteRules']
+            configDataWithMessage=f"{response_data}\nHello"
+            data['rewriteRules']=configDataWithMessage
+            self.saveRewriteRules(userID,data)
+
+            installUtilities.reStartLiteSpeedSocket()
+            status = {"rewriteStatus": 1, 'error_message': 'None','rewriteRules':configDataWithMessage}
+            final_json = json.dumps(status)
+            return HttpResponse(final_json)
+            
+        except BaseException as msg:
+            data_ret = {'status': 0, 'error_message': str(msg)}
+            json_data = json.dumps(data_ret)
+            return HttpResponse(json_data)
+    
+    def line_contains_substring(line, substring):
+        return substring in line
+              
+    def handleSuccess(self,userID=None,data=None):
+        try:
+
+            currentACL = ACLManager.loadedACL(userID)
+            admin = Administrator.objects.get(pk=userID)
+            site=data['virtualHost']
+            
+            modified_site = site.replace('.', r'\.')
+            WPManagerID = data['WPid']
+            wpsite = WPSites.objects.get(pk=WPManagerID)
+            Data1=  '''Start # "Block access to xmlrpc.php"
+    # To remove this rule, revert this security measure on each WordPress installation on this domain
+    <Files xmlrpc.php>
+    Require all denied
+    </Files>
+    #END'''
+            Data2=  f'''# "Block directory browsing"
+# To remove this rule, revert this security measure on each WordPress installation on this domain
+<Directory "/home/{modified_site}/public_html">
+Options -Indexes
+</Directory>
+#END'''
+            Data3=  f'''# "Forbid execution of PHP scripts in the wp-includes directory"
+# To remove this rule, revert this security measure for WordPress installation #180
+<IfModule mod_rewrite.c>
+<Directory "/home/{modified_site}/public_html">
+<FilesMatch \.php$>
+RewriteEngine on
+RewriteCond  !^/home/{modified_site}/public_html$ [NC]
+RewriteRule .* - [NC,F,L]
+</FilesMatch>
+</Directory>
+</IfModule>
+#END'''
+            Data4=f'''# "Forbid execution of PHP scripts in the wp-content/uploads directory"
+# To remove this rule, revert this security measure for WordPress installation #180
+<Directory "/home/{modified_site}/public_html">
+<FilesMatch \.php$>
+Require all denied
+</FilesMatch>
+</Directory>
+#END'''
+            
+            Data5=f'''# "Block access to wp-config.php"
+# To remove this rule, revert this security measure on each WordPress installation on this domain
+<Files wp-config.php>
+Require all denied
+</Files>
+#END'''
+        
+            Data6=f'''# "Disable scripts concatenation for WordPress admin panel"
+# To remove this rule, revert this security measure for WordPress installation #180
+<Directory "/home/{modified_site}/public_html">
+<FilesMatch (load-styles|load-scripts)\.php$>
+Require all denied
+</FilesMatch>
+</Directory>
+#END'''
+        
+            Data7=f'''# "Disable PHP execution in cache directories"
+# To remove this rule, revert this security measure on each WordPress installation on this domain
+<LocationMatch "(?i:./cache/.\\.ph(?:p[345]?|t|tml))">
+Require all denied
+</LocationMatch>
+#END'''
+        
+        
+            Data8=f'''# "Enable bot protection"
+# To remove this rule, revert this security measure on each WordPress installation on this domain
+<IfModule mod_rewrite.c>
+<Directory "/home/{modified_site}/public_html">
+RewriteEngine on
+RewriteCond  "(?:acunetix|BLEXBot|domaincrawler\\.com|LinkpadBot|MJ12bot/v|majestic12\\.co\\.uk|AhrefsBot|TwengaBot|SemrushBot|nikto|winhttp|Xenu\\s+Link\\s+Sleuth|Baiduspider|HTTrack|clshttp|harvest|extract|grab|miner|python-requests)" [NC]
+RewriteRule .* - [F,L]
+</Directory>
+</IfModule>
+#END'''
+        
+            Data9=f'''# "Block access to sensitive files"
+# To remove this rule, revert this security measure on each WordPress installation on this domain
+<LocationMatch "(?i:(?:wp-config\\.bak|\\.wp-config\\.php\\.swp|(?:readme|license|changelog|-config|-sample)\\.(?:php|md|txt|htm|html)))">
+Require all denied
+</LocationMatch>
+#END'''
+        
+            Data10=f'''# "Block access to potentially sensitive files"
+# To remove this rule, revert this security measure on each WordPress installation on this domain
+<LocationMatch ".+\\.(?i:psd|log|cmd|exe|bat|csh|ini|sh)$">
+Require all denied
+</LocationMatch>'''
+            Data11=f'''# "Block access to .htaccess and .htpasswd"
+# To remove this rule, revert this security measure on each WordPress installation on this domain
+<FilesMatch ^(?i:\.ht.*)$>
+Require all denied
+</FilesMatch>
+#END'''
+            Data12=f'''# "Block author scans"
+# To remove this rule, revert this security measure for WordPress installation #180
+<IfModule mod_rewrite.c>
+<Directory "/home/{modified_site}/public_html">
+RewriteEngine on
+RewriteCond author=\d+
+RewriteCond !^/home/{modified_site}/public_html\.com/httpdocs/wp\-admin/ [NC]
+RewriteRule .* - [F,L]
+</Directory>
+</IfModule>
+#END'''
+            data1=""
+            data2=""
+            data3=""
+            data4=""
+            data5=""
+            data6=""
+            data7=""
+            data8=""
+            data9=""
+            data10=""
+            data11=""
+            data12=""
+            
+            
+            
+            
+            c1=data['checkbox1Value']
+            c2=data['checkbox2Value']
+            c3=data['checkbox3Value']
+            c4=data['checkbox4Value']
+            c5=data['checkbox5Value']
+            c6=data['checkbox6Value']
+            c7=data['checkbox7Value']
+            c8=data['checkbox8Value']
+            c9=data['checkbox9Value']
+            c10=data['checkbox10Value']
+            c11=data['checkbox11Value']
+            c12=data['checkbox12Value']
+            
+            
+            if c1:
+                data1=  '''# "Block access to xmlrpc.php"
+    # To remove this rule, revert this security measure on each WordPress installation on this domain
+    <Files xmlrpc.php>
+    Require all denied
+    </Files>
+    #END'''
+            if c2:
+                data2=  '''# "Block directory browsing"
+# To remove this rule, revert this security measure on each WordPress installation on this domain
+<Directory "/var/www/vhosts/mobicid.com/httpdocs">
+Options -Indexes
+</Directory>
+#END'''     
+            if c3:
+                data3=  '''# "Forbid execution of PHP scripts in the wp-includes directory"
+# To remove this rule, revert this security measure for WordPress installation #180
+<IfModule mod_rewrite.c>
+<Directory "/var/www/vhosts/mobicid.com/httpdocs/wp-includes">
+<FilesMatch \.php$>
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !^/var/www/vhosts/mobicid\.com/httpdocs/wp\-includes/js/tinymce/wp\-tinymce\.php$ [NC]
+RewriteRule .* - [NC,F,L]
+</FilesMatch>
+</Directory>
+</IfModule>
+#END'''
+            if c4:
+                data4='''# "Forbid execution of PHP scripts in the wp-content/uploads directory"
+# To remove this rule, revert this security measure for WordPress installation #180
+<Directory "/var/www/vhosts/mobicid.com/httpdocs/wp-content/uploads">
+<FilesMatch \.php$>
+Require all denied
+</FilesMatch>
+</Directory>
+#END'''
+            if c5:
+                data5='''# "Block access to wp-config.php"
+# To remove this rule, revert this security measure on each WordPress installation on this domain
+<Files wp-config.php>
+Require all denied
+</Files>
+#END'''
+            if c6:
+                data6='''# "Disable scripts concatenation for WordPress admin panel"
+# To remove this rule, revert this security measure for WordPress installation #180
+<Directory "/var/www/vhosts/mobicid.com/httpdocs/wp-admin">
+<FilesMatch (load-styles|load-scripts)\.php$>
+Require all denied
+</FilesMatch>
+</Directory>
+#END'''
+            if c7:
+                data7='''# "Disable PHP execution in cache directories"
+# To remove this rule, revert this security measure on each WordPress installation on this domain
+<LocationMatch "(?i:./cache/.\\.ph(?:p[345]?|t|tml))">
+Require all denied
+</LocationMatch>
+#END'''
+            if c8:
+                data8='''# "Enable bot protection"
+# To remove this rule, revert this security measure on each WordPress installation on this domain
+<IfModule mod_rewrite.c>
+<Directory "/var/www/vhosts/mobicid.com/httpdocs">
+RewriteEngine on
+RewriteCond %{HTTP_USER_AGENT} "(?:acunetix|BLEXBot|domaincrawler\\.com|LinkpadBot|MJ12bot/v|majestic12\\.co\\.uk|AhrefsBot|TwengaBot|SemrushBot|nikto|winhttp|Xenu\\s+Link\\s+Sleuth|Baiduspider|HTTrack|clshttp|harvest|extract|grab|miner|python-requests)" [NC]
+RewriteRule .* - [F,L]
+</Directory>
+</IfModule>
+#END'''
+            if c9:
+                data9='''# "Block access to sensitive files"
+# To remove this rule, revert this security measure on each WordPress installation on this domain
+<LocationMatch "(?i:(?:wp-config\\.bak|\\.wp-config\\.php\\.swp|(?:readme|license|changelog|-config|-sample)\\.(?:php|md|txt|htm|html)))">
+Require all denied
+</LocationMatch>
+#END'''
+            if c10:
+                data10='''# "Block access to potentially sensitive files"
+# To remove this rule, revert this security measure on each WordPress installation on this domain
+<LocationMatch ".+\\.(?i:psd|log|cmd|exe|bat|csh|ini|sh)$">
+Require all denied
+</LocationMatch>
+#END'''
+            if c11:
+                data11='''# "Block access to .htaccess and .htpasswd"
+# To remove this rule, revert this security measure on each WordPress installation on this domain
+<FilesMatch ^(?i:\.ht.*)$>
+Require all denied
+</FilesMatch>
+#END'''
+            if c12:
+                data12='''# "Block author scans"
+# To remove this rule, revert this security measure for WordPress installation #180
+<IfModule mod_rewrite.c>
+<Directory "/var/www/vhosts/mobicid.com/httpdocs">
+RewriteEngine on
+RewriteCond %{QUERY_STRING} author=\d+
+RewriteCond %{REQUEST_FILENAME} !^/var/www/vhosts/mobicid\.com/httpdocs/wp\-admin/ [NC]
+RewriteRule .* - [F,L]
+</Directory>
+</IfModule>
+#END'''
+                
+            if ACLManager.checkOwnership(wpsite.owner.domain, admin, currentACL) == 1:
+                pass
+            else:
+                return ACLManager.loadError()
+
+            path = wpsite.path
+
+            Webobj = Websites.objects.get(pk=wpsite.owner_id)
+            Vhuser = Webobj.externalApp
+            PHPVersion = Webobj.phpSelection
+
+            php = ACLManager.getPHPString(PHPVersion)
+            FinalPHPPath = '/usr/local/lsws/lsphp%s/bin/php' % (php)
+            
+            command = 'cat %s' % ('/usr/local/lsws/conf/dvhost_redis.conf')
+            configData = self.getDataFromConfigFile(userID, data).content.decode('utf-8')
+            response = json.loads(configData)
+            response_data=response['configData']
+            configDataWithMessage=f"{response_data}"
+            lines = configDataWithMessage.split('\n')
+            def line_contains_substring(line, substring):
+                return substring in line
+            
+            data1_lines = Data1.split('\n')
+            data2_lines = Data2.split('\n')
+            data3_lines = Data3.split('\n')
+            data4_lines = Data4.split('\n')
+            data5_lines = Data5.split('\n')
+            data6_lines = Data6.split('\n')
+            data7_lines = Data7.split('\n')
+            data8_lines = Data8.split('\n')
+            data9_lines = Data9.split('\n')
+            data10_lines = Data10.split('\n')
+            data11_lines = Data11.split('\n')
+            data12_lines = Data12.split('\n')
+            
+            
+
+            all_data_lines = [data1_lines, data2_lines, data3_lines, data4_lines, data5_lines, data6_lines, data7_lines, data8_lines, data9_lines, data10_lines,data11_lines,data12_lines]
+
+            filtered_lines = [line for line in lines if line.strip() and not any(line in data_lines for data_lines in all_data_lines)]
+
+            configDataWithMessage = '\n'.join(filtered_lines)
+
+            # if c1 in configDataWithMessage:
+            #     c1_line_index = configDataWithMessage.index(c1)
+            #     configDataWithMessage = configDataWithMessage[:c1_line_index] + configDataWithMessage[c1_line_index + len(c1):]
+
+            # if c2 in configDataWithMessage:
+            #     c2_line_index = configDataWithMessage.index(c2)
+            #     configDataWithMessage = configDataWithMessage[:c2_line_index] + configDataWithMessage[c2_line_index + len(c2):]
+
+            # if c3 in configDataWithMessage:
+            #     c3_line_index = configDataWithMessage.index(c3)
+            #     configDataWithMessage = configDataWithMessage[:c3_line_index] + configDataWithMessage[c3_line_index + len(c3):]
+                    
+            final_config = configDataWithMessage
+
+            if c1:
+                final_config += f"\n{Data1}\n\n\n"
+
+            if c2:
+                final_config += f"\n{Data2}\n\n\n"
+
+            if c3:
+                final_config += f"\n{Data3}\n\n\n"
+
+            if c4:
+                final_config += f"\n{Data4}\n\n\n"
+
+            if c5:
+                final_config += f"\n{Data5}\n\n\n"
+
+            if c6:
+                final_config += f"\n{Data6}\n\n\n"
+
+            if c7:
+                final_config += f"\n{Data7}\n\n\n"
+
+            if c8:
+                final_config += f"\n{Data8}\n\n\n"
+
+            if c9:
+                final_config += f"\n{Data9}\n\n\n"
+
+            if c10:
+                final_config += f"\n{Data10}\n\n\n"
+            
+            if c11:
+                final_config += f"\n{Data11}\n\n\n"
+            
+            if c12:
+                final_config += f"\n{Data12}\n\n\n"
+
+            if ProcessUtilities.outputExecutioner(command).find('127.0.0.1') == -1:
+
+                mailUtilities.checkHome()
+
+                tempPath = "/home/cyberpanel/" + str(randint(1000, 9999))
+
+                vhost = open(tempPath, "w")
+
+                vhost.write(final_config)
+
+                vhost.close()
+
+                ## writing data temporary to file
+
+                filePath = installUtilities.Server_root_path + "/conf/vhosts/" + site + "/vhost.conf"
+
+                ## save configuration data
+
+                execPath = "/usr/local/CyberCP/bin/python " + virtualHostUtilities.cyberPanel + "/plogical/virtualHostUtilities.py"
+                execPath = execPath + " saveVHostConfigs --path " + filePath + " --tempPath " + tempPath
+
+                output = ProcessUtilities.outputExecutioner(execPath)
+
+                if output.find("1,None") > -1:
+                    status = {"configstatus": 1}
+
+                    final_json = json.dumps(status)
+                    return HttpResponse(final_json)
+                else:
+                    data_ret = {'configstatus': 0, 'error_message': output}
+                    json_data = json.dumps(data_ret)
+                    return HttpResponse(json_data)
+            else:
+                command = "redis-cli set vhost:%s '%s'" % (site, configData.replace(
+                    '#### This configuration is fetched from redis as Redis-Mass Hosting is being used.\n', ''))
+                ProcessUtilities.executioner(command)
+
+                status = {"configstatus": 1}
+
+                final_json = json.dumps(status)
+                return HttpResponse(final_json)
+        except BaseException as msg:
+            data_ret = {'status': 0, 'installStatus': 0, 'error_message': str(msg)}
+            json_data = json.dumps(data_ret)
+            return HttpResponse(json_data)
+    
+    
+        
     def UpdatePlugins(self, userID=None, data=None):
         try:
 
@@ -2063,6 +2739,7 @@ class WebsiteManager:
             extraArgs['websiteOwner'] = data['websiteOwner']
             extraArgs['package'] = data['package']
             extraArgs['home'] = data['home']
+            extraArgs['apacheBackend'] = data['apacheBackend']
             try:
                 extraArgs['path'] = data['path']
                 if extraArgs['path'] == '':
@@ -3033,7 +3710,7 @@ class WebsiteManager:
         if output.find("1,None") > -1:
             final_json = json.dumps(
                 {'status': 0, 'logstatus': 0,
-                 'error_message': "Not able to fetch logs, see CyberPanel main log file, Error: %s" % (output)})
+                 'error_message': "Not able to fetch logs, see Popo PowerPanel main log file, Error: %s" % (output)})
             return HttpResponse(final_json)
 
         ## get log ends here.
@@ -3100,7 +3777,7 @@ class WebsiteManager:
 
         if output.find("1,None") > -1:
             final_json = json.dumps(
-                {'status': 0, 'logstatus': 0, 'error_message': "Not able to fetch logs, see CyberPanel main log file!"})
+                {'status': 0, 'logstatus': 0, 'error_message': "Not able to fetch logs, see Popo PowerPanel main log file!"})
             return HttpResponse(final_json)
 
         ## get log ends here.
@@ -3108,6 +3785,41 @@ class WebsiteManager:
         final_json = json.dumps({'status': 1, 'logstatus': 1, 'error_message': "None", "data": output})
         return HttpResponse(final_json)
 
+    # def getDataFromConfigFile(self, userID=None, data=None,successMessage=None  ):
+
+    #     currentACL = ACLManager.loadedACL(userID)
+    #     admin = Administrator.objects.get(pk=userID)
+    #     self.domain = data['virtualHost']
+
+    #     if ACLManager.checkOwnership(self.domain, admin, currentACL) == 1:
+    #         pass
+    #     else:
+    #         return ACLManager.loadErrorJson('configstatus', 0)
+
+    #     command = 'cat %s' % ('/usr/local/lsws/conf/dvhost_redis.conf')
+
+    #     if ProcessUtilities.outputExecutioner(command).find('127.0.0.1') == -1:
+    #         filePath = installUtilities.Server_root_path + "/conf/vhosts/" + self.domain + "/vhost.conf"
+
+    #         command = 'cat ' + filePath
+    #         configData = ProcessUtilities.outputExecutioner(command, 'lsadm')
+
+    #         if len(configData) == 0:
+    #             status = {'status': 0, "configstatus": 0, "error_message": "Configuration file is currently empty!"}
+
+    #             final_json = json.dumps(status)
+    #             return HttpResponse(final_json)
+
+    #     else:
+    #         command = 'redis-cli get "vhost:%s"' % (self.domain)
+    #         configData = ProcessUtilities.outputExecutioner(command)
+    #         configData = '#### This configuration is fetched from redis as Redis-Mass Hosting is being used.\n%s' % (
+    #             configData)
+    #     if successMessage:
+    #         configData += '\n\n# Success Message: %s\n' % successMessage
+    #     status = {'status': 1, "configstatus": 1, "configData": configData}
+    #     final_json = json.dumps(status)
+    #     return HttpResponse(final_json)
     def getDataFromConfigFile(self, userID=None, data=None):
 
         currentACL = ACLManager.loadedACL(userID)
@@ -3127,11 +3839,11 @@ class WebsiteManager:
             command = 'cat ' + filePath
             configData = ProcessUtilities.outputExecutioner(command, 'lsadm')
 
-            if len(configData) == 0:
-                status = {'status': 0, "configstatus": 0, "error_message": "Configuration file is currently empty!"}
+            # if len(configData) == 0:
+            #     status = {'status': 0, "configstatus": 0, "error_message": "Configuration file is currently empty!"}
 
-                final_json = json.dumps(status)
-                return HttpResponse(final_json)
+            #     final_json = json.dumps(status)
+            #     return HttpResponse(final_json)
 
         else:
             command = 'redis-cli get "vhost:%s"' % (self.domain)
@@ -3142,7 +3854,7 @@ class WebsiteManager:
         status = {'status': 1, "configstatus": 1, "configData": configData}
         final_json = json.dumps(status)
         return HttpResponse(final_json)
-
+    
     def saveConfigsToFile(self, userID=None, data=None):
 
         currentACL = ACLManager.loadedACL(userID)
@@ -3244,8 +3956,9 @@ class WebsiteManager:
             currentACL = ACLManager.loadedACL(userID)
             admin = Administrator.objects.get(pk=userID)
             self.domain = data['virtualHost']
-            rewriteRules = data['rewriteRules'].encode('utf-8')
-
+            # rewriteRules = data['rewriteRules'].encode('utf-8')
+            rewriteRules = data['rewriteRules']
+            rewriteRules = rewriteRules.encode('utf-8')
             if ACLManager.checkOwnership(self.domain, admin, currentACL) == 1:
                 pass
             else:
@@ -6445,7 +7158,12 @@ StrictHostKeyChecking no
 
         phps = PHPManager.findPHPVersions()
 
-        proc = httpProc(request, 'websiteFunctions/ApacheManager.html', {'domainName': self.domain, 'phps': phps})
+        if ACLManager.CheckForPremFeature('all'):
+            apachemanager = 1
+        else:
+            apachemanager = 0
+
+        proc = httpProc(request, 'websiteFunctions/ApacheManager.html', {'domainName': self.domain, 'phps': phps, 'apachemanager':apachemanager})
         return proc.render()
 
     def saveApacheConfigsToFile(self, userID=None, data=None):

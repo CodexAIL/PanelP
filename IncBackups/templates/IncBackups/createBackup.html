@@ -8,13 +8,14 @@
     {% get_current_language as LANGUAGE_CODE %}
     <!-- Current language: {{ LANGUAGE_CODE }} -->
 
-    <div class="container">
+    <div class="container"></div>
+
         <div id="page-title">
             <h2>{% trans "Backup Website" %} - <a target="_blank" href="https://cyberpanel.net/docs/2-create-restore-incremental-backups/"
                                                    style="height: 23px;line-height: 21px;"
                                                    class="btn btn-border btn-alt border-red btn-link font-red" title=""><span>{% trans "Backup Docs" %}</span></a>
             </h2>
-            <p>{% trans "This page can be used to create incremental backups for your websites." %}</p>
+            <p>{% trans "divis page can be used to create incremental backups for your websites." %}</p>
         </div>
 
         <div ng-controller="createIncrementalBackups" class="panel">
@@ -114,28 +115,33 @@
                             </div>
                         </div>
 
+                    </div>
+                </div>
 
                         <!------ List of records --------------->
 
                         <div class="form-group">
 
-                            <div class="col-sm-12">
+                            <div class="col-md-12 mb-4 mt-5">
 
-                                <table class="table">
-                                    <thead>
-                                    <tr>
-                                        <th>{% trans "ID" %}</th>
-                                        <th>{% trans "Date" %}</th>
-                                        <th>{% trans "Restore" %}</th>
-                                        <th>{% trans "Delete" %}</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr ng-repeat="record in records track by $index">
-                                        <td ng-bind="record.id"></td>
-                                        <td ng-bind="record.date"></td>
-                                        <td>
-                                            <a ng-click="restore(record.id)" data-toggle="modal" data-target="#settings"
+                                
+                                    
+                                        <div class="col-md-3 content-box-header" id="backup-data">{% trans "ID" %}</div>
+                                        <div class="col-md-3 content-box-header" id="backup-data"> {% trans "Date" %}</div>
+                                        <div class="col-md-3 content-box-header" id="backup-data">{% trans "Restore" %}</div>
+                                        <div class="col-md-3 content-box-header" id="backup-data">{% trans "Delete" %}</div>
+                            </div>
+                                   
+                                   
+                                    <div ng-repeat="record in records track by $index" class="panel col-md-12"
+                                    style="padding: 0px; box-shadow: 0px 0px 1px 0px #888888;" >
+                                        <div class="table-responsive no-gutter text-nowrap" style="overflow-x: hidden;"> 
+                                         <div class="col-md-12">
+
+                                        <div class="col-md-3 content-box-header" id="backup-data" ng-bind="record.id"></div>
+                                        <div class="col-md-3 content-box-header" id="backup-data" ng-bind="record.date"></div>
+                                        <div>
+                                            <a class="col-md-3 content-box-header" id="backup-data" ng-click="restore(record.id)" data-toggle="modal" data-target="#settings"
                                                ng-click='deleteCLPackage()'
                                                class="btn btn-border btn-alt border-green btn-link font-green"
                                                title=""><span>Restore Points</span></a>
@@ -155,29 +161,32 @@
                                                         </div>
                                                         <div class="modal-body">
 
-                                                            <table class="table">
-                                                                <thead>
-                                                                <tr>
-                                                                    <th>{% trans "Job ID" %}</th>
-                                                                    <th>{% trans "Snapshot ID" %}</th>
-                                                                    <th>{% trans "Type" %}</th>
-                                                                    <th>{% trans "Destination" %}</th>
-                                                                    <th>{% trans "Action" %}</th>
-                                                                </tr>
-                                                                </thead>
-                                                                <tbody>
-                                                                <tr ng-repeat="job in jobs track by $index">
-                                                                    <td ng-bind="job.id"></td>
-                                                                    <td ng-bind="job.snapshotid"></td>
-                                                                    <td ng-bind="job.type"></td>
-                                                                    <td ng-bind="job.destination"></td>
-                                                                    <td>
+                                                            <div class="col-md-12 mt-6 mb-3">
+                                                                    <div class="col-md-2 content-box-header" id="backup-data">{% trans "Job ID" %}</div>
+                                                                    <div class="col-md-2 content-box-header" id="backup-data">{% trans "Snapshot ID" %}</div>
+                                                                    <div class="col-md-2 content-box-header" id="backup-data">{% trans "Type" %}</div>
+                                                                    <div class="col-md-4 content-box-header" id="backup-data">{% trans "Destination" %}</div>
+                                                                    <div class="col-md-2 content-box-header" id="backup-data">{% trans "Action" %}</div>
+                                                                </div>
+                                                                
+                                                                
+                                                                <div ng-repeat="job in jobs track by $index" class="panel col-md-12"
+                                                                style="padding: 0px; box-shadow: 0px 0px 1px 0px #888888;" >
+                                                                    <div class="table-responsive no-gutter text-nowrap" style="overflow-x: hidden;"> 
+                                                                    <div class="col-md-12">
+                                                                    <div class="col-md-2 content-box-header" id="backup-data" ng-bind="job.id"></div>
+                                                                    <div class="col-md-2 content-box-header" id="backup-data" ng-bind="job.snapshotid"></div>
+                                                                    <div class="col-md-2 content-box-header" id="backup-data" ng-bind="job.type"></div>
+                                                                    <div class="col-md-4 content-box-header" id="backup-data" ng-bind="job.destination"></div>
+                                                                    <div class="col-md-2 content-box-header" id="backup-data">
                                                                         <a ng-click="restorePoint(job.id, 0)" class="btn btn-border btn-alt border-green btn-link font-green"
                                                                            title=""><span>Restore</span></a>
-                                                                    </td>
-                                                                </tr>
-                                                                </tbody>
-                                                            </table>
+                                                                    </div>
+                                                                </div>
+                                                                </div>
+                                                        </div>
+                                                            
+                                                            
 
                                                             <div ng-hide="restoreSt" class="form-group">
                                                                 <div class="col-sm-12">
@@ -199,16 +208,16 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </td>
-                                        <a href="">
-                                            <td ng-click="deleteBackup(record.id)"><img
-                                                    src="{% static 'images/delete.png' %}"></td>
+                                        </div>
+                                        <a href="" class="col-md-3 content-box-header" id="backup-data">
+                                            <div ng-click="deleteBackup(record.id)"><img style="margin-left: 17rem;"
+                                                    src="{% static 'images/delete.png' %}"></div>
                                         </a>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+                                    
+                                </div>
                         </div>
+            </div>
+                            
 
                         <!------ List of records --------------->
 
@@ -217,11 +226,8 @@
 
 
                 </div>
-            </div>
-        </div>
 
 
-    </div>
 
 
 {% endblock %}

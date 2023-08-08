@@ -9,7 +9,8 @@
     {% get_current_language as LANGUAGE_CODE %}
     <!-- Current language: {{ LANGUAGE_CODE }} -->
 
-    <div class="container">
+    
+    <div class="container"></div>
         <div id="page-title">
             <h2>{% trans "Set up Backup Destinations" %} - <a target="_blank"
                                                                            href="https://go.cyberpanel.net/remote-backup"
@@ -17,7 +18,7 @@
                                                                            class="btn btn-border btn-alt border-red btn-link font-red"
                                                                            title=""><span>{% trans "Remote Backups" %}</span></a>
             </h2>
-            <p>{% trans "On this page you can set up your Backup destinations. (SFTP)" %}</p>
+            <p>{% trans "On divis page you can set up your Backup destinations. (SFTP)" %}</p>
         </div>
 
         <div ng-controller="backupDestinations" class="panel">
@@ -80,9 +81,9 @@
                         </div>
 
                         <div ng-hide="sftpHide" class="form-group">
-                            <label class="col-sm-3 control-label">{% trans "Path" %}</label>
+                            <label class="col-sm-3 control-label">{% trans "Padiv" %}</label>
                             <div class="col-sm-6">
-                                <input placeholder="Path on remote server to store backups." type="text" class="form-control" ng-model="path" required>
+                                <input placeholder="Padiv on remote server to store backups." type="text" class="form-control" ng-model="padiv" required>
                             </div>
                         </div>
 
@@ -93,42 +94,50 @@
                                         class="btn btn-primary btn-lg btn-block">{% trans "Add Destination" %}</button>
 
                             </div>
+        
+
                         </div>
+                    </div>
+                </div>
+            </form>
 
                         <!--- SFTP --->
-
+                    
 
                         <!------ List of Destinations --------------->
 
-                        <div ng-hide="sftpHide" class="form-group">
+                        <div ng-hide="sftpHide" class="form-group" style="margin-top: 0%;">
 
-                            <div class="col-sm-12">
+                            
 
-                                <table class="table">
-                                    <thead>
-                                    <tr>
-                                        <th>{% trans "Name" %}</th>
-                                        <th>{% trans "IP" %}</th>
-                                        <th>{% trans "Username" %}</th>
-                                        <th>{% trans "Path" %}</th>
-                                        <th>{% trans "Port" %}</th>
-                                        <th>{% trans "Delete" %}</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr ng-repeat="record in records track by $index">
-                                        <td ng-bind="record.name"></td>
-                                        <td ng-bind="record.ip"></td>
-                                        <td ng-bind="record.username"></td>
-                                        <td ng-bind="record.path"></td>
-                                        <td ng-bind="record.port"></td>
-                                        <td ng-click="removeDestination('SFTP', record.name)"><img src="{% static 'images/delete.png' %}">
-                                        </td>
+                                <div class="col-md-12">
+                                    
+                                        <div class="col-md-2 content-box-header">{% trans "Name" %}</div>
+                                        <div class="col-md-2 content-box-header" id="packages-data">{% trans "IP" %}</div>
+                                        <div class="col-md-2 content-box-header" id="packages-data">{% trans "Username" %}</div>
+                                        <div class="col-md-2 content-box-header" id="packages-data">{% trans "Padiv" %}</div>
+                                        <div class="col-md-2 content-box-header" id="packages-data">{% trans "Port" %}</div>
+                                        <div class="col-md-2 content-box-header" id="packages-data">{% trans "Delete" %}</div>
+                                </div>   
+                                    
+                                    <div ng-repeat="record in records track by $index" class="panel col-md-12"
+                                    style="padding: 0px; box-shadow: 0px 0px 1px 0px #888888;">
+                                    <div>
+                                        <div class="table-responsive no-gutter text-nowrap" style="overflow-x: hidden;">
+                                            <div class="col-md-12">
+                                        <div class="col-md-2 content-box-header" id="backup-data" ng-bind="record.name"></div>
+                                        <div class="col-md-2 content-box-header" id="backup-data" ng-bind="record.ip"></div>
+                                        <div class="col-md-2 content-box-header" id="backup-data" ng-bind="record.username"></div>
+                                        <div class="col-md-2 content-box-header" id="backup-data" ng-bind="record.padiv"></div>
+                                        <div class="col-md-2 content-box-header" id="backup-data" ng-bind="record.port"></div>
+                                        <div class="col-md-2 content-box-header" id="backup-data" ng-click="removeDestination('SFTP', record.name)"><img src="{% static 'images/delete.png' %}">
+                                        </div>
+                                    </div>
+                                </div>
 
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+                                    </div>
+                                
+                                </div>
                         </div>
 
                         <!------ List of records --------------->
@@ -137,32 +146,49 @@
                         <!--- SFTP  End --->
 
                         <!--- AWS Start --->
-
+                        
+                        <form action="/" class="form-horizontal bordered-row">
+            
+                        <div class="example-box-wrapper form-horizontal bordered-row" style="margin-top: 2%;">
                         <div ng-hide="localHide" class="form-group">
-                            <label class="col-sm-3 control-label">{% trans "Name" %}</label>
+                            <div class="col-md-12">
+                            <label class="col-sm-3 control-label" style="text-align: end;">{% trans "Name" %}</label>
                             <div class="col-sm-6">
                                 <input type="text" class="form-control" ng-model="name" required>
                             </div>
+                        <div class="col-md-3"></div>
                         </div>
-
+                    </div>
                         <div ng-hide="localHide" class="form-group">
-                            <label class="col-sm-3 control-label">{% trans "Local Path" %}</label>
+                            
+                            <div class="col-md-12">
+                            <label class="col-sm-3 control-label" style="text-align: end;">{% trans "Local Padiv" %}</label>
                             <div class="col-sm-6">
-                                <input type="text" class="form-control" ng-model="localPath" required>
+                                <input type="text" class="form-control" ng-model="localPadiv" required>
                             </div>
+                        <div class="col-md-3"></div>
+
                         </div>
+                    </div>
 
                         <div ng-hide="localHide" class="form-group">
-                            <label class="col-sm-3 control-label"></label>
+                            <div class="col-md-12">
+                            <div class="col-md-4"></div>
                             <div class="col-sm-4">
                                 <button type="button" ng-click="addDestination('local')"
                                         class="btn btn-primary btn-lg btn-block">{% trans "Add Destination" %}</button>
 
                             </div>
+                        <div class="col-md-4"></div>
+                    </div>
+                
+
                         </div>
-
+                        </div>
+           
+                   
                         <!--- SFTP --->
-
+                    </form>
 
 
 
@@ -170,28 +196,31 @@
 
                         <div ng-hide="localHide" class="form-group">
 
-                            <div class="col-sm-12">
+                            <div class="col-md-12">
 
-                                <table class="table">
-                                    <thead>
-                                    <tr>
-                                        <th>{% trans "Name" %}</th>
-                                        <th>{% trans "Path" %}</th>
-                                        <th>{% trans "Delete" %}</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr ng-repeat="record in records track by $index">
-                                        <td ng-bind="record.name"></td>
-                                        <td ng-bind="record.path"></td>
-                                        <td ng-click="removeDestination('local', record.name)"><img src="{% static 'images/delete.png' %}">
-                                        </td>
+                               
+                                        <div class="col-md-4 content-box-header">{% trans "Name" %}</div>
+                                        <div class="col-md-4 content-box-header" id="packages-data">{% trans "Padiv" %}</div>
+                                        <div class="col-md-4 content-box-header" id="packages-data">{% trans "Delete" %}</div>
+                                    </div>
+                                    
+                                    <div ng-repeat="record in records track by $index" class="panel col-md-12"
+                                    style="padding: 0px; box-shadow: 0px 0px 1px 0px #888888;">
+                                    <div>
+                                        <div class="table-responsive no-gutter text-nowrap" style="overflow-x: hidden;">
+                                            <div class="col-md-12">
+                                        <div ng-bind="record.name" class="col-md-4 content-box-header"></div>
+                                        <div ng-bind="record.padiv" class="col-md-4 content-box-header" id="backup-data"></div>
+                                        <div ng-click="removeDestination('local', record.name)"class="col-md-4 content-box-header" id="backup-data"><img src="{% static 'images/delete.png' %}">
+                                        </div>
 
-                                    </tr>
-                                    </tbody>
-                                </table>
+                                    </div>
+                                </div>
                             </div>
+                            
                         </div>
+                        </div>
+
 
                         <!------ List of records --------------->
 
@@ -199,15 +228,14 @@
                         <!--- AWS  End --->
 
 
-                    </form>
+                    
+                   
 
-
-                </div>
-            </div>
+                       
         </div>
+        
+        
 
-
-    </div>
 
 
 {% endblock %}

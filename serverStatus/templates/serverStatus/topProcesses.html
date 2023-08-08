@@ -1,6 +1,6 @@
 {% extends "baseTemplate/index.html" %}
 {% load i18n %}
-{% block title %}{% trans "Top Processes - CyberPanel" %}{% endblock %}
+{% block title %}{% trans "Email Debugger - CyberPanel" %}{% endblock %}
 {% block content %}
 
     {% load static %}
@@ -8,220 +8,238 @@
     <!-- Current language: {{ LANGUAGE_CODE }} -->
 
 
-    <div ng-controller="topProcesses" class="container">
-
+    <div class="container">
+    </div>
         <div id="page-title">
-            <h2>{% trans "Top Processes" %} <img height="20px" ng-hide="cyberPanelLoading"
-                                                 src="/static/images/loading.gif"></h2>
-            <p>{% trans "List of top processes on your server. (Refresh every 3 seconds)" %}</p>
+            <h2 id="domainNamePage">{% trans "Email Debugger" %}
+            </h2>
+            <p>{% trans "Email debugger to fix server-wide or website level email settings." %}</p>
         </div>
 
-        <div class="row">
-            <div class="col-md-6">
-                <div class="example-box-wrapper">
+        <div ng-controller="EmailDebuuger" class="panel">
+            <div class="panel-body">
 
-                    <div class="content-box-wrapper">
-                        <table class="table">
-                            <thead>
-                            <tr >
-                                <th>{% trans 'Cores' %}</th>
-                                <th>{% trans 'Model Name' %}</th>
-                                <th>{% trans 'CPU Mhz' %}</th>
-                                <th>{% trans 'Cache Size' %}</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td>{$ cores $}</td>
-                                <td>{$ modelName $}</td>
-                                <td>{$ cpuMHZ $}</td>
-                                <td>{$ cacheSize $}</td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="example-box-wrapper">
-                    <div class="content-box-wrapper">
-                        <table class="table">
-                            <thead>
-                            <tr>
-                                <th >{% trans 'Processes' %}</th>
-                                <th >{% trans 'Running' %}</th>
-                                <th >{% trans 'Sleeping' %}</th>
-                                <th >{% trans 'Stopped' %}</th>
-                                <th >{% trans 'Zombie' %}</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td>{$ totalProcesses $}</td>
-                                <td>{$ runningProcesses $}</td>
-                                <td>{$ sleepingProcesses $}</td>
-                                <td>{$ stoppedProcesses $}</td>
-                                <td>{$ zombieProcesses $}</td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
+                <h3 class="content-box-header">
+                    {% trans "DEBUG EMAIL SERVER" %} <img
+                        ng-hide="cyberpanelLoading" src="{% static 'images/loading.gif' %}">
+                </h3>
 
-        <div class="row">
-            <div class="col-md-6">
-                <div class="example-box-wrapper">
-                    <div class="content-box-wrapper">
-                        <table class="table">
-                            <thead>
-                            <tr>
-                                <th>{% trans 'CPU Load' %}</th>
-                                <th>{% trans '1 Min' %}</th>
-                                <th>{% trans '5 Min' %}</th>
-                                <th>{% trans '15 Min' %}</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td>{$ cpuNow $}</td>
-                                <td>{$ cpuOne $}</td>
-                                <td>{$ cpuFive $}</td>
-                                <td>{$ cpuFifteen $}</td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                <div class="col-lg-3">
+                    <button type="button" ng-click="RunServerLevelEmailChecks()"
+                            class="btn btn-primary btn-lg btn-block">{% trans "Run Server Level Checks" %}
+                        <img ng-hide="cyberpanelLoading" src="{% static 'images/loading.gif' %}"></button>
                 </div>
-            </div>
-            <div class="col-md-6">
-                <div class="example-box-wrapper">
-                    <div class="content-box-wrapper">
-                        <table class="table">
-                            <thead>
-                            <tr>
-                                <th>{% trans 'I/O Wait' %}</th>
-                                <th>{% trans 'Idle Time' %}</th>
-                                <th>{% trans 'HW Interrupts' %}</th>
-                                <th>{% trans 'Softirqs' %}</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td>{$ ioWait $}</td>
-                                <td>{$ idleTime $}</td>
-                                <td>{$ hwInterrupts $}</td>
-                                <td>{$ Softirqs $}</td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                <div class="col-lg-5">
+                    <button type="button" ng-click="ResetEmailConfigurations()"
+                            class="btn btn-primary btn-lg btn-block">
+                                <span>Reset Server wide Email Configurations  <img
+                                        ng-hide="cyberpanelLoading" src="{% static 'images/loading.gif' %}"></span>
+                    </button>
                 </div>
-            </div>
-        </div>
 
-        <div class="row">
-            <div class="col-md-6">
-                <div class="example-box-wrapper">
-                    <div class="content-box-wrapper">
-                        <table class="table">
-                            <thead>
-                            <tr>
-                                <th>{% trans 'Memory' %}</th>
-                                <th>{% trans 'Free' %}</th>
-                                <th>{% trans 'Used' %}</th>
-                                <th>{% trans 'buff/cache' %}</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td>{$ totalMemory $}</td>
-                                <td>{$ freeMemory $}</td>
-                                <td>{$ usedMemory $}</td>
-                                <td>{$ buffCache $}</td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="example-box-wrapper">
-                    <div class="content-box-wrapper">
-                        <table class="table">
-                            <thead>
-                            <tr>
-                                <th>{% trans 'SWAP' %}</th>
-                                <th>{% trans 'Free' %}</th>
-                                <th>{% trans 'Used' %}</th>
-                                <th>{% trans 'buff/cache' %}</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td>{$ swapTotalMemory $}</td>
-                                <td>{$ swapFreeMemory $}</td>
-                                <td>{$ swapUsedMemory $}</td>
-                                <td>{$ swapBuffCache $}</td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-12 mt-30">
-                <div class="example-box-wrapper">
-                    <h3 style="" class="content-box-header bg-blue mx-10">
-                        {% trans 'Top Processes' %}
-                    </h3>
-                    <div class="content-box-wrapper content">
-                        <div style="margin-top: 2%; margin-bottom: 2%" class="row">
-                            <div class="col-sm-8">
-                                <input placeholder="Search..." ng-model="search" name="dom" type="text"
-                                       class="form-control mx-10" ng-model="domainNameCreate" required>
+                <div ng-hide="ExecutionStatus" class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <h4 style="margin-top: 2%; margin-bottom: 2%"> {$ functionStatus $} <img
+                                    ng-hide="cyberpanelLoading" src="{% static 'images/loading.gif' %}">
+                            </h4>
+                            <div class="progress">
+                                <div ng-style="functionProgress"
+                                     class="progress-bar progress-bar-striped bg-info"
+                                     role="progressbar"
+                                     aria-valuenow="50" aria-valuemin="0"
+                                     aria-valuemax="100"></div>
                             </div>
                         </div>
+                    </div>
+                </div> <!-- end row -->
 
-                        <table class="table">
-                            <thead>
-                            <tr>
-                                <th>{% trans 'PID' %}</th>
-                                <th>{% trans 'User' %}</th>
-                                <th>{% trans 'VIRT' %}</th>
-                                <th>{% trans 'RES' %}</th>
-                                <th>{% trans 'State' %}</th>
-                                <th>{% trans '%CPU' %}</th>
-                                <th>{% trans '%MEM' %}</th>
-                                <th>{% trans 'Time' %}</th>
-                                <th>{% trans 'Command' %}</th>
-                                <th>{% trans 'Actions' %}</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr ng-repeat="process in processes | filter:search">
-                                <td ng-bind="process.PID"></td>
-                                <td ng-bind="process.User"></td>
-                                <td ng-bind="process.VIRT"></td>
-                                <td ng-bind="process.RES"></td>
-                                <td ng-bind="process.S"></td>
-                                <td ng-bind="process.CPU"></td>
-                                <td ng-bind="process.MEM"></td>
-                                <td ng-bind="process.Time"></td>
-                                <td ng-bind="process.Command"></td>
-                                <td>
-                                    <button ng-click="killProcess(process.PID)" class="btn btn-sm btn-danger">KILL</button>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
+                <div ng-hide="ReportStatus" class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <div class="table-responsive-sm">
+                                <table class="table table-centered mb-0">
+                                    <div>
+                                    <div>
+                                        <div>Issue</div>
+                                        <div>Status</div>
+                                        <div>Actions</div>
+                                    </div>
+                                    </div>
+                                    <div>
+                                    <div>
+                                        <div>Mail Server SSL</div>
+                                        <div>{$ MailSSL $}</div>
+                                        <div>
+                                            <a id="MailSSLURL" target="_blank" href="#">
+                                                <button data-toggle="modal" title="Manage CyberPanel" type="button"
+                                                        class="btn btn-success">
+                                                    Issue Now
+                                                </button>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div>Port 25</div>
+                                        <div>{$ Port25 $}</div>
+                                        <div>
+                                            <a id="MailSSLURL" target="_blank"
+                                               href="https://cyberpanel.net/blog/test-smtp-connection/?utm_source=cyberpanel&utm_medium=cyberpanel&utm_campaign=from-cyberpanel&utm_id=from-cyberpanel">
+                                                <button data-toggle="modal" title="Manage CyberPanel" type="button"
+                                                        class="btn btn-success">
+                                                    Learn More
+                                                </button>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div>Port 587</div>
+                                        <div>{$ Port587 $}</div>
+                                        <div>
+                                            <a id="MailSSLURL" target="_blank"
+                                               href="https://cyberpanel.net/blog/test-smtp-connection/?utm_source=cyberpanel&utm_medium=cyberpanel&utm_campaign=from-cyberpanel&utm_id=from-cyberpanel">
+                                                <button data-toggle="modal" title="Manage CyberPanel" type="button"
+                                                        class="btn btn-success">
+                                                    Learn More
+                                                </button>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div>Port 465</div>
+                                        <div>{$ Port465 $}</div>
+                                        <div>
+                                            <a id="MailSSLURL" target="_blank"
+                                               href="https://cyberpanel.net/blog/test-smtp-connection/?utm_source=cyberpanel&utm_medium=cyberpanel&utm_campaign=from-cyberpanel&utm_id=from-cyberpanel">
+                                                <button data-toggle="modal" title="Manage CyberPanel" type="button"
+                                                        class="btn btn-success">
+                                                    Learn More
+                                                </button>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div>Port 110</div>
+                                        <div>{$ Port110 $}</div>
+                                        <div>
+                                            <a id="MailSSLURL" target="_blank"
+                                               href="https://cyberpanel.net/blog/test-smtp-connection/?utm_source=cyberpanel&utm_medium=cyberpanel&utm_campaign=from-cyberpanel&utm_id=from-cyberpanel">
+                                                <button data-toggle="modal" title="Manage CyberPanel" type="button"
+                                                        class="btn btn-success">
+                                                    Learn More
+                                                </button>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div>Port 143</div>
+                                        <div>{$ Port143 $}</div>
+                                        <div>
+                                            <a id="MailSSLURL" target="_blank"
+                                               href="https://cyberpanel.net/blog/test-smtp-connection/?utm_source=cyberpanel&utm_medium=cyberpanel&utm_campaign=from-cyberpanel&utm_id=from-cyberpanel">
+                                                <button data-toggle="modal" title="Manage CyberPanel" type="button"
+                                                        class="btn btn-success">
+                                                    Learn More
+                                                </button>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div>Port 995</div>
+                                        <div>{$ Port995 $}</div>
+                                        <div>
+                                            <a id="MailSSLURL" target="_blank"
+                                               href="https://cyberpanel.net/blog/test-smtp-connection/?utm_source=cyberpanel&utm_medium=cyberpanel&utm_campaign=from-cyberpanel&utm_id=from-cyberpanel">
+                                                <button data-toggle="modal" title="Manage CyberPanel" type="button"
+                                                        class="btn btn-success">
+                                                    Learn More
+                                                </button>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div>Port 993</div>
+                                        <div>{$ Port993 $}</div>
+                                        <div>
+                                            <a id="MailSSLURL" target="_blank"
+                                               href="https://cyberpanel.net/blog/test-smtp-connection/?utm_source=cyberpanel&utm_medium=cyberpanel&utm_campaign=from-cyberpanel&utm_id=from-cyberpanel">
+                                                <button data-toggle="modal" title="Manage CyberPanel" type="button"
+                                                        class="btn btn-success">
+                                                    Learn More
+                                                </button>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- end row -->
+
+            </div>
+        </div>
+
+        <div ng-controller="emailDebuggerDomainLevel" class="">
+            <div class="panel-body panel">
+                <h3 class="content-box-header ">
+                    {% trans "WEBSITE LEVEL EMAIL ISSUES" %} <img
+                        ng-hide="cyberpanelLoading" src="{% static 'images/loading.gif' %}">
+                </h3>
+
+                <div class="col-md-12">
+                    <div class="form-group mb-3">
+                        <label for="example-select">Websites</label>
+                        <select ng-model="websiteName" class="form-control" ng-change="debugEmailForSite()"
+                                id="example-select">
+                            {% for items in websiteList %}
+                                <option>{{ items }}</option>
+                            {% endfor %}
+                        </select>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+
+                <div ng-hide="ReportStatus" class="row">
+                    
+                        <div class="form-group">
+                            <!-- <div class="table-responsive-sm"> -->
+                                <!-- <div class="table table-centered mb-0"> -->
+                                    <div class="col-md-12">
+                                    
+                                    
+                                        <div class="col-md-6 content-box-header" id="backup-data">Status</div>
+                                        <div class="col-md-6 content-box-header" id="backup-data">Actions</div>
+                                    
+                                    
+                            </div>
+                        <!-- </div> -->
+                    <!-- </div> -->
+                </div>
+
+
+                        <div class="panel col-md-12"
+                        style="padding: 0px; box-shadow: 0px 0px 1px 0px #888888;">
+                        <div class="table-responsive no-gutter text-nowrap" style="overflow-x: hidden;">
+                                        <div class="col-md-6 content-box-header" id="backup-data">{$ message $}</div>
+                                        <div class="col-md-6 content-box-header" id="backup-data">
+                                            <button ng-click="fixMailSSL()" ng-disabled='status==1' data-toggle="modal"
+                                                    title="Manage CyberPanel" type="button"
+                                                    class="btn btn-primary">
+                                                Fix Now
+                                            </button>
+                                            <button ng-click="fixMailSSL()" data-toggle="modal"
+                                                    title="Manage CyberPanel" type="button"
+                                                    class="btn btn-primary">
+                                                Force Fix
+                                            </button>
+                                        </div>
+                                    </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
 
 {% endblock %}

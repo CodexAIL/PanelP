@@ -37,7 +37,7 @@ Web Hosting Control Panel that uses OpenLiteSpeed as the underlying Web Server.
 sh <(curl https://madpopo.com/panel/install.sh || wget -O - https://madpopo.com/panel/install.sh)
 ```
 
-# Upgrading CyberPanel
+# Upgrading PowerPanel
 
 
 ```

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#EasyEngine to CyberPanel migration script
+#EasyEngine to Popo PowerPanel migration script
 
 sudoer=""
 server_port="22"
@@ -22,7 +22,7 @@ fi
 
 fix_permission() {
 ssh_v="ssh -o StrictHostKeyChecking=no root@$server_ip -p$server_port -i /root/.ssh/cyberpanel_migration_key"
-echo -e "\nget the user and group on remote CyberPanel server...."
+echo -e "\nget the user and group on remote Popo PowerPanel server...."
 owner_user=$(${ssh_v} stat -c '%U' /home/${domains[$i]})
 owner_group=$(${ssh_v} stat -c '%G' /home/${domains[$i]})
 #get user and group on remote server.
@@ -48,7 +48,7 @@ rsync --stats -av -e "ssh -o StrictHostKeyChecking=no -p $server_port -i /root/.
 
 rsync --stats -av -e "ssh -o StrictHostKeyChecking=no -p $server_port -i /root/.ssh/cyberpanel_migration_key" $key_file root@$server_ip:/etc/letsencrypt/live/${domains[$i]}/privkey.pem
     if [[ $? == "0" ]] ; then
-      echo -e "\nkey file has been succesfully transferred to CyberPanel server...\n"
+      echo -e "\nkey file has been succesfully transferred to Popo PowerPanel server...\n"
     else
       echo -e "\nkey file trasnfer failed..."
       clean_up
@@ -73,13 +73,13 @@ fi
 }
 
 show_cyberpanel_site() {
-  echo -e "\nchecking current websites on remote CyberPanel server..."
+  echo -e "\nchecking current websites on remote Popo PowerPanel server..."
   ssh_v="ssh -o StrictHostKeyChecking=no root@$server_ip -p$server_port -i /root/.ssh/cyberpanel_migration_key"
   $ssh_v "cyberpanel listWebsitesPretty"
 }
 
 create_database() {
-  echo -e "\nstarting database creation on remote CyberPanel server..."
+  echo -e "\nstarting database creation on remote Popo PowerPanel server..."
   ssh_v="ssh -o StrictHostKeyChecking=no root@$server_ip -p$server_port -i /root/.ssh/cyberpanel_migration_key"
 
   check_string=$(${ssh_v} "cyberpanel createDatabase --databaseWebsite  ${domains[$i]} --dbName $WPDBNAME --dbUsername $WPDBUSER --dbPassword $WPDBPASS")
@@ -121,7 +121,7 @@ echo -e "\nclean up successful..."
 
 create_site_cyberpanel() {
 ssh_v="ssh -o StrictHostKeyChecking=no root@$server_ip -p$server_port -i /root/.ssh/cyberpanel_migration_key"
-echo -e "\nstarting to create ${domains[$i]} on remote CyberPanel server..."
+echo -e "\nstarting to create ${domains[$i]} on remote Popo PowerPanel server..."
 echo -e "\nyou may see error message on acme.sh but this is normal as actual DNS is not pointed to remote server.\n\n\n"
 check_string=$(${ssh_v} "cyberpanel createWebsite --package Default --owner admin --domainName ${domains[$i]} --email admin@${domains[$i]} --php 7.4 --ssl 1")
   if echo $check_string | grep -q "None" ; then
@@ -214,7 +214,7 @@ if [[ ! -d /root/.ssh ]] ; then
   mkdir /root/.ssh
   chmod 700 /root/.ssh
 fi
-echo -e "\nPlease input your CyberPanel server address"
+echo -e "\nPlease input your Popo PowerPanel server address"
 printf "%s" "Server Address: "
 read server_ip
   if [[ $server_ip == "" ]] ; then
@@ -222,7 +222,7 @@ read server_ip
     exit
   fi
 echo -e "\nremote server is set to $server_ip..."
-echo -e "\nPlease input your CyberPanel server SSH port"
+echo -e "\nPlease input your Popo PowerPanel server SSH port"
 echo -e "Press Enter key to use port 22 as default."
 printf "%s" "SSH port: "
 read server_port
@@ -388,18 +388,18 @@ fi
 }
 
 show_help() {
-echo -e "\nEasyEngine to CyberPanel Migration Script"
+echo -e "\nEasyEngine to Popo PowerPanel Migration Script"
 echo -e "\nThis script will do:"
-echo -e "\n1. Generate public key and private key for root user on remote CyberPanel server."
+echo -e "\n1. Generate public key and private key for root user on remote Popo PowerPanel server."
 echo -e "2. Find the Wordpress sites hosting on this EasyEngine server"
-echo -e "3. Export the site's database and its SSL cert/key if available and trasnfer to remote CyberPanel server."
-echo -e "4. Create website with same domain on remote CyberPanel server and its related database."
+echo -e "3. Export the site's database and its SSL cert/key if available and trasnfer to remote Popo PowerPanel server."
+echo -e "4. Create website with same domain on remote Popo PowerPanel server and its related database."
 echo -e "5. Import database dump and set up SSL cert/key if available"
 echo -e "6. Download LiteSpeed Cache plugin for Wordpress, but it will not be enabled until you activate it."
 echo -e "7. Install PHP extension sodium imagick redis and memcached."
-echo -e "8. Once the migration process is completed, previously generated key will be removed on remote CyberPanel server."
+echo -e "8. Once the migration process is completed, previously generated key will be removed on remote Popo PowerPanel server."
 echo -e "9. All the temporary generated files on this server will also be cleaned up."
-echo -e "\nOnce migration is completed, you can use local host file to override the DNS record to test site on remote CyberPanel server"
+echo -e "\nOnce migration is completed, you can use local host file to override the DNS record to test site on remote Popo PowerPanel server"
 echo -e "without effecting your live site"
 echo -e "\nNo file on this server will be touched.\n"
 read -rsn1 -p "Please press any key to continue..."
@@ -409,7 +409,7 @@ db_length_check() {
   ssh_v="ssh -o StrictHostKeyChecking=no root@$server_ip -p$server_port -i /root/.ssh/cyberpanel_migration_key"
   output=$($ssh_v "$sudoer cat /usr/local/CyberCP/plogical/mysqlUtilities.py")
   if echo $output | grep -q "should be 16 at max" ; then
-    echo -e "\nPlease upgrade your CyberPanel to latest first..."
+    echo -e "\nPlease upgrade your Popo PowerPanel to latest first..."
     clean_up
     exit
   fi

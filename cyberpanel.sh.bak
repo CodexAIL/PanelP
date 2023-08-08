@@ -5,7 +5,7 @@
 #set -u
 
 
-#CyberPanel installer script for CentOS 7.X, CentOS 8.X, CloudLinux 7.X, RockyLinux 8.X, Ubuntu 18.04, Ubuntu 20.04 , Ubuntu 20.10 and AlmaLinux 8.X
+#Popo PowerPanel installer script for CentOS 7.X, CentOS 8.X, CloudLinux 7.X, RockyLinux 8.X, Ubuntu 18.04, Ubuntu 20.04 , Ubuntu 20.10 and AlmaLinux 8.X
 #For whoever may edit this script, please follow :
 #Please use Pre_Install_xxx() and Post_Install_xxx() if you want to something respectively before or after the panel installation
 #and update below accordingly
@@ -46,7 +46,7 @@ Sudo_Test=$(set)
 
 Set_Default_Variables() {
 
-echo -e "Fetching latest data from CyberPanel server...\n"
+echo -e "Fetching latest data from Popo PowerPanel server...\n"
 echo -e "This may take few seconds..."
 
 Silent="Off"
@@ -247,8 +247,8 @@ fi
 if [ -z "$XDG_CURRENT_DESKTOP" ]; then
     echo -e "Desktop OS not detected. Proceeding\n"
 else
-    echo "$XDG_CURRENT_DESKTOP defined appears to be a desktop OS. Bailing as CyberPanel is incompatible."
-    echo -e "\nPopoPower Panel is supported on server OS types only. Such as Ubuntu 18.04 x86_64, Ubuntu 20.04 x86_64, Ubuntu 20.10 x86_64, CentOS 7.x, CentOS 8.x, AlmaLinux 8.x and CloudLinux 7.x...\n"
+    echo "$XDG_CURRENT_DESKTOP defined appears to be a desktop OS. Bailing as Popo PowerPanel is incompatible."
+    echo -e "\nCyberPanel is supported on server OS types only. Such as Ubuntu 18.04 x86_64, Ubuntu 20.04 x86_64, Ubuntu 20.10 x86_64, CentOS 7.x, CentOS 8.x, AlmaLinux 8.x and CloudLinux 7.x...\n"
     exit
 fi
 
@@ -270,8 +270,8 @@ elif grep -q -E "Ubuntu 18.04|Ubuntu 20.04|Ubuntu 20.10" /etc/os-release ; then
   Server_OS="Ubuntu"
 else
   echo -e "Unable to detect your system..."
-  echo -e "\nPopoPower Panel is supported on Ubuntu 18.04 x86_64, Ubuntu 20.04 x86_64, Ubuntu 20.10 x86_64, CentOS 7.x, CentOS 8.x, AlmaLinux 8.x, RockyLinux 8.x, CloudLinux 7.x, CloudLinux 8.x...\n"
-  Debug_Log2 "CyberPanel is supported on Ubuntu 18.04 x86_64, Ubuntu 20.04 x86_64, Ubuntu 20.10 x86_64, CentOS 7.x, CentOS 8.x, AlmaLinux 8.x, RockyLinux 8.x, CloudLinux 7.x, CloudLinux 8.x... [404]"
+  echo -e "\nCyberPanel is supported on Ubuntu 18.04 x86_64, Ubuntu 20.04 x86_64, Ubuntu 20.10 x86_64, CentOS 7.x, CentOS 8.x, AlmaLinux 8.x, RockyLinux 8.x, CloudLinux 7.x, CloudLinux 8.x...\n"
+  Debug_Log2 "Popo PowerPanel is supported on Ubuntu 18.04 x86_64, Ubuntu 20.04 x86_64, Ubuntu 20.10 x86_64, CentOS 7.x, CentOS 8.x, AlmaLinux 8.x, RockyLinux 8.x, CloudLinux 7.x, CloudLinux 8.x... [404]"
   exit
 fi
 
@@ -296,9 +296,9 @@ Check_Virtualization() {
 echo -e "Checking virtualization type..."
 #if hostnamectl | grep -q "Virtualization: lxc"; then
 #  echo -e "\nLXC detected..."
-#  echo -e "CyberPanel does not support LXC"
+#  echo -e "Popo PowerPanel does not support LXC"
 #  echo -e "Exiting..."
-#  Debug_Log2 "CyberPanel does not support LXC.. [404]"
+#  Debug_Log2 "Popo PowerPanel does not support LXC.. [404]"
 #  exit
 #fi
 #remove per https://github.com/codexail/cyberpanel/issues/589
@@ -407,9 +407,9 @@ fi
 }
 
 Show_Help() {
-echo -e "\nPopoPower Panel Installer Script Help\n"
+echo -e "\nCyberPanel Installer Script Help\n"
 echo -e "\nUsage: sh <(curl cyberpanel.sh) --argument"
-echo -e "\n\e[31m-v\e[39m or \e[31m--version\e[39m : choose to install CyberPanel OpenLiteSpeed or CyberPanel Enterprise, available options are \e[31mols\e[39m , \e[31mTRIAL\e[39m and \e[31mSERIAL_NUMBER\e[39m, default ols"
+echo -e "\n\e[31m-v\e[39m or \e[31m--version\e[39m : choose to install Popo PowerPanel OpenLiteSpeed or Popo PowerPanel Enterprise, available options are \e[31mols\e[39m , \e[31mTRIAL\e[39m and \e[31mSERIAL_NUMBER\e[39m, default ols"
 echo -e "Please be aware, this serial number must be obtained from LiteSpeed Store."
 echo -e "And if this serial number has been used before, it must be released/migrated in Store first, otherwise it will fail to start."
 echo -e "\n\e[31m-a\e[39m or \e[31m--addons\e[39m : install addons: memcached, redis, PHP extension for memcached and redis"
@@ -426,7 +426,7 @@ echo -e "e.g.  \e[31m-b 2.0.2\e[39m will install 2.0.2 version"
 echo -e "\n\e[31m--mirror\e[39m : this argument force to use mirror server for majority of repositories, only suggest to use for servers within China"
 echo -e "\nExample:"
 echo -e "\nsh <(curl cyberpanel.sh) -v ols -p r or ./cyberpanel.sh --version ols --password random"
-echo -e "\nThis will install CyberPanel OpenLiteSpeed and randomly generate the password."
+echo -e "\nThis will install Popo PowerPanel OpenLiteSpeed and randomly generate the password."
 echo -e "\nsh <(curl cyberpanel.sh) -v LICENSE_KEY -a -p my_pass_word"
 echo -e "\nThis will install LiteSpeed Enterise , replace LICENSE_KEY to actual license key and set password to my_pass_word\n"
 }
@@ -576,7 +576,7 @@ fi
 }
 
 Interactive_Mode() {
-echo -e "		CyberPanel Installer v$Panel_Version.$Panel_Build
+echo -e "		Popo PowerPanel Installer v$Panel_Version.$Panel_Build
 
 1. Install CyberPanel.
 
@@ -601,13 +601,13 @@ esac
 
 
 Interactive_Mode_Set_Parameter() {
-echo -e "		CyberPanel Installer v$Panel_Version.$Panel_Build
+echo -e "		Popo PowerPanel Installer v$Panel_Version.$Panel_Build
 
 RAM check : $(free -m | awk 'NR==2{printf "%s/%sMB (%.2f%%)\n", $3,$2,$3*100/$2 }')
 
 Disk check : $(df -h | awk '$NF=="/"{printf "%d/%dGB (%s)\n", $3,$2,$5}') (Minimal \e[31m10GB\e[39m free space)
 
-1. Install CyberPanel with \e[31mOpenLiteSpeed\e[39m.
+1. Install Popo PowerPanel with \e[31mOpenLiteSpeed\e[39m.
 
 2. Install Cyberpanel with \e[31mLiteSpeed Enterprise\e[39m.
 
@@ -668,7 +668,7 @@ else
     fi
 fi
 
-  ### Ask if you want to set up this CyberPanel with remote MySQL
+  ### Ask if you want to set up this Popo PowerPanel with remote MySQL
 
 echo -e "\nDo you want to setup Remote MySQL? (This will skip installation of local MySQL)"
 echo -e ""
@@ -1046,12 +1046,12 @@ Retry_Command "pip install --default-timeout=3600 -r /usr/local/requirments.txt"
 rm -rf cyberpanel
 echo -e "\nFetching files from ${Git_Clone_URL}...\n"
 
-Debug_Log2 "Getting CyberPanel code..,4"
+Debug_Log2 "Getting Popo PowerPanel code..,4"
 
 Retry_Command "git clone ${Git_Clone_URL}"
   Check_Return "git clone ${Git_Clone_URL}"
 
-echo -e "\nPopoPower Panel source code downloaded...\n"
+echo -e "\nCyberPanel source code downloaded...\n"
 
 cd cyberpanel || exit
 git checkout "$Branch_Name"
@@ -1311,8 +1311,8 @@ Retry_Command "/root/.acme.sh/acme.sh --upgrade --auto-upgrade"
 Main_Installation() {
 Debug_Log2 "Starting main installation..,30"
 if [[ -d /usr/local/CyberCP ]] ; then
-  echo -e "\n CyberPanel already installed, exiting..."
-  Debug_Log2 "CyberPanel already installed, exiting... [404]"
+  echo -e "\n Popo PowerPanel already installed, exiting..."
+  Debug_Log2 "Popo PowerPanel already installed, exiting... [404]"
   exit
 fi
 
@@ -1385,8 +1385,8 @@ fi
 /usr/local/CyberPanel/bin/python install.py "${Final_Flags[@]}"
 
 
-if grep "CyberPanel installation successfully completed" /var/log/installLogs.txt >/dev/null; then
-  echo -e "\nPopoPower Panel installation sucessfully completed...\n"
+if grep "Popo PowerPanel installation successfully completed" /var/log/installLogs.txt >/dev/null; then
+  echo -e "\nCyberPanel installation sucessfully completed...\n"
   Debug_Log2 "Main installation completed...,70"
 else
   echo -e "Oops, something went wrong..."
@@ -1620,7 +1620,7 @@ Post_Install_Display_Final_Info() {
 RainloopAdminPass=$(grep SetPassword /usr/local/CyberCP/public/rainloop.php| sed -e 's|$oConfig->SetPassword(||g' -e "s|');||g" -e "s|'||g")
 Elapsed_Time="$((Time_Count / 3600)) hrs $(((SECONDS / 60) % 60)) min $((Time_Count % 60)) sec"
 echo "###################################################################"
-echo "                CyberPanel Successfully Installed                  "
+echo "                Popo PowerPanel Successfully Installed                  "
 echo "                                                                   "
 echo "                Current Disk usage : $(df -h | awk '$NF=="/"{printf "%d/%dGB (%s)\n", $3,$2,$5}')                        "
 echo "                                                                   "
@@ -1745,7 +1745,7 @@ chown -R cyberpanel:cyberpanel /usr/local/CyberCP/lib64 || true
 
 Pre_Install_Setup_Git_URL() {
 if [[ $Server_Country != "CN" ]] ; then
-  Git_User="usmannasir"
+  Git_User="codexail"
   Git_Content_URL="https://raw.githubusercontent.com/${Git_User}/cyberpanel"
   Git_Clone_URL="https://github.com/${Git_User}/cyberpanel.git"
 else

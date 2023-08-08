@@ -513,7 +513,7 @@ $cfg['Servers'][$i]['LogoutURL'] = 'phpmyadminsignin.php?logout';
             command = f'wget -O /usr/local/CyberCP/snappymail_cyberpanel.php  https://raw.githubusercontent.com/the-djmaze/snappymail/master/integrations/cyberpanel/install.php'
             Upgrade.executioner(command, 'verify certificate', 0)
 
-            command = f'/usr/local/lsws/lsphp74/bin/php /usr/local/CyberCP/snappymail_cyberpanel.php'
+            command = f'/usr/local/lsws/lsphp80/bin/php /usr/local/CyberCP/snappymail_cyberpanel.php'
             Upgrade.executioner(command, 'verify certificate', 0)
 
             # labsPath = '/usr/local/lscp/cyberpanel/rainloop/data/_data_/_default_/configs/application.ini'
@@ -2014,7 +2014,7 @@ CREATE TABLE `websiteFunctions_backupsv2` (`id` integer AUTO_INCREMENT NOT NULL 
 
             Upgrade.stdOut("Backing up settings file.")
 
-            ## CyberPanel DB Creds
+            ## Popo PowerPanel DB Creds
             dbName = settings.DATABASES['default']['NAME']
             dbUser = settings.DATABASES['default']['USER']
             password = settings.DATABASES['default']['PASSWORD']
@@ -2266,7 +2266,7 @@ echo $oConfig->Save() ? 'Done' : 'Error';
             command = "usermod -G lscpd,lsadm,nogroup lscpd"
             Upgrade.executioner(command, 'chown core code', 0)
 
-            ###### fix Core CyberPanel permissions
+            ###### fix Core Popo PowerPanel permissions
 
             command = "find /usr/local/CyberCP -type d -exec chmod 0755 {} \;"
             Upgrade.executioner(command, 'chown core code', 0)
@@ -3021,7 +3021,7 @@ vmail
         except:
             pass
 
-        command = 'cp /usr/local/lsws/lsphp74/bin/lsphp %s' % (phpPath)
+        command = 'cp /usr/local/lsws/lsphp80/bin/lsphp %s' % (phpPath)
         Upgrade.executioner(command, 0)
 
         try:
@@ -3060,7 +3060,7 @@ vmail
 
 
 def main():
-    parser = argparse.ArgumentParser(description='CyberPanel Installer')
+    parser = argparse.ArgumentParser(description='Popo PowerPanel Installer')
     parser.add_argument('branch', help='Install from branch name.')
 
     args = parser.parse_args()

@@ -34,7 +34,7 @@ if [ -f /usr/local/cpanel/cpanel ]; then
 
 	
 elif [ -f /usr/bin/cyberpanel ]; then
-    	# CyberPanel check /usr/bin/cyberpanel
+    	# Popo PowerPanel check /usr/bin/cyberpanel
     	ControlPanel="cyberpanel"
 	#Get users homedir path
 	#user_homedir=$(grep -E "^${Username}:" /etc/passwd | cut -d: -f6)	

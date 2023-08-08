@@ -266,13 +266,13 @@ def design(request):
 
     ####### Fetch sha...
 
-    sha_url = "https://api.github.com/repos/codexail/CyberPanel-Themes/commits"
+    sha_url = "https://api.github.com/repos/usmannasir/CyberPanel-Themes/commits"
 
     sha_res = requests.get(sha_url)
 
     sha = sha_res.json()[0]['sha']
 
-    l = "https://api.github.com/repos/codexail/CyberPanel-Themes/git/trees/%s" % sha
+    l = "https://api.github.com/repos/usmannasir/CyberPanel-Themes/git/trees/%s" % sha
     fres = requests.get(l)
     tott = len(fres.json()['tree'])
     finalData['tree'] = []
@@ -300,7 +300,7 @@ def getthemedata(request):
 
         #logging.CyberCPLogFileWriter.writeToFile(str(data) + "  [themedata]")
 
-        url = "https://raw.githubusercontent.com/codexail/CyberPanel-Themes/main/%s/design.css" % data['Themename']
+        url = "https://raw.githubusercontent.com/usmannasir/CyberPanel-Themes/main/%s/design.css" % data['Themename']
 
         res = requests.get(url)
 

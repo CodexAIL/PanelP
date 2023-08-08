@@ -455,7 +455,7 @@ class cPanelImporter:
     def CreateDNSRecords(self):
         try:
 
-            message = 'We are going to create DNS records now, please note we will not create DKIM records. Make sure to create them from CyberPanel interface using our DKIM manager.'
+            message = 'We are going to create DNS records now, please note we will not create DKIM records. Make sure to create them from Popo PowerPanel interface using our DKIM manager.'
             logging.statusWriter(self.logFile, message, 1)
 
             ipFile = "/etc/cyberpanel/machineIP"
@@ -909,7 +909,7 @@ def main():
     message = 'Backup logs to be generated in %s' % (LogFile)
     print(message)
 
-    parser = argparse.ArgumentParser(description='CyberPanel cPanel Importer')
+    parser = argparse.ArgumentParser(description='Popo PowerPanel cPanel Importer')
     parser.add_argument('--path', help='Path where cPanel .tar.gz files are stored.')
 
     args = parser.parse_args()

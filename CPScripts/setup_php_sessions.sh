@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 ## Author: Michael Ramsey
-## Objective Fix session issues on CyberPanel and standardized session paths.
+## Objective Fix session issues on Popo PowerPanel and standardized session paths.
 # Fixes #430
 # https://github.com/codexail/cyberpanel/issues/430
 

@@ -8,13 +8,14 @@
     <!-- Current language: {{ LANGUAGE_CODE }} -->
 
     <div class="container">
+    </div>
         <div id="page-title">
             <h2>{% trans "Remote Backup Configurations" %}</h2>
         </div>
 
 
-        <div ng-controller="RemoteBackupConfig" class="panel">
-            <div class="panel-body">
+        <div ng-controller="RemoteBackupConfig" >
+            <div class="panel-body panel">
                 <h3 class="content-box-header">
                     {% trans "Configure Remote Backups" %} <img ng-hide="RemoteBackupLoading"
                                                                 src="{% static 'images/loading.gif' %}">
@@ -34,6 +35,7 @@
                                 </select>
                             </div>
                         </div>
+            
 
 
                         <div ng-hide="SFTPBackUpdiv" class="form-group">
@@ -113,36 +115,38 @@
 
                         <div ng-hide="installationDetailsForm" class="form-group">
                             <label class="col-sm-3 control-label"></label>
-                            <div class="col-sm-4">
+                            <div class="col-sm-4" style="text-align: center; text-align: center;">
                                 <button type="button" ng-click="SaveBackupConfig()"
-                                        class="btn btn-primary btn-lg">{% trans "Save Configurations" %}</button>
+                                        class="btn btn-primary btn-lg " >{% trans "Save Configurations" %}</button>
 
                             </div>
                         </div>
+                    </div>
+                </div>
 
 
                     </form>
-
-                </div>
+<div class="col-md-12">
                 <h3 class="content-box-header">
                     {% trans "Saved Remote Configuration" %} </h3>
-                <table class="table-spacing" style="width: 100%">
-                    <thead style="color: white; background-color: #0a6ebd">
-                    <tr>
-                        <th style="padding: 18px; color: white; width: 161px; font-size: 12px;">Backup Type</th>
-                        <th style="padding: 18px; color: white; width: 161px; font-size: 12px;">HostName</th>
-                        <th style="padding: 18px; color: white; width: 161px; font-size: 12px;">Path / Key Name</th>
-                        <th style="padding: 18px; color: white; width: 161px; font-size: 12px;">Action</th>
-                    </tr>
-                    </thead>
+                </div>
+                
+                    
+                    <div class="col-md-12">
+                        <div class="col-md-3 content-box-header" id="backup-data">Backup Type</div>
+                        <div class="col-md-3 content-box-header" id="backup-data">HostName</div>
+                        <div class="col-md-3 content-box-header" id="backup-data">Path / Key Name</div>
+                        <div class="col-md-3 content-box-header" id="backup-data">Action</div>
+                    </div>
 
-                    <tbody>
                     {% for sub in backupconfigs %}
-                        <tr>
-                            <td style="padding: 13px;">{{ sub.Type }}</td>
-                            <td style="padding: 13px;">{{ sub.HostName }}</td>
-                            <td style="padding: 13px;">{{ sub.Path }}</td>
-                            <td style="padding: 13px;">
+                        <div class="panel col-md-12"
+                        style="padding: 0px; box-shadow: 0px 0px 1px 0px #888888;">
+                        <div class="table-responsive no-gutter text-nowrap" style="overflow-x: hidden;">
+                            <div class="col-md-3 content-box-header" id="backup-data">{{ sub.Type }}</div>
+                            <div class="col-md-3 content-box-header" id="backup-data">{{ sub.HostName }}</div>
+                            <div class="col-md-3 content-box-header" id="backup-data">{{ sub.Path }}</div>
+                            <div class="col-md-3 content-box-header" id="backup-data">
                                 <button
                                         aria-label=""
                                         onclick="DeleteBackupConfigNow('{% url 'RemoteBackupConfig' %}?DeleteID={{ sub.id }}')"
@@ -151,17 +155,13 @@
                                 </button>
                                 <a href="{% url 'BackupfileConfig' %}?ID={{ sub.id }}"
                                    aria-label=""
-
                                    type="button" class="btn btn-border btn-alt border-green btn-link font-green">
                                     Schedule Backups
-                                </a></td>
-                        </tr>
+                                </a></div>
+                        </div>
+                        </div>
                     {% endfor %}
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
+                
 
     </div>
 

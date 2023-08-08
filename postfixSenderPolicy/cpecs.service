@@ -1,5 +1,5 @@
 [Unit]
-Description = CyberPanel Email Policy Control Daemon
+Description = Popo PowerPanel Email Policy Control Daemon
 
 [Service]
 Type=forking

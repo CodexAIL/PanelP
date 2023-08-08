@@ -9,7 +9,7 @@
 
 
     <div class="container">
-
+    </div>
         <div id="page-title">
             <h2 id="domainNamePage">{% trans "Email Debugger" %}
             </h2>
@@ -31,7 +31,7 @@
                 </div>
                 <div class="col-lg-5">
                     <button type="button" ng-click="ResetEmailConfigurations()"
-                            class="btn btn-danger btn-lg btn-block">
+                            class="btn btn-primary btn-lg btn-block">
                                 <span>Reset Server wide Email Configurations  <img
                                         ng-hide="cyberpanelLoading" src="{% static 'images/loading.gif' %}"></span>
                     </button>
@@ -59,30 +59,30 @@
                         <div class="form-group">
                             <div class="table-responsive-sm">
                                 <table class="table table-centered mb-0">
-                                    <thead>
-                                    <tr>
-                                        <th>Issue</th>
-                                        <th>Status</th>
-                                        <th>Actions</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <td>Mail Server SSL</td>
-                                        <td>{$ MailSSL $}</td>
-                                        <td>
+                                    <div>
+                                    <div>
+                                        <div>Issue</div>
+                                        <div>Status</div>
+                                        <div>Actions</div>
+                                    </div>
+                                    </div>
+                                    <div>
+                                    <div>
+                                        <div>Mail Server SSL</div>
+                                        <div>{$ MailSSL $}</div>
+                                        <div>
                                             <a id="MailSSLURL" target="_blank" href="#">
                                                 <button data-toggle="modal" title="Manage CyberPanel" type="button"
                                                         class="btn btn-success">
                                                     Issue Now
                                                 </button>
                                             </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Port 25</td>
-                                        <td>{$ Port25 $}</td>
-                                        <td>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div>Port 25</div>
+                                        <div>{$ Port25 $}</div>
+                                        <div>
                                             <a id="MailSSLURL" target="_blank"
                                                href="https://cyberpanel.net/blog/test-smtp-connection/?utm_source=cyberpanel&utm_medium=cyberpanel&utm_campaign=from-cyberpanel&utm_id=from-cyberpanel">
                                                 <button data-toggle="modal" title="Manage CyberPanel" type="button"
@@ -90,12 +90,12 @@
                                                     Learn More
                                                 </button>
                                             </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Port 587</td>
-                                        <td>{$ Port587 $}</td>
-                                        <td>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div>Port 587</div>
+                                        <div>{$ Port587 $}</div>
+                                        <div>
                                             <a id="MailSSLURL" target="_blank"
                                                href="https://cyberpanel.net/blog/test-smtp-connection/?utm_source=cyberpanel&utm_medium=cyberpanel&utm_campaign=from-cyberpanel&utm_id=from-cyberpanel">
                                                 <button data-toggle="modal" title="Manage CyberPanel" type="button"
@@ -103,12 +103,12 @@
                                                     Learn More
                                                 </button>
                                             </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Port 465</td>
-                                        <td>{$ Port465 $}</td>
-                                        <td>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div>Port 465</div>
+                                        <div>{$ Port465 $}</div>
+                                        <div>
                                             <a id="MailSSLURL" target="_blank"
                                                href="https://cyberpanel.net/blog/test-smtp-connection/?utm_source=cyberpanel&utm_medium=cyberpanel&utm_campaign=from-cyberpanel&utm_id=from-cyberpanel">
                                                 <button data-toggle="modal" title="Manage CyberPanel" type="button"
@@ -116,12 +116,12 @@
                                                     Learn More
                                                 </button>
                                             </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Port 110</td>
-                                        <td>{$ Port110 $}</td>
-                                        <td>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div>Port 110</div>
+                                        <div>{$ Port110 $}</div>
+                                        <div>
                                             <a id="MailSSLURL" target="_blank"
                                                href="https://cyberpanel.net/blog/test-smtp-connection/?utm_source=cyberpanel&utm_medium=cyberpanel&utm_campaign=from-cyberpanel&utm_id=from-cyberpanel">
                                                 <button data-toggle="modal" title="Manage CyberPanel" type="button"
@@ -129,12 +129,12 @@
                                                     Learn More
                                                 </button>
                                             </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Port 143</td>
-                                        <td>{$ Port143 $}</td>
-                                        <td>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div>Port 143</div>
+                                        <div>{$ Port143 $}</div>
+                                        <div>
                                             <a id="MailSSLURL" target="_blank"
                                                href="https://cyberpanel.net/blog/test-smtp-connection/?utm_source=cyberpanel&utm_medium=cyberpanel&utm_campaign=from-cyberpanel&utm_id=from-cyberpanel">
                                                 <button data-toggle="modal" title="Manage CyberPanel" type="button"
@@ -142,12 +142,12 @@
                                                     Learn More
                                                 </button>
                                             </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Port 995</td>
-                                        <td>{$ Port995 $}</td>
-                                        <td>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div>Port 995</div>
+                                        <div>{$ Port995 $}</div>
+                                        <div>
                                             <a id="MailSSLURL" target="_blank"
                                                href="https://cyberpanel.net/blog/test-smtp-connection/?utm_source=cyberpanel&utm_medium=cyberpanel&utm_campaign=from-cyberpanel&utm_id=from-cyberpanel">
                                                 <button data-toggle="modal" title="Manage CyberPanel" type="button"
@@ -155,12 +155,12 @@
                                                     Learn More
                                                 </button>
                                             </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Port 993</td>
-                                        <td>{$ Port993 $}</td>
-                                        <td>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div>Port 993</div>
+                                        <div>{$ Port993 $}</div>
+                                        <div>
                                             <a id="MailSSLURL" target="_blank"
                                                href="https://cyberpanel.net/blog/test-smtp-connection/?utm_source=cyberpanel&utm_medium=cyberpanel&utm_campaign=from-cyberpanel&utm_id=from-cyberpanel">
                                                 <button data-toggle="modal" title="Manage CyberPanel" type="button"
@@ -168,9 +168,9 @@
                                                     Learn More
                                                 </button>
                                             </a>
-                                        </td>
-                                    </tr>
-                                    </tbody>
+                                        </div>
+                                    </div>
+                                    </div>
                                 </table>
                             </div>
                         </div>
@@ -180,9 +180,9 @@
             </div>
         </div>
 
-        <div ng-controller="emailDebuggerDomainLevel" class="panel">
-            <div class="panel-body">
-                <h3 class="content-box-header">
+        <div ng-controller="emailDebuggerDomainLevel" class="">
+            <div class="panel-body panel">
+                <h3 class="content-box-header ">
                     {% trans "WEBSITE LEVEL EMAIL ISSUES" %} <img
                         ng-hide="cyberpanelLoading" src="{% static 'images/loading.gif' %}">
                 </h3>
@@ -198,44 +198,47 @@
                         </select>
                     </div>
                 </div>
+            </div>
 
                 <div ng-hide="ReportStatus" class="row">
-                    <div class="col-md-12">
+                    
                         <div class="form-group">
-                            <div class="table-responsive-sm">
-                                <table class="table table-centered mb-0">
-                                    <thead>
-                                    <tr>
-                                        <th>Status</th>
-                                        <th>Actions</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <td>{$ message $}</td>
-                                        <td>
+                            <!-- <div class="table-responsive-sm"> -->
+                                <!-- <div class="table table-centered mb-0"> -->
+                                    <div class="col-md-12">
+                                    
+                                    
+                                        <div class="col-md-6 content-box-header" id="backup-data">Status</div>
+                                        <div class="col-md-6 content-box-header" id="backup-data">Actions</div>
+                                    
+                                    
+                            </div>
+                        <!-- </div> -->
+                    <!-- </div> -->
+                </div>
+
+
+                        <div class="panel col-md-12"
+                        style="padding: 0px; box-shadow: 0px 0px 1px 0px #888888;">
+                        <div class="table-responsive no-gutter text-nowrap" style="overflow-x: hidden;">
+                                        <div class="col-md-6 content-box-header" id="backup-data">{$ message $}</div>
+                                        <div class="col-md-6 content-box-header" id="backup-data">
                                             <button ng-click="fixMailSSL()" ng-disabled='status==1' data-toggle="modal"
                                                     title="Manage CyberPanel" type="button"
-                                                    class="btn btn-success">
+                                                    class="btn btn-primary">
                                                 Fix Now
                                             </button>
                                             <button ng-click="fixMailSSL()" data-toggle="modal"
                                                     title="Manage CyberPanel" type="button"
-                                                    class="btn btn-success">
+                                                    class="btn btn-primary">
                                                 Force Fix
                                             </button>
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                                        </div>
+                                    </div>
+                                    </div>
 
-        </div>
-    </div>
+                                </div>
+                            </div>
 
 
 

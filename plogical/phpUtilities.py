@@ -221,7 +221,7 @@ class phpUtilities:
 
 def main():
 
-    parser = argparse.ArgumentParser(description='CyberPanel Installer')
+    parser = argparse.ArgumentParser(description='Popo PowerPanel Installer')
     parser.add_argument('function', help='Specific a function to call!')
     parser.add_argument('--phpVers', help='Domain name!')
     parser.add_argument('--allow_url_fopen', help='Max Connections for PHP!')

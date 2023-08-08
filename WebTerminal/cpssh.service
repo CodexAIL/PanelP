@@ -1,5 +1,5 @@
 [Unit]
-Description = CyberPanel SSH Websocket Daemon
+Description = Popo PowerPanel SSH Websocket Daemon
 
 [Service]
 Type=forking

@@ -207,7 +207,7 @@ class FirewallUtilities:
 
 def main():
 
-    parser = argparse.ArgumentParser(description='CyberPanel Installer')
+    parser = argparse.ArgumentParser(description='Popo PowerPanel Installer')
     parser.add_argument('function', help='Specific a function to call!')
 
     ## Litespeed Tuning Arguments

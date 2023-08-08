@@ -4,7 +4,7 @@
 #set -x
 #set -u
 
-#PopoPower Panel installer script for CentOS 7, CentOS 8, CloudLinux 7, AlmaLinux 8, RockyLinux 8, Ubuntu 18.04, Ubuntu 20.04, Ubuntu 20.10, openEuler 20.03 and openEuler 22.03
+#Popo PowerPanel installer script for CentOS 7, CentOS 8, CloudLinux 7, AlmaLinux 8, RockyLinux 8, Ubuntu 18.04, Ubuntu 20.04, Ubuntu 20.10, openEuler 20.03 and openEuler 22.03
 #For whoever may edit this script, please follow:
 #Please use Pre_Install_xxx() and Post_Install_xxx() if you want to something respectively before or after the panel installation
 #and update below accordingly
@@ -17,7 +17,7 @@ Sudo_Test=$(set)
 Set_Default_Variables() {
 
 export LC_CTYPE=en_US.UTF-8
-echo -e "\nFetching latest data from PopoPower Panel server...\n"
+echo -e "\nFetching latest data from Popo PowerPanel server...\n"
 echo -e "This may take few seconds..."
 
 Server_Country="Unknown"
@@ -70,7 +70,7 @@ echo -e "\nChecking root privileges..."
   fi
 
   if [[ $(id -u) != 0 ]] >/dev/null; then
-    echo -e "\nYou must run as root user to install PopoPower Panel...\n"
+    echo -e "\nYou must run as root user to install CyberPanel...\n"
     echo -e "or run the following command: (do NOT miss the quotes)"
     echo -e "\e[31msudo su -c \"sh <(curl https://cyberpanel.sh || wget -O - https://cyberpanel.sh)\"\e[39m"
     exit 1
@@ -127,8 +127,8 @@ elif grep -q -E "openEuler 20.03|openEuler 22.03" /etc/os-release ; then
   Server_OS="openEuler"
 else
   echo -e "Unable to detect your system..."
-  echo -e "\nPopoPower Panel is supported on x86_64 based Ubuntu 18.04, Ubuntu 20.04, Ubuntu 20.10, Ubuntu 22.04, CentOS 7, CentOS 8, AlmaLinux 8, RockyLinux 8, CloudLinux 7, CloudLinux 8, openEuler 20.03, openEuler 22.03...\n"
-  Debug_Log2 "PopoPower Panel is supported on x86_64 based Ubuntu 18.04, Ubuntu 20.04, Ubuntu 20.10, Ubuntu 22.04, CentOS 7, CentOS 8, AlmaLinux 8, RockyLinux 8, CloudLinux 7, CloudLinux 8, openEuler 20.03, openEuler 22.03... [404]"
+  echo -e "\nCyberPanel is supported on x86_64 based Ubuntu 18.04, Ubuntu 20.04, Ubuntu 20.10, Ubuntu 22.04, CentOS 7, CentOS 8, AlmaLinux 8, RockyLinux 8, CloudLinux 7, CloudLinux 8, openEuler 20.03, openEuler 22.03...\n"
+  Debug_Log2 "Popo PowerPanel is supported on x86_64 based Ubuntu 18.04, Ubuntu 20.04, Ubuntu 20.10, Ubuntu 22.04, CentOS 7, CentOS 8, AlmaLinux 8, RockyLinux 8, CloudLinux 7, CloudLinux 8, openEuler 20.03, openEuler 22.03... [404]"
   exit
 fi
 
@@ -222,20 +222,20 @@ Regenerate_Cert() {
   cat <<EOF >/usr/local/CyberCP/cert_conf
 [req]
 prompt=no
-distinguished_name=popopower
+distinguished_name=cyberpanel
 [cyberpanel]
 commonName = www.example.com
 countryName = CP
-localityName = PopoPower
-organizationName = PopoPower
-organizationalUnitName = PopoPower
+localityName = CyberPanel
+organizationName = CyberPanel
+organizationalUnitName = CyberPanel
 stateOrProvinceName = CP
 emailAddress = mail@example.com
-name = PopoPower
-surname = PopoPower
-givenName = PopoPower
+name = CyberPanel
+surname = CyberPanel
+givenName = CyberPanel
 initials = CP
-dnQualifier = PopoPower
+dnQualifier = CyberPanel
 [server_exts]
 extendedKeyUsage = 1.3.6.1.5.5.7.3.1
 EOF
@@ -756,7 +756,7 @@ fi
 
 if curl -I -XGET -k "https://127.0.0.1:${Panel_Port#*:}" | grep -q "200 OK" ; then
   echo "###################################################################"
-  echo "                PopoPower Panel Upgraded                                "
+  echo "                Popo PowerPanel Upgraded                                "
   echo "###################################################################"
 else
   echo -e "\nSeems something wrong with upgrade, please check...\n"

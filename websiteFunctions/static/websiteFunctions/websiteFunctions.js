@@ -301,6 +301,14 @@ app.controller('createWordpress', function ($scope, $http, $timeout, $compile, $
 
         $scope.currentStatus = "Starting creation..";
 
+        var apacheBackend = 0;
+
+        if ($scope.apacheBackend === true) {
+            apacheBackend = 1;
+        } else {
+            apacheBackend = 0
+        }
+
         var package = $scope.packageForWebsite;
         var websiteOwner = $scope.websiteOwner;
         var WPtitle = $scope.WPtitle;
@@ -361,6 +369,7 @@ app.controller('createWordpress', function ($scope, $http, $timeout, $compile, $
             package: package,
             home: home,
             path: path,
+            apacheBackend: apacheBackend
         }
 
         var config = {
@@ -1709,7 +1718,69 @@ app.controller('WPsiteHome', function ($scope, $http, $timeout, $compile, $windo
         }
 
     };
+    $scope.handleSuccess = function () {
 
+        // notifcations
+
+        $('#wordpresshomeloading').show();
+        $('#wordpresshomeloadingsec').show();
+        var data = {
+            WPid: $('#WPid').html(),
+        }
+
+        $scope.wordpresshomeloading = false;
+        console.log("function working")
+
+
+        var url = "/websites/handleSuccess";
+
+        
+
+        var config = {
+            headers: {
+                'X-CSRFToken': getCookie('csrftoken')
+            }
+        };
+
+        $http.post(url, data, config).then(ListInitialDatas, cantLoadInitialDatas);
+
+
+        function ListInitialDatas(response) {
+
+
+            $('#wordpresshomeloading').hide();
+            $('#wordpresshomeloadingsec').hide();
+            $scope.wordpresshomeloading = true;
+
+            if (response.data.status === 1) {
+                new PNotify({
+                    title: 'Success!',
+                    text: 'Results fetched',
+                    type: 'success'
+                });
+                $('#SecurityResult').html(response.data.result);
+            } else {
+                new PNotify({
+                    title: 'Operation Failed!',
+                    text: response.data.error_message,
+                    type: 'error'
+                });
+
+            }
+
+        }
+
+        function cantLoadInitialDatas(response) {
+
+            $('#wordpresshomeloading').hide();
+            $('#wordpresshomeloadingsec').hide();
+            $scope.wordpresshomeloading = true;
+            alert(response)
+
+
+        }
+
+    };
     $scope.dataintegrity = function () {
 
         $('#wordpresshomeloading').show();
@@ -1727,6 +1798,7 @@ app.controller('WPsiteHome', function ($scope, $http, $timeout, $compile, $windo
                 'X-CSRFToken': getCookie('csrftoken')
             }
         };
+        console.log("function working")
 
 
         $http.post(url, data, config).then(ListInitialDatas, cantLoadInitialDatas);
@@ -5207,42 +5279,42 @@ app.controller('websitePages', function ($scope, $http, $timeout, $window) {
 
     // REWRITE Template
 
-    const httpToHTTPS = `### Rewrite Rules Added by CyberPanel Rewrite Rule Generator
+    const httpToHTTPS = `### Rewrite Rules Added by Popo PowerPanel Rewrite Rule Generator
 
 RewriteEngine On
 RewriteCond %{HTTPS}  !=on
 RewriteRule ^/?(.*) https://%{SERVER_NAME}/$1 [R,L]
 
-### End CyberPanel Generated Rules.
+### End Popo PowerPanel Generated Rules.
 
 `;
 
-    const WWWToNonWWW = `### Rewrite Rules Added by CyberPanel Rewrite Rule Generator
+    const WWWToNonWWW = `### Rewrite Rules Added by Popo PowerPanel Rewrite Rule Generator
 
 RewriteEngine On
 RewriteCond %{HTTP_HOST} ^www\.(.*)$
 RewriteRule ^(.*)$ http://%1/$1 [L,R=301]
 
-### End CyberPanel Generated Rules.
+### End Popo PowerPanel Generated Rules.
 
 `;
 
-    const nonWWWToWWW = `### Rewrite Rules Added by CyberPanel Rewrite Rule Generator
+    const nonWWWToWWW = `### Rewrite Rules Added by Popo PowerPanel Rewrite Rule Generator
 
 RewriteEngine On
 RewriteCond %{HTTP_HOST} !^www\. [NC]
 RewriteRule ^(.*)$ http://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
-### End CyberPanel Generated Rules.
+### End Popo PowerPanel Generated Rules.
 
 `;
 
-    const WordpressProtect = `### Rewrite Rules Added by CyberPanel Rewrite Rule Generator
+    const WordpressProtect = `### Rewrite Rules Added by Popo PowerPanel Rewrite Rule Generator
 
 RewriteEngine On
 RewriteRule ^/(xmlrpc|wp-trackback)\.php - [F,L,NC]
 
-### End CyberPanel Generated Rules.
+### End Popo PowerPanel Generated Rules.
 
 `;
 
