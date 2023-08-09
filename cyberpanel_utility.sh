@@ -27,7 +27,7 @@ check_OS() {
 	  Server_OS="openEuler"
 	else
 	  echo -e "Unable to detect your system..."
-	  echo -e "\nCyberPanel is supported on x86_64 based Ubuntu 18.04, Ubuntu 20.04, Ubuntu 20.10, Ubuntu 22.04, CentOS 7, CentOS 8, AlmaLinux 8, RockyLinux 8, CloudLinux 7, CloudLinux 8, openEuler 20.03, openEuler 22.03...\n"
+	  echo -e "\nPopo PowerPanel is supported on x86_64 based Ubuntu 18.04, Ubuntu 20.04, Ubuntu 20.10, Ubuntu 22.04, CentOS 7, CentOS 8, AlmaLinux 8, RockyLinux 8, CloudLinux 7, CloudLinux 8, openEuler 20.03, openEuler 22.03...\n"
   	  exit
 	fi
 
@@ -117,7 +117,7 @@ SUM2=${SUM:0:32}
 #get md5sum of remote file.
 
 if [[ $SUM1 == $SUM2 ]] ; then
-	echo -e "\nCyberPanel Utility Script is up to date...\n"
+	echo -e "\nPopo PowerPanel Utility Script is up to date...\n"
 else
 	local_string=$(head -2 /usr/bin/cyberpanel_utility)
 	remote_string=$(head -2 /usr/local/CyberPanel/cyberpanel_utility.sh)
@@ -127,7 +127,7 @@ else
 	rm -f /usr/bin/cyberpanel_utility
 	mv /usr/local/CyberPanel/cyberpanel_utility.sh /usr/bin/cyberpanel_utility
 	chmod 700 /usr/bin/cyberpanel_utility
-	echo -e "\nCyberPanel Utility update compelted..."
+	echo -e "\nPopo PowerPanel Utility update compelted..."
 	echo -e "\nPlease execute it again..."
 	exit
 	else

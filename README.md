@@ -37,6 +37,11 @@ Web Hosting Control Panel that uses OpenLiteSpeed as the underlying Web Server.
 sh <(curl https://madpopo.com/panel/install.sh || wget -O - https://madpopo.com/panel/install.sh)
 ```
 
+If, for some reason, you are not able to log in as root, you can use this command
+
+```
+sudo su - -c "sh <(curl https://madpopo.com/panel/install.sh || wget -O - https://madpopo.com/panel/install.sh)"
+```
 # Upgrading PowerPanel
 
 

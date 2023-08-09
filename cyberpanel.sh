@@ -248,7 +248,7 @@ if [ -z "$XDG_CURRENT_DESKTOP" ]; then
     echo -e "Desktop OS not detected. Proceeding\n"
 else
     echo "$XDG_CURRENT_DESKTOP defined appears to be a desktop OS. Bailing as Popo PowerPanel is incompatible."
-    echo -e "\nCyberPanel is supported on server OS types only. Such as Ubuntu 18.04 x86_64, Ubuntu 20.04 x86_64, Ubuntu 20.10 x86_64, CentOS 7.x, CentOS 8.x, AlmaLinux 8.x and CloudLinux 7.x...\n"
+    echo -e "\nPopo PowerPanel is supported on server OS types only. Such as Ubuntu 18.04 x86_64, Ubuntu 20.04 x86_64, Ubuntu 20.10 x86_64, CentOS 7.x, CentOS 8.x, AlmaLinux 8.x and CloudLinux 7.x...\n"
     exit
 fi
 
@@ -271,7 +271,7 @@ elif grep -q -E "openEuler 20.03|openEuler 22.03" /etc/os-release ; then
   Server_OS="openEuler"
 else
   echo -e "Unable to detect your system..."
-  echo -e "\nCyberPanel is supported on x86_64 based Ubuntu 18.04, Ubuntu 20.04, Ubuntu 20.10, Ubuntu 22.04, CentOS 7, CentOS 8, AlmaLinux 8, RockyLinux 8, CloudLinux 7, CloudLinux 8, openEuler 20.03, openEuler 22.03...\n"
+  echo -e "\nPopo PowerPanel is supported on x86_64 based Ubuntu 18.04, Ubuntu 20.04, Ubuntu 20.10, Ubuntu 22.04, CentOS 7, CentOS 8, AlmaLinux 8, RockyLinux 8, CloudLinux 7, CloudLinux 8, openEuler 20.03, openEuler 22.03...\n"
   Debug_Log2 "Popo PowerPanel is supported on x86_64 based Ubuntu 18.04, Ubuntu 20.04, Ubuntu 20.10, Ubuntu 22.04, CentOS 7, CentOS 8, AlmaLinux 8, RockyLinux 8, CloudLinux 7, CloudLinux 8, openEuler 20.03, openEuler 22.03... [404]"
   exit
 fi
@@ -408,7 +408,7 @@ fi
 }
 
 Show_Help() {
-echo -e "\nCyberPanel Installer Script Help\n"
+echo -e "\nPopo PowerPanel Installer Script Help\n"
 echo -e "\nUsage: sh <(curl cyberpanel.sh) --argument"
 echo -e "\n\e[31m-v\e[39m or \e[31m--version\e[39m : choose to install Popo PowerPanel OpenLiteSpeed or Popo PowerPanel Enterprise, available options are \e[31mols\e[39m , \e[31mTRIAL\e[39m and \e[31mSERIAL_NUMBER\e[39m, default ols"
 echo -e "Please be aware, this serial number must be obtained from LiteSpeed Store."
@@ -1092,7 +1092,7 @@ Debug_Log2 "Getting Popo PowerPanel code..,4"
 Retry_Command "git clone ${Git_Clone_URL}"
   Check_Return "git clone ${Git_Clone_URL}"
 
-echo -e "\nCyberPanel source code downloaded...\n"
+echo -e "\nPopo PowerPanel source code downloaded...\n"
 
 cd cyberpanel || exit
 git checkout "$Branch_Name"
@@ -1446,7 +1446,7 @@ fi
 
 
 if grep "Popo PowerPanel installation successfully completed" /var/log/installLogs.txt >/dev/null; then
-  echo -e "\nCyberPanel installation sucessfully completed...\n"
+  echo -e "\nPopo PowerPanel installation sucessfully completed...\n"
   Debug_Log2 "Main installation completed...,70"
 else
   echo -e "Oops, something went wrong..."
