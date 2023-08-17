@@ -3534,7 +3534,7 @@ RewriteRule .* - [F,L]
 
             modifyWeb.save()
 
-            ## Fix https://github.com/usmannasir/cyberpanel/issues/998
+            ## Fix https://github.com/codexail/cyberpanel/issues/998
 
             #from plogical.IncScheduler import IncScheduler
             #isPU = IncScheduler('CalculateAndUpdateDiskUsage', {})

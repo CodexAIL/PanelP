@@ -56,4 +56,4 @@ sh <(curl https://raw.githubusercontent.com/codexail/cyberpanel/stable/preUpgrad
 
 # Installation Instructions
 
-Thanks usmannasir original repo.
+Thanks codexail original repo.
