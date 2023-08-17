@@ -192,7 +192,7 @@ echo -e "\nChecking root privileges..."
   fi
 
   if [[ $(id -u) != 0 ]] >/dev/null; then
-    echo -e "\nYou must run on root user to install CyberPanel...\n"
+    echo -e "\nYou must run on root user to install Popo PowerPanel...\n"
     echo -e "or run following command: (do NOT miss the quotes)"
     echo -e "\e[31msudo su -c \"sh <(curl https://cyberpanel.sh || wget -O - https://cyberpanel.sh)\"\e[39m"
     exit 1
@@ -302,7 +302,7 @@ echo -e "Checking virtualization type..."
 #  Debug_Log2 "Popo PowerPanel does not support LXC.. [404]"
 #  exit
 #fi
-#remove per https://github.com/codexail/cyberpanel/issues/589
+#remove per https://github.com/usmannasir/cyberpanel/issues/589
 
 if hostnamectl | grep -q "Virtualization: openvz"; then
   echo -e "OpenVZ detected...\n"
@@ -579,7 +579,7 @@ fi
 Interactive_Mode() {
 echo -e "		Popo PowerPanel Installer v$Panel_Version.$Panel_Build
 
-1. Install CyberPanel.
+1. Install Popo PowerPanel.
 
 2. Exit.
 
@@ -633,7 +633,7 @@ case "$Input_Number" in
   ;;
 esac
 
-echo -e "\nInstall Full service for CyberPanel? This will include PowerDNS, Postfix and Pure-FTPd."
+echo -e "\nInstall Full service for Popo PowerPanel? This will include PowerDNS, Postfix and Pure-FTPd."
 echo -e ""
 printf "%s" "Full installation [Y/n]: "
 read -r Tmp_Input
@@ -1391,7 +1391,7 @@ if [[ $Server_Edition = "Enterprise" ]] ; then
   Enterprise_Flag="--ent ent --serial "
 fi
 
-sed -i 's|git clone https://github.com/codexail/cyberpanel|echo downloaded|g' install.py
+sed -i 's|git clone https://github.com/usmannasir/cyberpanel|echo downloaded|g' install.py
 sed -i 's|mirror.cyberpanel.net|cyberpanel.sh|g' install.py
 
 
@@ -1729,7 +1729,7 @@ echo "              Wikipage: https://docs.cyberpanel.net                "
 echo "              Docs    : https://cyberpanel.net/docs/               "
 echo "                                                                   "
 echo -e "            Enjoy your accelerated Internet by                  "
-echo -e "                CyberPanel & $Word 				                     "
+echo -e "                Popo PowerPanel & $Word 				                     "
 echo "###################################################################"
 
 if [[ "$Server_Provider" != "Undefined" ]]; then
@@ -1739,7 +1739,7 @@ else
   echo -e "If your provider has a \e[31mnetwork-level firewall\033[39m"
 fi
 echo -e "Please make sure you have opened following port for both in/out:"
-echo -e "\033[0;32mTCP: 8090\033[39m for CyberPanel"
+echo -e "\033[0;32mTCP: 8090\033[39m for Popo PowerPanel"
 echo -e "\033[0;32mTCP: 80\033[39m, \033[0;32mTCP: 443\033[39m and \033[0;32mUDP: 443\033[39m for webserver"
 echo -e "\033[0;32mTCP: 21\033[39m and \033[0;32mTCP: 40110-40210\033[39m for FTP"
 echo -e "\033[0;32mTCP: 25\033[39m, \033[0;32mTCP: 587\033[39m, \033[0;32mTCP: 465\033[39m, \033[0;32mTCP: 110\033[39m, \033[0;32mTCP: 143\033[39m and \033[0;32mTCP: 993\033[39m for mail service"
@@ -1767,20 +1767,20 @@ Post_Install_Regenerate_Cert() {
 cat <<EOF >/root/cyberpanel/cert_conf
 [req]
 prompt=no
-distinguished_name=cyberpanel
-[cyberpanel]
+distinguished_name=popopanel
+[popopanel]
 commonName = www.example.com
 countryName = CP
-localityName = CyberPanel
-organizationName = CyberPanel
-organizationalUnitName = CyberPanel
+localityName = PopoPanel
+organizationName = PopoPanel
+organizationalUnitName = PopoPanel
 stateOrProvinceName = CP
 emailAddress = mail@example.com
-name = CyberPanel
-surname = CyberPanel
-givenName = CyberPanel
+name = PopoPanel
+surname = PopoPanel
+givenName = PopoPanel
 initials = CP
-dnQualifier = CyberPanel
+dnQualifier = PopoPanel
 [server_exts]
 extendedKeyUsage = 1.3.6.1.5.5.7.3.1
 EOF
@@ -1832,7 +1832,7 @@ chown -R cyberpanel:cyberpanel /usr/local/CyberCP/lib64 || true
 
 Pre_Install_Setup_Git_URL() {
 if [[ $Server_Country != "CN" ]] ; then
-  Git_User="codexail"
+  Git_User="usmannasir"
   Git_Content_URL="https://raw.githubusercontent.com/${Git_User}/cyberpanel"
   Git_Clone_URL="https://github.com/${Git_User}/cyberpanel.git"
 else

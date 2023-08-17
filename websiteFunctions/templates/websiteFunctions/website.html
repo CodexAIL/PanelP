@@ -331,7 +331,7 @@
                             </div>
 
 
-                            <!---------- HTML For creating domains --------------->
+                           
                             <div class="col-md-12 mx-10">
                                 <form id="domainCreationForm" name="websiteCreationForm" action="/"
                                       class="form-horizontal bordered-row">
@@ -455,9 +455,7 @@
                                 </form>
                             </div>
 
-                            <!---------- HTML For creating domains --------------->
-
-                            <!---------- HTML For Listing domains --------------->
+                            
 
                             <div id="listDomains" class="col-md-12 mx-10">
 
@@ -563,7 +561,7 @@
 
                             </div>
 
-                            <!---------- HTML For Listing domains --------------->
+                            
                         </div>
 
                     </div>
@@ -675,10 +673,7 @@
                             </div>
 
 
-                            <!----- HTML For SSL ---->
-
-
-                            <!---- HTML for main conf file ---->
+                            
 
                             <div class="col-md-12">
                                 <form ng-hide="configurationsBox" class="form-horizontal bordered-row">
@@ -795,8 +790,7 @@
 
                             </div>
 
-                            <!--- HTML To change PHP --->
-
+                            
                             <div class="col-md-12">
 
                                 <form ng-hide="changePHPView" name="" action="/" class="form-horizontal bordered-row">
@@ -906,7 +900,7 @@
 
                             {% endif %}
 
-                            <!--- HTML To change open_basedir --->
+                            
 
                             <div ng-hide="openBaseDirBox" class="col-md-12">
                                 <form action="/" class="form-horizontal bordered-row">
@@ -960,7 +954,7 @@
                                 </form>
                             </div>
 
-                            <!--- HTML To change open_basedir --->
+                            
 
 
                         </div>
@@ -1051,7 +1045,7 @@
                             <div class="col-md-3 panel-body">
                                 <a href="/email/listEmails?value={{domain}}" target="_self"
                                    title="{% trans 'Install wordpress with LSCache' %}">
-                                    <img src="{% static 'images/icons/wordpress.png' %}" width="65" class="mr-10">
+                                    <img src="{% static 'baseTemplate/images/mail.png' %}" width="55"  class="ml-10">
                                 </a>
                                 <a href="/email/listEmails?value={{domain}}" target="_self"
                                    title="{% trans 'Install wordpress with LSCache' %}">
@@ -1062,7 +1056,7 @@
                             <div class="col-md-3 panel-body">
                                 <a href="/email/emailForwarding" target="_self"
                                    title="{% trans 'Install Joomla with LSCache' %}">
-                                    <img src="{% static 'images/icons/joomla-logo.png' %}" width="65" class="mr-10">
+                                    <img src="{% static 'baseTemplate/images/forwarding.png' %}" width="55"  class="ml-10">
                                 </a>
                                 <a href="/email/emailForwarding" target="_self"
                                    title="{% trans 'Install Joomla with LSCache' %}">
@@ -1073,7 +1067,7 @@
                             <div class="col-md-3 panel-body">
                                 <a href="email/changeEmailAccountPassword" target="_self"
                                    title="{% trans 'Attach Git with this website!' %}">
-                                    <img src="{% static 'images/icons/git-logo.png' %}" width="65" class="mr-10">
+                                    <img src="{% static 'baseTemplate/images/password.png' %}" width="55"  class="ml-10">
                                 </a>
                                 <a href="email/changeEmailAccountPassword" target="_self"
                                    title="{% trans 'Attach Git with this website!' %}">
@@ -1084,7 +1078,7 @@
                             <div class="col-md-3 panel-body">
                                 <a href="/email/dkimManager" target="_self"
                                    title="{% trans 'Install Prestashop' %}">
-                                    <img src="{% static 'images/icons/prestashop.png' %}" width="65" class="mr-10">
+                                    <img src="{% static 'baseTemplate/images/dkim.png' %}" width="55"  class="ml-10">
                                 </a>
                                 <a href="/email/dkimManager" target="_self"
                                    title="{% trans 'Install Prestashop' %}">
@@ -1095,7 +1089,7 @@
                             <div class="col-md-3 panel-body">
                                 <a href="/emailPremium/EmailDebugger" target="_self"
                                    title="{% trans 'Install Magento' %}">
-                                    <img src="{% static 'images/icons/magento.png' %}" width="65" class="mr-10">
+                                    <img src="{% static 'baseTemplate/images/debug.png' %}" width="55"  class="ml-10">
                                 </a>
                                 <a href="/emailPremium/EmailDebugger" target="_self"
                                    title="{% trans 'Install Magento' %}">
@@ -1106,7 +1100,7 @@
                             <div class="col-md-3 panel-body">
                                 <a href="/snappymail/index.php" target="_self"
                                    title="{% trans 'Install Mautic' %}">
-                                    <img src="{% static 'baseTemplate/images/icons/mautic.png' %}" width="65" class="mr-10">
+                                    <img src="{% static 'baseTemplate/images/accessMail.png' %}" width="55"  class="ml-10">
                                 </a>
                                 <a href="/snappymail/index.php" target="_self"
                                    title="{% trans 'Install Mautic' %}">

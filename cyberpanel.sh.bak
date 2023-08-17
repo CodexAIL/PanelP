@@ -5,7 +5,7 @@
 #set -u
 
 
-#Popo PowerPanel installer script for CentOS 7.X, CentOS 8.X, CloudLinux 7.X, RockyLinux 8.X, Ubuntu 18.04, Ubuntu 20.04 , Ubuntu 20.10 and AlmaLinux 8.X
+#CyberPanel installer script for CentOS 7.X, CentOS 8.X, CloudLinux 7.X, RockyLinux 8.X, Ubuntu 18.04, Ubuntu 20.04 , Ubuntu 20.10 and AlmaLinux 8.X
 #For whoever may edit this script, please follow :
 #Please use Pre_Install_xxx() and Post_Install_xxx() if you want to something respectively before or after the panel installation
 #and update below accordingly
@@ -301,7 +301,7 @@ echo -e "Checking virtualization type..."
 #  Debug_Log2 "Popo PowerPanel does not support LXC.. [404]"
 #  exit
 #fi
-#remove per https://github.com/codexail/cyberpanel/issues/589
+#remove per https://github.com/usmannasir/cyberpanel/issues/589
 
 if hostnamectl | grep -q "Virtualization: openvz"; then
   echo -e "OpenVZ detected...\n"
@@ -576,7 +576,7 @@ fi
 }
 
 Interactive_Mode() {
-echo -e "		Popo PowerPanel Installer v$Panel_Version.$Panel_Build
+echo -e "		CyberPanel Installer v$Panel_Version.$Panel_Build
 
 1. Install CyberPanel.
 
@@ -601,7 +601,7 @@ esac
 
 
 Interactive_Mode_Set_Parameter() {
-echo -e "		Popo PowerPanel Installer v$Panel_Version.$Panel_Build
+echo -e "		CyberPanel Installer v$Panel_Version.$Panel_Build
 
 RAM check : $(free -m | awk 'NR==2{printf "%s/%sMB (%.2f%%)\n", $3,$2,$3*100/$2 }')
 
@@ -1331,7 +1331,7 @@ if [[ $Server_Edition = "Enterprise" ]] ; then
   Enterprise_Flag="--ent ent --serial "
 fi
 
-sed -i 's|git clone https://github.com/codexail/cyberpanel|echo downloaded|g' install.py
+sed -i 's|git clone https://github.com/usmannasir/cyberpanel|echo downloaded|g' install.py
 sed -i 's|mirror.cyberpanel.net|cyberpanel.sh|g' install.py
 
 
@@ -1653,7 +1653,7 @@ echo "              Wikipage: https://docs.cyberpanel.net                "
 echo "              Docs    : https://cyberpanel.net/docs/               "
 echo "                                                                   "
 echo -e "            Enjoy your accelerated Internet by                  "
-echo -e "                CyberPanel & $Word 				                     "
+echo -e "                Popo PowerPanel & $Word 				                     "
 echo "###################################################################"
 
 if [[ "$Server_Provider" != "Undefined" ]]; then
@@ -1663,7 +1663,7 @@ else
   echo -e "If your provider has a \e[31mnetwork-level firewall\033[39m"
 fi
 echo -e "Please make sure you have opened following port for both in/out:"
-echo -e "\033[0;32mTCP: 8090\033[39m for CyberPanel"
+echo -e "\033[0;32mTCP: 8090\033[39m for Popo PowerPanel "
 echo -e "\033[0;32mTCP: 80\033[39m, \033[0;32mTCP: 443\033[39m and \033[0;32mUDP: 443\033[39m for webserver"
 echo -e "\033[0;32mTCP: 21\033[39m and \033[0;32mTCP: 40110-40210\033[39m for FTP"
 echo -e "\033[0;32mTCP: 25\033[39m, \033[0;32mTCP: 587\033[39m, \033[0;32mTCP: 465\033[39m, \033[0;32mTCP: 110\033[39m, \033[0;32mTCP: 143\033[39m and \033[0;32mTCP: 993\033[39m for mail service"
@@ -1745,7 +1745,7 @@ chown -R cyberpanel:cyberpanel /usr/local/CyberCP/lib64 || true
 
 Pre_Install_Setup_Git_URL() {
 if [[ $Server_Country != "CN" ]] ; then
-  Git_User="codexail"
+  Git_User="usmannasir"
   Git_Content_URL="https://raw.githubusercontent.com/${Git_User}/cyberpanel"
   Git_Clone_URL="https://github.com/${Git_User}/cyberpanel.git"
 else

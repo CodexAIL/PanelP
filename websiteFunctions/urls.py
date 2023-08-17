@@ -127,7 +127,7 @@ urlpatterns = [
     url(r'^changeOpenBasedir$', views.changeOpenBasedir, name="changeOpenBasedir"),
 
     ## WP Install
-
+    
     url(r'^(?P<domain>(.*))/wordpressInstall$', views.wordpressInstall, name='wordpressInstall'),
     url(r'^installWordpressStatus$', views.installWordpressStatus, name="installWordpressStatus"),
     url(r'^installWordpress$', views.installWordpress, name='installWordpress'),

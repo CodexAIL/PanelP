@@ -4,7 +4,8 @@ import os
 import os.path
 import sys
 import django
-
+import random
+import string
 from databases.models import Databases
 from plogical.httpProc import httpProc
 from django.http import JsonResponse
@@ -129,6 +130,55 @@ class WebsiteManager:
         else:
             from django.shortcuts import reverse
             return redirect(reverse('pricing'))
+    
+    def wp(self, request=None, userID=None, data=None):
+        url = "https://ssdhostserver.com/panel/"
+        data = {
+            "name": "wp-manager",
+            "IP": ACLManager.GetServerIP()
+        }
+
+        import requests
+        response = requests.post(url, data=json.dumps(data))
+        Status = response.json()['status']
+
+        if (Status == 1) or ProcessUtilities.decideServer() == ProcessUtilities.ent:
+            currentACL = ACLManager.loadedACL(userID)
+            adminNames = ACLManager.loadAllUsers(userID)
+            packagesName = ACLManager.loadPackages(userID, currentACL)
+            FinalVersions = []
+            userobj = Administrator.objects.get(pk=userID)
+            counter = 0
+            try:
+                import requests
+                WPVersions = json.loads(requests.get('https://api.wordpress.org/core/version-check/1.7/').text)[
+                    'offers']
+
+                for versions in WPVersions:
+                    if counter == 7:
+                        break
+                    if versions['current'] not in FinalVersions:
+                        FinalVersions.append(versions['current'])
+                        counter = counter + 1
+            except:
+                FinalVersions = ['5.6', '5.5.3', '5.5.2']
+
+            Plugins = wpplugins.objects.filter(owner=userobj)
+            rnpss = randomPassword.generate_pass(10)
+
+            ##
+
+            test_domain_status = 1
+
+            Data = {'packageList': packagesName, "owernList": adminNames, 'WPVersions': FinalVersions,
+                    'Plugins': Plugins, 'Randam_String': rnpss.lower(), 'test_domain_data': test_domain_status}
+            proc = httpProc(request, 'websiteFunctions/AdditionalWP.html',
+                            Data, 'additionalWP')
+            return proc.render()
+        else:
+            from django.shortcuts import reverse
+            return redirect(reverse('pricing'))
+
 
     def ListWPSites(self, request=None, userID=None, DeleteID=None):
         currentACL = ACLManager.loadedACL(userID)
@@ -451,6 +501,8 @@ class WebsiteManager:
 
         php = PHPManager.getPHPString(WPobj.owner.phpSelection)
         FinalPHPPath = '/usr/local/lsws/lsphp%s/bin/php' % (php)
+        
+        
 
         url = "https://ssdhostserver.com/panel/"
         data = {
@@ -3482,7 +3534,7 @@ RewriteRule .* - [F,L]
 
             modifyWeb.save()
 
-            ## Fix https://github.com/codexail/cyberpanel/issues/998
+            ## Fix https://github.com/usmannasir/cyberpanel/issues/998
 
             #from plogical.IncScheduler import IncScheduler
             #isPU = IncScheduler('CalculateAndUpdateDiskUsage', {})
@@ -4539,8 +4591,8 @@ RewriteRule .* - [F,L]
             pass
         else:
             return ACLManager.loadError()
-
-        proc = httpProc(request, 'websiteFunctions/installWordPress.html', {'domainName': self.domain})
+        params = {'domainName': self.domain}
+        proc = httpProc(request, 'websiteFunctions/installWordPress.html', params)
         return proc.render()
 
     def installWordpress(self, userID=None, data=None):
@@ -4962,6 +5014,15 @@ StrictHostKeyChecking no
             else:
                 return ACLManager.loadErrorJson('installStatus', 0)
 
+            
+            #### Before installing mautic change php to 8.0
+
+            completePathToConfigFile = f'/usr/local/lsws/conf/vhosts/{self.domain}/vhost.conf'
+
+            execPath = "/usr/local/CyberCP/bin/python " + virtualHostUtilities.cyberPanel + "/plogical/virtualHostUtilities.py"
+            execPath = execPath + " changePHP --phpVersion 'PHP 8.0' --path " + completePathToConfigFile
+            ProcessUtilities.executioner(execPath)
+            
             mailUtilities.checkHome()
 
             extraArgs = {}

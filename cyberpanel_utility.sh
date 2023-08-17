@@ -1,11 +1,11 @@
 #!/bin/bash
-#Popo PowerPanel utility script
+#CyberPanel utility script
 
 export LC_CTYPE=en_US.UTF-8
 SUDO_TEST=$(set)
 BRANCH_NAME="stable"
-GIT_URL="github.com/codexail/cyberpanel"
-GIT_CONTENT_URL="raw.githubusercontent.com/codexail/cyberpanel"
+GIT_URL="github.com/usmannasir/cyberpanel"
+GIT_CONTENT_URL="raw.githubusercontent.com/usmannasir/cyberpanel"
 
 check_OS() {
 	if [[ ! -f /etc/os-release ]] ; then
@@ -28,7 +28,8 @@ check_OS() {
 	else
 	  echo -e "Unable to detect your system..."
 	  echo -e "\nPopo PowerPanel is supported on x86_64 based Ubuntu 18.04, Ubuntu 20.04, Ubuntu 20.10, Ubuntu 22.04, CentOS 7, CentOS 8, AlmaLinux 8, RockyLinux 8, CloudLinux 7, CloudLinux 8, openEuler 20.03, openEuler 22.03...\n"
-  	  exit
+  	#   Debug_Log2 "Popo PowerPanel is supported on x86_64 based Ubuntu 18.04, Ubuntu 20.04, Ubuntu 20.10, Ubuntu 22.04, CentOS 7, CentOS 8, AlmaLinux 8, RockyLinux 8, CloudLinux 7, CloudLinux 8, openEuler 20.03, openEuler 22.03... [404]"
+	  exit
 	fi
 
 	Server_OS_Version=$(grep VERSION_ID /etc/os-release | awk -F[=,] '{print $2}' | tr -d \" | head -c2 | tr -d . )
@@ -371,7 +372,7 @@ install_php_memcached() {
 }
 
 main_page() {
-echo -e "		Popo PowerPanel Utility Tools \e[31m(beta)\e[39m
+echo -e "		CyberPanel Utility Tools \e[31m(beta)\e[39m
 
   1. Upgrade CyberPanel.
 

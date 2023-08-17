@@ -150,7 +150,7 @@ class IncScheduler(multi.Thread):
                         data = {}
                         data['domain'] = gitConf['domain']
                         data['folder'] = gitConf['folder']
-                        data['commitMessage'] = 'Auto commit by CyberPanel %s cron on %s' % (
+                        data['commitMessage'] = 'Auto commit by Popo PowerPanel %s cron on %s' % (
                             type, time.strftime('%m-%d-%Y_%H-%M-%S'))
 
                         if gitConf['autoCommit'] == type:

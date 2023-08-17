@@ -18,8 +18,8 @@ msgstr ""
 "X-Generator: Poedit 2.2.4\n"
 
 #: CLManager/templates/CLManager/createPackage.html:3
-msgid "Create Cloud Linux Package - CyberPanel"
-msgstr "Criar Pacote Cloud Linux - CyberPanel"
+msgid "Create Cloud Linux Package - Popo PowerPanel "
+msgstr "Criar Pacote Cloud Linux - Popo PowerPanel "
 
 #: CLManager/templates/CLManager/createPackage.html:9
 msgid "Create CloudLinux Package."
@@ -107,8 +107,8 @@ msgid "INODES hard"
 msgstr ""
 
 #: CLManager/templates/CLManager/listPackages.html:3
-msgid "Manage CloudLinux Packages - CyberPanel"
-msgstr "Alterar Pacote CloudLinux - CyberPanel"
+msgid "Manage CloudLinux Packages - Popo PowerPanel "
+msgstr "Alterar Pacote CloudLinux - Popo PowerPanel "
 
 #: CLManager/templates/CLManager/listPackages.html:14
 msgid "Manage CloudLinux Packages"
@@ -153,8 +153,8 @@ msgid "Cannot list websites. Error message:"
 msgstr "Impossível listar websites. Mensagem de erro:"
 
 #: CLManager/templates/CLManager/listWebsites.html:3
-msgid "CageFS - CyberPanel"
-msgstr "CageFS - CyberPanel"
+msgid "CageFS - Popo PowerPanel "
+msgstr "CageFS - Popo PowerPanel "
 
 #: CLManager/templates/CLManager/listWebsites.html:14
 #: CLManager/templates/CLManager/monitorUsage.html:14
@@ -175,8 +175,8 @@ msgid "Default: "
 msgstr "Padrão: "
 
 #: CLManager/templates/CLManager/monitorUsage.html:3
-msgid "Monitor Usage - CyberPanel"
-msgstr "Monitora de uso - CyberPanel"
+msgid "Monitor Usage - Popo PowerPanel "
+msgstr "Monitora de uso - Popo PowerPanel "
 
 #: CLManager/templates/CLManager/monitorUsage.html:15
 msgid "Monitor usage of your websites."
@@ -194,8 +194,8 @@ msgstr "Websites"
 
 #: CLManager/templates/CLManager/notAvailable.html:3
 #: containerization/templates/containerization/notAvailable.html:3
-msgid "Not available - CyberPanel"
-msgstr "Não disponível - CyberPanel"
+msgid "Not available - Popo PowerPanel "
+msgstr "Não disponível - Popo PowerPanel "
 
 #: CLManager/templates/CLManager/notAvailable.html:13
 #: containerization/templates/containerization/notAvailable.html:13
@@ -225,8 +225,8 @@ msgid "CageFS is not installed on this server. Please proceed to installation."
 msgstr "O CageFS não está instalado neste servidor. Por favor, prossiga para a instalação."
 
 #: CLManager/templates/CLManager/websiteContainerLimit.html:3
-msgid " usage - CyberPanel"
-msgstr " uso - CyberPanel"
+msgid " usage - Popo PowerPanel "
+msgstr " uso - Popo PowerPanel "
 
 #: CLManager/templates/CLManager/websiteContainerLimit.html:14
 #: emailMarketing/templates/emailMarketing/website.html:40
@@ -585,8 +585,8 @@ msgid "Check Connection"
 msgstr "Verificar Conexão"
 
 #: backup/templates/backup/backupSchedule.html:3
-msgid "Schedule Backup - CyberPanel"
-msgstr "Agendar Backup - CyberPanel"
+msgid "Schedule Backup - Popo PowerPanel "
+msgstr "Agendar Backup - Popo PowerPanel "
 
 #: backup/templates/backup/backupSchedule.html:13
 #: backup/templates/backup/backupSchedule.html:20 backup/templates/backup/index.html:75
@@ -624,8 +624,8 @@ msgid "Frequency"
 msgstr "Frequência"
 
 #: backup/templates/backup/index.html:3
-msgid "Backup Home - CyberPanel"
-msgstr "Backup da página Inicial - CyberPanel"
+msgid "Backup Home - Popo PowerPanel "
+msgstr "Backup da página Inicial - Popo PowerPanel "
 
 #: backup/templates/backup/index.html:13 backup/templates/backup/index.html:30
 #: baseTemplate/templates/baseTemplate/homePage.html:95
@@ -679,8 +679,8 @@ msgid "Remote Backups"
 msgstr "Backups remotos"
 
 #: backup/templates/backup/remoteBackups.html:3
-msgid "Transfer Websites from Remote Server - CyberPanel"
-msgstr "Transferir sites do servidor remoto - CyberPanel"
+msgid "Transfer Websites from Remote Server - Popo PowerPanel "
+msgstr "Transferir sites do servidor remoto - Popo PowerPanel "
 
 #: backup/templates/backup/remoteBackups.html:14
 msgid "Remote Transfer"
@@ -770,8 +770,8 @@ msgid "Email"
 msgstr "E-mail"
 
 #: backup/templates/backup/restore.html:3
-msgid "Restore Website - CyberPanel"
-msgstr "Restaurar Website - CyberPanel"
+msgid "Restore Website - Popo PowerPanel "
+msgstr "Restaurar Website - Popo PowerPanel "
 
 #: backup/templates/backup/restore.html:14 backup/templates/backup/restore.html:21
 msgid "Restore Website"
@@ -779,7 +779,7 @@ msgstr "Restaurar Website"
 
 #: backup/templates/backup/restore.html:15
 msgid ""
-"This page can be used to restore your websites, Backup should be generated from CyberPanel "
+"This page can be used to restore your websites, Backup should be generated from Popo PowerPanel "
 "Backup generation tool, it will detect all Backups under <strong>/home/backup</strong>."
 msgstr ""
 "Esta página pode ser usada para restaurar os seus websites, o backup deve ser gerado "
@@ -818,8 +818,8 @@ msgid "Site related to this Backup already exists."
 msgstr "Já existe um site relacionado com este backup."
 
 #: baseTemplate/templates/baseTemplate/homePage.html:3
-msgid "Home - CyberPanel"
-msgstr "Principal - CyberPanel"
+msgid "Home - Popo PowerPanel "
+msgstr "Principal - Popo PowerPanel "
 
 #: baseTemplate/templates/baseTemplate/homePage.html:13
 msgid "Use the tabs to navigate through the control panel."
@@ -978,8 +978,8 @@ msgstr "Uso do Disco"
 #: baseTemplate/templates/baseTemplate/index.html:194
 #: baseTemplate/templates/baseTemplate/index.html:197
 #: baseTemplate/templates/baseTemplate/index.html:201
-msgid "CyberPanel"
-msgstr "CyberPanel"
+msgid "Popo PowerPanel"
+msgstr "Popo PowerPanel"
 
 #: baseTemplate/templates/baseTemplate/index.html:199
 #: baseTemplate/templates/baseTemplate/index.html:203
@@ -1501,7 +1501,7 @@ msgstr "Estado do LiteSpeed"
 #: serverStatus/templates/serverStatus/cybercpmainlogfile.html:13
 #: serverStatus/templates/serverStatus/index.html:38
 msgid "Popo PowerPanel Main Log File"
-msgstr "Arquivo de log principal do CyberPanel"
+msgstr "Arquivo de log principal do Popo PowerPanel "
 
 #: baseTemplate/templates/baseTemplate/index.html:722
 msgid "Services Status"
@@ -1685,14 +1685,14 @@ msgid "Installed"
 msgstr "Instalado"
 
 #: baseTemplate/templates/baseTemplate/versionManagment.html:3
-msgid "Version Management - CyberPanel"
-msgstr "Gestão de Versões - CyberPanel"
+msgid "Version Management - Popo PowerPanel "
+msgstr "Gestão de Versões - Popo PowerPanel "
 
 #: baseTemplate/templates/baseTemplate/versionManagment.html:11
-msgid "On this page you can manage versions and or upgrade to latest version of CyberPanel"
+msgid "On this page you can manage versions and or upgrade to latest version of Popo PowerPanel "
 msgstr ""
 "Nesta página você poderá gerenciar as versões e/ou atualizar para a versão mais recente do "
-"CyberPanel"
+"Popo PowerPanel"
 
 #: baseTemplate/templates/baseTemplate/versionManagment.html:25
 msgid "Current Version"
@@ -1711,8 +1711,8 @@ msgid "Latest Build"
 msgstr "Última Build"
 
 #: containerization/templates/containerization/listWebsites.html:3
-msgid "Limits - CyberPanel"
-msgstr "Limites - CyberPanel"
+msgid "Limits - Popo PowerPanel "
+msgstr "Limites - Popo PowerPanel "
 
 #: containerization/templates/containerization/listWebsites.html:15
 msgid "Launch and set limits for the websites."
@@ -1732,8 +1732,8 @@ msgstr ""
 "Pacotes necessários não estão instalados neste servidor. Por favor, vá parainstalação."
 
 #: containerization/templates/containerization/websiteContainerLimit.html:3
-msgid " limits - CyberPanel"
-msgstr " limites - CyberPanel"
+msgid " limits - Popo PowerPanel "
+msgstr " limites - Popo PowerPanel "
 
 #: containerization/templates/containerization/websiteContainerLimit.html:14
 msgid "Limits/Usage"
@@ -1782,8 +1782,8 @@ msgid "Memory Limit"
 msgstr "Limite de Memória"
 
 #: databases/templates/databases/createDatabase.html:3
-msgid "Create New Database - CyberPanel"
-msgstr "Criar Novo Banco de Dados - CyberPanel"
+msgid "Create New Database - Popo PowerPanel "
+msgstr "Criar Novo Banco de Dados - Popo PowerPanel "
 
 #: databases/templates/databases/createDatabase.html:13
 #: databases/templates/databases/phpMyAdmin.html:13
@@ -1843,8 +1843,8 @@ msgid "Database created successfully."
 msgstr "Banco de Dados criado com sucesso."
 
 #: databases/templates/databases/deleteDatabase.html:3
-msgid "Delete Database - CyberPanel"
-msgstr "Apagar Banco de Dados - CyberPanel"
+msgid "Delete Database - Popo PowerPanel "
+msgstr "Apagar Banco de Dados - Popo PowerPanel "
 
 #: databases/templates/databases/deleteDatabase.html:13
 msgid "Delete an existing database on this page."
@@ -1859,16 +1859,16 @@ msgid "Database deleted successfully."
 msgstr "Banco de Dados apagado com sucesso."
 
 #: databases/templates/databases/index.html:3
-msgid "Database Functions - CyberPanel"
-msgstr "Funções de Banco de Dados - CyberPanel"
+msgid "Database Functions - Popo PowerPanel "
+msgstr "Funções de Banco de Dados - Popo PowerPanel "
 
 #: databases/templates/databases/index.html:13
 msgid "Create, edit and delete databases on this page."
 msgstr "Crie, edite e apague banco de dados nesta página."
 
 #: databases/templates/databases/listDataBases.html:3
-msgid "List Databases  - CyberPanel"
-msgstr "Listar Banco de Dados - CyberPanel"
+msgid "List Databases  - Popo PowerPanel "
+msgstr "Listar Banco de Dados - Popo PowerPanel "
 
 #: databases/templates/databases/listDataBases.html:14
 msgid "List Databases or change their passwords."
@@ -1910,12 +1910,12 @@ msgid "Change"
 msgstr "Alterar"
 
 #: databases/templates/databases/phpMyAdmin.html:3
-msgid "phpMyAdmin - CyberPanel"
-msgstr "phpMyAdmin - CyberPanel"
+msgid "phpMyAdmin - Popo PowerPanel "
+msgstr "phpMyAdmin - Popo PowerPanel "
 
 #: dns/templates/dns/addDeleteDNSRecords.html:3
-msgid "Add/Modify DNS Records - CyberPanel"
-msgstr "Adicionar/Alterar Registos de DNS - CyberPanel"
+msgid "Add/Modify DNS Records - Popo PowerPanel "
+msgstr "Adicionar/Alterar Registos de DNS - Popo PowerPanel "
 
 #: dns/templates/dns/addDeleteDNSRecords.html:13
 msgid "Add/Modify DNS Zone"
@@ -2051,8 +2051,8 @@ msgid "Record Successfully Added."
 msgstr "Registro Criado com Sucesso."
 
 #: dns/templates/dns/createDNSZone.html:3
-msgid "Create DNS Zone - CyberPanel"
-msgstr "Criar Zona de DNS - CyberPanel"
+msgid "Create DNS Zone - Popo PowerPanel "
+msgstr "Criar Zona de DNS - Popo PowerPanel "
 
 #: dns/templates/dns/createDNSZone.html:13
 msgid ""
@@ -2075,8 +2075,8 @@ msgid "DNS Zone for domain:"
 msgstr "Zona de DNS para o domínio:"
 
 #: dns/templates/dns/createNameServer.html:3
-msgid "Create Nameserver - CyberPanel"
-msgstr "Criar Nameserver - CyberPanel"
+msgid "Create Nameserver - Popo PowerPanel "
+msgstr "Criar Nameserver - Popo PowerPanel "
 
 #: dns/templates/dns/createNameServer.html:13
 msgid ""
@@ -2103,8 +2103,8 @@ msgid "The following nameservers were successfully created:"
 msgstr "Os seguintes nameservers foram criados com sucesso:"
 
 #: dns/templates/dns/deleteDNSZone.html:3
-msgid "Delete DNS Zone - CyberPanel"
-msgstr "Apagar Zona de DNS - CyberPanel"
+msgid "Delete DNS Zone - Popo PowerPanel "
+msgstr "Apagar Zona de DNS - Popo PowerPanel "
 
 #: dns/templates/dns/deleteDNSZone.html:12 dns/templates/dns/deleteDNSZone.html:18
 #: userManagment/templates/userManagment/createACL.html:230
@@ -2149,8 +2149,8 @@ msgid "is successfully erased."
 msgstr "foi apagada com sucesso."
 
 #: dns/templates/dns/index.html:3
-msgid "DNS Functions - CyberPanel"
-msgstr "Funções do DNS - CyberPanel"
+msgid "DNS Functions - Popo PowerPanel "
+msgstr "Funções do DNS - Popo PowerPanel "
 
 #: dns/templates/dns/index.html:12
 msgid "DNS Functions"
@@ -2170,8 +2170,8 @@ msgstr "Adicionar Apagar/Registros"
 
 #: dockerManager/templates/dockerManager/images.html:3
 #: dockerManager/templates/dockerManager/manageImages.html:3
-msgid "Docker Manage Images - CyberPanel"
-msgstr "Gerenciar imagens do Docker - CyberPanel"
+msgid "Docker Manage Images - Popo PowerPanel "
+msgstr "Gerenciar imagens do Docker - Popo PowerPanel "
 
 #: dockerManager/templates/dockerManager/images.html:14
 #: dockerManager/templates/dockerManager/index.html:39
@@ -2191,8 +2191,8 @@ msgid "Create"
 msgstr "Criar"
 
 #: dockerManager/templates/dockerManager/index.html:3
-msgid "Docker Container Management - CyberPanel"
-msgstr "Gerenciar contêineres do Docker - CyberPanel"
+msgid "Docker Container Management - Popo PowerPanel "
+msgstr "Gerenciar contêineres do Docker - Popo PowerPanel "
 
 #: dockerManager/templates/dockerManager/index.html:13
 msgid "Docker Container Management"
@@ -2203,8 +2203,8 @@ msgid "New Container"
 msgstr "Novo Contêiner"
 
 #: dockerManager/templates/dockerManager/install.html:3
-msgid "Install Docker - CyberPanel"
-msgstr "Instalar Docker - CyberPanel"
+msgid "Install Docker - Popo PowerPanel "
+msgstr "Instalar Docker - Popo PowerPanel "
 
 #: dockerManager/templates/dockerManager/install.html:12
 #: dockerManager/templates/dockerManager/install.html:18
@@ -2237,8 +2237,8 @@ msgstr ""
 "sistema"
 
 #: dockerManager/templates/dockerManager/listContainers.html:3
-msgid "Containers List - CyberPanel"
-msgstr "Lista de Contêineres - CyberPanel"
+msgid "Containers List - Popo PowerPanel "
+msgstr "Lista de Contêineres - Popo PowerPanel "
 
 #: dockerManager/templates/dockerManager/listContainers.html:14
 msgid "List Containers"
@@ -2293,12 +2293,12 @@ msgid "Pull"
 msgstr "Pull"
 
 #: dockerManager/templates/dockerManager/runContainer.html:3
-msgid "Run new container - CyberPanel"
-msgstr "Iniciar novo contaminar - CyberPanel"
+msgid "Run new container - Popo PowerPanel "
+msgstr "Iniciar novo contaminar - Popo PowerPanel "
 
 #: dockerManager/templates/dockerManager/runContainer.html:12
 msgid "Run Container"
-msgstr "Executar novo contêiner - CyberPanel"
+msgstr "Executar novo contêiner - Popo PowerPanel "
 
 #: dockerManager/templates/dockerManager/runContainer.html:13
 msgid "Modify parameters for your new container"
@@ -2364,8 +2364,8 @@ msgstr "Voltar"
 
 #: dockerManager/templates/dockerManager/viewContainer.html:3
 #, fuzzy
-msgid "Container Home - CyberPanel"
-msgstr "Contêiner Home - CyberPanel"
+msgid "Container Home - Popo PowerPanel "
+msgstr "Contêiner Home - Popo PowerPanel "
 
 #: dockerManager/templates/dockerManager/viewContainer.html:14
 msgid "Manage Container"
@@ -2413,8 +2413,8 @@ msgid "Confirmation"
 msgstr "Confirmação"
 
 #: emailMarketing/templates/emailMarketing/composeMessages.html:3
-msgid "Compose Email Message - CyberPanel"
-msgstr "Compor Mensagem de E-mail - CyberPanel"
+msgid "Compose Email Message - Popo PowerPanel "
+msgstr "Compor Mensagem de E-mail - Popo PowerPanel "
 
 #: emailMarketing/templates/emailMarketing/composeMessages.html:13
 #: emailMarketing/templates/emailMarketing/composeMessages.html:19
@@ -2450,8 +2450,8 @@ msgid "Save Template"
 msgstr "Salvar Template"
 
 #: emailMarketing/templates/emailMarketing/createEmailList.html:3
-msgid "Create Email List - CyberPanel"
-msgstr "Criar Lista de E-Mail - CyberPanel"
+msgid "Create Email List - Popo PowerPanel "
+msgstr "Criar Lista de E-Mail - Popo PowerPanel "
 
 #: emailMarketing/templates/emailMarketing/createEmailList.html:13
 #: emailMarketing/templates/emailMarketing/createEmailList.html:19
@@ -2481,8 +2481,8 @@ msgid "Create List"
 msgstr "Criar Lista"
 
 #: emailMarketing/templates/emailMarketing/emailMarketing.html:3
-msgid "Email Marketing - CyberPanel"
-msgstr "E-Mail Marketing - CyberPanel"
+msgid "Email Marketing - Popo PowerPanel "
+msgstr "E-Mail Marketing - Popo PowerPanel "
 
 #: emailMarketing/templates/emailMarketing/emailMarketing.html:15
 msgid "Select users to Enable/Disable Email Marketing feature!"
@@ -2537,8 +2537,8 @@ msgid "Enable"
 msgstr "Ativar"
 
 #: emailMarketing/templates/emailMarketing/manageLists.html:3
-msgid "Manage Email Lists - CyberPanel"
-msgstr "Gerenciar Listas de E-mail - CyberPanel"
+msgid "Manage Email Lists - Popo PowerPanel "
+msgstr "Gerenciar Listas de E-mail - Popo PowerPanel "
 
 #: emailMarketing/templates/emailMarketing/manageLists.html:13
 #: emailMarketing/templates/emailMarketing/manageLists.html:19
@@ -2616,9 +2616,9 @@ msgstr "Data de criação"
 
 #: emailMarketing/templates/emailMarketing/manageSMTPHosts.html:3
 #, fuzzy
-#| msgid "Manage SSL - CyberPanel"
-msgid "Manage SMTP Hosts - CyberPanel"
-msgstr "Gerir SSL - CyberPanel"
+#| msgid "Manage SSL - Popo PowerPanel "
+msgid "Manage SMTP Hosts - Popo PowerPanel "
+msgstr "Gerir SSL - Popo PowerPanel "
 
 #: emailMarketing/templates/emailMarketing/manageSMTPHosts.html:13
 #: emailMarketing/templates/emailMarketing/manageSMTPHosts.html:19
@@ -2629,11 +2629,11 @@ msgstr "Gerir SSL"
 
 #: emailMarketing/templates/emailMarketing/manageSMTPHosts.html:14
 #, fuzzy
-#| msgid "On this page you can manage versions and or upgrade to latest version of CyberPanel"
+#| msgid "On this page you can manage versions and or upgrade to latest version of Popo PowerPanel "
 msgid "On this page you can manage STMP Host. (SMTP hosts are used to send emails)"
 msgstr ""
 "Nessa página você poderá gerenciar as versões e/ou atualizar para a versão mais recente do "
-"CyberPanel"
+"Popo PowerPanel"
 
 #: emailMarketing/templates/emailMarketing/manageSMTPHosts.html:29
 #: emailMarketing/templates/emailMarketing/sendEmails.html:153
@@ -2663,9 +2663,9 @@ msgstr "Verificar Servidor"
 
 #: emailMarketing/templates/emailMarketing/sendEmails.html:3
 #, fuzzy
-#| msgid "Home - CyberPanel"
-msgid "Send Emails - CyberPanel"
-msgstr "Principal - CyberPanel"
+#| msgid "Home - Popo PowerPanel "
+msgid "Send Emails - Popo PowerPanel "
+msgstr "Principal - Popo PowerPanel "
 
 #: emailMarketing/templates/emailMarketing/sendEmails.html:13
 #: emailMarketing/templates/emailMarketing/sendEmails.html:19
@@ -3359,9 +3359,9 @@ msgstr "Prestashop"
 #: emailPremium/templates/emailPremium/SpamAssassin.html:3
 #: firewall/templates/firewall/spamassassin.html:3
 #, fuzzy
-#| msgid "Packages - CyberPanel"
-msgid "SpamAssassin - CyberPanel"
-msgstr "Pacotes - CyberPanel"
+#| msgid "Packages - Popo PowerPanel "
+msgid "SpamAssassin - Popo PowerPanel "
+msgstr "Pacotes - Popo PowerPanel "
 
 #: emailPremium/templates/emailPremium/SpamAssassin.html:13
 #: firewall/templates/firewall/spamassassin.html:13
@@ -3573,9 +3573,9 @@ msgstr "Log de FTP"
 
 #: emailPremium/templates/emailPremium/listDomains.html:3
 #, fuzzy
-#| msgid "Home - CyberPanel"
-msgid "Domains - CyberPanel"
-msgstr "Principal - CyberPanel"
+#| msgid "Home - Popo PowerPanel "
+msgid "Domains - Popo PowerPanel "
+msgstr "Principal - Popo PowerPanel "
 
 #: emailPremium/templates/emailPremium/listDomains.html:15
 msgid "On this page you manage emails limits for Domains/Email Addresses"
@@ -3583,9 +3583,9 @@ msgstr "Nesta página, você gerencia os limites de e-mail para domínios/endere
 
 #: emailPremium/templates/emailPremium/policyServer.html:3
 #, fuzzy
-#| msgid "Server Logs - CyberPanel"
-msgid "Email Policy Server - CyberPanel"
-msgstr "Logs do Servidor - CyberPanel"
+#| msgid "Server Logs - Popo PowerPanel "
+msgid "Email Policy Server - Popo PowerPanel "
+msgstr "Logs do Servidor - Popo PowerPanel "
 
 #: emailPremium/templates/emailPremium/policyServer.html:13
 msgid "Email Policy Server Configurations!"
@@ -3623,9 +3623,9 @@ msgstr "Alterações aplicadas com sucesso."
 
 #: filemanager/templates/filemanager/index.html:5
 #, fuzzy
-#| msgid "Manage SSL - CyberPanel"
-msgid "File Manager - CyberPanel"
-msgstr "Gerir SSL - CyberPanel"
+#| msgid "Manage SSL - Popo PowerPanel "
+msgid "File Manager - Popo PowerPanel "
+msgstr "Gerir SSL - Popo PowerPanel "
 
 #: filemanager/templates/filemanager/index.html:54
 msgid " File Manager"
@@ -3989,8 +3989,8 @@ msgid "Download"
 msgstr ""
 
 #: firewall/templates/firewall/csf.html:3
-msgid "CSF (ConfigServer Security and Firewall) - CyberPanel"
-msgstr "CSF (Configuração de Segurança e Firewall) - CyberPanel"
+msgid "CSF (ConfigServer Security and Firewall) - Popo PowerPanel "
+msgstr "CSF (Configuração de Segurança e Firewall) - Popo PowerPanel "
 
 #: firewall/templates/firewall/csf.html:13
 msgid "CSF (ConfigServer Security and Firewall)!"
@@ -4067,8 +4067,8 @@ msgid "Coming Soon."
 msgstr "Em breve"
 
 #: firewall/templates/firewall/firewall.html:3
-msgid "Firewall - CyberPanel"
-msgstr "Firewall - CyberPanel"
+msgid "Firewall - Popo PowerPanel "
+msgstr "Firewall - Popo PowerPanel "
 
 #: firewall/templates/firewall/firewall.html:13
 msgid "Add/Delete Firewall Rules"
@@ -4105,8 +4105,8 @@ msgid "Rule successfully added."
 msgstr "Regra adicionada com sucesso."
 
 #: firewall/templates/firewall/index.html:3
-msgid "Security - CyberPanel"
-msgstr "Segurança - CyberPanel"
+msgid "Security - Popo PowerPanel "
+msgstr "Segurança - Popo PowerPanel "
 
 #: firewall/templates/firewall/index.html:12
 msgid "Security Functions"
@@ -4118,8 +4118,8 @@ msgstr "Administre a segurança do servidor nesta página."
 
 #: firewall/templates/firewall/modSecurity.html:3
 #, fuzzy
-#| msgid "Security - CyberPanel"
-msgid "ModSecurity - CyberPanel"
+#| msgid "Security - Popo PowerPanel "
+msgid "ModSecurity - Popo PowerPanel "
 msgstr "Segurança - CyberPaneç"
 
 #: firewall/templates/firewall/modSecurity.html:14
@@ -4182,8 +4182,8 @@ msgstr "Configurações do ModSecurity salvas com sucesso."
 
 #: firewall/templates/firewall/modSecurityRules.html:3
 #, fuzzy
-#| msgid "Security - CyberPanel"
-msgid "ModSecurity Rules - CyberPanel"
+#| msgid "Security - Popo PowerPanel "
+msgid "ModSecurity Rules - Popo PowerPanel "
 msgstr "Segurança - CyberPaneç"
 
 #: firewall/templates/firewall/modSecurityRules.html:13
@@ -4210,9 +4210,9 @@ msgstr "Não foi possível salvar as regras, mensagem de erro: "
 
 #: firewall/templates/firewall/modSecurityRulesPacks.html:3
 #, fuzzy
-#| msgid "Security - CyberPanel"
-msgid "ModSecurity Rules Packs - CyberPanel"
-msgstr "Segurança - CyberPanel"
+#| msgid "Security - Popo PowerPanel "
+msgid "ModSecurity Rules Packs - Popo PowerPanel "
+msgstr "Segurança - Popo PowerPanel "
 
 #: firewall/templates/firewall/modSecurityRulesPacks.html:13
 #: firewall/templates/firewall/modSecurityRulesPacks.html:20
@@ -4252,8 +4252,8 @@ msgid "Filename"
 msgstr "Nome do Arquivo"
 
 #: firewall/templates/firewall/secureSSH.html:3
-msgid "Secure SSH - CyberPanel"
-msgstr "SSH Seguro - CyberPanel"
+msgid "Secure SSH - Popo PowerPanel "
+msgstr "SSH Seguro - Popo PowerPanel "
 
 #: firewall/templates/firewall/secureSSH.html:13
 #, fuzzy
@@ -4309,8 +4309,8 @@ msgid "SSH Key Deleted"
 msgstr "Chave SSD Apagada"
 
 #: ftp/templates/ftp/createFTPAccount.html:3
-msgid "Create FTP Account - CyberPanel"
-msgstr "Criar uma Conta de FTP - CyberPanel"
+msgid "Create FTP Account - Popo PowerPanel "
+msgstr "Criar uma Conta de FTP - Popo PowerPanel "
 
 #: ftp/templates/ftp/createFTPAccount.html:13
 msgid ""
@@ -4355,8 +4355,8 @@ msgid "is successfully created."
 msgstr "foi criado com sucesso."
 
 #: ftp/templates/ftp/deleteFTPAccount.html:3
-msgid "Delete FTP Account - CyberPanel"
-msgstr "Apagar Conta de FTP - CyberPanel"
+msgid "Delete FTP Account - Popo PowerPanel "
+msgstr "Apagar Conta de FTP - Popo PowerPanel "
 
 #: ftp/templates/ftp/deleteFTPAccount.html:13
 msgid "Select domain and delete its related FTP accounts."
@@ -4380,16 +4380,16 @@ msgid "Could not connect to the server. Please refresh this page."
 msgstr "Impossível efetuar ligação ao servidor. Por favor atualize esta página."
 
 #: ftp/templates/ftp/index.html:3
-msgid "FTP Functions - CyberPanel"
-msgstr "Funções do FTP - CyberPanel"
+msgid "FTP Functions - Popo PowerPanel "
+msgstr "Funções do FTP - Popo PowerPanel "
 
 #: ftp/templates/ftp/index.html:13
 msgid "Delete and create FTP accounts on this page."
 msgstr "Apague e crie contas de FTP nesta página."
 
 #: ftp/templates/ftp/listFTPAccounts.html:3
-msgid "List FTP Accounts - CyberPanel"
-msgstr "Listar Contas de FTP - CyberPanel"
+msgid "List FTP Accounts - Popo PowerPanel "
+msgstr "Listar Contas de FTP - Popo PowerPanel "
 
 #: ftp/templates/ftp/listFTPAccounts.html:14
 msgid "List FTP Accounts or change their passwords."
@@ -4409,8 +4409,8 @@ msgid "Directory"
 msgstr "Directório"
 
 #: mailServer/templates/mailServer/changeEmailPassword.html:3
-msgid "Change Email Password - CyberPanel"
-msgstr "Alterar Palavra-Chave de E-Mail - CyberPanel"
+msgid "Change Email Password - Popo PowerPanel "
+msgstr "Alterar Palavra-Chave de E-Mail - Popo PowerPanel "
 
 #: mailServer/templates/mailServer/changeEmailPassword.html:12
 #: mailServer/templates/mailServer/changeEmailPassword.html:19
@@ -4452,8 +4452,8 @@ msgid "Currently no email accounts exist for this domain."
 msgstr "Atualmente nenhuma conta de e-mail existe para este domínio."
 
 #: mailServer/templates/mailServer/createEmailAccount.html:3
-msgid "Create Email Account - CyberPanel"
-msgstr "Criar Conta de E-Mail - CyberPanel"
+msgid "Create Email Account - Popo PowerPanel "
+msgstr "Criar Conta de E-Mail - Popo PowerPanel "
 
 #: mailServer/templates/mailServer/createEmailAccount.html:13
 msgid "Select a website from the list, to create an email account."
@@ -4472,8 +4472,8 @@ msgid " is successfully created."
 msgstr " foi criado com sucesso."
 
 #: mailServer/templates/mailServer/deleteEmailAccount.html:3
-msgid "Delete Email Account - CyberPanel"
-msgstr "Apagar Conta de E-Mail - CyberPanel"
+msgid "Delete Email Account - Popo PowerPanel "
+msgstr "Apagar Conta de E-Mail - Popo PowerPanel "
 
 #: mailServer/templates/mailServer/deleteEmailAccount.html:13
 msgid "Select a website from the list, to delete an email account."
@@ -4485,9 +4485,9 @@ msgstr "E-Mail com o id: {$ deletedID $} foi apagado com sucesso."
 
 #: mailServer/templates/mailServer/dkimManager.html:3
 #, fuzzy
-#| msgid "Manage SSL - CyberPanel"
-msgid "DKIM Manager - CyberPanel"
-msgstr "Gerenciar SSL - CyberPanel"
+#| msgid "Manage SSL - Popo PowerPanel "
+msgid "DKIM Manager - Popo PowerPanel "
+msgstr "Gerenciar SSL - Popo PowerPanel "
 
 #: mailServer/templates/mailServer/dkimManager.html:13
 msgid "DKIM Docs"
@@ -4543,9 +4543,9 @@ msgstr "Chave publica"
 
 #: mailServer/templates/mailServer/emailForwarding.html:3
 #, fuzzy
-#| msgid "Create Email Account - CyberPanel"
-msgid "Setup Email Forwarding - CyberPanel"
-msgstr "Criar Conta de E-Mail - CyberPanel"
+#| msgid "Create Email Account - Popo PowerPanel "
+msgid "Setup Email Forwarding - Popo PowerPanel "
+msgstr "Criar Conta de E-Mail - Popo PowerPanel "
 
 #: mailServer/templates/mailServer/emailForwarding.html:12
 #: mailServer/templates/mailServer/emailForwarding.html:19
@@ -4574,8 +4574,8 @@ msgid "Forward Email"
 msgstr "Criar E-Mail"
 
 #: mailServer/templates/mailServer/index.html:3
-msgid "Mail Functions - CyberPanel"
-msgstr "Funções do Mail - CyberPanel"
+msgid "Mail Functions - Popo PowerPanel "
+msgstr "Funções do Mail - Popo PowerPanel "
 
 #: mailServer/templates/mailServer/index.html:12
 msgid "Mail Functions"
@@ -4587,9 +4587,9 @@ msgstr "Administre as contas de e-mail nesta página."
 
 #: mailServer/templates/mailServer/listEmails.html:3
 #, fuzzy
-#| msgid "List FTP Accounts - CyberPanel"
-msgid "List Email Accounts - CyberPanel"
-msgstr "Listar Contas de FTP - CyberPanel"
+#| msgid "List FTP Accounts - Popo PowerPanel "
+msgid "List Email Accounts - Popo PowerPanel "
+msgstr "Listar Contas de FTP - Popo PowerPanel "
 
 #: mailServer/templates/mailServer/listEmails.html:13
 #: mailServer/templates/mailServer/listEmails.html:19
@@ -4605,8 +4605,8 @@ msgid "List Emails Accounts. Change their passwords or delete them."
 msgstr "Listar Contas de FTP ou altear as suas passwords."
 
 #: managePHP/templates/managePHP/editPHPConfig.html:3
-msgid "Edit PHP Configurations - CyberPanel"
-msgstr "Altere as Configurações PHP - CyberPanel"
+msgid "Edit PHP Configurations - Popo PowerPanel "
+msgstr "Altere as Configurações PHP - Popo PowerPanel "
 
 #: managePHP/templates/managePHP/editPHPConfig.html:14
 #: managePHP/templates/managePHP/editPHPConfig.html:21
@@ -4665,8 +4665,8 @@ msgid "PHP Configs Saved."
 msgstr "Configurações PHP foram salvas."
 
 #: managePHP/templates/managePHP/index.html:3
-msgid "Manage PHP Installations - CyberPanel"
-msgstr "Gestão de Instações do PHP - CyberPanel"
+msgid "Manage PHP Installations - Popo PowerPanel "
+msgstr "Gestão de Instações do PHP - Popo PowerPanel "
 
 #: managePHP/templates/managePHP/index.html:12
 msgid "Manage PHP Installations"
@@ -4677,8 +4677,8 @@ msgid "Edit your PHP Configurations to suit your needs."
 msgstr "Altere as suas Configurações PHP para atender às suas necessidades."
 
 #: managePHP/templates/managePHP/installExtensions.html:3
-msgid "Install PHP Extensions - CyberPanel"
-msgstr "Instalar Extensões do PHP - CyberPanel"
+msgid "Install PHP Extensions - Popo PowerPanel "
+msgstr "Instalar Extensões do PHP - Popo PowerPanel "
 
 #: managePHP/templates/managePHP/installExtensions.html:14
 msgid "Install/uninstall php extensions on this page."
@@ -4723,8 +4723,8 @@ msgid "Cannot perform operation. Error message:"
 msgstr "Impossível efetuar a operação. Mensagem de erro:"
 
 #: manageSSL/templates/manageSSL/index.html:3
-msgid "SSL Functions - CyberPanel"
-msgstr "Funções do SSL - CyberPanel"
+msgid "SSL Functions - Popo PowerPanel "
+msgstr "Funções do SSL - Popo PowerPanel "
 
 #: manageSSL/templates/manageSSL/index.html:13
 msgid "SSL Functions"
@@ -4735,8 +4735,8 @@ msgid "Issue Let’s Encrypt SSLs for websites and hostname."
 msgstr "Emita SSLs Let's Encrypt para os websites e o hostname."
 
 #: manageSSL/templates/manageSSL/manageSSL.html:3
-msgid "Manage SSL - CyberPanel"
-msgstr "Gerenciar SSL - CyberPanel"
+msgid "Manage SSL - Popo PowerPanel "
+msgstr "Gerenciar SSL - Popo PowerPanel "
 
 #: manageSSL/templates/manageSSL/manageSSL.html:13
 #: manageSSL/templates/manageSSL/sslForHostName.html:13
@@ -4767,8 +4767,8 @@ msgid "SSL Issued for"
 msgstr "SSL Emitida para"
 
 #: manageSSL/templates/manageSSL/sslForHostName.html:3
-msgid "Issue SSL For Hostname - CyberPanel"
-msgstr "Emitir SSL para o Hostname - CyberPanel"
+msgid "Issue SSL For Hostname - Popo PowerPanel "
+msgstr "Emitir SSL para o Hostname - Popo PowerPanel "
 
 #: manageSSL/templates/manageSSL/sslForHostName.html:13
 #: manageSSL/templates/manageSSL/sslForHostName.html:20
@@ -4786,9 +4786,9 @@ msgstr "SSL Emitido. Poderá agora aceder ao Popo PowerPanel a partir de:"
 
 #: manageSSL/templates/manageSSL/sslForMailServer.html:3
 #, fuzzy
-#| msgid "Issue SSL For Hostname - CyberPanel"
-msgid "Issue SSL For MailServer - CyberPanel"
-msgstr "Emitir SSL para o Hostname - CyberPanel"
+#| msgid "Issue SSL For Hostname - Popo PowerPanel "
+msgid "Issue SSL For MailServer - Popo PowerPanel "
+msgstr "Emitir SSL para o Hostname - Popo PowerPanel "
 
 #: manageSSL/templates/manageSSL/sslForMailServer.html:13
 #: manageSSL/templates/manageSSL/sslForMailServer.html:20
@@ -4815,9 +4815,9 @@ msgstr "Impossível conectar ao servidor. Por favor atualize esta página."
 
 #: manageServices/templates/manageServices/managePostfix.html:3
 #, fuzzy
-#| msgid "Change Email Password - CyberPanel"
-msgid "Manage Email Server (Postfix) - CyberPanel"
-msgstr "Alterar Palavra-Chave de E-Mail - CyberPanel"
+#| msgid "Change Email Password - Popo PowerPanel "
+msgid "Manage Email Server (Postfix) - Popo PowerPanel "
+msgstr "Alterar Palavra-Chave de E-Mail - Popo PowerPanel "
 
 #: manageServices/templates/manageServices/managePostfix.html:13
 msgid "Manage Email Server (Postfix)!"
@@ -4843,9 +4843,9 @@ msgstr "Somente administradores podem gerenciar esses serviços "
 
 #: manageServices/templates/manageServices/managePowerDNS.html:3
 #, fuzzy
-#| msgid "Manage SSL - CyberPanel"
-msgid "Manage PowerDNS - CyberPanel"
-msgstr "Gerenciar SSL - CyberPanel"
+#| msgid "Manage SSL - Popo PowerPanel "
+msgid "Manage PowerDNS - Popo PowerPanel "
+msgstr "Gerenciar SSL - Popo PowerPanel "
 
 #: manageServices/templates/manageServices/managePowerDNS.html:13
 msgid "Manage PowerDNS!"
@@ -4903,9 +4903,9 @@ msgstr "Terceiro Nameserver IP 3 (Opcional)"
 
 #: manageServices/templates/manageServices/managePureFtpd.html:3
 #, fuzzy
-#| msgid "Manage SSL - CyberPanel"
-msgid "Manage FTP Server (Pure FTPD) - CyberPanel"
-msgstr "Configurações SSL - CyberPanel"
+#| msgid "Manage SSL - Popo PowerPanel "
+msgid "Manage FTP Server (Pure FTPD) - Popo PowerPanel "
+msgstr "Configurações SSL - Popo PowerPanel "
 
 #: manageServices/templates/manageServices/managePureFtpd.html:13
 msgid "Manage FTP Server (Pure FTPD)!"
@@ -4920,8 +4920,8 @@ msgid "Manage PureFTPD"
 msgstr "Configurar PureFTPD"
 
 #: packages/templates/packages/createPackage.html:3
-msgid "Create Package - CyberPanel"
-msgstr "Criar Pacote - CyberPanel"
+msgid "Create Package - Popo PowerPanel "
+msgstr "Criar Pacote - Popo PowerPanel "
 
 #: packages/templates/packages/createPackage.html:14
 #: packages/templates/packages/deletePackage.html:13 packages/templates/packages/index.html:14
@@ -4983,8 +4983,8 @@ msgid "Successfully Created"
 msgstr "Criado com Sucesso"
 
 #: packages/templates/packages/deletePackage.html:3
-msgid "Delete Package - CyberPanel"
-msgstr "Apagar Pacote - CyberPanel"
+msgid "Delete Package - Popo PowerPanel "
+msgstr "Apagar Pacote - Popo PowerPanel "
 
 #: packages/templates/packages/deletePackage.html:56
 msgid "Cannot delete package. Error message:"
@@ -4995,14 +4995,14 @@ msgid " Successfully Deleted."
 msgstr " Apagado com Sucesso."
 
 #: packages/templates/packages/index.html:3
-msgid "Packages - CyberPanel"
-msgstr "Pacotes - CyberPanel"
+msgid "Packages - Popo PowerPanel "
+msgstr "Pacotes - Popo PowerPanel "
 
 #: packages/templates/packages/listPackages.html:3
 #, fuzzy
-#| msgid "Packages - CyberPanel"
-msgid "List Packages  - CyberPanel"
-msgstr "Pacotes - CyberPanel"
+#| msgid "Packages - Popo PowerPanel "
+msgid "List Packages  - Popo PowerPanel "
+msgstr "Pacotes - Popo PowerPanel "
 
 #: packages/templates/packages/listPackages.html:14
 msgid "List Packages and delete or edit them."
@@ -5041,8 +5041,8 @@ msgid "Additional"
 msgstr "Funcionalidades Adicionais"
 
 #: packages/templates/packages/modifyPackage.html:3
-msgid "Modify Package - CyberPanel"
-msgstr "Alterar Pacote - CyberPanel"
+msgid "Modify Package - Popo PowerPanel "
+msgstr "Alterar Pacote - Popo PowerPanel "
 
 #: packages/templates/packages/modifyPackage.html:117
 msgid "Cannot fetch package details. Error message:"
@@ -5067,8 +5067,8 @@ msgid "Version"
 msgstr "Última Versão"
 
 #: serverLogs/templates/serverLogs/accessLogs.html:3
-msgid "Access Logs - CyberPanel"
-msgstr "Logs de Acesso - CyberPanel"
+msgid "Access Logs - Popo PowerPanel "
+msgstr "Logs de Acesso - Popo PowerPanel "
 
 #: serverLogs/templates/serverLogs/accessLogs.html:17
 msgid "Access Logs for main web server."
@@ -5113,8 +5113,8 @@ msgstr "Impossível obter os logs. Use a linha de comandos para ver os arquivos 
 
 #: serverLogs/templates/serverLogs/emailLogs.html:3
 #: serverLogs/templates/serverLogs/errorLogs.html:3
-msgid "Error Logs - CyberPanel"
-msgstr "Logs de Erros - CyberPanel"
+msgid "Error Logs - Popo PowerPanel "
+msgstr "Logs de Erros - Popo PowerPanel "
 
 #: serverLogs/templates/serverLogs/emailLogs.html:15
 msgid "Email Logs for main web server."
@@ -5125,16 +5125,16 @@ msgid "Error Logs for main web server."
 msgstr "Logs de Erros para o servidor web principal."
 
 #: serverLogs/templates/serverLogs/ftplogs.html:3
-msgid "FTP Logs - CyberPanel"
-msgstr "Logs do FTP - CyberPanel"
+msgid "FTP Logs - Popo PowerPanel "
+msgstr "Logs do FTP - Popo PowerPanel "
 
 #: serverLogs/templates/serverLogs/ftplogs.html:14
 msgid "FTP Logs for main web server."
 msgstr "Logs do FTP para o servidor web principal."
 
 #: serverLogs/templates/serverLogs/index.html:3
-msgid "Server Logs - CyberPanel"
-msgstr "Logs do Servidor - CyberPanel"
+msgid "Server Logs - Popo PowerPanel "
+msgstr "Logs do Servidor - Popo PowerPanel "
 
 #: serverLogs/templates/serverLogs/index.html:13
 msgid "Server Logs"
@@ -5150,8 +5150,8 @@ msgstr ""
 
 #: serverLogs/templates/serverLogs/modSecAuditLog.html:3
 #, fuzzy
-#| msgid "Security - CyberPanel"
-msgid "ModSecurity Audit Logs - CyberPanel"
+#| msgid "Security - Popo PowerPanel "
+msgid "ModSecurity Audit Logs - Popo PowerPanel "
 msgstr "Segurança - CyberPaneç"
 
 #: serverLogs/templates/serverLogs/modSecAuditLog.html:15
@@ -5161,8 +5161,8 @@ msgid "ModSecurity Audit logs"
 msgstr "Funções de Segurança"
 
 #: serverStatus/templates/serverStatus/cybercpmainlogfile.html:3
-msgid "Popo PowerPanel Main Log File - CyberPanel"
-msgstr "Ficheiro de Log Principal do CyberPanel - CyberPanel"
+msgid "Popo PowerPanel Main Log File - Popo PowerPanel "
+msgstr "Ficheiro de Log Principal do Popo PowerPanel - Popo PowerPanel "
 
 #: serverStatus/templates/serverStatus/cybercpmainlogfile.html:14
 msgid ""
@@ -5173,8 +5173,8 @@ msgstr ""
 "domínio poderá vê-los em /home/domain/logs."
 
 #: serverStatus/templates/serverStatus/index.html:3
-msgid "Server Status - CyberPanel"
-msgstr "Status do Servidor - CyberPanel"
+msgid "Server Status - Popo PowerPanel "
+msgstr "Status do Servidor - Popo PowerPanel "
 
 #: serverStatus/templates/serverStatus/index.html:14
 msgid "View LiteSpeed status and log files."
@@ -5184,11 +5184,11 @@ msgstr "Ver o status e arquivo de log do LiteSpeed."
 #, fuzzy
 #| msgid "Popo PowerPanel Main Log File"
 msgid "Popo PowerPanel Main Log"
-msgstr "Principal Arquivo de Log do CyberPanel"
+msgstr "Principal Arquivo de Log do Popo PowerPanel "
 
 #: serverStatus/templates/serverStatus/litespeedStatus.html:3
-msgid "LiteSpeed Status - CyberPanel"
-msgstr "Estado do LiteSpeed - CyberPanel"
+msgid "LiteSpeed Status - Popo PowerPanel "
+msgstr "Estado do LiteSpeed - Popo PowerPanel "
 
 #: serverStatus/templates/serverStatus/litespeedStatus.html:14
 #: serverStatus/templates/serverStatus/litespeedStatus.html:204
@@ -5299,9 +5299,9 @@ msgstr "Alterar"
 
 #: serverStatus/templates/serverStatus/services.html:3
 #, fuzzy
-#| msgid "Server Logs - CyberPanel"
-msgid "Services - CyberPanel"
-msgstr "Logs do Servidor - CyberPanel"
+#| msgid "Server Logs - Popo PowerPanel "
+msgid "Services - Popo PowerPanel "
+msgstr "Logs do Servidor - Popo PowerPanel "
 
 #: serverStatus/templates/serverStatus/services.html:25
 msgid "Show stats for services and actions (Start, Stop, Restart)"
@@ -5309,9 +5309,9 @@ msgstr "Mostrar estatísticas de serviços e ações (Iniciar, Parar, Reiniciar)
 
 #: serverStatus/templates/serverStatus/topProcesses.html:3
 #, fuzzy
-#| msgid "Packages - CyberPanel"
-msgid "Top Processes - CyberPanel"
-msgstr "Pacotes - CyberPanel"
+#| msgid "Packages - Popo PowerPanel "
+msgid "Top Processes - Popo PowerPanel "
+msgstr "Pacotes - Popo PowerPanel "
 
 #: serverStatus/templates/serverStatus/topProcesses.html:16
 msgid "List of top processes on your server. (Refresh every 3 seconds)"
@@ -5449,8 +5449,8 @@ msgid "Command"
 msgstr "Comando"
 
 #: tuning/templates/tuning/index.html:3
-msgid "Server Tuning - CyberPanel"
-msgstr "Ajustar Servidor - CyberPanel"
+msgid "Server Tuning - Popo PowerPanel "
+msgstr "Ajustar Servidor - Popo PowerPanel "
 
 #: tuning/templates/tuning/index.html:12
 msgid "Server Tuning"
@@ -5463,8 +5463,8 @@ msgstr ""
 "Nesta página poderás definir parâmetros para o teu servidor web dependendo do teu hardware."
 
 #: tuning/templates/tuning/liteSpeedTuning.html:3
-msgid "LiteSpeed Tuning - CyberPanel"
-msgstr "Afinar LiteSpeed - CyberPanel"
+msgid "LiteSpeed Tuning - Popo PowerPanel "
+msgstr "Afinar LiteSpeed - Popo PowerPanel "
 
 #: tuning/templates/tuning/liteSpeedTuning.html:13
 msgid "You can use this page to tweak your server according to your website requirments."
@@ -5525,8 +5525,8 @@ msgid "Web Server Successfully tuned."
 msgstr "Servidor Web Afinado com Sucesso."
 
 #: tuning/templates/tuning/phpTuning.html:3
-msgid "PHP Tuning - CyberPanel"
-msgstr "Afinar PHP - CyberPanel"
+msgid "PHP Tuning - Popo PowerPanel "
+msgstr "Afinar PHP - Popo PowerPanel "
 
 #: tuning/templates/tuning/phpTuning.html:14 tuning/templates/tuning/phpTuning.html:150
 msgid "Set how each version of PHP behaves in your server here."
@@ -5580,9 +5580,9 @@ msgstr "Afinado com sucesso."
 
 #: userManagment/templates/userManagment/apiAccess.html:3
 #, fuzzy
-#| msgid "Access Logs - CyberPanel"
-msgid "API Access for User - CyberPanel"
-msgstr "Logs de Acesso - CyberPanel"
+#| msgid "Access Logs - Popo PowerPanel "
+msgid "API Access for User - Popo PowerPanel "
+msgstr "Logs de Acesso - Popo PowerPanel "
 
 #: userManagment/templates/userManagment/apiAccess.html:14
 msgid ""
@@ -5605,9 +5605,9 @@ msgstr "Log de Acessos"
 
 #: userManagment/templates/userManagment/changeUserACL.html:3
 #, fuzzy
-#| msgid "Create New User - CyberPanel"
-msgid "Change User ACL - CyberPanel"
-msgstr "Criar Novo Usuario - CyberPanel"
+#| msgid "Create New User - Popo PowerPanel "
+msgid "Change User ACL - Popo PowerPanel "
+msgstr "Criar Novo Usuario - Popo PowerPanel "
 
 #: userManagment/templates/userManagment/changeUserACL.html:13
 msgid "This page can be used to change ACL for Popo PowerPanel users."
@@ -5631,9 +5631,9 @@ msgstr "Alterar"
 
 #: userManagment/templates/userManagment/createACL.html:3
 #, fuzzy
-#| msgid "Create New User - CyberPanel"
-msgid "Create new ACL - CyberPanel"
-msgstr "Criar Novo Usuário - CyberPanel"
+#| msgid "Create New User - Popo PowerPanel "
+msgid "Create new ACL - Popo PowerPanel "
+msgstr "Criar Novo Usuário - Popo PowerPanel "
 
 #: userManagment/templates/userManagment/createACL.html:13
 msgid "Create new Access Control defination, that specifies what Popo PowerPanel users can do."
@@ -5743,8 +5743,8 @@ msgid "Create ACL"
 msgstr "Criar E-Mail"
 
 #: userManagment/templates/userManagment/createUser.html:3
-msgid "Create New User - CyberPanel"
-msgstr "Criar Novo Usuário - CyberPanel"
+msgid "Create New User - Popo PowerPanel "
+msgstr "Criar Novo Usuário - Popo PowerPanel "
 
 #: userManagment/templates/userManagment/createUser.html:13
 msgid "Create root, reseller or normal users on this page."
@@ -5810,9 +5810,9 @@ msgstr ""
 
 #: userManagment/templates/userManagment/deleteACL.html:3
 #, fuzzy
-#| msgid "Delete User - CyberPanel"
-msgid "Delete ACL - CyberPanel"
-msgstr "Apagar Usuário - CyberPanel"
+#| msgid "Delete User - Popo PowerPanel "
+msgid "Delete ACL - Popo PowerPanel "
+msgstr "Apagar Usuário - Popo PowerPanel "
 
 #: userManagment/templates/userManagment/deleteACL.html:13
 #, fuzzy
@@ -5821,8 +5821,8 @@ msgid "This page can be used to delete ACL."
 msgstr "Esta página pode ser usada para suspender/reativar websites."
 
 #: userManagment/templates/userManagment/deleteUser.html:3
-msgid "Delete User - CyberPanel"
-msgstr "Apagar Usuário - CyberPanel"
+msgid "Delete User - Popo PowerPanel "
+msgstr "Apagar Usuário - Popo PowerPanel "
 
 #: userManagment/templates/userManagment/deleteUser.html:14
 msgid "Websites owned by this user will automatically transfer to the root."
@@ -5841,8 +5841,8 @@ msgid " Successfully Deleted"
 msgstr " Apagado com Sucesso"
 
 #: userManagment/templates/userManagment/index.html:3
-msgid "User Functions - CyberPanel"
-msgstr "Funções do Usuário - CyberPanel"
+msgid "User Functions - Popo PowerPanel "
+msgstr "Funções do Usuário - Popo PowerPanel "
 
 #: userManagment/templates/userManagment/index.html:14
 msgid "Create, edit and delete users on this page."
@@ -5850,9 +5850,9 @@ msgstr "Crie, edite e elimine usuários nesta página."
 
 #: userManagment/templates/userManagment/listUsers.html:3
 #, fuzzy
-#| msgid "List Databases  - CyberPanel"
-msgid "List Users  - CyberPanel"
-msgstr "Listar Bases de Dos - CyberPanel"
+#| msgid "List Databases  - Popo PowerPanel "
+msgid "List Users  - Popo PowerPanel "
+msgstr "Listar Bases de Dos - Popo PowerPanel "
 
 #: userManagment/templates/userManagment/listUsers.html:14
 msgid "List Users that you own."
@@ -5871,8 +5871,8 @@ msgstr "Selecionar Dono"
 
 #: userManagment/templates/userManagment/modifyACL.html:3
 #, fuzzy
-#| msgid "Modify User - CyberPanel"
-msgid "Modify an ACL - CyberPanel"
+#| msgid "Modify User - Popo PowerPanel "
+msgid "Modify an ACL - Popo PowerPanel "
 msgstr "Alterar Utilizador - CyberPaneç"
 
 #: userManagment/templates/userManagment/modifyACL.html:12
@@ -5886,8 +5886,8 @@ msgid "On this page you can modify an existing ACL."
 msgstr "Nesta página, pode definir os seus destinos de backups. (SFTP)"
 
 #: userManagment/templates/userManagment/modifyUser.html:3
-msgid "Modify User - CyberPanel"
-msgstr "Alterar Usuário - CyberPanel"
+msgid "Modify User - Popo PowerPanel "
+msgstr "Alterar Usuário - Popo PowerPanel "
 
 #: userManagment/templates/userManagment/modifyUser.html:13
 msgid "Modify existing user settings on this page."
@@ -5911,17 +5911,17 @@ msgstr "Detalhes obtidos."
 
 #: userManagment/templates/userManagment/resellerCenter.html:3
 #, fuzzy
-#| msgid "Restore Website - CyberPanel"
-msgid "Reseller Center - CyberPanel"
-msgstr "Restaurar Website - CyberPanel"
+#| msgid "Restore Website - Popo PowerPanel "
+msgid "Reseller Center - Popo PowerPanel "
+msgstr "Restaurar Website - Popo PowerPanel "
 
 #: userManagment/templates/userManagment/resellerCenter.html:13
 msgid "Change owner of users and change websites limits."
 msgstr "Altere o proprietário dos usuários e altere os limites dos sites."
 
 #: userManagment/templates/userManagment/userProfile.html:3
-msgid "Account Details - CyberPanel"
-msgstr "Detahes da Conta - CyberPanel"
+msgid "Account Details - Popo PowerPanel "
+msgstr "Detahes da Conta - Popo PowerPanel "
 
 #: userManagment/templates/userManagment/userProfile.html:12
 #: userManagment/templates/userManagment/userProfile.html:18
@@ -5945,7 +5945,7 @@ msgstr "( 0 = Ilimitado )"
 #: websiteFunctions/templates/websiteFunctions/applicationInstaller.html:3
 #, fuzzy
 #| msgid "Application Installer"
-msgid "Application Installer - CyberPanel"
+msgid "Application Installer - Popo PowerPanel "
 msgstr "Instalador de Aplicações"
 
 #: websiteFunctions/templates/websiteFunctions/applicationInstaller.html:15
@@ -5959,8 +5959,8 @@ msgid "Install Joomla with(?) LSCache"
 msgstr "Wordpress com LSCache"
 
 #: websiteFunctions/templates/websiteFunctions/createWebsite.html:3
-msgid "Create New Website - CyberPanel"
-msgstr "Criar Novo Website - CyberPanel"
+msgid "Create New Website - Popo PowerPanel "
+msgstr "Criar Novo Website - Popo PowerPanel "
 
 #: websiteFunctions/templates/websiteFunctions/createWebsite.html:13
 #: websiteFunctions/templates/websiteFunctions/index.html:14
@@ -5977,8 +5977,8 @@ msgid "Do not enter WWW, it will be auto created!"
 msgstr "Não digite WWW, ele será criado automaticamente!"
 
 #: websiteFunctions/templates/websiteFunctions/deleteWebsite.html:3
-msgid "Delete Website - CyberPanel"
-msgstr "Apagar Website - CyberPanel"
+msgid "Delete Website - Popo PowerPanel "
+msgstr "Apagar Website - Popo PowerPanel "
 
 #: websiteFunctions/templates/websiteFunctions/deleteWebsite.html:13
 msgid "This page can be used to delete website, once deleted it can not be recovered."
@@ -5996,9 +5996,9 @@ msgstr "Apagado com Sucesso."
 
 #: websiteFunctions/templates/websiteFunctions/domainAlias.html:3
 #, fuzzy
-#| msgid "Home - CyberPanel"
-msgid "Domain Aliases - CyberPanel"
-msgstr "Principal - CyberPanel"
+#| msgid "Home - Popo PowerPanel "
+msgid "Domain Aliases - Popo PowerPanel "
+msgstr "Principal - Popo PowerPanel "
 
 #: websiteFunctions/templates/websiteFunctions/domainAlias.html:12
 #: websiteFunctions/templates/websiteFunctions/domainAlias.html:19
@@ -6070,8 +6070,8 @@ msgid "Operation Successfull."
 msgstr "Ação com sucesso."
 
 #: websiteFunctions/templates/websiteFunctions/index.html:3
-msgid "Website Functions - CyberPanel"
-msgstr "Funções do Website - CyberPanel"
+msgid "Website Functions - Popo PowerPanel "
+msgstr "Funções do Website - Popo PowerPanel "
 
 #: websiteFunctions/templates/websiteFunctions/index.html:33
 #: websiteFunctions/templates/websiteFunctions/index.html:57
@@ -6088,9 +6088,9 @@ msgstr "Suspender/Reativar Website"
 
 #: websiteFunctions/templates/websiteFunctions/installJoomla.html:3
 #, fuzzy
-#| msgid "Install PHP Extensions - CyberPanel"
-msgid "Install Joomla - CyberPanel"
-msgstr "Instalar Extensões do PHP - CyberPanel"
+#| msgid "Install PHP Extensions - Popo PowerPanel "
+msgid "Install Joomla - Popo PowerPanel "
+msgstr "Instalar Extensões do PHP - Popo PowerPanel "
 
 #: websiteFunctions/templates/websiteFunctions/installJoomla.html:12
 #, fuzzy
@@ -6151,9 +6151,9 @@ msgstr "Instalação com sucesso. Para completar:"
 
 #: websiteFunctions/templates/websiteFunctions/installPrestaShop.html:3
 #, fuzzy
-#| msgid "Install PHP Extensions - CyberPanel"
-msgid "Install PrestaShop - CyberPanel"
-msgstr "Instalar Extensões do PHP - CyberPanel"
+#| msgid "Install PHP Extensions - Popo PowerPanel "
+msgid "Install PrestaShop - Popo PowerPanel "
+msgstr "Instalar Extensões do PHP - Popo PowerPanel "
 
 #: websiteFunctions/templates/websiteFunctions/installPrestaShop.html:12
 #, fuzzy
@@ -6173,9 +6173,9 @@ msgstr "Nome do Ficheiro"
 
 #: websiteFunctions/templates/websiteFunctions/installWordPress.html:3
 #, fuzzy
-#| msgid "Install PHP Extensions - CyberPanel"
-msgid "Install WordPress - CyberPanel"
-msgstr "Instalar Extensões do PHP - CyberPanel"
+#| msgid "Install PHP Extensions - Popo PowerPanel "
+msgid "Install WordPress - Popo PowerPanel "
+msgstr "Instalar Extensões do PHP - Popo PowerPanel "
 
 #: websiteFunctions/templates/websiteFunctions/installWordPress.html:12
 #, fuzzy
@@ -6207,9 +6207,9 @@ msgstr "Wordpress _ LSCache"
 
 #: websiteFunctions/templates/websiteFunctions/listCron.html:3
 #, fuzzy
-#| msgid "Version Management - CyberPanel"
-msgid "Cron Management - CyberPanel"
-msgstr "Gestão de Versões - CyberPanel"
+#| msgid "Version Management - Popo PowerPanel "
+msgid "Cron Management - Popo PowerPanel "
+msgstr "Gestão de Versões - Popo PowerPanel "
 
 #: websiteFunctions/templates/websiteFunctions/listCron.html:12
 #: websiteFunctions/templates/websiteFunctions/listCron.html:19
@@ -6335,12 +6335,12 @@ msgid "Cron job saved"
 msgstr "Tarefa salva no cron"
 
 #: websiteFunctions/templates/websiteFunctions/listWebsites.html:3
-msgid "Websites Hosted - CyberPanel"
-msgstr "Websites Alojados - CyberPanel"
+msgid "Websites Hosted - Popo PowerPanel "
+msgstr "Websites Alojados - Popo PowerPanel "
 
 #: websiteFunctions/templates/websiteFunctions/modifyWebsite.html:3
-msgid "Modify Website - CyberPanel"
-msgstr "Alterar Website - CyberPanel"
+msgid "Modify Website - Popo PowerPanel "
+msgstr "Alterar Website - Popo PowerPanel "
 
 #: websiteFunctions/templates/websiteFunctions/modifyWebsite.html:51
 msgid "Current Package:"
@@ -6360,9 +6360,9 @@ msgstr "Detalhes do Website Obtidos com Sucesso"
 
 #: websiteFunctions/templates/websiteFunctions/setupGit.html:3
 #, fuzzy
-#| msgid "Version Management - CyberPanel"
-msgid "Git Management - CyberPanel"
-msgstr "Gerenciador de Versões - CyberPanel"
+#| msgid "Version Management - Popo PowerPanel "
+msgid "Git Management - Popo PowerPanel "
+msgstr "Gerenciador de Versões - Popo PowerPanel "
 
 #: websiteFunctions/templates/websiteFunctions/setupGit.html:12
 #, fuzzy
@@ -6448,9 +6448,9 @@ msgstr "Branch alterada com sucesso."
 
 #: websiteFunctions/templates/websiteFunctions/setupStaging.html:3
 #, fuzzy
-#| msgid "Version Management - CyberPanel"
-msgid "Set up Staging Enviroment - CyberPanel"
-msgstr "Gestão de Versões - CyberPanel"
+#| msgid "Version Management - Popo PowerPanel "
+msgid "Set up Staging Enviroment - Popo PowerPanel "
+msgstr "Gestão de Versões - Popo PowerPanel "
 
 #: websiteFunctions/templates/websiteFunctions/setupStaging.html:12
 msgid "Set up Staging Enviroment"
@@ -6482,9 +6482,9 @@ msgstr "Iniciar"
 
 #: websiteFunctions/templates/websiteFunctions/sshAccess.html:3
 #, fuzzy
-#| msgid "Manage SSL - CyberPanel"
-msgid "SSH and CageFS - CyberPanel"
-msgstr "Gerenciar SSL - CyberPanel"
+#| msgid "Manage SSL - Popo PowerPanel "
+msgid "SSH and CageFS - Popo PowerPanel "
+msgstr "Gerenciar SSL - Popo PowerPanel "
 
 #: websiteFunctions/templates/websiteFunctions/sshAccess.html:12
 #, fuzzy
@@ -6513,8 +6513,8 @@ msgid " is "
 msgstr "é"
 
 #: websiteFunctions/templates/websiteFunctions/suspendWebsite.html:3
-msgid "Suspend/Unsuspend Website - CyberPanel"
-msgstr "Suspendar/Reativar Website - CyberPanel"
+msgid "Suspend/Unsuspend Website - Popo PowerPanel "
+msgstr "Suspendar/Reativar Website - Popo PowerPanel "
 
 #: websiteFunctions/templates/websiteFunctions/suspendWebsite.html:14
 msgid "This page can be used to suspend/unsuspend website."
@@ -6546,9 +6546,9 @@ msgstr "Com Sucesso "
 
 #: websiteFunctions/templates/websiteFunctions/syncMaster.html:3
 #, fuzzy
-#| msgid "DNS Functions - CyberPanel"
-msgid "Sync to Master - CyberPanel"
-msgstr "Funções do DNS - CyberPanel"
+#| msgid "DNS Functions - Popo PowerPanel "
+msgid "Sync to Master - Popo PowerPanel "
+msgstr "Funções do DNS - Popo PowerPanel "
 
 #: websiteFunctions/templates/websiteFunctions/syncMaster.html:12
 msgid "Sync your site to Master"

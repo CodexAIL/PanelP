@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#Popo PowerPanel installer script for Ubuntu 18.04 and CentOS 7.X
+#CyberPanel installer script for Ubuntu 18.04 and CentOS 7.X
 DEV="OFF"
 BRANCH="stable"
 POSTFIX_VARIABLE="ON"
@@ -67,7 +67,7 @@ rm -rf /root/cyberpanel-tmp
 special_change(){
 sed -i 's|cyberpanel.sh|'$DOWNLOAD_SERVER'|g' install.py
 sed -i 's|mirror.cyberpanel.net|'$DOWNLOAD_SERVER'|g' install.py
-sed -i 's|git clone https://github.com/codexail/cyberpanel|echo downloaded|g' install.py
+sed -i 's|git clone https://github.com/usmannasir/cyberpanel|echo downloaded|g' install.py
 #change to CDN first, regardless country
 sed -i 's|http://|https://|g' install.py
 
@@ -78,7 +78,7 @@ LSWS_STABLE_LINE=`cat /tmp/lsws_latest | grep LSWS_STABLE`
 LSWS_STABLE_VER=`expr "$LSWS_STABLE_LINE" : '.*LSWS_STABLE=\(.*\) BUILD .*'`
 
 if [[ $SERVER_COUNTRY == "CN" ]] ; then
-#line1="$(grep -n "github.com/codexail/cyberpanel" install.py | head -n 1 | cut -d: -f1)"
+#line1="$(grep -n "github.com/usmannasir/cyberpanel" install.py | head -n 1 | cut -d: -f1)"
 #line2=$((line1 - 1))
 #sed -i "${line2}i\ \ \ \ \ \ \ \ subprocess.call(command, shell=True)" install.py
 #sed -i "${line2}i\ \ \ \ \ \ \ \ command = 'tar xzvf cyberpanel-git.tar.gz'" install.py
@@ -95,7 +95,7 @@ sed -i 's|https://copr.fedorainfracloud.org/coprs/copart/restic/repo/epel-7/copa
 
 sed -i 's|yum -y install https://cyberpanel.sh/gf-release-latest.gf.el7.noarch.rpm|wget -O /etc/yum.repos.d/gf.repo https://'$DOWNLOAD_SERVER'/gf-plus/gf.repo|g' install.py
 sed -i 's|dovecot-2.3-latest|dovecot-2.3-latest-mirror|g' install.py
-sed -i 's|git clone https://github.com/codexail/cyberpanel|wget https://cyberpanel.sh/cyberpanel-git.tar.gz \&\& tar xzvf cyberpanel-git.tar.gz|g' install.py
+sed -i 's|git clone https://github.com/usmannasir/cyberpanel|wget https://cyberpanel.sh/cyberpanel-git.tar.gz \&\& tar xzvf cyberpanel-git.tar.gz|g' install.py
 sed -i 's|https://repo.dovecot.org/ce-2.3-latest/centos/$releasever/RPMS/$basearch|https://'$DOWNLOAD_SERVER'/dovecot/|g' install.py
 sed -i 's|'$DOWNLOAD_SERVER'|cyberpanel.sh|g' install.py
 sed -i 's|https://www.litespeedtech.com/packages/5.0/lsws-5.4.2-ent-x86_64-linux.tar.gz|https://'$DOWNLOAD_SERVER'/litespeed/lsws-'$LSWS_STABLE_VER'-ent-x86_64-linux.tar.gz|g' installCyberPanel.py
@@ -595,7 +595,7 @@ fi
 }
 
 interactive_mode() {
-echo -e "		Popo PowerPanel Installer v$CP_VER1$CP_VER2
+echo -e "		CyberPanel Installer v$CP_VER1$CP_VER2
 
   1. Install CyberPanel.
   
@@ -629,7 +629,7 @@ echo -e "\nYou don't have Popo PowerPanel installed...\n"
 exit
 fi
 
-echo -e "		Popo PowerPanel Addons v$CP_VER1$CP_VER2
+echo -e "		CyberPanel Addons v$CP_VER1$CP_VER2
 
   1. Install Memcached extension and backend
 	
@@ -666,7 +666,7 @@ interactive_install() {
 RAM=$(free -m | awk 'NR==2{printf "%s/%sMB (%.2f%%)\n", $3,$2,$3*100/$2 }')
 DISK=$(df -h | awk '$NF=="/"{printf "%d/%dGB (%s)\n", $3,$2,$5}')
 #clear
-echo -e "		Popo PowerPanel Installer v$CP_VER1$CP_VER2
+echo -e "		CyberPanel Installer v$CP_VER1$CP_VER2
 
   RAM check : $RAM 
   
@@ -887,18 +887,18 @@ pip install virtualenv
 virtualenv --system-site-packages /usr/local/CyberPanel
 source /usr/local/CyberPanel/bin/activate
 rm -rf requirements.txt
-wget -O requirements.txt https://raw.githubusercontent.com/codexail/cyberpanel/1.8.0/requirments.txt
+wget -O requirements.txt https://raw.githubusercontent.com/usmannasir/cyberpanel/1.8.0/requirments.txt
 pip install --ignore-installed -r requirements.txt
 virtualenv --system-site-packages /usr/local/CyberPanel
 fi
 
 if [[ $DEV == "ON" ]] ; then
 	#install dev branch 
-	#wget https://raw.githubusercontent.com/codexail/cyberpanel/$BRANCH_NAME/requirments.txt
+	#wget https://raw.githubusercontent.com/usmannasir/cyberpanel/$BRANCH_NAME/requirments.txt
 	cd /usr/local/
 	python3.6 -m venv CyberPanel
 	source /usr/local/CyberPanel/bin/activate
-	wget -O requirements.txt https://raw.githubusercontent.com/codexail/cyberpanel/$BRANCH_NAME/requirments.txt
+	wget -O requirements.txt https://raw.githubusercontent.com/usmannasir/cyberpanel/$BRANCH_NAME/requirments.txt
 	pip3.6 install --ignore-installed -r requirements.txt
 fi
 
@@ -914,13 +914,13 @@ if [[ $SERVER_COUNTRY == "CN" ]] ; then
 	cd cyberpanel/install
 else
 	if [[ $DEV == "ON" ]] ; then
-	git clone https://github.com/codexail/cyberpanel
+	git clone https://github.com/usmannasir/cyberpanel
 	cd cyberpanel
 	git checkout $BRANCH_NAME
 	cd -
 	cd cyberpanel/install
 	else
-	git clone https://github.com/codexail/cyberpanel
+	git clone https://github.com/usmannasir/cyberpanel
 	cd cyberpanel/install
 	fi
 fi
@@ -952,7 +952,7 @@ if grep "Popo PowerPanel installation successfully completed" /var/log/installLo
 if [[ $DEV == "ON" ]] ; then
 python3.6 -m venv /usr/local/CyberCP
 source /usr/local/CyberCP/bin/activate
-wget -O requirements.txt https://raw.githubusercontent.com/codexail/cyberpanel/$BRANCH_NAME/requirments.txt
+wget -O requirements.txt https://raw.githubusercontent.com/usmannasir/cyberpanel/$BRANCH_NAME/requirments.txt
 pip3.6 install --ignore-installed -r requirements.txt
 systemctl restart lscpd
 fi
@@ -1072,7 +1072,7 @@ echo "              Forums  : https://forums.cyberpanel.net              "
 echo "              Wikipage: https://docs.cyberpanel.net                "
 echo "                                                                   "
 echo -e "            Enjoy your accelerated Internet by                  "
-echo -e "                CyberPanel & $WORD					                     "
+echo -e "                Popo PowerPanel & $WORD					                     "
 echo "###################################################################"
 if [[ $PROVIDER != "undefined" ]] ; then
 	echo -e "\033[0;32m$PROVIDER\033[39m detected..."
@@ -1081,7 +1081,7 @@ else
 	echo -e "If your provider has a \e[31mnetwork-level firewall\033[39m"
 fi
 	echo -e "Please make sure you have opened following port for both in/out:"
-	echo -e "\033[0;32mTCP: 8090\033[39m for CyberPanel"
+	echo -e "\033[0;32mTCP: 8090\033[39m for Popo PowerPanel "
 	echo -e "\033[0;32mTCP: 80\033[39m, \033[0;32mTCP: 443\033[39m and \033[0;32mUDP: 443\033[39m for webserver"
 	echo -e "\033[0;32mTCP: 21\033[39m and \033[0;32mTCP: 40110-40210\033[39m for FTP"
 	echo -e "\033[0;32mTCP: 25\033[39m, \033[0;32mTCP: 587\033[39m, \033[0;32mTCP: 465\033[39m, \033[0;32mTCP: 110\033[39m, \033[0;32mTCP: 143\033[39m and \033[0;32mTCP: 993\033[39m for mail service"

@@ -290,7 +290,7 @@ class Upgrade:
             except:
                 pass
 
-            command = 'wget -O /usr/local/CyberCP/public/phpmyadmin.zip https://github.com/codexail/cyberpanel/raw/stable/phpmyadmin.zip'
+            command = 'wget -O /usr/local/CyberCP/public/phpmyadmin.zip https://github.com/usmannasir/cyberpanel/raw/stable/phpmyadmin.zip'
             Upgrade.executioner(command, 0)
 
             command = 'unzip /usr/local/CyberCP/public/phpmyadmin.zip -d /usr/local/CyberCP/public/phpmyadmin'
@@ -2061,7 +2061,7 @@ CREATE TABLE `websiteFunctions_backupsv2` (`id` integer AUTO_INCREMENT NOT NULL 
             if not Upgrade.executioner(command, command, 1):
                 return 0, 'Failed to execute %s' % (command)
 
-            command = 'git config --global user.name "CyberPanel"'
+            command = 'git config --global user.name "Popo PowerPanel"'
 
             if not Upgrade.executioner(command, command, 1):
                 return 0, 'Failed to execute %s' % (command)
@@ -2084,7 +2084,7 @@ CREATE TABLE `websiteFunctions_backupsv2` (`id` integer AUTO_INCREMENT NOT NULL 
 
                 os.chdir('/usr/local')
 
-                command = 'git clone https://github.com/codexail/cyberpanel'
+                command = 'git clone https://github.com/usmannasir/cyberpanel'
                 if not Upgrade.executioner(command, command, 1):
                     return 0, 'Failed to execute %s' % (command)
 
@@ -2760,7 +2760,7 @@ vmail
     @staticmethod
     def runSomeImportantBash():
 
-        # Remove invalid crons from /etc/crontab Reference: https://github.com/codexail/cyberpanel/issues/216
+        # Remove invalid crons from /etc/crontab Reference: https://github.com/usmannasir/cyberpanel/issues/216
         command = """sed -i '/CyberCP/d' /etc/crontab"""
         Upgrade.executioner(command, command, 0, True)
 
@@ -2917,7 +2917,7 @@ vmail
             if os.path.exists('httpd_config.xml'):
                 os.remove('httpd_config.xml')
 
-            command = 'wget https://raw.githubusercontent.com/codexail/cyberpanel/stable/install/litespeed/httpd_config.xml'
+            command = 'wget https://raw.githubusercontent.com/usmannasir/cyberpanel/stable/install/litespeed/httpd_config.xml'
             Upgrade.executioner(command, command, 0)
             # os.remove('/usr/local/lsws/conf/httpd_config.xml')
             # shutil.copy('httpd_config.xml', '/usr/local/lsws/conf/httpd_config.xml')
@@ -3046,15 +3046,15 @@ vmail
         #     command = "yum reinstall imunify360-firewall-generic -y"
         #     Upgrade.executioner(command, command, 1)
         #
-        # imunifyAVPath = '/etc/sysconfig/imunify360/integration.conf'
-        #
-        # if os.path.exists(imunifyAVPath):
-        #     execPath = "/usr/local/CyberCP/bin/python /usr/local/CyberCP/CLManager/CageFS.py"
-        #     command = execPath + " --function submitinstallImunifyAV"
-        #     Upgrade.executioner(command, command, 1)
-        #
-        #     command = 'chmod +x /usr/local/CyberCP/public/imunifyav/bin/execute.py'
-        #     Upgrade.executioner(command, command, 1)
+        imunifyAVPath = '/etc/sysconfig/imunify360/integration.conf'
+        
+        if os.path.exists(imunifyAVPath):
+            execPath = "/usr/local/CyberCP/bin/python /usr/local/CyberCP/CLManager/CageFS.py"
+            command = execPath + " --function submitinstallImunifyAV"
+            Upgrade.executioner(command, command, 1)
+        
+            command = 'chmod +x /usr/local/CyberCP/public/imunifyav/bin/execute.py'
+            Upgrade.executioner(command, command, 1)
 
         Upgrade.stdOut("Upgrade Completed.")
 

@@ -1,6 +1,6 @@
 {% extends "baseTemplate/index.html" %}
 {% load i18n %}
-{% block title %}{% trans "SSL v2 - CyberPanel" %}{% endblock %}
+{% block title %}{% trans "SSL v2 - Popo PowerPanel " %}{% endblock %}
 {% block content %}
 
     {% load static %}
@@ -16,10 +16,10 @@
                                               title=""><span>{% trans "DNS Docs" %}</span></a></h2>
                 <p>{% trans "On this page, you have the option to configure DNS providers that Popo PowerPanel can utilize for issuing SSL certificates, providing enhanced flexibility and ease of renewal." %}</p>
                 <p align="center" style="margin-top: 2%; margin-bottom: 2%">
-                    <iframe width="788.54" height="443" src="https://www.youtube.com/embed/kDUANNvtOwE"
+                    <!-- <iframe width="788.54" height="443" src="https://www.youtube.com/embed/kDUANNvtOwE"
                             title="YouTube video player" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen></iframe>
+                            allowfullscreen></iframe> -->
                 </p>
             </div>
             <div ng-controller="sslIssueCtrlV2" class="panel">
@@ -72,7 +72,7 @@
                                                     {% endfor %}
                                                 </select>
                                             </div>
-                                            <div class="col-sm-4">
+                                            <div class="col-sm-4 email-data">
                                                 <button style="width: 100%;" type="button"
                                                         ng-click="issueSSL()"
                                                         class="btn btn-primary">{% trans "Issue SSL" %} <img

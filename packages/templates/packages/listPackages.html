@@ -1,6 +1,6 @@
 {% extends "baseTemplate/index.html" %}
 {% load i18n %}
-{% block title %}{% trans "List Packages  - CyberPanel" %}{% endblock %}
+{% block title %}{% trans "List Packages  - Popo PowerPanel " %}{% endblock %}
 {% block content %}
 
     {% load static %}
@@ -9,9 +9,14 @@
 
 
     <div class="container"></div>
-        <div id="page-title">
+        <div  style="display: flex;">
+            <div id="page-title">
             <h2>{% trans "List Packages" %}</h2>
             <p>{% trans "List Packages and delete or edit them." %}</p>
+        </div>
+        <a class="pull-right btn btn-primary web-btn" href="/packages/createPackage" style="margin-left: auto;">Create Package</a>
+        <!-- <button class="btn btn-primary btn-md" style="margin-left: 70%;"></button> -->
+
         </div>
         <div ng-controller="listPackageTables" class="panel">
             <div class="panel-body" style="margin: -1%;">
@@ -43,32 +48,32 @@
                                     <th>{% trans "Actions" %}</th>
                                 </tr>
                                 </thead> -->
-                                <div class="col-md-12">
+                                <div class="col-md-12 list-package">
                                     <div class="col-md-2 content-box-header">
                                         <h4 class="header font-bold">Package</h4>
                                     </div>
-                                    <div class="col-md-1 content-box-header" style="text-align: center;">
+                                    <div class="col-md-1 content-box-header packages-head" style="text-align:center;">
                                         <h4 class="header font-bold">Diskspace</h4>
                                     </div>
-                                    <div class="col-md-1 content-box-header" style="text-align: center;">
+                                    <div class="col-md-1 content-box-header packages-head" style="text-align: center;">
                                         <h4 class="header font-bold">Bandwidth</h4>
                                     </div>
-                                    <div class="col-md-2 content-box-header" style="text-align: center;">
+                                    <div class="col-md-2 content-box-header packages-head" style="text-align: center;">
                                         <h4 class="header font-bold">Email Account</h4>
                                     </div>
-                                    <div class="col-md-1 content-box-header" style="text-align: center;">
+                                    <div class="col-md-1 content-box-header packages-head" style="text-align: center;">
                                         <h4 class="header font-bold font-bold">Databases</h4>
                                     </div>
-                                    <div class="col-md-1 content-box-header" style="text-align: center;">
+                                    <div class="col-md-1 content-box-header packages-head" style="text-align: center;">
                                         <h4 class="header font-bold font-bold">FTPs</h4>
                                     </div>
-                                    <div class="col-md-1 content-box-header" style="text-align: center;">
+                                    <div class="col-md-1 content-box-header packages-head" style="text-align: center;">
                                         <h4 class="header font-bold">Child Domains</h4>
                                     </div>
-                                    <div class="col-md-1 content-box-header" style="text-align: center;">
+                                    <div class="col-md-1 content-box-header packages-head" style="text-align: center;">
                                         <h4 class="header font-bold font-bold">Allow FQDN as Childs</h4>
                                     </div>
-                                    <div class="col-md-2 content-box-header" style="text-align: center;">
+                                    <div class="col-md-2 content-box-header packages-head" style="text-align: center;">
                                         <h4 class="header font-bold font-bold">Actions</h4>
                                     </div>
                                 </div>
@@ -77,7 +82,7 @@
                                 <div ng-repeat="record in records track by $index" style="padding: 0px; box-shadow: 0px 0px 1px 0px #888888;" class="panel col-md-12">
                                     <div class="">
                                         <div class="table-responsive no-gutter text-nowrap" style="overflow-x: hidden;">
-                                    <div class="col-md-2 content-box-header" ng-bind="record.package" style="padding-left:2%"></div>
+                                    <div class="col-md-2 content-box-header" ng-bind="record.package"  style="padding-left:2%"></div>
                                     <div class="col-md-1 content-box-header" id="packages-data" ng-bind="record.diskSpace"></div>
                                     <div class="col-md-1 content-box-header" id="packages-data" ng-bind="record.bandwidth"></div>
                                     <div class="col-md-2 content-box-header" id="packages-data" ng-bind="record.emailAccounts"></div>
@@ -90,10 +95,10 @@
                                         <a data-toggle="modal" data-target="#settings"
                                            ng-click="editInitial(record.package, record.diskSpace, record.bandwidth,
                                            record.emailAccounts, record.dataBases, record.ftpAccounts, record.allowedDomains, record.allowFullDomain, record.enforceDiskLimits)"
-                                           class="btn btn-border btn-alt border-purple btn-link font-purple" href="#"
+                                           class="btn btn-primary" href="#"
                                            title=""><span>{% trans 'Edit' %}</span></a>
                                         <a ng-click="deletePackageFinal(record.package)"
-                                           class="btn btn-border btn-alt border-red btn-link font-red" href="#"
+                                           class="btn btn-primary" href="#"
                                            title=""><span>{% trans 'Delete' %}</span></a>
                                         </div>
                                     </div>

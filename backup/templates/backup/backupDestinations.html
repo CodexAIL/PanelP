@@ -42,7 +42,6 @@
                             </div>
                         </div>
 
-                        <!--- SFTP --->
 
                         <div ng-hide="sftpHide" class="form-group">
                             <label class="col-sm-3 control-label">{% trans "Name" %}</label>
@@ -101,16 +100,13 @@
                 </div>
             </form>
 
-                        <!--- SFTP --->
-                    
-
-                        <!------ List of Destinations --------------->
+                        
 
                         <div ng-hide="sftpHide" class="form-group" style="margin-top: 0%;">
 
                             
 
-                                <div class="col-md-12">
+                                <div class="col-md-12 list-database">
                                     
                                         <div class="col-md-2 content-box-header">{% trans "Name" %}</div>
                                         <div class="col-md-2 content-box-header" id="packages-data">{% trans "IP" %}</div>
@@ -140,38 +136,30 @@
                                 </div>
                         </div>
 
-                        <!------ List of records --------------->
-
-
-                        <!--- SFTP  End --->
-
-                        <!--- AWS Start --->
+                        
+                <div class="example-box-wrapper">
                         
                         <form action="/" class="form-horizontal bordered-row">
             
-                        <div class="example-box-wrapper form-horizontal bordered-row" style="margin-top: 2%;">
-                        <div ng-hide="localHide" class="form-group">
-                            <div class="col-md-12">
-                            <label class="col-sm-3 control-label" style="text-align: end;">{% trans "Name" %}</label>
-                            <div class="col-sm-6">
+                        <div ng-hide="localHide" class="form-group" style="display: initial;">
+                            
+                            <label class="col-sm-3 control-label margin" >{% trans "Name" %}</label>
+                            <div class="col-sm-6 margin">
                                 <input type="text" class="form-control" ng-model="name" required>
                             </div>
-                        <div class="col-md-3"></div>
-                        </div>
+
                     </div>
-                        <div ng-hide="localHide" class="form-group">
+                        <div ng-hide="localHide" class="form-group" style="display: initial;">
                             
-                            <div class="col-md-12">
-                            <label class="col-sm-3 control-label" style="text-align: end;">{% trans "Local Padiv" %}</label>
-                            <div class="col-sm-6">
+                            
+                            <label class="col-sm-3 control-label margin">{% trans "Local Padiv" %}</label>
+                            <div class="col-sm-6 margin">
                                 <input type="text" class="form-control" ng-model="localPadiv" required>
-                            </div>
-                        <div class="col-md-3"></div>
-
-                        </div>
+                            </div> 
                     </div>
 
-                        <div ng-hide="localHide" class="form-group">
+                
+                        <div ng-hide="localHide" class="form-group" style="display: initial;">
                             <div class="col-md-12">
                             <div class="col-md-4"></div>
                             <div class="col-sm-4">
@@ -184,19 +172,18 @@
                 
 
                         </div>
-                        </div>
            
                    
-                        <!--- SFTP --->
                     </form>
+                </div>
 
 
 
-                        <!------ List of Destinations --------------->
+                        
 
                         <div ng-hide="localHide" class="form-group">
 
-                            <div class="col-md-12">
+                            <div class="col-md-12 list-database">
 
                                
                                         <div class="col-md-4 content-box-header">{% trans "Name" %}</div>
@@ -222,10 +209,7 @@
                         </div>
 
 
-                        <!------ List of records --------------->
-
-
-                        <!--- AWS  End --->
+                        
 
 
                     

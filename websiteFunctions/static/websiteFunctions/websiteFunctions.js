@@ -301,14 +301,6 @@ app.controller('createWordpress', function ($scope, $http, $timeout, $compile, $
 
         $scope.currentStatus = "Starting creation..";
 
-        var apacheBackend = 0;
-
-        if ($scope.apacheBackend === true) {
-            apacheBackend = 1;
-        } else {
-            apacheBackend = 0
-        }
-
         var package = $scope.packageForWebsite;
         var websiteOwner = $scope.websiteOwner;
         var WPtitle = $scope.WPtitle;
@@ -369,7 +361,6 @@ app.controller('createWordpress', function ($scope, $http, $timeout, $compile, $
             package: package,
             home: home,
             path: path,
-            apacheBackend: apacheBackend
         }
 
         var config = {
@@ -1718,24 +1709,59 @@ app.controller('WPsiteHome', function ($scope, $http, $timeout, $compile, $windo
         }
 
     };
-    $scope.handleSuccess = function () {
-
-        // notifcations
-
-        $('#wordpresshomeloading').show();
-        $('#wordpresshomeloadingsec').show();
-        var data = {
-            WPid: $('#WPid').html(),
-        }
-
-        $scope.wordpresshomeloading = false;
-        console.log("function working")
+    // $scope.cechkbox1 = false;
+    // $scope.checkbox2 = false;
+    // $scope.checkbox3 = false;
+    $scope.handleSuccess = function (selectedCheckboxes) {
 
 
-        var url = "/websites/handleSuccess";
-
+        ///
         
 
+        var checkbox1Value = selectedCheckboxes[0];
+        var checkbox2Value = selectedCheckboxes[1];
+        var checkbox3Value = selectedCheckboxes[2];
+        var checkbox4Value = selectedCheckboxes[3];
+        var checkbox5Value = selectedCheckboxes[4];
+        var checkbox6Value = selectedCheckboxes[5];
+        var checkbox7Value = selectedCheckboxes[6];
+        var checkbox8Value = selectedCheckboxes[7];
+        var checkbox9Value = selectedCheckboxes[8];
+        var checkbox10Value = selectedCheckboxes[9];
+        var checkbox11Value = selectedCheckboxes[10];
+        var checkbox12Value = selectedCheckboxes[11];
+
+
+        // $scope.handleCheckBox(checkbox1Value,checkbox2Value,checkbox3Value); 
+        $('#wordpresshomeloading').show();
+        $('#wordpresshomeloadingsec').show();
+        $scope.configFileLoading = false;
+
+        url = "/websites/handleSuccess";
+        // var virtualHost = $("#domainNamePage").text();
+        // console.log("Checkbox 1:", checkbox1Value);
+        // console.log("Checkbox 2:", checkbox2Value);
+        // console.log("Checkbox 3:", checkbox3Value);
+
+        var data = {
+            virtualHost: $('#WPsite').html(),
+            WPid: $('#WPid').html(),
+            checkbox1Value:checkbox1Value,
+            checkbox2Value:checkbox2Value,
+            checkbox3Value:checkbox3Value,
+            checkbox4Value:checkbox4Value,
+            checkbox5Value:checkbox5Value,
+            checkbox6Value:checkbox6Value,
+            checkbox7Value:checkbox7Value,
+            checkbox8Value:checkbox8Value,
+            checkbox9Value:checkbox9Value,
+            checkbox10Value:checkbox10Value,
+            checkbox11Value:checkbox11Value,
+            checkbox12Value:checkbox12Value,
+
+
+        };
+        console.log(JSON.stringify(data['checkbox1Value']))
         var config = {
             headers: {
                 'X-CSRFToken': getCookie('csrftoken')
@@ -1746,12 +1772,10 @@ app.controller('WPsiteHome', function ($scope, $http, $timeout, $compile, $windo
 
 
         function ListInitialDatas(response) {
-
-
             $('#wordpresshomeloading').hide();
             $('#wordpresshomeloadingsec').hide();
             $scope.wordpresshomeloading = true;
-
+            console.log(data)
             if (response.data.status === 1) {
                 new PNotify({
                     title: 'Success!',
@@ -1759,6 +1783,8 @@ app.controller('WPsiteHome', function ($scope, $http, $timeout, $compile, $windo
                     type: 'success'
                 });
                 $('#SecurityResult').html(response.data.result);
+                $scope.configData = response.data.configData;
+                console.log(response)
             } else {
                 new PNotify({
                     title: 'Operation Failed!',
@@ -1771,15 +1797,274 @@ app.controller('WPsiteHome', function ($scope, $http, $timeout, $compile, $windo
         }
 
         function cantLoadInitialDatas(response) {
-
             $('#wordpresshomeloading').hide();
             $('#wordpresshomeloadingsec').hide();
             $scope.wordpresshomeloading = true;
             alert(response)
 
+        }
+
+
+    };
+    $scope.handleCheckboxSelection = function() {
+        var selectedCheckboxes = [];
+        if ($scope.checkbox1) {selectedCheckboxes.push('1');}
+        else {selectedCheckboxes.push(false)}
+        if ($scope.checkbox2) {selectedCheckboxes.push('2');}
+        else {selectedCheckboxes.push(false)}
+        if ($scope.checkbox3) {selectedCheckboxes.push('3');}
+        else {selectedCheckboxes.push(false)}
+        if ($scope.checkbox4) {selectedCheckboxes.push('4');}
+        else {selectedCheckboxes.push(false)}
+        if ($scope.checkbox5) {selectedCheckboxes.push('5');}
+        else {selectedCheckboxes.push(false)}
+        if ($scope.checkbox6) {selectedCheckboxes.push('6');}
+        else {selectedCheckboxes.push(false)}
+        if ($scope.checkbox7) {selectedCheckboxes.push('7');}
+        else {selectedCheckboxes.push(false)}
+        if ($scope.checkbox8) {selectedCheckboxes.push('8');}
+        else {selectedCheckboxes.push(false)}
+        if ($scope.checkbox9) {selectedCheckboxes.push('9');}
+        else {selectedCheckboxes.push(false)}
+        if ($scope.checkbox10) {selectedCheckboxes.push('10');}
+        else {selectedCheckboxes.push(false)}
+        if ($scope.checkbox11) {selectedCheckboxes.push('11');}
+        else {selectedCheckboxes.push(false)}
+        if ($scope.checkbox12) {selectedCheckboxes.push('12');}
+        else {selectedCheckboxes.push(false)}
+        console.log(selectedCheckboxes)
+        $scope.handleSuccess(selectedCheckboxes);
+        
+    };
+
+    $scope.handleSuccessHttp = function (selectedCheckboxes) {
+
+
+        ///
+        
+
+        var checkbox1Value = selectedCheckboxes[0];
+        var checkbox2Value = selectedCheckboxes[1];
+        var checkbox3Value = selectedCheckboxes[2];
+        // $scope.handleCheckBox(checkbox1Value,checkbox2Value,checkbox3Value); 
+        $('#wordpresshomeloading').show();
+        $('#wordpresshomeloadingsec').show();
+        $scope.configFileLoading = false;
+
+        url = "/websites/handleSuccessHttp";
+        // var virtualHost = $("#domainNamePage").text();
+        // console.log("Checkbox 1:", checkbox1Value);
+        // console.log("Checkbox 2:", checkbox2Value);
+        // console.log("Checkbox 3:", checkbox3Value);
+
+        var data = {
+            virtualHost: $('#WPsite').html(),
+            WPid: $('#WPid').html(),
+            checkbox1Value:checkbox1Value,
+            checkbox2Value:checkbox2Value,
+            checkbox3Value:checkbox3Value,
+
+        };
+
+        console.log(JSON.stringify(data['checkbox1Value']))
+        var config = {
+            headers: {
+                'X-CSRFToken': getCookie('csrftoken')
+            }
+        };
+
+        $http.post(url, data, config).then(ListInitialDatas, cantLoadInitialDatas);
+
+        console.log(data)
+        function ListInitialDatas(response) {
+            $('#wordpresshomeloading').hide();
+            $('#wordpresshomeloadingsec').hide();
+            $scope.wordpresshomeloading = true;
+            console.log(response)
+
+            if (response.status === 200) {
+                new PNotify({
+                    title: 'Success!',
+                    text: 'Results fetched',
+                    type: 'success'
+                });
+                $('#SecurityResult').html(response.data.result);
+                $scope.configData = response.data.configData;
+                console.log(response)
+            } else {
+                new PNotify({
+                    title: 'Operation Failed!',
+                    text: response.data.error_message,
+                    type: 'error'
+                });
+
+            }
 
         }
 
+        function cantLoadInitialDatas(response) {
+            $('#wordpresshomeloading').hide();
+            $('#wordpresshomeloadingsec').hide();
+            $scope.wordpresshomeloading = true;
+            alert(response)
+
+        }
+
+
+    };
+
+    $scope.handleCheckboxSelectionHttp = function() {
+        var selectedCheckboxes = [];
+        if ($scope.checkbox1) {selectedCheckboxes.push('HttpAccess1');}
+        else {selectedCheckboxes.push(false)}
+        if ($scope.checkbox2) {selectedCheckboxes.push('HttpAccess2');}
+        else {selectedCheckboxes.push(false)}
+        if ($scope.checkbox3) {selectedCheckboxes.push('logLevel');}
+        else {selectedCheckboxes.push(false)}
+        console.log(selectedCheckboxes)
+        $scope.handleSuccessHttp(selectedCheckboxes);
+        
+    };
+    $scope.isCheckboxSelected = function () {
+        // Assuming the configData is available in $scope.configData
+        var data = {
+            virtualHost: $('#WPsite').html(),
+            WPid: $('#WPid').html(),
+            checkbox1:false,
+            checkbox2:false,
+            checkbox3:false,
+            checkbox4:false,
+            checkbox5:false,
+            checkbox6:false,
+            checkbox7:false,
+            checkbox8:false,
+            checkbox9:false,
+            checkbox10:false,
+            checkbox11:false,
+            checkbox12:false,
+
+        };
+        var config = {
+            headers: {
+                'X-CSRFToken': getCookie('csrftoken')
+            }
+        };
+        // Make the HTTP request to the backend
+        $http.post("/websites/handleCheckbox", data,config)
+            .then(function(response) {
+                // Handle the response from the backend
+                console.log(response.data.checkbox1)
+                // var isPresent = response.data.isPresent; // Assuming the response contains the result
+                var checkbox1 = response.data.checkbox1;
+                var checkbox2 = response.data.checkbox2;
+                var checkbox3 = response.data.checkbox3;
+                var checkbox4 = response.data.checkbox4;
+                var checkbox5 = response.data.checkbox5;
+                var checkbox6 = response.data.checkbox6;
+                var checkbox7 = response.data.checkbox7;
+                var checkbox8 = response.data.checkbox8;
+                var checkbox9 = response.data.checkbox9;
+                var checkbox10 = response.data.checkbox10;
+                var checkbox11 = response.data.checkbox11;
+                var checkbox12 = response.data.checkbox12;
+                if (checkbox1){
+                    $scope.checkbox1 = true;
+                }
+                else {
+                    $scope.checkbox1 = false;
+                }
+                
+                if (checkbox2){
+                    $scope.checkbox2 = true;
+                }
+                else {
+                    $scope.checkbox2 = false;
+                }
+                
+                if (checkbox3){
+                    $scope.checkbox3 = true;
+                }
+                else {
+                    $scope.checkbox3 = false;
+                }
+                
+                // Repeat the above code for checkbox4 to checkbox12
+                
+                if (checkbox4){
+                    $scope.checkbox4 = true;
+                }
+                else {
+                    $scope.checkbox4 = false;
+                }
+                
+                if (checkbox5){
+                    $scope.checkbox5 = true;
+                }
+                else {
+                    $scope.checkbox5 = false;
+                }
+                
+                if (checkbox6){
+                    $scope.checkbox6 = true;
+                }
+                else {
+                    $scope.checkbox6 = false;
+                }
+                
+                if (checkbox7){
+                    $scope.checkbox7 = true;
+                }
+                else {
+                    $scope.checkbox7 = false;
+                }
+                
+                if (checkbox8){
+                    $scope.checkbox8 = true;
+                }
+                else {
+                    $scope.checkbox8 = false;
+                }
+                
+                if (checkbox9){
+                    $scope.checkbox9 = true;
+                }
+                else {
+                    $scope.checkbox9 = false;
+                }
+                
+                if (checkbox10){
+                    $scope.checkbox10 = true;
+                }
+                else {
+                    $scope.checkbox10 = false;
+                }
+                
+                if (checkbox11){
+                    $scope.checkbox11 = true;
+                }
+                else {
+                    $scope.checkbox11 = false;
+                }
+                
+                if (checkbox12){
+                    $scope.checkbox12 = true;
+                }
+                else {
+                    $scope.checkbox12 = false;
+                }
+                
+                // if (isPresent) {
+                    
+                //     $scope.checkbox1 = true;
+                // } else {
+                    
+                //     $scope.checkbox1 = false;
+                // }
+            })
+            .catch(function(error) {
+                // Handle errors, if any
+                console.log(error);
+            });
     };
     $scope.dataintegrity = function () {
 
@@ -2697,11 +2982,13 @@ app.controller('createWebsite', function ($scope, $http, $timeout, $window) {
 $("#listFail").hide();
 
 
-app.controller('listWebsites', function ($scope, $http) {
+
+app.controller('listWebsites', function ($scope, $http,$rootScope,WebsiteService) {
 
 
     $scope.currentPage = 1;
     $scope.recordsToShow = 10;
+
 
     $scope.getFurtherWebsitesFromDB = function () {
 
@@ -2725,9 +3012,12 @@ app.controller('listWebsites', function ($scope, $http) {
         function ListInitialData(response) {
             if (response.data.listWebSiteStatus === 1) {
 
-                $scope.WebSitesList = JSON.parse(response.data.data);
+                $rootScope.WebSitesList = JSON.parse(response.data.data);
+                var data=$rootScope.WebSitesList;
                 $scope.pagination = response.data.pagination;
                 $scope.clients = JSON.parse(response.data.data);
+                console.log(data);
+                // WebsiteDataService.setWebsitesList(JSON.parse(response.data.data));
                 $("#listFail").hide();
             } else {
                 $("#listFail").fadeIn();
@@ -2903,6 +3193,19 @@ app.controller('listWebsites', function ($scope, $http) {
 
 
 });
+
+// app.service('WebsiteDataService', function() {
+//     var websitesList = [];
+
+//     return {
+//         getWebsitesList: function() {
+//             return websitesList;
+//         },
+//         setWebsitesList: function(data) {
+//             websitesList = data;
+//         }
+//     };
+// });
 
 app.controller('listChildDomainsMain', function ($scope, $http, $timeout) {
 
@@ -4054,6 +4357,7 @@ app.controller('websitePages', function ($scope, $http, $timeout, $window) {
 
 
                 $scope.rewriteRules = response.data.rewriteRules;
+                console.log(response)
 
             } else {
                 // from main
@@ -4131,13 +4435,13 @@ app.controller('websitePages', function ($scope, $http, $timeout, $window) {
 
         var virtualHost = $("#domainNamePage").text();
         var rewriteRules = $scope.rewriteRules;
-
+        console.log(virtualHost)
 
         var data = {
             virtualHost: virtualHost,
             rewriteRules: rewriteRules,
         };
-
+        console.log(data)
         var config = {
             headers: {
                 'X-CSRFToken': getCookie('csrftoken')
@@ -6991,7 +7295,35 @@ app.controller('launchChild', function ($scope, $http) {
 
 /* Application Installer */
 
-app.controller('installWordPressCTRL', function ($scope, $http, $timeout) {
+app.service('WebsiteService', function($http, $rootScope) {
+    this.getWebsitesFromDB = function(page, recordsToShow) {
+        var config = {
+            headers: {
+                'X-CSRFToken': getCookie('csrftoken')
+            }
+        };
+
+        var data = {
+            page: 1,
+            recordsToShow: 10,
+        };
+
+        dataurl = "/websites/fetchWebsitesList";
+
+        return $http.post(dataurl, data, config)
+            .then(function(response) {
+                if (response.data.listWebSiteStatus === 1) {
+                    $rootScope.WebSitesList = JSON.parse(response.data.data);
+                    return $rootScope.WebSitesList;
+                } else {
+                    throw new Error(response.data.error_message);
+                }
+            });
+    };
+});
+
+
+app.controller('installWordPressCTRL', function ($scope, $http, $timeout,$rootScope,WebsiteService) {
 
     $scope.installationDetailsForm = false;
     $scope.installationProgress = true;
@@ -7004,7 +7336,8 @@ app.controller('installWordPressCTRL', function ($scope, $http, $timeout) {
     var statusFile;
     var domain = $("#domainNamePage").text();
     var path;
-
+    user=$scope.adminUser;
+    // console.log(user)
 
     $scope.goBack = function () {
         $scope.installationDetailsForm = false;
@@ -7016,6 +7349,109 @@ app.controller('installWordPressCTRL', function ($scope, $http, $timeout) {
         $scope.goBackDisable = true;
         $("#installProgress").css("width", "0%");
     };
+
+    $scope.showPassword = false;
+    
+
+    $scope.togglePasswordVisibility = function() {
+        $scope.showPassword = !$scope.showPassword;
+    };
+    
+
+    $scope.generateAutogeneratedUsername=function () {
+        
+        const minLength = 8; // Minimum length of the generated username
+         // Maximum length of the generated username (since we want exactly 8 characters)
+        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        const usernameLength = minLength; // Set the length to be exactly 8 characters
+        let autogeneratedUsername = '';
+
+        for (let i = 0; i < usernameLength; i++) {
+            const randomIndex = Math.floor(Math.random() * characters.length);
+            autogeneratedUsername += characters.charAt(randomIndex);
+        }
+
+        // Update the adminUser ng-model with the generated username
+        $scope.adminUser = autogeneratedUsername;
+        console.log(autogeneratedUsername);
+
+    };
+
+    $scope.generateAutogeneratedPassword = function() {
+        const minLength = 16; // Minimum length of the generated password (since we want exactly 16 characters)
+        const specialChars = '!@#$%^&*';
+        const numbers = '0123456789';
+        const lowercaseChars = 'abcdefghijklmnopqrstuvwxyz';
+        const uppercaseChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+        const requiredChars = specialChars + numbers + lowercaseChars + uppercaseChars;
+
+        const passwordLength = minLength; // Set the length to be exactly 16 characters
+
+        let autogeneratedPassword = '';
+
+        // Ensure at least one character of each required type
+        autogeneratedPassword += specialChars.charAt(Math.floor(Math.random() * specialChars.length));
+        autogeneratedPassword += numbers.charAt(Math.floor(Math.random() * numbers.length));
+        autogeneratedPassword += lowercaseChars.charAt(Math.floor(Math.random() * lowercaseChars.length));
+        autogeneratedPassword += uppercaseChars.charAt(Math.floor(Math.random() * uppercaseChars.length));
+
+        // Fill the remaining password characters randomly from the required characters
+        for (let i = 4; i < passwordLength; i++) {
+            const randomIndex = Math.floor(Math.random() * requiredChars.length);
+            autogeneratedPassword += requiredChars.charAt(randomIndex);
+        }
+
+        // Shuffle the characters to ensure randomness
+        autogeneratedPassword = autogeneratedPassword.split('').sort(function() { return 0.5 - Math.random() }).join('');
+
+        // Update a ng-model with the generated password (replace 'adminPassword' with the actual ng-model name you're using)
+        $scope.adminPassword = autogeneratedPassword;
+        console.log(autogeneratedPassword);
+    };
+    var dataDB
+    $scope.callGetWebsitesFromDB = function() {
+        WebsiteService.getWebsitesFromDB()
+            .then(function(data) {
+                
+                console.log(data);
+                dataDB=data;
+                var domainToFind = $("#domainNamePage").text();
+                var matchingEmail = findEmailByDomain(domainToFind, dataDB);
+
+                if (matchingEmail) {
+                    $scope.adminEmail=matchingEmail;
+                } else {
+                    console.log("No matching email found for domain:", domainToFind);
+                }
+        })
+                // Use the data as needed
+            
+            .catch(function(error) {
+                // Handle 
+                console.log(error);
+            });
+    };
+
+
+    function findEmailByDomain(domainToFind, data) {
+        for (var i = 0; i < data.length; i++) {
+            if (data[i].domain === domainToFind) {
+                return data[i].adminEmail;
+            }
+        }
+        return null; // Return null if no matching email is found
+    }
+
+    $scope.generateAutogeneratedUsername();
+    $scope.generateAutogeneratedPassword();
+    // $rootScope.getFurtherWebsitesFromDB();
+    $scope.callGetWebsitesFromDB();
+    var domain = $("#domainNamePage").text();
+    
+
+
+
 
     $scope.installWordPress = function () {
 
@@ -7029,7 +7465,6 @@ app.controller('installWordPressCTRL', function ($scope, $http, $timeout) {
         $scope.currentStatus = "Starting installation..";
 
         path = $scope.installPath;
-
 
         url = "/websites/installWordpress";
 
@@ -7049,6 +7484,7 @@ app.controller('installWordPressCTRL', function ($scope, $http, $timeout) {
             passwordByPass: $scope.adminPassword,
             adminEmail: $scope.adminEmail
         };
+        console.log(data)
 
         var config = {
             headers: {

@@ -1,6 +1,6 @@
 {% extends "baseTemplate/index.html" %}
 {% load i18n %}
-{% block title %}{% trans "Add/Modify DNS Records - CyberPanel" %}{% endblock %}
+{% block title %}{% trans "Add/Modify DNS Records - Popo PowerPanel " %}{% endblock %}
 {% block content %}
 
     {% load static %}
@@ -79,33 +79,30 @@
                                     </ul>
                                 </div>
 
-                                <!------------- A Record box ------------->
 
 
-                                <div class="col-sm-3 aRecord">
+                                <div class="col-sm-3 aRecord mt-7 mb-2">
                                     <input placeholder="{% trans 'Name' %}" name="dom" type="text" class="form-control"
                                            ng-model="recordName" required>
                                 </div>
 
-                                <div class="col-sm-3 aRecord">
+                                <div class="col-sm-3 aRecord mt-7 mb-2">
                                     <input placeholder="{% trans 'TTL' %}" type="number" class="form-control"
                                            ng-model="ttl" required>
                                 </div>
 
-                                <div class="col-sm-3 aRecord">
+                                <div class="col-sm-3 aRecord mt-7 mb-2">
                                     <input placeholder="{% trans 'IP Address' %}" name="dom" type="text"
                                            class="form-control" ng-model="recordContentA" required>
                                 </div>
 
 
-                                <div class="col-sm-3 aRecord">
+                                <div class="col-sm-3 aRecord mt-7">
                                     <button style="width: 100%;" type="button" ng-click="addDNSRecord('A')"
                                             class="btn btn-primary">{% trans "Add" %}</button>
                                 </div>
 
-                                <!------------- A Record box ------------->
 
-                                <!------------- AAAA Record box ------------->
 
 
                                 <div class="col-sm-3 aaaaRecord">
@@ -129,11 +126,6 @@
                                             class="btn btn-primary">{% trans "Add" %}</button>
                                 </div>
 
-                                <!------------- AAAA Record box ------------->
-
-
-                                <!------------- CNAME Record box ------------->
-
 
                                 <div class="col-sm-3 cNameRecord">
                                     <input placeholder="{% trans 'Name' %}" type="text" class="form-control"
@@ -155,10 +147,6 @@
                                     <button style="width: 100%;" type="button" ng-click="addDNSRecord('CNAME')"
                                             class="btn btn-primary">{% trans "Add" %}</button>
                                 </div>
-
-                                <!------------- CNAME Record box ------------->
-
-                                <!------------- MX Record box ------------->
 
 
                                 <div class="col-sm-3 mxRecord">
@@ -187,11 +175,6 @@
                                             class="btn btn-primary">{% trans "Add" %}</button>
                                 </div>
 
-                                <!------------- CNAME Record box ------------->
-
-
-                                <!------------- SPF Record box ------------->
-
 
                                 <div class="col-sm-3 spfRecord">
                                     <input placeholder="{% trans 'Name' %}" type="text" class="form-control"
@@ -215,9 +198,7 @@
                                             class="btn btn-primary">{% trans "Add" %}</button>
                                 </div>
 
-                                <!------------- SPF Record box ------------->
 
-                                <!------------- TXT Record box ------------->
 
 
                                 <div class="col-sm-3 txtRecord">
@@ -242,9 +223,7 @@
                                             class="btn btn-primary">{% trans "Add" %}</button>
                                 </div>
 
-                                <!------------- TXT Record box ------------->
 
-                                <!------------- SOA Record box ------------->
 
 
                                 <div class="col-sm-3 soaRecord">
@@ -269,9 +248,7 @@
                                             class="btn btn-primary">{% trans "Add" %}</button>
                                 </div>
 
-                                <!------------- SOA Record box ------------->
 
-                                <!------------- NS Record box ------------->
 
 
                                 <div class="col-sm-3 nsRecord">
@@ -296,9 +273,7 @@
                                             class="btn btn-primary">{% trans "Add" %}</button>
                                 </div>
 
-                                <!------------- NS Record box ------------->
 
-                                <!------------- SRV Record box ------------->
 
 
                                 <div class="col-sm-3 srvRecord">
@@ -328,9 +303,7 @@
                                             class="btn btn-primary">{% trans "Add" %}</button>
                                 </div>
 
-                                <!------------- SRV Record box ------------->
 
-                                <!------------- CAA Record box ------------->
 
                                 <div class="col-sm-3 caaRecord">
                                     <input placeholder="{% trans 'Name' %}" type="text" class="form-control"
@@ -349,13 +322,11 @@
                                             class="btn btn-primary">{% trans "Add" %}</button>
                                 </div>
 
-                                <!------------- CAA Record box ------------->
 
 
                             </div>
 
 
-                            <!------ List of records --------------->
 
                             <div ng-hide="currentRecords" class="form-group">
 
@@ -402,7 +373,6 @@
                                 </div>
                             </div>
 
-                            <!------ List of records --------------->
 
 
                             <div class="form-group">
