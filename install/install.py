@@ -336,8 +336,8 @@ class preFlightsChecks:
                 command = "./" + filename
                 preFlightsChecks.call(command, self.distro, command, command, 1, 1, os.EX_OSERR)
             except:
-                logging.InstallLog.writeToFile("[ERROR] Exception during Popo PowerPanel install")
-                preFlightsChecks.stdOut("[ERROR] Exception during Popo PowerPanel install")
+                logging.InstallLog.writeToFile("[ERROR] Exception during CyberPanel install")
+                preFlightsChecks.stdOut("[ERROR] Exception during CyberPanel install")
                 os._exit(os.EX_SOFTWARE)
 
         elif self.distro == centos:
@@ -515,7 +515,7 @@ password="%s"
 
     def fixCyberPanelPermissions(self):
 
-        ###### fix Core Popo PowerPanel permissions
+        ###### fix Core CyberPanel permissions
 
         command = "usermod -G lscpd,lsadm,nobody lscpd"
         preFlightsChecks.call(command, self.distro, command, command, 1, 0, os.EX_OSERR)
@@ -1970,7 +1970,7 @@ $cfg['Servers'][$i]['LogoutURL'] = 'phpmyadminsignin.php?logout';
 
     def installation_successfull(self):
         print("###################################################################")
-        print("                Popo PowerPanel Successfully Installed                  ")
+        print("                CyberPanel Successfully Installed                  ")
         print("                                                                   ")
 
         print("                                                                   ")
@@ -2372,7 +2372,7 @@ vmail
 
 
 def main():
-    parser = argparse.ArgumentParser(description='Popo PowerPanel Installer')
+    parser = argparse.ArgumentParser(description='CyberPanel Installer')
     parser.add_argument('publicip', help='Please enter public IP for your VPS or dedicated server.')
     parser.add_argument('--mysql', help='Specify number of MySQL instances to be used.')
     parser.add_argument('--postfix', help='Enable or disable Email Service.')
@@ -2392,8 +2392,8 @@ def main():
     args = parser.parse_args()
 
     logging.InstallLog.ServerIP = args.publicip
-    logging.InstallLog.writeToFile("Starting Popo PowerPanel installation..,10")
-    preFlightsChecks.stdOut("Starting Popo PowerPanel installation..")
+    logging.InstallLog.writeToFile("Starting CyberPanel installation..,10")
+    preFlightsChecks.stdOut("Starting CyberPanel installation..")
 
     if args.ent is None:
         ent = 0
@@ -2586,7 +2586,7 @@ echo $oConfig->Save() ? 'Done' : 'Error';
 
     checks.fixCyberPanelPermissions()
 
-    logging.InstallLog.writeToFile("Popo PowerPanel installation successfully completed!,80")
+    logging.InstallLog.writeToFile("PopoPanelinstallation successfully completed!,80")
 
 
 if __name__ == "__main__":

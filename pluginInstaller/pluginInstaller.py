@@ -182,9 +182,9 @@ class pluginInstaller:
 
             ##
 
-            pluginInstaller.stdOut('Informing Popo PowerPanel about plugin.')
+            pluginInstaller.stdOut('Informing CyberPanel about plugin.')
             pluginInstaller.informCyberPanel(pluginName)
-            pluginInstaller.stdOut('Popo PowerPanel core informed about the plugin.')
+            pluginInstaller.stdOut('CyberPanel core informed about the plugin.')
 
             ##
 
@@ -322,9 +322,9 @@ class pluginInstaller:
 
             ##
 
-            pluginInstaller.stdOut('Informing Popo PowerPanel about plugin removal.')
+            pluginInstaller.stdOut('Informing CyberPanel about plugin removal.')
             pluginInstaller.informCyberPanelRemoval(pluginName)
-            pluginInstaller.stdOut('Popo PowerPanel core informed about the plugin removal.')
+            pluginInstaller.stdOut('CyberPanel core informed about the plugin removal.')
 
             ##
 
@@ -353,7 +353,7 @@ class pluginInstaller:
 
 def main():
 
-    parser = argparse.ArgumentParser(description='Popo PowerPanel Installer')
+    parser = argparse.ArgumentParser(description='CyberPanel Installer')
     parser.add_argument('function', help='Specify a function to call!')
 
     parser.add_argument('--pluginName', help='Temporary path to configurations data!')

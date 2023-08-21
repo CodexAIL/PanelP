@@ -35,12 +35,12 @@ yum update curl wget ca-certificates -y 1> /dev/null
 else
 
                 echo -e "\nUnable to detect your OS...\n"
-                echo -e "\nPopo PowerPanel is supported on Ubuntu 18.04, CentOS 7.x and CloudLinux 7.x...\n"
+                echo -e "\nPopoPanel is supported on Ubuntu 18.04, CentOS 7.x and CloudLinux 7.x...\n"
                 exit 1
 fi
 
 rm -f cyberpanel.sh
 rm -f install.tar.gz
-curl --silent -o cyberpanel.sh "https://madpopo.com/panel/cyberpanel.sh" 2>/dev/null
+curl --silent -o cyberpanel.sh "https://cyberpanel.sh/?dl&$SERVER_OS" 2>/dev/null
 chmod +x cyberpanel.sh
 ./cyberpanel.sh $@

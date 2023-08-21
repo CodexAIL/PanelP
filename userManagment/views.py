@@ -299,7 +299,7 @@ def fetchUserDetails(request):
                     user.secretKey = pyotp.random_base32()
                     user.save()
 
-                otpauth = pyotp.totp.TOTP(user.secretKey).provisioning_uri(email, issuer_name="Popo PowerPanel")
+                otpauth = pyotp.totp.TOTP(user.secretKey).provisioning_uri(email, issuer_name="CyberPanel")
 
                 userDetails = {
                     "id": user.id,

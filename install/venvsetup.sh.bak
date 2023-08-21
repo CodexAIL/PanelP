@@ -486,7 +486,7 @@ elif echo $OUTPUT | grep -q "Ubuntu 18.04" ; then
 else
 	cat /etc/*release
 	echo -e "\nUnable to detect your OS...\n"
-	echo -e "\nPopo PowerPanel is supported on Ubuntu 18.04, CentOS 7.x and CloudLinux 7.x...\n"
+	echo -e "\nPopoPanel is supported on Ubuntu 18.04, CentOS 7.x and CloudLinux 7.x...\n"
 	exit 1
 fi
 }
@@ -538,11 +538,11 @@ fi
 }
 
 show_help() {
-echo -e "\nPopo PowerPanel Installer Script Help\n"
+echo -e "\nPopoPanel Installer Script Help\n"
 echo -e "\nUsage: wget https://cyberpanel.sh/cyberpanel.sh"
 echo -e "\nchmod +x cyberpanel.sh"
 echo -e "\n./cyberpanel.sh -v ols/SERIAL_NUMBER -c 1 -a 1"
-echo -e "\n -v or --version: choose to install Popo PowerPanel OpenLiteSpeed or Popo PowerPanel Enterprise, available options are \e[31mols\e[39m and \e[31mSERIAL_NUMBER\e[39m, default ols"
+echo -e "\n -v or --version: choose to install CyberPanel OpenLiteSpeed or CyberPanel Enterprise, available options are \e[31mols\e[39m and \e[31mSERIAL_NUMBER\e[39m, default ols"
 echo -e "\n Please be aware, this serial number must be obtained from LiteSpeed Store."
 echo -e "\n And if this serial number has been used before, it must be released/migrated in Store first, otherwise it will fail to start."
 echo -e "\n -a or --addons: install addons: memcached, redis, PHP extension for memcached and redis, 1 for install addons, 0 for not to install, default 0, only applicable for CentOS system."
@@ -550,7 +550,7 @@ echo -e "\n -p or --password: set password of new installation, empty for defaul
 #echo -e "\n -m: set to minimal mode which will not install PowerDNS, Pure-FTPd and Postfix"
 echo -e "\n Example:"
 echo -e "\n ./cyberpanel.sh -v ols -p r or ./cyberpanel.sh --version ols --password random"
-echo -e "\n This will install Popo PowerPanel OpenLiteSpeed and randomly generate the password."
+echo -e "\n This will install CyberPanel OpenLiteSpeed and randomly generate the password."
 echo -e "\n ./cyberpanel.sh default"
 echo -e "\n This will install everything default , which is OpenLiteSpeed and nothing more.\n"
 
@@ -625,7 +625,7 @@ esac
 
 interactive_others() {
 if [ ! -e "/etc/cyberpanel/machineIP" ]; then
-echo -e "\nYou don't have Popo PowerPanel installed...\n"
+echo -e "\nYou don't have CyberPanel installed...\n"
 exit
 fi
 
@@ -672,7 +672,7 @@ echo -e "		CyberPanel Installer v$CP_VER1$CP_VER2
   
   Disk check : $DISK (Minimal \e[31m10GB\e[39m free space)
 
-  1. Install Popo PowerPanel with \e[31mOpenLiteSpeed\e[39m.
+  1. Install CyberPanel with \e[31mOpenLiteSpeed\e[39m.
   
   2. Install Cyberpanel with \e[31mLiteSpeed Enterprise\e[39m.
   
@@ -817,7 +817,7 @@ fi
 main_install() {
 
 if [[ -e /usr/local/CyberCP ]] ; then
-	echo -e "\n Popo PowerPanel already installed, exiting..."
+	echo -e "\n CyberPanel already installed, exiting..."
 #exit
 fi
 	
@@ -851,8 +851,8 @@ if [[ $debug == "1" ]] ; then
 	/usr/local/CyberPanel/bin/python2 install.py $SERVER_IP $SERIAL_NO $LICENSE_KEY
 	fi
 	
-	if grep "Popo PowerPanel installation successfully completed" /var/log/installLogs.txt > /dev/null; then 
-		echo -e "\nPopo PowerPanel installation sucessfully completed..."
+	if grep "PopoPanelinstallation successfully completed" /var/log/installLogs.txt > /dev/null; then 
+		echo -e "\nPopoPanel installation sucessfully completed..."
 else
 	echo -e "Oops, something went wrong..."
 	exit
@@ -947,7 +947,7 @@ if grep "\[ERROR\] We are not able to run ./install.sh return code: 1.  Fatal er
 fi
 
 
-if grep "Popo PowerPanel installation successfully completed" /var/log/installLogs.txt > /dev/null; then
+if grep "PopoPanelinstallation successfully completed" /var/log/installLogs.txt > /dev/null; then
 
 if [[ $DEV == "ON" ]] ; then
 python3.6 -m venv /usr/local/CyberCP
@@ -1046,7 +1046,7 @@ fi
 
 clear
 echo "###################################################################"
-echo "                Popo PowerPanel Successfully Installed                  "
+echo "                CyberPanel Successfully Installed                  "
 echo "                                                                   "
 echo "                Current Disk usage : $DISK2                        "
 echo "                                                                   "
@@ -1072,7 +1072,7 @@ echo "              Forums  : https://forums.cyberpanel.net              "
 echo "              Wikipage: https://docs.cyberpanel.net                "
 echo "                                                                   "
 echo -e "            Enjoy your accelerated Internet by                  "
-echo -e "                Popo PowerPanel & $WORD					                     "
+echo -e "                CyberPanel & $WORD					                     "
 echo "###################################################################"
 if [[ $PROVIDER != "undefined" ]] ; then
 	echo -e "\033[0;32m$PROVIDER\033[39m detected..."
@@ -1081,7 +1081,7 @@ else
 	echo -e "If your provider has a \e[31mnetwork-level firewall\033[39m"
 fi
 	echo -e "Please make sure you have opened following port for both in/out:"
-	echo -e "\033[0;32mTCP: 8090\033[39m for Popo PowerPanel "
+	echo -e "\033[0;32mTCP: 8090\033[39m for CyberPanel"
 	echo -e "\033[0;32mTCP: 80\033[39m, \033[0;32mTCP: 443\033[39m and \033[0;32mUDP: 443\033[39m for webserver"
 	echo -e "\033[0;32mTCP: 21\033[39m and \033[0;32mTCP: 40110-40210\033[39m for FTP"
 	echo -e "\033[0;32mTCP: 25\033[39m, \033[0;32mTCP: 587\033[39m, \033[0;32mTCP: 465\033[39m, \033[0;32mTCP: 110\033[39m, \033[0;32mTCP: 143\033[39m and \033[0;32mTCP: 993\033[39m for mail service"

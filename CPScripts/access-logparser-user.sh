@@ -28,7 +28,7 @@ if [ -f /usr/local/cpanel/cpanel ]; then
 	acesslog_sed="-ssl_log"
 	
 elif [ -f /usr/bin/cyberpanel ]; then
-    	# Popo PowerPanel check /usr/bin/cyberpanel
+    	# CyberPanel check /usr/bin/cyberpanel
     	ControlPanel="cyberpanel"
 	
 	#Get users homedir path

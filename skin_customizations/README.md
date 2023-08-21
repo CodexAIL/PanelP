@@ -1,4 +1,4 @@
-# Popo PowerPanel Skin Customizations
+# CyberPanel Skin Customizations
 
 For detailed instructions and screenshots [visit](http://blog.cyberpanel.net/2019/01/01/skin-customization-for-cyberpanel).
 

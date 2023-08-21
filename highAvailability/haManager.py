@@ -234,7 +234,7 @@ class HAManager(multi.Thread):
 
 def main():
 
-    parser = argparse.ArgumentParser(description='Popo PowerPanel HA Manager')
+    parser = argparse.ArgumentParser(description='CyberPanel HA Manager')
     parser.add_argument('function', help='Specific a function to call!')
     parser.add_argument('--id', help='ID!')
     parser.add_argument('--ipAddress', help='IP Address!')

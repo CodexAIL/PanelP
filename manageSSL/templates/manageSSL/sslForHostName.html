@@ -1,6 +1,6 @@
 {% extends "baseTemplate/index.html" %}
 {% load i18n %}
-{% block title %}{% trans "Issue SSL For Hostname - Popo PowerPanel " %}{% endblock %}
+{% block title %}{% trans "Issue SSL For Hostname - CyberPanel" %}{% endblock %}
 {% block content %}
 
 {% load static %}
@@ -11,7 +11,7 @@
 <div class="container">
 <div id="page-title">
    <h2>{% trans "Issue SSL For Hostname" %} - <a  target="_blank" href="http://go.cyberpanel.net/hostname-ssl" style="height: 23px;line-height: 21px;" class="btn btn-border btn-alt border-red btn-link font-red" title=""><span>{% trans "SSL Docs" %}</span></a></h2>
-   <p>{% trans "Let’s Encrypt SSL for hostname to access Popo PowerPanel on verified SSL." %}</p>
+   <p>{% trans "Let’s Encrypt SSL for hostname to access CyberPanel on verified SSL." %}</p>
 </div>
 
 <div ng-controller="sslIssueForHostNameCtrl" class="panel">
@@ -53,11 +53,11 @@
                             </div>
 
                             <div ng-hide="sslIssued" class="alert alert-success">
-                                <p>{% trans "SSL Issued. You can now access Popo PowerPanel at:" %} <strong>https://{$ sslDomain $}:8090</strong></p>
+                                <p>{% trans "SSL Issued. You can now access CyberPanel at:" %} <strong>https://{$ sslDomain $}:8090</strong></p>
                             </div>
 
                             <div ng-hide="couldNotConnect" class="alert alert-success">
-                                <p>{% trans "SSL Issued. You can now access Popo PowerPanel at:" %} <strong>https://"domain":8090</strong></p>
+                                <p>{% trans "SSL Issued. You can now access CyberPanel at:" %} <strong>https://"domain":8090</strong></p>
                             </div>
                     </div>
 

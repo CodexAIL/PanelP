@@ -1,6 +1,6 @@
-# Popo PowerPanel Translation File.
+# CyberPanel Translation File.
 # Copyright (C) 2017 LiteSpeedTech
-# This file is distributed under the same license as the Popo PowerPanel package.
+# This file is distributed under the same license as the CyberPanel package.
 # FIRST AUTHOR <unasir@litespeedtech.com>, 2017.
 #
 #: baseTemplate/templates/baseTemplate/index.html:219
@@ -26,8 +26,8 @@ msgstr ""
 "X-Generator: Poedit 2.0.6\n"
 
 #: CLManager/templates/CLManager/createPackage.html:3
-msgid "Create Cloud Linux Package - Popo PowerPanel "
-msgstr "Buat Paket Cloud Linux - Popo PowerPanel "
+msgid "Create Cloud Linux Package - CyberPanel"
+msgstr "Buat Paket Cloud Linux - CyberPanel"
 
 #: CLManager/templates/CLManager/createPackage.html:9
 msgid "Create CloudLinux Package."
@@ -35,11 +35,11 @@ msgstr "Buat Paket CloudLinux"
 
 #: CLManager/templates/CLManager/createPackage.html:10
 msgid ""
-"Each CloudLinux package have one associated (owner) Popo PowerPanel package. "
+"Each CloudLinux package have one associated (owner) CyberPanel package. "
 "During website creation associated CloudLinux package will be assigned to "
 "website user."
 msgstr ""
-"Setiap paket CloudLinux memiliki satu paket Popo PowerPanel (pemilik) terkait."
+"Setiap paket CloudLinux memiliki satu paket CyberPanel (pemilik) terkait."
 "Selama pembuatan situs web, paket CloudLinux terkait akan ditetapkan ke "
 "pengguna situs web." 
 
@@ -119,8 +119,8 @@ msgid "INODES hard"
 msgstr "INODES hard"
 
 #: CLManager/templates/CLManager/listPackages.html:3
-msgid "Manage CloudLinux Packages - Popo PowerPanel "
-msgstr "Kelola Paket CloudLinux - Popo PowerPanel "
+msgid "Manage CloudLinux Packages - CyberPanel"
+msgstr "Kelola Paket CloudLinux - CyberPanel"
 
 #: CLManager/templates/CLManager/listPackages.html:14
 msgid "Manage CloudLinux Packages"
@@ -166,8 +166,8 @@ msgid "Cannot list websites. Error message:"
 msgstr "Tidak bisa melihat daftar situs. Pesan kesalahan:"
 
 #: CLManager/templates/CLManager/listWebsites.html:3
-msgid "CageFS - Popo PowerPanel "
-msgstr "CageFS - Popo PowerPanel "
+msgid "CageFS - CyberPanel"
+msgstr "CageFS - CyberPanel"
 
 #: CLManager/templates/CLManager/listWebsites.html:14
 #: CLManager/templates/CLManager/monitorUsage.html:14
@@ -188,8 +188,8 @@ msgid "Default: "
 msgstr "Bawaan: "
 
 #: CLManager/templates/CLManager/monitorUsage.html:3
-msgid "Monitor Usage - Popo PowerPanel "
-msgstr "Pantau Penggunaan - Popo PowerPanel "
+msgid "Monitor Usage - CyberPanel"
+msgstr "Pantau Penggunaan - CyberPanel"
 
 #: CLManager/templates/CLManager/monitorUsage.html:15
 msgid "Monitor usage of your websites."
@@ -207,8 +207,8 @@ msgstr "Situs Web"
 
 #: CLManager/templates/CLManager/notAvailable.html:3
 #: containerization/templates/containerization/notAvailable.html:3
-msgid "Not available - Popo PowerPanel "
-msgstr "Tak Tersedia - Popo PowerPanel "
+msgid "Not available - CyberPanel"
+msgstr "Tak Tersedia - CyberPanel"
 
 #: CLManager/templates/CLManager/notAvailable.html:13
 #: containerization/templates/containerization/notAvailable.html:13
@@ -238,8 +238,8 @@ msgid "CageFS is not installed on this server. Please proceed to installation."
 msgstr "CageFS tidak diinstal di server ini. Silakan lanjutkan ke instalasi."
 
 #: CLManager/templates/CLManager/websiteContainerLimit.html:3
-msgid " usage - Popo PowerPanel "
-msgstr " penggunaan - Popo PowerPanel "
+msgid " usage - CyberPanel"
+msgstr " penggunaan - CyberPanel"
 
 #: CLManager/templates/CLManager/websiteContainerLimit.html:14
 #: emailMarketing/templates/emailMarketing/website.html:40
@@ -329,8 +329,8 @@ msgstr "Jerman"
 
 #: IncBackups/templates/IncBackups/backupSchedule.html:3
 #: backup/templates/backup/backupSchedule.html:3
-msgid "Schedule Backup - Popo PowerPanel "
-msgstr "Jadwal Cadangan - Popo PowerPanel "
+msgid "Schedule Backup - CyberPanel"
+msgstr "Jadwal Cadangan - CyberPanel"
 
 #: IncBackups/templates/IncBackups/backupSchedule.html:13
 #: IncBackups/templates/IncBackups/backupSchedule.html:23
@@ -671,8 +671,8 @@ msgid "Actions"
 msgstr "Aksi"
 
 #: WebTerminal/templates/WebTerminal/WebTerminal.html:3
-msgid "Terminal - Popo PowerPanel "
-msgstr "Terminal - Popo PowerPanel "
+msgid "Terminal - CyberPanel"
+msgstr "Terminal - CyberPanel"
 
 #: WebTerminal/templates/WebTerminal/WebTerminal.html:16
 #: baseTemplate/templates/baseTemplate/index.html:641
@@ -860,8 +860,8 @@ msgid "Schedule Added"
 msgstr "Jadwal Berhasil Ditambahkan"
 
 #: backup/templates/backup/index.html:3
-msgid "Backup Home - Popo PowerPanel "
-msgstr "Cadangan - Popo PowerPanel "
+msgid "Backup Home - CyberPanel"
+msgstr "Cadangan - CyberPanel"
 
 #: backup/templates/backup/index.html:13 backup/templates/backup/index.html:30
 #: baseTemplate/templates/baseTemplate/homePage.html:95
@@ -917,8 +917,8 @@ msgid "Remote Backups"
 msgstr "Cadangan Jarak jauh"
 
 #: backup/templates/backup/remoteBackups.html:3
-msgid "Transfer Websites from Remote Server - Popo PowerPanel "
-msgstr "Transfer Situs dari Server Lain - Popo PowerPanel "
+msgid "Transfer Websites from Remote Server - CyberPanel"
+msgstr "Transfer Situs dari Server Lain - CyberPanel"
 
 #: backup/templates/backup/remoteBackups.html:14
 msgid "Remote Transfer"
@@ -1005,8 +1005,8 @@ msgid "Email"
 msgstr "Surel"
 
 #: backup/templates/backup/restore.html:3
-msgid "Restore Website - Popo PowerPanel "
-msgstr "Memulihkan Situs Web - Popo PowerPanel "
+msgid "Restore Website - CyberPanel"
+msgstr "Memulihkan Situs Web - CyberPanel"
 
 #: backup/templates/backup/restore.html:14
 #: backup/templates/backup/restore.html:21
@@ -1016,7 +1016,7 @@ msgstr "Memulihkan Situs Web"
 #: backup/templates/backup/restore.html:15
 msgid ""
 "This page can be used to restore your websites, Backup should be generated "
-"from Popo PowerPanel Backup generation tool, it will detect all Backups under "
+"from CyberPanel Backup generation tool, it will detect all Backups under "
 "<strong>/home/backup</strong>."
 msgstr ""
 "Halaman ini dapat digunakan untuk memulihkan situs web Anda, Cadangan harus dibuat"
@@ -1055,8 +1055,8 @@ msgid "Site related to this Backup already exists."
 msgstr "Situs yang terkait dengan Cadangan ini sudah ada."
 
 #: baseTemplate/templates/baseTemplate/homePage.html:3
-msgid "Home - Popo PowerPanel "
-msgstr "Beranda - Popo PowerPanel "
+msgid "Home - CyberPanel"
+msgstr "Beranda - CyberPanel"
 
 #: baseTemplate/templates/baseTemplate/homePage.html:13
 msgid "Use the tabs to navigate through the control panel."
@@ -1216,8 +1216,8 @@ msgstr "Penggunaan Disk"
 #: baseTemplate/templates/baseTemplate/index.html:192
 #: baseTemplate/templates/baseTemplate/index.html:195
 #: baseTemplate/templates/baseTemplate/index.html:199
-msgid "Popo PowerPanel"
-msgstr "Popo PowerPanel"
+msgid "CyberPanel"
+msgstr "CyberPanel"
 
 #: baseTemplate/templates/baseTemplate/index.html:197
 #: baseTemplate/templates/baseTemplate/index.html:201
@@ -1636,7 +1636,7 @@ msgstr "Jadwal Cadangan"
 
 #: baseTemplate/templates/baseTemplate/index.html:607
 msgid "Restore from Remote Server"
-msgstr "Pulihkan dari Server Jarak Jauh  - Popo PowerPanel "
+msgstr "Pulihkan dari Server Jarak Jauh  - CyberPanel"
 
 #: baseTemplate/templates/baseTemplate/index.html:607
 msgid "Restore from Remote"
@@ -1783,8 +1783,8 @@ msgstr "Status LiteSpeed"
 #: baseTemplate/templates/baseTemplate/index.html:757
 #: serverStatus/templates/serverStatus/cybercpmainlogfile.html:13
 #: serverStatus/templates/serverStatus/index.html:38
-msgid "Popo PowerPanel Main Log File"
-msgstr "Berkas Log Utama Popo PowerPanel "
+msgid "PopoPanelMain Log File"
+msgstr "Berkas Log Utama CyberPanel"
 
 #: baseTemplate/templates/baseTemplate/index.html:760
 msgid "Services Status"
@@ -1979,16 +1979,16 @@ msgid "Installed"
 msgstr "Terpasang"
 
 #: baseTemplate/templates/baseTemplate/versionManagment.html:3
-msgid "Version Management - Popo PowerPanel "
-msgstr "Pengelolaan Versi  - Popo PowerPanel "
+msgid "Version Management - CyberPanel"
+msgstr "Pengelolaan Versi  - CyberPanel"
 
 #: baseTemplate/templates/baseTemplate/versionManagment.html:11
 msgid ""
 "On this page you can manage versions and or upgrade to latest version of "
-"Popo PowerPanel"
+"CyberPanel"
 msgstr ""
 "Di halaman ini anda bisa mengelola versi, menambah atau memperbarui ke versi "
-"Popo PowerPanel terakhir"
+"PopoPanelterakhir"
 
 #: baseTemplate/templates/baseTemplate/versionManagment.html:25
 msgid "Current Version"
@@ -2007,20 +2007,20 @@ msgid "Latest Build"
 msgstr "Build Terbaru"
 
 #: containerization/templates/containerization/listWebsites.html:3
-msgid "Limits - Popo PowerPanel "
-msgstr "Batasan - Popo PowerPanel "
+msgid "Limits - CyberPanel"
+msgstr "Batasan - CyberPanel"
 
 #: containerization/templates/containerization/listWebsites.html:15
 msgid "Launch and set limits for the websites."
 msgstr "Buka dan tentukan batasan situs."
 
 #: containerization/templates/containerization/notAvailable.html:14
-msgid "Popo PowerPanel Ent is required for Containerization."
-msgstr "Kontainerisasi membutuhkan lisensi Popo PowerPanel Ent ."
+msgid "PopoPanelEnt is required for Containerization."
+msgstr "Kontainerisasi membutuhkan lisensi CyberPanel Ent ."
 
 #: containerization/templates/containerization/notAvailable.html:22
-msgid "Containerization is only available on Popo PowerPanel Ent. "
-msgstr "Kontainerisasi hanya tersedia pada Popo PowerPanel Ent. "
+msgid "Containerization is only available on CyberPanel Ent. "
+msgstr "Kontainerisasi hanya tersedia pada CyberPanel Ent. "
 
 #: containerization/templates/containerization/notAvailable.html:39
 msgid ""
@@ -2031,8 +2031,8 @@ msgstr ""
 "memasang."
 
 #: containerization/templates/containerization/websiteContainerLimit.html:3
-msgid " limits - Popo PowerPanel "
-msgstr " batasan - Popo PowerPanel "
+msgid " limits - CyberPanel"
+msgstr " batasan - CyberPanel"
 
 #: containerization/templates/containerization/websiteContainerLimit.html:14
 msgid "Limits/Usage"
@@ -2082,8 +2082,8 @@ msgid "Memory Limit"
 msgstr "Batasan Memori"
 
 #: databases/templates/databases/createDatabase.html:3
-msgid "Create New Database - Popo PowerPanel "
-msgstr "Buat Database Baru - Popo PowerPanel "
+msgid "Create New Database - CyberPanel"
+msgstr "Buat Database Baru - CyberPanel"
 
 #: databases/templates/databases/createDatabase.html:13
 #: databases/templates/databases/phpMyAdmin.html:13
@@ -2147,8 +2147,8 @@ msgid "Database created successfully."
 msgstr "Database berhasil dibuat."
 
 #: databases/templates/databases/deleteDatabase.html:3
-msgid "Delete Database - Popo PowerPanel "
-msgstr "Hapus Database - Popo PowerPanel "
+msgid "Delete Database - CyberPanel"
+msgstr "Hapus Database - CyberPanel"
 
 #: databases/templates/databases/deleteDatabase.html:13
 msgid "Delete an existing database on this page."
@@ -2163,16 +2163,16 @@ msgid "Database deleted successfully."
 msgstr "Database berhasil dihapus."
 
 #: databases/templates/databases/index.html:3
-msgid "Database Functions - Popo PowerPanel "
-msgstr "Fungsi Database - Popo PowerPanel "
+msgid "Database Functions - CyberPanel"
+msgstr "Fungsi Database - CyberPanel"
 
 #: databases/templates/databases/index.html:13
 msgid "Create, edit and delete databases on this page."
 msgstr "Buat, edit dan hapus database di halaman ini."
 
 #: databases/templates/databases/listDataBases.html:3
-msgid "List Databases  - Popo PowerPanel "
-msgstr "Daftar Database - Popo PowerPanel "
+msgid "List Databases  - CyberPanel"
+msgstr "Daftar Database - CyberPanel"
 
 #: databases/templates/databases/listDataBases.html:14
 msgid "List Databases or change their passwords."
@@ -2217,11 +2217,11 @@ msgid "Change"
 msgstr "Ganti"
 
 #: databases/templates/databases/phpMyAdmin.html:3
-msgid "phpMyAdmin - Popo PowerPanel "
-msgstr "phpMyAdmin - Popo PowerPanel "
+msgid "phpMyAdmin - CyberPanel"
+msgstr "phpMyAdmin - CyberPanel"
 
 #: dns/templates/dns/addDeleteDNSRecords.html:3
-msgid "Add/Modify DNS Records - Popo PowerPanel "
+msgid "Add/Modify DNS Records - CyberPanel"
 msgstr "Tambah/Edit Rekor DNS - CyberPaneç"
 
 #: dns/templates/dns/addDeleteDNSRecords.html:13
@@ -2364,8 +2364,8 @@ msgid "Record Successfully Added."
 msgstr "Rekor Berhasil Ditambahkan."
 
 #: dns/templates/dns/configureDefaultNameServers.html:3
-msgid "Konfigurasikan Default Nameserver - Popo PowerPanel "
-msgstr "Buat Nameserver - Popo PowerPanel "
+msgid "Konfigurasikan Default Nameserver - CyberPanel"
+msgstr "Buat Nameserver - CyberPanel"
 
 #: dns/templates/dns/configureDefaultNameServers.html:12
 msgid "Konfigurasikan Default Nameserver"
@@ -2417,8 +2417,8 @@ msgid "Save"
 msgstr "Simpan"
 
 #: dns/templates/dns/createDNSZone.html:3
-msgid "Create DNS Zone - Popo PowerPanel "
-msgstr "Buat Zona DNS - Popo PowerPanel "
+msgid "Create DNS Zone - CyberPanel"
+msgstr "Buat Zona DNS - CyberPanel"
 
 #: dns/templates/dns/createDNSZone.html:13
 msgid ""
@@ -2437,8 +2437,8 @@ msgid "DNS Zone for domain:"
 msgstr "Zona DNS untuk domain:"
 
 #: dns/templates/dns/createNameServer.html:3
-msgid "Create Nameserver - Popo PowerPanel "
-msgstr "Buat Nameserver - Popo PowerPanel "
+msgid "Create Nameserver - CyberPanel"
+msgstr "Buat Nameserver - CyberPanel"
 
 #: dns/templates/dns/createNameServer.html:62
 msgid "Second Nameserver (Backup)"
@@ -2453,8 +2453,8 @@ msgid "The following nameservers were successfully created:"
 msgstr "Nameserver berikut berhasil dibuat:"
 
 #: dns/templates/dns/deleteDNSZone.html:3
-msgid "Delete DNS Zone - Popo PowerPanel "
-msgstr "Hapus Zona DNS - Popo PowerPanel "
+msgid "Delete DNS Zone - CyberPanel"
+msgstr "Hapus Zona DNS - CyberPanel"
 
 #: dns/templates/dns/deleteDNSZone.html:12
 #: dns/templates/dns/deleteDNSZone.html:18
@@ -2500,8 +2500,8 @@ msgid "is successfully erased."
 msgstr "berhasil dihapus."
 
 #: dns/templates/dns/index.html:3
-msgid "DNS Functions - Popo PowerPanel "
-msgstr "Fungsi  DNS - Popo PowerPanel "
+msgid "DNS Functions - CyberPanel"
+msgstr "Fungsi  DNS - CyberPanel"
 
 #: dns/templates/dns/index.html:12
 msgid "DNS Functions"
@@ -2521,8 +2521,8 @@ msgstr "Tambah/Hapus Rekor"
 
 #: dockerManager/templates/dockerManager/images.html:3
 #: dockerManager/templates/dockerManager/manageImages.html:3
-msgid "Docker Manage Images - Popo PowerPanel "
-msgstr "Kelola Citra Docker - Popo PowerPanel "
+msgid "Docker Manage Images - CyberPanel"
+msgstr "Kelola Citra Docker - CyberPanel"
 
 #: dockerManager/templates/dockerManager/images.html:14
 #: dockerManager/templates/dockerManager/index.html:39
@@ -2542,8 +2542,8 @@ msgid "Create"
 msgstr "Buat"
 
 #: dockerManager/templates/dockerManager/index.html:3
-msgid "Docker Container Management - Popo PowerPanel "
-msgstr "Pengelolaan Kontainer Docker - Popo PowerPanel "
+msgid "Docker Container Management - CyberPanel"
+msgstr "Pengelolaan Kontainer Docker - CyberPanel"
 
 #: dockerManager/templates/dockerManager/index.html:13
 msgid "Docker Container Management"
@@ -2554,8 +2554,8 @@ msgid "New Container"
 msgstr "Kontainer Baru"
 
 #: dockerManager/templates/dockerManager/install.html:3
-msgid "Install Docker - Popo PowerPanel "
-msgstr "Pasang Docker - Popo PowerPanel "
+msgid "Install Docker - CyberPanel"
+msgstr "Pasang Docker - CyberPanel"
 
 #: dockerManager/templates/dockerManager/install.html:12
 #: dockerManager/templates/dockerManager/install.html:18
@@ -2591,8 +2591,8 @@ msgstr ""
 "pengelola sistem anda"
 
 #: dockerManager/templates/dockerManager/listContainers.html:3
-msgid "Containers List - Popo PowerPanel "
-msgstr "Daftar Kontainer - Popo PowerPanel "
+msgid "Containers List - CyberPanel"
+msgstr "Daftar Kontainer - CyberPanel"
 
 #: dockerManager/templates/dockerManager/listContainers.html:14
 msgid "List Containers"
@@ -2647,8 +2647,8 @@ msgid "Pull"
 msgstr "Tarik"
 
 #: dockerManager/templates/dockerManager/runContainer.html:3
-msgid "Run new container - Popo PowerPanel "
-msgstr "Jalankan kontainer baru - Popo PowerPanel "
+msgid "Run new container - CyberPanel"
+msgstr "Jalankan kontainer baru - CyberPanel"
 
 #: dockerManager/templates/dockerManager/runContainer.html:12
 msgid "Run Container"
@@ -2718,8 +2718,8 @@ msgid "Go Back"
 msgstr "Kembali"
 
 #: dockerManager/templates/dockerManager/viewContainer.html:3
-msgid "Container Home - Popo PowerPanel "
-msgstr "Kontainer - Popo PowerPanel "
+msgid "Container Home - CyberPanel"
+msgstr "Kontainer - CyberPanel"
 
 #: dockerManager/templates/dockerManager/viewContainer.html:14
 msgid "Manage Container"
@@ -2754,8 +2754,8 @@ msgid "Confirmation"
 msgstr "Konfirmasi"
 
 #: emailMarketing/templates/emailMarketing/composeMessages.html:3
-msgid "Compose Email Message - Popo PowerPanel "
-msgstr "Buat  Email - Popo PowerPanel "
+msgid "Compose Email Message - CyberPanel"
+msgstr "Buat  Email - CyberPanel"
 
 #: emailMarketing/templates/emailMarketing/composeMessages.html:13
 #: emailMarketing/templates/emailMarketing/composeMessages.html:19
@@ -2791,8 +2791,8 @@ msgid "Save Template"
 msgstr "Simpan Templat"
 
 #: emailMarketing/templates/emailMarketing/createEmailList.html:3
-msgid "Create Email List - Popo PowerPanel "
-msgstr "Buat Surel List - Popo PowerPanel "
+msgid "Create Email List - CyberPanel"
+msgstr "Buat Surel List - CyberPanel"
 
 #: emailMarketing/templates/emailMarketing/createEmailList.html:13
 #: emailMarketing/templates/emailMarketing/createEmailList.html:19
@@ -2812,8 +2812,8 @@ msgid "Create List"
 msgstr "Buat List"
 
 #: emailMarketing/templates/emailMarketing/emailMarketing.html:3
-msgid "Email Marketing - Popo PowerPanel "
-msgstr "Email Marketing - Popo PowerPanel "
+msgid "Email Marketing - CyberPanel"
+msgstr "Email Marketing - CyberPanel"
 
 #: emailMarketing/templates/emailMarketing/emailMarketing.html:15
 msgid "Select users to Enable/Disable Email Marketing feature!"
@@ -2870,8 +2870,8 @@ msgid "Enable"
 msgstr "Aktifkan"
 
 #: emailMarketing/templates/emailMarketing/manageLists.html:3
-msgid "Manage Email Lists - Popo PowerPanel "
-msgstr "Kelola Surel List - Popo PowerPanel "
+msgid "Manage Email Lists - CyberPanel"
+msgstr "Kelola Surel List - CyberPanel"
 
 #: emailMarketing/templates/emailMarketing/manageLists.html:13
 #: emailMarketing/templates/emailMarketing/manageLists.html:19
@@ -2943,8 +2943,8 @@ msgid "Date Created"
 msgstr "Tanggal Dibuat"
 
 #: emailMarketing/templates/emailMarketing/manageSMTPHosts.html:3
-msgid "Manage SMTP Hosts - Popo PowerPanel "
-msgstr "Kelola Host SMTP - Popo PowerPanel "
+msgid "Manage SMTP Hosts - CyberPanel"
+msgstr "Kelola Host SMTP - CyberPanel"
 
 #: emailMarketing/templates/emailMarketing/manageSMTPHosts.html:13
 #: emailMarketing/templates/emailMarketing/manageSMTPHosts.html:19
@@ -2977,8 +2977,8 @@ msgid "Verify Host"
 msgstr "Verifikasi Host"
 
 #: emailMarketing/templates/emailMarketing/sendEmails.html:3
-msgid "Send Emails - Popo PowerPanel "
-msgstr "Kirim Surel - Popo PowerPanel "
+msgid "Send Emails - CyberPanel"
+msgstr "Kirim Surel - CyberPanel"
 
 #: emailMarketing/templates/emailMarketing/sendEmails.html:13
 #: emailMarketing/templates/emailMarketing/sendEmails.html:19
@@ -3600,8 +3600,8 @@ msgstr "Prestashop"
 
 #: emailPremium/templates/emailPremium/SpamAssassin.html:3
 #: firewall/templates/firewall/spamassassin.html:3
-msgid "SpamAssassin - Popo PowerPanel "
-msgstr "SpamAssassin - Popo PowerPanel "
+msgid "SpamAssassin - CyberPanel"
+msgstr "SpamAssassin - CyberPanel"
 
 #: emailPremium/templates/emailPremium/SpamAssassin.html:13
 #: firewall/templates/firewall/spamassassin.html:13
@@ -3801,8 +3801,8 @@ msgid "Flush Logs"
 msgstr "Bersihkan Log"
 
 #: emailPremium/templates/emailPremium/listDomains.html:3
-msgid "Domains - Popo PowerPanel "
-msgstr "Domain - Popo PowerPanel "
+msgid "Domains - CyberPanel"
+msgstr "Domain - CyberPanel"
 
 #: emailPremium/templates/emailPremium/listDomains.html:15
 msgid "On this page you manage emails limits for Domains/Email Addresses"
@@ -3810,8 +3810,8 @@ msgstr ""
 "Di halaman ini anda bisa mengelola batasan email untuk Alamat Email/Domain"
 
 #: emailPremium/templates/emailPremium/policyServer.html:3
-msgid "Email Policy Server - Popo PowerPanel "
-msgstr "Server Kebijakan Surel - Popo PowerPanel "
+msgid "Email Policy Server - CyberPanel"
+msgstr "Server Kebijakan Surel - CyberPanel"
 
 #: emailPremium/templates/emailPremium/policyServer.html:13
 msgid "Email Policy Server Configurations!"
@@ -3846,8 +3846,8 @@ msgid "Changes successfully applied."
 msgstr "Perubahan berhasil diterapkan."
 
 #: filemanager/templates/filemanager/index.html:5
-msgid "File Manager - Popo PowerPanel "
-msgstr "Pengelola File - Popo PowerPanel "
+msgid "File Manager - CyberPanel"
+msgstr "Pengelola File - CyberPanel"
 
 #: filemanager/templates/filemanager/index.html:54
 msgid " File Manager"
@@ -4172,7 +4172,7 @@ msgid "Download"
 msgstr "Unduh"
 
 #: firewall/templates/firewall/csf.html:3
-msgid "CSF (ConfigServer Security and Firewall) - Popo PowerPanel "
+msgid "CSF (ConfigServer Security and Firewall) - CyberPanel"
 msgstr "CSF (ConfigServer Security and Firewall) - Cyberpanel"
 
 #: firewall/templates/firewall/csf.html:13
@@ -4248,8 +4248,8 @@ msgid "Coming Soon."
 msgstr "Akan Datang."
 
 #: firewall/templates/firewall/firewall.html:3
-msgid "Firewall - Popo PowerPanel "
-msgstr "Firewall - Popo PowerPanel "
+msgid "Firewall - CyberPanel"
+msgstr "Firewall - CyberPanel"
 
 #: firewall/templates/firewall/firewall.html:13
 msgid "Add/Delete Firewall Rules"
@@ -4286,8 +4286,8 @@ msgid "Rule successfully added."
 msgstr "Rule berhasil ditambahkan."
 
 #: firewall/templates/firewall/index.html:3
-msgid "Security - Popo PowerPanel "
-msgstr "Keamanan - Popo PowerPanel "
+msgid "Security - CyberPanel"
+msgstr "Keamanan - CyberPanel"
 
 #: firewall/templates/firewall/index.html:12
 msgid "Security Functions"
@@ -4298,8 +4298,8 @@ msgid "Manage the security of the server on this page."
 msgstr "Kelola keamanan server di halaman ini."
 
 #: firewall/templates/firewall/modSecurity.html:3
-msgid "ModSecurity - Popo PowerPanel "
-msgstr "ModSecurity - Popo PowerPanel "
+msgid "ModSecurity - CyberPanel"
+msgstr "ModSecurity - CyberPanel"
 
 #: firewall/templates/firewall/modSecurity.html:14
 #: firewall/templates/firewall/modSecurity.html:208
@@ -4356,7 +4356,7 @@ msgid "ModSecurity configurations successfully saved."
 msgstr "Konfigurasi ModSecurity berhasil disimpan."
 
 #: firewall/templates/firewall/modSecurityRules.html:3
-msgid "ModSecurity Rules - Popo PowerPanel "
+msgid "ModSecurity Rules - CyberPanel"
 msgstr "Rules ModSecurity - CyberPaneç"
 
 #: firewall/templates/firewall/modSecurityRules.html:13
@@ -4380,7 +4380,7 @@ msgid "Could not save rules, Error message: "
 msgstr "Tidak bisa menyimpan rules. Pesan kesalahan: "
 
 #: firewall/templates/firewall/modSecurityRulesPacks.html:3
-msgid "ModSecurity Rules Packs - Popo PowerPanel "
+msgid "ModSecurity Rules Packs - CyberPanel"
 msgstr "Paket Rules ModSecurity - CyberPaneç"
 
 #: firewall/templates/firewall/modSecurityRulesPacks.html:13
@@ -4415,8 +4415,8 @@ msgid "Filename"
 msgstr "Nama berkas"
 
 #: firewall/templates/firewall/secureSSH.html:3
-msgid "Secure SSH - Popo PowerPanel "
-msgstr "Keamanan SSH - Popo PowerPanel "
+msgid "Secure SSH - CyberPanel"
+msgstr "Keamanan SSH - CyberPanel"
 
 #: firewall/templates/firewall/secureSSH.html:13
 msgid "SSH Docs"
@@ -4468,8 +4468,8 @@ msgid "SSH Key Deleted"
 msgstr "Kunci SSD Sudah Dihapus"
 
 #: ftp/templates/ftp/createFTPAccount.html:3
-msgid "Create FTP Account - Popo PowerPanel "
-msgstr "Buat Akun FTP - Popo PowerPanel "
+msgid "Create FTP Account - CyberPanel"
+msgstr "Buat Akun FTP - CyberPanel"
 
 #: ftp/templates/ftp/createFTPAccount.html:13
 msgid ""
@@ -4518,8 +4518,8 @@ msgid "is successfully created."
 msgstr "berhasil dibuat."
 
 #: ftp/templates/ftp/deleteFTPAccount.html:3
-msgid "Delete FTP Account - Popo PowerPanel "
-msgstr "Hapus Akun FTP - Popo PowerPanel "
+msgid "Delete FTP Account - CyberPanel"
+msgstr "Hapus Akun FTP - CyberPanel"
 
 #: ftp/templates/ftp/deleteFTPAccount.html:13
 msgid "Select domain and delete its related FTP accounts."
@@ -4543,16 +4543,16 @@ msgid "Could not connect to the server. Please refresh this page."
 msgstr "Tidak bisa tersambung ke server. Coba refresh halaman ini."
 
 #: ftp/templates/ftp/index.html:3
-msgid "FTP Functions - Popo PowerPanel "
-msgstr "Fungsi  FTP - Popo PowerPanel "
+msgid "FTP Functions - CyberPanel"
+msgstr "Fungsi  FTP - CyberPanel"
 
 #: ftp/templates/ftp/index.html:13
 msgid "Delete and create FTP accounts on this page."
 msgstr "Menghapus dan membuat akun FTP di halaman ini."
 
 #: ftp/templates/ftp/listFTPAccounts.html:3
-msgid "List FTP Accounts - Popo PowerPanel "
-msgstr "Daftar Akun FTP - Popo PowerPanel "
+msgid "List FTP Accounts - CyberPanel"
+msgstr "Daftar Akun FTP - CyberPanel"
 
 #: ftp/templates/ftp/listFTPAccounts.html:14
 msgid "List FTP Accounts or change their passwords."
@@ -4574,8 +4574,8 @@ msgid "Directory"
 msgstr "Direktori"
 
 #: mailServer/templates/mailServer/changeEmailPassword.html:3
-msgid "Change Email Password - Popo PowerPanel "
-msgstr "Ganti Password Surel - Popo PowerPanel "
+msgid "Change Email Password - CyberPanel"
+msgstr "Ganti Password Surel - CyberPanel"
 
 #: mailServer/templates/mailServer/changeEmailPassword.html:12
 #: mailServer/templates/mailServer/changeEmailPassword.html:19
@@ -4617,8 +4617,8 @@ msgid "Currently no email accounts exist for this domain."
 msgstr "Saat ini tidak ada akun email dalam domain ini."
 
 #: mailServer/templates/mailServer/createEmailAccount.html:3
-msgid "Create Email Account - Popo PowerPanel "
-msgstr "Buat Akun Surel - Popo PowerPanel "
+msgid "Create Email Account - CyberPanel"
+msgstr "Buat Akun Surel - CyberPanel"
 
 #: mailServer/templates/mailServer/createEmailAccount.html:13
 msgid "Select a website from the list, to create an email account."
@@ -4637,8 +4637,8 @@ msgid " is successfully created."
 msgstr " berhasil dibuat."
 
 #: mailServer/templates/mailServer/deleteEmailAccount.html:3
-msgid "Delete Email Account - Popo PowerPanel "
-msgstr "Hapus Akun Surel - Popo PowerPanel "
+msgid "Delete Email Account - CyberPanel"
+msgstr "Hapus Akun Surel - CyberPanel"
 
 #: mailServer/templates/mailServer/deleteEmailAccount.html:13
 msgid "Select a website from the list, to delete an email account."
@@ -4649,8 +4649,8 @@ msgid "Email with id : {$ deletedID $} is successfully deleted."
 msgstr "Surel dengan ID: {$ deletedID $} berhasil dihapus."
 
 #: mailServer/templates/mailServer/dkimManager.html:3
-msgid "DKIM Manager - Popo PowerPanel "
-msgstr "DKIM Manager- Popo PowerPanel "
+msgid "DKIM Manager - CyberPanel"
+msgstr "DKIM Manager- CyberPanel"
 
 #: mailServer/templates/mailServer/dkimManager.html:13
 msgid "DKIM Docs"
@@ -4700,8 +4700,8 @@ msgid "Public Key"
 msgstr "Kunci Publik"
 
 #: mailServer/templates/mailServer/emailForwarding.html:3
-msgid "Setup Email Forwarding - Popo PowerPanel "
-msgstr "Penyiapan Pengalihan Surel - Popo PowerPanel "
+msgid "Setup Email Forwarding - CyberPanel"
+msgstr "Penyiapan Pengalihan Surel - CyberPanel"
 
 #: mailServer/templates/mailServer/emailForwarding.html:12
 #: mailServer/templates/mailServer/emailForwarding.html:19
@@ -4734,8 +4734,8 @@ msgid "Forward Email"
 msgstr "Alihkan Surel"
 
 #: mailServer/templates/mailServer/index.html:3
-msgid "Mail Functions - Popo PowerPanel "
-msgstr "Fungsi Mail - Popo PowerPanel "
+msgid "Mail Functions - CyberPanel"
+msgstr "Fungsi Mail - CyberPanel"
 
 #: mailServer/templates/mailServer/index.html:12
 msgid "Mail Functions"
@@ -4746,8 +4746,8 @@ msgid "Manage email accounts on this page."
 msgstr "Mengelola akun Surel di halaman ini."
 
 #: mailServer/templates/mailServer/listEmails.html:3
-msgid "List Email Accounts - Popo PowerPanel "
-msgstr "Daftar Akun FTP - Popo PowerPanel "
+msgid "List Email Accounts - CyberPanel"
+msgstr "Daftar Akun FTP - CyberPanel"
 
 #: mailServer/templates/mailServer/listEmails.html:13
 #: mailServer/templates/mailServer/listEmails.html:19
@@ -4759,8 +4759,8 @@ msgid "List Emails Accounts. Change their passwords or delete them."
 msgstr "Daftar Akun Surel. Ubah kata sandi atau hapus."
 
 #: managePHP/templates/managePHP/editPHPConfig.html:3
-msgid "Edit PHP Configurations - Popo PowerPanel "
-msgstr "Edit Konfigurasi PHP - Popo PowerPanel "
+msgid "Edit PHP Configurations - CyberPanel"
+msgstr "Edit Konfigurasi PHP - CyberPanel"
 
 #: managePHP/templates/managePHP/editPHPConfig.html:14
 #: managePHP/templates/managePHP/editPHPConfig.html:21
@@ -4817,8 +4817,8 @@ msgid "PHP Configs Saved."
 msgstr "Konfigurasi PHP Sudah Disimpan."
 
 #: managePHP/templates/managePHP/index.html:3
-msgid "Manage PHP Installations - Popo PowerPanel "
-msgstr "Kelola Instalasi PHP - Popo PowerPanel "
+msgid "Manage PHP Installations - CyberPanel"
+msgstr "Kelola Instalasi PHP - CyberPanel"
 
 #: managePHP/templates/managePHP/index.html:12
 msgid "Manage PHP Installations"
@@ -4829,8 +4829,8 @@ msgid "Edit your PHP Configurations to suit your needs."
 msgstr "Edit konfigurasi PHP untuk disesuaikan dengan kebutuhan anda."
 
 #: managePHP/templates/managePHP/installExtensions.html:3
-msgid "Install PHP Extensions - Popo PowerPanel "
-msgstr "Pasang Ekstensi PHP - Popo PowerPanel "
+msgid "Install PHP Extensions - CyberPanel"
+msgstr "Pasang Ekstensi PHP - CyberPanel"
 
 #: managePHP/templates/managePHP/installExtensions.html:14
 msgid "Install/uninstall php extensions on this page."
@@ -4877,8 +4877,8 @@ msgid "Cannot perform operation. Error message:"
 msgstr "Tidak bisa menjalankan operasi. Pesan kesalahan:"
 
 #: manageSSL/templates/manageSSL/index.html:3
-msgid "SSL Functions - Popo PowerPanel "
-msgstr "Fungsi SSL - Popo PowerPanel "
+msgid "SSL Functions - CyberPanel"
+msgstr "Fungsi SSL - CyberPanel"
 
 #: manageSSL/templates/manageSSL/index.html:13
 msgid "SSL Functions"
@@ -4889,8 +4889,8 @@ msgid "Issue Let’s Encrypt SSLs for websites and hostname."
 msgstr "Terbitkan SSLs Let's Encrypt untuk situs dan hostname."
 
 #: manageSSL/templates/manageSSL/manageSSL.html:3
-msgid "Manage SSL - Popo PowerPanel "
-msgstr "Kelola SSL - Popo PowerPanel "
+msgid "Manage SSL - CyberPanel"
+msgstr "Kelola SSL - CyberPanel"
 
 #: manageSSL/templates/manageSSL/manageSSL.html:13
 #: manageSSL/templates/manageSSL/sslForHostName.html:13
@@ -4923,8 +4923,8 @@ msgid "SSL Issued for"
 msgstr "SSL Diterbitkan untuk"
 
 #: manageSSL/templates/manageSSL/sslForHostName.html:3
-msgid "Issue SSL For Hostname - Popo PowerPanel "
-msgstr "Terbitkan SSL untuk Hostname - Popo PowerPanel "
+msgid "Issue SSL For Hostname - CyberPanel"
+msgstr "Terbitkan SSL untuk Hostname - CyberPanel"
 
 #: manageSSL/templates/manageSSL/sslForHostName.html:13
 #: manageSSL/templates/manageSSL/sslForHostName.html:20
@@ -4932,19 +4932,19 @@ msgid "Issue SSL For Hostname"
 msgstr "Terbitkan SSL untuk Hostname"
 
 #: manageSSL/templates/manageSSL/sslForHostName.html:14
-msgid "Let’s Encrypt SSL for hostname to access Popo PowerPanel on verified SSL."
+msgid "Let’s Encrypt SSL for hostname to access CyberPanel on verified SSL."
 msgstr ""
-"SSL Let's Encrypt untuk hostname untuk mengakses Popo PowerPanel dengan SSL yang "
+"SSL Let's Encrypt untuk hostname untuk mengakses CyberPanel dengan SSL yang "
 "valid."
 
 #: manageSSL/templates/manageSSL/sslForHostName.html:56
 #: manageSSL/templates/manageSSL/sslForHostName.html:60
-msgid "SSL Issued. You can now access Popo PowerPanel at:"
-msgstr "SSL sudah diterbitkan. Sekarang anda bisa mengakses Popo PowerPanel lewat:"
+msgid "SSL Issued. You can now access CyberPanel at:"
+msgstr "SSL sudah diterbitkan. Sekarang anda bisa mengakses CyberPanel lewat:"
 
 #: manageSSL/templates/manageSSL/sslForMailServer.html:3
-msgid "Issue SSL For MailServer - Popo PowerPanel "
-msgstr "Penerbitan SSL untuk MailServer - Popo PowerPanel "
+msgid "Issue SSL For MailServer - CyberPanel"
+msgstr "Penerbitan SSL untuk MailServer - CyberPanel"
 
 #: manageSSL/templates/manageSSL/sslForMailServer.html:13
 #: manageSSL/templates/manageSSL/sslForMailServer.html:20
@@ -4964,8 +4964,8 @@ msgid "Could not connect to server, please refresh this page."
 msgstr "Tidak bisa tersambung ke server, coba refresh halaman ini."
 
 #: manageServices/templates/manageServices/managePostfix.html:3
-msgid "Manage Email Server (Postfix) - Popo PowerPanel "
-msgstr "Kelola Server Email(Postfix) - Popo PowerPanel "
+msgid "Manage Email Server (Postfix) - CyberPanel"
+msgstr "Kelola Server Email(Postfix) - CyberPanel"
 
 #: manageServices/templates/manageServices/managePostfix.html:13
 msgid "Manage Email Server (Postfix)!"
@@ -4988,8 +4988,8 @@ msgid "Only administrator can manage services."
 msgstr "Hanya administrator yang bisa mengelola servis."
 
 #: manageServices/templates/manageServices/managePowerDNS.html:3
-msgid "Manage PowerDNS - Popo PowerPanel "
-msgstr "Kelola PowerDNS - Popo PowerPanel "
+msgid "Manage PowerDNS - CyberPanel"
+msgstr "Kelola PowerDNS - CyberPanel"
 
 #: manageServices/templates/manageServices/managePowerDNS.html:13
 msgid "Manage PowerDNS!"
@@ -5038,8 +5038,8 @@ msgid "Slave Server IP 3 (Optional)"
 msgstr "Slave Server IP 3 (Optional)"
 
 #: manageServices/templates/manageServices/managePureFtpd.html:3
-msgid "Manage FTP Server (Pure FTPD) - Popo PowerPanel "
-msgstr "Kelola Server FTP (PureFTPD) - Popo PowerPanel "
+msgid "Manage FTP Server (Pure FTPD) - CyberPanel"
+msgstr "Kelola Server FTP (PureFTPD) - CyberPanel"
 
 #: manageServices/templates/manageServices/managePureFtpd.html:13
 msgid "Manage FTP Server (Pure FTPD)!"
@@ -5054,8 +5054,8 @@ msgid "Manage PureFTPD"
 msgstr "Kelola PureFTPD"
 
 #: packages/templates/packages/createPackage.html:3
-msgid "Create Package - Popo PowerPanel "
-msgstr "Buat Paket - Popo PowerPanel "
+msgid "Create Package - CyberPanel"
+msgstr "Buat Paket - CyberPanel"
 
 #: packages/templates/packages/createPackage.html:14
 #: packages/templates/packages/deletePackage.html:13
@@ -5116,8 +5116,8 @@ msgid "Successfully Created"
 msgstr "Berhasil Dibuat"
 
 #: packages/templates/packages/deletePackage.html:3
-msgid "Delete Package - Popo PowerPanel "
-msgstr "Hapus Paket - Popo PowerPanel "
+msgid "Delete Package - CyberPanel"
+msgstr "Hapus Paket - CyberPanel"
 
 #: packages/templates/packages/deletePackage.html:56
 msgid "Cannot delete package. Error message:"
@@ -5128,12 +5128,12 @@ msgid " Successfully Deleted."
 msgstr " Berhasil Dihapus"
 
 #: packages/templates/packages/index.html:3
-msgid "Packages - Popo PowerPanel "
-msgstr "Paket - Popo PowerPanel "
+msgid "Packages - CyberPanel"
+msgstr "Paket - CyberPanel"
 
 #: packages/templates/packages/listPackages.html:3
-msgid "List Packages  - Popo PowerPanel "
-msgstr "List Paket - Popo PowerPanel "
+msgid "List Packages  - CyberPanel"
+msgstr "List Paket - CyberPanel"
 
 #: packages/templates/packages/listPackages.html:14
 msgid "List Packages and delete or edit them."
@@ -5164,8 +5164,8 @@ msgid "Additional"
 msgstr "Tambahan"
 
 #: packages/templates/packages/modifyPackage.html:3
-msgid "Modify Package - Popo PowerPanel "
-msgstr "Edit Paket - Popo PowerPanel "
+msgid "Modify Package - CyberPanel"
+msgstr "Edit Paket - CyberPanel"
 
 #: packages/templates/packages/modifyPackage.html:117
 msgid "Cannot fetch package details. Error message:"
@@ -5181,15 +5181,15 @@ msgstr "Berhasil Diedit"
 
 #: pluginHolder/templates/pluginHolder/plugins.html:15
 msgid "List of installed plugins on your CyberPanel."
-msgstr "Daftar plugin terpasang dalam Popo PowerPanel anda."
+msgstr "Daftar plugin terpasang dalam CyberPanel anda."
 
 #: pluginHolder/templates/pluginHolder/plugins.html:31
 msgid "Version"
 msgstr "Versi"
 
 #: serverLogs/templates/serverLogs/accessLogs.html:3
-msgid "Access Logs - Popo PowerPanel "
-msgstr "Log Akses - Popo PowerPanel "
+msgid "Access Logs - CyberPanel"
+msgstr "Log Akses - CyberPanel"
 
 #: serverLogs/templates/serverLogs/accessLogs.html:17
 msgid "Access Logs for main web server."
@@ -5233,8 +5233,8 @@ msgstr ""
 
 #: serverLogs/templates/serverLogs/emailLogs.html:3
 #: serverLogs/templates/serverLogs/errorLogs.html:3
-msgid "Error Logs - Popo PowerPanel "
-msgstr "Log Kesalahan - Popo PowerPanel "
+msgid "Error Logs - CyberPanel"
+msgstr "Log Kesalahan - CyberPanel"
 
 #: serverLogs/templates/serverLogs/emailLogs.html:15
 msgid "Email Logs for main web server."
@@ -5245,16 +5245,16 @@ msgid "Error Logs for main web server."
 msgstr "Log Kesalahan untuk webserver utama."
 
 #: serverLogs/templates/serverLogs/ftplogs.html:3
-msgid "FTP Logs - Popo PowerPanel "
-msgstr "Log FTP - Popo PowerPanel "
+msgid "FTP Logs - CyberPanel"
+msgstr "Log FTP - CyberPanel"
 
 #: serverLogs/templates/serverLogs/ftplogs.html:14
 msgid "FTP Logs for main web server."
 msgstr "Log FTP untuk webserver utama."
 
 #: serverLogs/templates/serverLogs/index.html:3
-msgid "Server Logs - Popo PowerPanel "
-msgstr "Log Server - Popo PowerPanel "
+msgid "Server Logs - CyberPanel"
+msgstr "Log Server - CyberPanel"
 
 #: serverLogs/templates/serverLogs/index.html:13
 msgid "Server Logs"
@@ -5269,40 +5269,40 @@ msgstr ""
 "kunjungi Situs -> Daftar Situs -> Pilih Situs -> Lihat Log."
 
 #: serverLogs/templates/serverLogs/modSecAuditLog.html:3
-msgid "ModSecurity Audit Logs - Popo PowerPanel "
-msgstr "Log Audit ModSecurity - Popo PowerPanel "
+msgid "ModSecurity Audit Logs - CyberPanel"
+msgstr "Log Audit ModSecurity - CyberPanel"
 
 #: serverLogs/templates/serverLogs/modSecAuditLog.html:15
 msgid "ModSecurity Audit logs"
 msgstr "Log Audit ModSecurity"
 
 #: serverStatus/templates/serverStatus/cybercpmainlogfile.html:3
-msgid "Popo PowerPanel Main Log File - Popo PowerPanel "
-msgstr "Berkas Log Utama Popo PowerPanel - Popo PowerPanel "
+msgid "PopoPanelMain Log File - CyberPanel"
+msgstr "Berkas Log Utama CyberPanel - CyberPanel"
 
 #: serverStatus/templates/serverStatus/cybercpmainlogfile.html:14
 msgid ""
-"This log file corresponds to errors generated by Popo PowerPanel for your domain "
+"This log file corresponds to errors generated by CyberPanel for your domain "
 "errors log you can look into /home/domain/logs."
 msgstr ""
 "Berkas log ini berisi pesan kesalahan yang terkait dengan CyberPannel, untuk "
 "pesan kesalahan domain bisa dilihat di /home/domain/logs."
 
 #: serverStatus/templates/serverStatus/index.html:3
-msgid "Server Status - Popo PowerPanel "
-msgstr "Status Server - Popo PowerPanel "
+msgid "Server Status - CyberPanel"
+msgstr "Status Server - CyberPanel"
 
 #: serverStatus/templates/serverStatus/index.html:14
 msgid "View LiteSpeed status and log files."
 msgstr "Lihat status dan berkas log LiteSpeed."
 
 #: serverStatus/templates/serverStatus/index.html:41
-msgid "Popo PowerPanel Main Log"
-msgstr "Log Utama Popo PowerPanel "
+msgid "PopoPanelMain Log"
+msgstr "Log Utama CyberPanel"
 
 #: serverStatus/templates/serverStatus/litespeedStatus.html:3
-msgid "LiteSpeed Status - Popo PowerPanel "
-msgstr "Status LiteSpeed - Popo PowerPanel "
+msgid "LiteSpeed Status - CyberPanel"
+msgstr "Status LiteSpeed - CyberPanel"
 
 #: serverStatus/templates/serverStatus/litespeedStatus.html:14
 #: serverStatus/templates/serverStatus/litespeedStatus.html:221
@@ -5353,7 +5353,7 @@ msgstr "Stop LiteSpeed"
 
 #: serverStatus/templates/serverStatus/litespeedStatus.html:87
 #: serverStatus/templates/serverStatus/litespeedStatus.html:310
-msgid "Error Occurred. See Popo PowerPanel main log file."
+msgid "Error Occurred. See CyberPanel main log file."
 msgstr "Terjadi Kesalahan. Lihat berkas log utama CyberPanel."
 
 #: serverStatus/templates/serverStatus/litespeedStatus.html:92
@@ -5380,7 +5380,7 @@ msgstr "Dapatkan 15 Hari Percobaan"
 #: serverStatus/templates/serverStatus/litespeedStatus.html:175
 msgid ""
 "Note: If you select 15 days trial there is no need to enter the serial key, "
-"Popo PowerPanel will auto fetch 15 days trial key for you. Make sure this server "
+"PopoPanelwill auto fetch 15 days trial key for you. Make sure this server "
 "have not used trial already."
 msgstr ""
 
@@ -5413,16 +5413,16 @@ msgid "Change Key"
 msgstr "Ganti Kunci"
 
 #: serverStatus/templates/serverStatus/services.html:3
-msgid "Services - Popo PowerPanel "
-msgstr "Servis - Popo PowerPanel "
+msgid "Services - CyberPanel"
+msgstr "Servis - CyberPanel"
 
 #: serverStatus/templates/serverStatus/services.html:25
 msgid "Show stats for services and actions (Start, Stop, Restart)"
 msgstr "Tampilkan statistik untuk servis dan perintah (Start, Stop, Restart)"
 
 #: serverStatus/templates/serverStatus/topProcesses.html:3
-msgid "Top Processes - Popo PowerPanel "
-msgstr "Proses Teratas - Popo PowerPanel "
+msgid "Top Processes - CyberPanel"
+msgstr "Proses Teratas - CyberPanel"
 
 #: serverStatus/templates/serverStatus/topProcesses.html:16
 msgid "List of top processes on your server. (Refresh every 3 seconds)"
@@ -5548,8 +5548,8 @@ msgid "Command"
 msgstr "Perintah"
 
 #: tuning/templates/tuning/index.html:3
-msgid "Server Tuning - Popo PowerPanel "
-msgstr "Tuning Server - Popo PowerPanel "
+msgid "Server Tuning - CyberPanel"
+msgstr "Tuning Server - CyberPanel"
 
 #: tuning/templates/tuning/index.html:12
 msgid "Server Tuning"
@@ -5564,8 +5564,8 @@ msgstr ""
 "tergantung pada hardware."
 
 #: tuning/templates/tuning/liteSpeedTuning.html:3
-msgid "LiteSpeed Tuning - Popo PowerPanel "
-msgstr "Tuning LiteSpeed - Popo PowerPanel "
+msgid "LiteSpeed Tuning - CyberPanel"
+msgstr "Tuning LiteSpeed - CyberPanel"
 
 #: tuning/templates/tuning/liteSpeedTuning.html:13
 msgid ""
@@ -5632,8 +5632,8 @@ msgid "Web Server Successfully tuned."
 msgstr "Webserver berhasil di-tuning."
 
 #: tuning/templates/tuning/phpTuning.html:3
-msgid "PHP Tuning - Popo PowerPanel "
-msgstr "Tuning PHP - Popo PowerPanel "
+msgid "PHP Tuning - CyberPanel"
+msgstr "Tuning PHP - CyberPanel"
 
 #: tuning/templates/tuning/phpTuning.html:14
 #: tuning/templates/tuning/phpTuning.html:150
@@ -5696,8 +5696,8 @@ msgid "Successfully tuned."
 msgstr "Berhasil Di-tuning."
 
 #: userManagment/templates/userManagment/apiAccess.html:3
-msgid "API Access for User - Popo PowerPanel "
-msgstr "Akses API untuk Pengguna - Popo PowerPanel "
+msgid "API Access for User - CyberPanel"
+msgstr "Akses API untuk Pengguna - CyberPanel"
 
 #: userManagment/templates/userManagment/apiAccess.html:14
 msgid ""
@@ -5717,8 +5717,8 @@ msgid "Access"
 msgstr "Log Akses"
 
 #: userManagment/templates/userManagment/changeUserACL.html:3
-msgid "Change User ACL - Popo PowerPanel "
-msgstr "Ganti ACL User - Popo PowerPanel "
+msgid "Change User ACL - CyberPanel"
+msgstr "Ganti ACL User - CyberPanel"
 
 #: userManagment/templates/userManagment/changeUserACL.html:12
 #: userManagment/templates/userManagment/changeUserACL.html:19
@@ -5728,7 +5728,7 @@ msgid "Change User ACL"
 msgstr "Ubah ACL User"
 
 #: userManagment/templates/userManagment/changeUserACL.html:13
-msgid "This page can be used to change ACL for Popo PowerPanel users."
+msgid "This page can be used to change ACL for CyberPanel users."
 msgstr "Halaman ini bisa digunakan untuk mengubah ACL untuk iser CyberPanel."
 
 #: userManagment/templates/userManagment/changeUserACL.html:39
@@ -5744,12 +5744,12 @@ msgid "Change ACL"
 msgstr "Ganti ACL"
 
 #: userManagment/templates/userManagment/createACL.html:3
-msgid "Create new ACL - Popo PowerPanel "
-msgstr "Buat ACL baru - Popo PowerPanel "
+msgid "Create new ACL - CyberPanel"
+msgstr "Buat ACL baru - CyberPanel"
 
 #: userManagment/templates/userManagment/createACL.html:13
 msgid ""
-"Create new Access Control defination, that specifies what Popo PowerPanel users "
+"Create new Access Control defination, that specifies what CyberPanel users "
 "can do."
 msgstr ""
 "Buat definisi Kontrol Akses baru, yang menentukan apa yang bisa dilakukan "
@@ -5839,8 +5839,8 @@ msgid "Create ACL"
 msgstr "Buat ACL"
 
 #: userManagment/templates/userManagment/createUser.html:3
-msgid "Create New User - Popo PowerPanel "
-msgstr "Buat User Baru - Popo PowerPanel "
+msgid "Create New User - CyberPanel"
+msgstr "Buat User Baru - CyberPanel"
 
 #: userManagment/templates/userManagment/createUser.html:13
 msgid "Create root, reseller or normal users on this page."
@@ -5913,16 +5913,16 @@ msgid ""
 msgstr "Panjang total gabungan nama depan dan belakang maksimal 20 karakter"
 
 #: userManagment/templates/userManagment/deleteACL.html:3
-msgid "Delete ACL - Popo PowerPanel "
-msgstr "Hapus ACL- Popo PowerPanel "
+msgid "Delete ACL - CyberPanel"
+msgstr "Hapus ACL- CyberPanel"
 
 #: userManagment/templates/userManagment/deleteACL.html:13
 msgid "This page can be used to delete ACL."
 msgstr "Halaman ini bisa digunakan untuk menghapus ACL."
 
 #: userManagment/templates/userManagment/deleteUser.html:3
-msgid "Delete User - Popo PowerPanel "
-msgstr "Hapus User - Popo PowerPanel "
+msgid "Delete User - CyberPanel"
+msgstr "Hapus User - CyberPanel"
 
 #: userManagment/templates/userManagment/deleteUser.html:14
 msgid "Websites owned by this user will automatically transfer to the root."
@@ -5942,16 +5942,16 @@ msgid " Successfully Deleted"
 msgstr " Berhasil Dihapus"
 
 #: userManagment/templates/userManagment/index.html:3
-msgid "User Functions - Popo PowerPanel "
-msgstr "Fungsi User - Popo PowerPanel "
+msgid "User Functions - CyberPanel"
+msgstr "Fungsi User - CyberPanel"
 
 #: userManagment/templates/userManagment/index.html:14
 msgid "Create, edit and delete users on this page."
 msgstr "Buat, edit dan hapus user di halaman ini."
 
 #: userManagment/templates/userManagment/listUsers.html:3
-msgid "List Users  - Popo PowerPanel "
-msgstr "Daftar Pengguna - Popo PowerPanel "
+msgid "List Users  - CyberPanel"
+msgstr "Daftar Pengguna - CyberPanel"
 
 #: userManagment/templates/userManagment/listUsers.html:14
 msgid "List Users that you own."
@@ -5967,7 +5967,7 @@ msgid "New Owner"
 msgstr "Pemilik Baru"
 
 #: userManagment/templates/userManagment/modifyACL.html:3
-msgid "Modify an ACL - Popo PowerPanel "
+msgid "Modify an ACL - CyberPanel"
 msgstr "Ubah ACL - CyberPaneç"
 
 #: userManagment/templates/userManagment/modifyACL.html:12
@@ -5979,8 +5979,8 @@ msgid "On this page you can modify an existing ACL."
 msgstr "Di halaman ini anda bisa mengubah ACL yang ada."
 
 #: userManagment/templates/userManagment/modifyUser.html:3
-msgid "Modify User - Popo PowerPanel "
-msgstr "Edit User - Popo PowerPanel "
+msgid "Modify User - CyberPanel"
+msgstr "Edit User - CyberPanel"
 
 #: userManagment/templates/userManagment/modifyUser.html:13
 msgid "Modify existing user settings on this page."
@@ -6003,16 +6003,16 @@ msgid "Details fetched."
 msgstr "Detail diambil."
 
 #: userManagment/templates/userManagment/resellerCenter.html:3
-msgid "Reseller Center - Popo PowerPanel "
-msgstr "Nama Reseller - Popo PowerPanel "
+msgid "Reseller Center - CyberPanel"
+msgstr "Nama Reseller - CyberPanel"
 
 #: userManagment/templates/userManagment/resellerCenter.html:13
 msgid "Change owner of users and change websites limits."
 msgstr "Ganti pemilik user dan ganti batasan situs."
 
 #: userManagment/templates/userManagment/userProfile.html:3
-msgid "Account Details - Popo PowerPanel "
-msgstr "Detail Akun - Popo PowerPanel "
+msgid "Account Details - CyberPanel"
+msgstr "Detail Akun - CyberPanel"
 
 #: userManagment/templates/userManagment/userProfile.html:12
 #: userManagment/templates/userManagment/userProfile.html:18
@@ -6032,8 +6032,8 @@ msgid "( 0 = Unlimited )"
 msgstr "( 0 = tak dibatasi )"
 
 #: websiteFunctions/templates/websiteFunctions/applicationInstaller.html:3
-msgid "Application Installer - Popo PowerPanel "
-msgstr "Pemasang Aplikasi - Popo PowerPanel "
+msgid "Application Installer - CyberPanel"
+msgstr "Pemasang Aplikasi - CyberPanel"
 
 #: websiteFunctions/templates/websiteFunctions/applicationInstaller.html:15
 msgid "One-click application install."
@@ -6044,8 +6044,8 @@ msgid "Install Joomla with(?) LSCache"
 msgstr "Pasang Joomla dengan LSCache"
 
 #: websiteFunctions/templates/websiteFunctions/createWebsite.html:3
-msgid "Create New Website - Popo PowerPanel "
-msgstr "Buat Situs Baru - Popo PowerPanel "
+msgid "Create New Website - CyberPanel"
+msgstr "Buat Situs Baru - CyberPanel"
 
 #: websiteFunctions/templates/websiteFunctions/createWebsite.html:13
 #: websiteFunctions/templates/websiteFunctions/index.html:14
@@ -6066,8 +6066,8 @@ msgid "Do not enter WWW, it will be auto created!"
 msgstr "Jangan masukkan WW, itu akan dibuat otomatis!"
 
 #: websiteFunctions/templates/websiteFunctions/deleteWebsite.html:3
-msgid "Delete Website - Popo PowerPanel "
-msgstr "Hapus Situs - Popo PowerPanel "
+msgid "Delete Website - CyberPanel"
+msgstr "Hapus Situs - CyberPanel"
 
 #: websiteFunctions/templates/websiteFunctions/deleteWebsite.html:13
 msgid ""
@@ -6086,8 +6086,8 @@ msgid "Successfully Deleted."
 msgstr "Berhasil Dihapus."
 
 #: websiteFunctions/templates/websiteFunctions/domainAlias.html:3
-msgid "Domain Aliases - Popo PowerPanel "
-msgstr "Alias Domain - Popo PowerPanel "
+msgid "Domain Aliases - CyberPanel"
+msgstr "Alias Domain - CyberPanel"
 
 #: websiteFunctions/templates/websiteFunctions/domainAlias.html:12
 #: websiteFunctions/templates/websiteFunctions/domainAlias.html:19
@@ -6149,8 +6149,8 @@ msgid "Operation Successfull."
 msgstr "Operasi Berhasil."
 
 #: websiteFunctions/templates/websiteFunctions/index.html:3
-msgid "Website Functions - Popo PowerPanel "
-msgstr "Fungsi Situs - Popo PowerPanel "
+msgid "Website Functions - CyberPanel"
+msgstr "Fungsi Situs - CyberPanel"
 
 #: websiteFunctions/templates/websiteFunctions/index.html:33
 #: websiteFunctions/templates/websiteFunctions/index.html:57
@@ -6164,8 +6164,8 @@ msgid "Suspend/Unsuspend Website"
 msgstr "Suspen/Unsuspen Situs"
 
 #: websiteFunctions/templates/websiteFunctions/installJoomla.html:3
-msgid "Install Joomla - Popo PowerPanel "
-msgstr "Pasang Joomla - Popo PowerPanel "
+msgid "Install Joomla - CyberPanel"
+msgstr "Pasang Joomla - CyberPanel"
 
 #: websiteFunctions/templates/websiteFunctions/installJoomla.html:12
 msgid "Install Joomla"
@@ -6216,8 +6216,8 @@ msgid "Installation successful. Visit:"
 msgstr "Pemasangan berhasil. Kunjungi:"
 
 #: websiteFunctions/templates/websiteFunctions/installMagento.html:3
-msgid "Install Magento - Popo PowerPanel "
-msgstr "Pasang Magento - Popo PowerPanel "
+msgid "Install Magento - CyberPanel"
+msgstr "Pasang Magento - CyberPanel"
 
 #: websiteFunctions/templates/websiteFunctions/installMagento.html:12
 #: websiteFunctions/templates/websiteFunctions/launchChild.html:724
@@ -6244,8 +6244,8 @@ msgstr ""
 "pemasang dengan LiteSpeed Enterprise saja."
 
 #: websiteFunctions/templates/websiteFunctions/installPrestaShop.html:3
-msgid "Install PrestaShop - Popo PowerPanel "
-msgstr "Pasang PrestaShop - Popo PowerPanel "
+msgid "Install PrestaShop - CyberPanel"
+msgstr "Pasang PrestaShop - CyberPanel"
 
 #: websiteFunctions/templates/websiteFunctions/installPrestaShop.html:12
 msgid "Install PrestaShop"
@@ -6260,8 +6260,8 @@ msgid "Shop Name"
 msgstr "Nama Toko"
 
 #: websiteFunctions/templates/websiteFunctions/installWordPress.html:3
-msgid "Install WordPress - Popo PowerPanel "
-msgstr "Pasang WordPress - Popo PowerPanel "
+msgid "Install WordPress - CyberPanel"
+msgstr "Pasang WordPress - CyberPanel"
 
 #: websiteFunctions/templates/websiteFunctions/installWordPress.html:12
 msgid "Install WordPress"
@@ -6291,8 +6291,8 @@ msgid "Magento"
 msgstr "Magento"
 
 #: websiteFunctions/templates/websiteFunctions/listCron.html:3
-msgid "Cron Management - Popo PowerPanel "
-msgstr "Pengelolaan Cron - Popo PowerPanel "
+msgid "Cron Management - CyberPanel"
+msgstr "Pengelolaan Cron - CyberPanel"
 
 #: websiteFunctions/templates/websiteFunctions/listCron.html:12
 #: websiteFunctions/templates/websiteFunctions/listCron.html:19
@@ -6400,12 +6400,12 @@ msgid "Cron job saved"
 msgstr "Cron job sudah disimpan"
 
 #: websiteFunctions/templates/websiteFunctions/listWebsites.html:3
-msgid "Websites Hosted - Popo PowerPanel "
-msgstr "Situs Yang Ada - Popo PowerPanel "
+msgid "Websites Hosted - CyberPanel"
+msgstr "Situs Yang Ada - CyberPanel"
 
 #: websiteFunctions/templates/websiteFunctions/modifyWebsite.html:3
-msgid "Modify Website - Popo PowerPanel "
-msgstr "Edit Situs - Popo PowerPanel "
+msgid "Modify Website - CyberPanel"
+msgstr "Edit Situs - CyberPanel"
 
 #: websiteFunctions/templates/websiteFunctions/modifyWebsite.html:51
 msgid "Current Package:"
@@ -6424,8 +6424,8 @@ msgid "Website Details Successfully fetched"
 msgstr "Detail situs berhasil diambil"
 
 #: websiteFunctions/templates/websiteFunctions/setupGit.html:3
-msgid "Git Management - Popo PowerPanel "
-msgstr "Pengelolaan Git - Popo PowerPanel "
+msgid "Git Management - CyberPanel"
+msgstr "Pengelolaan Git - CyberPanel"
 
 #: websiteFunctions/templates/websiteFunctions/setupGit.html:12
 msgid "Git Management"
@@ -6507,8 +6507,8 @@ msgid "Branch successfully changed."
 msgstr "Cabang berhasil diubah."
 
 #: websiteFunctions/templates/websiteFunctions/setupStaging.html:3
-msgid "Set up Staging Enviroment - Popo PowerPanel "
-msgstr "Siapkan Lingkungan Git - Popo PowerPanel "
+msgid "Set up Staging Enviroment - CyberPanel"
+msgstr "Siapkan Lingkungan Git - CyberPanel"
 
 #: websiteFunctions/templates/websiteFunctions/setupStaging.html:12
 msgid "Set up Staging Enviroment"
@@ -6540,8 +6540,8 @@ msgid "Start Cloning"
 msgstr "Jalankan Klon"
 
 #: websiteFunctions/templates/websiteFunctions/sshAccess.html:3
-msgid "SSH and CageFS - Popo PowerPanel "
-msgstr "SSH dan CageFS - Popo PowerPanel "
+msgid "SSH and CageFS - CyberPanel"
+msgstr "SSH dan CageFS - CyberPanel"
 
 #: websiteFunctions/templates/websiteFunctions/sshAccess.html:12
 msgid "SSH Access"
@@ -6568,8 +6568,8 @@ msgid " is "
 msgstr " adalah "
 
 #: websiteFunctions/templates/websiteFunctions/suspendWebsite.html:3
-msgid "Suspend/Unsuspend Website - Popo PowerPanel "
-msgstr "Tangguhkan/Tidak Ditangguhkan Situs - Popo PowerPanel "
+msgid "Suspend/Unsuspend Website - CyberPanel"
+msgstr "Tangguhkan/Tidak Ditangguhkan Situs - CyberPanel"
 
 #: websiteFunctions/templates/websiteFunctions/suspendWebsite.html:14
 msgid "This page can be used to suspend/unsuspend website."
@@ -6600,8 +6600,8 @@ msgid "Successfully "
 msgstr "Berhasil "
 
 #: websiteFunctions/templates/websiteFunctions/syncMaster.html:3
-msgid "Sync to Master - Popo PowerPanel "
-msgstr "Sinkron ke Master - Popo PowerPanel "
+msgid "Sync to Master - CyberPanel"
+msgstr "Sinkron ke Master - CyberPanel"
 
 #: websiteFunctions/templates/websiteFunctions/syncMaster.html:12
 msgid "Sync your site to Master"

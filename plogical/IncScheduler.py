@@ -150,7 +150,7 @@ class IncScheduler(multi.Thread):
                         data = {}
                         data['domain'] = gitConf['domain']
                         data['folder'] = gitConf['folder']
-                        data['commitMessage'] = 'Auto commit by Popo PowerPanel %s cron on %s' % (
+                        data['commitMessage'] = 'Auto commit by CyberPanel %s cron on %s' % (
                             type, time.strftime('%m-%d-%Y_%H-%M-%S'))
 
                         if gitConf['autoCommit'] == type:
@@ -286,7 +286,7 @@ class IncScheduler(multi.Thread):
                         folderIDIP = gDriveData['folderIDIP']
                     except:
 
-                        ## Create Popo PowerPanel Folder
+                        ## Create CyberPanel Folder
 
                         file_metadata = {
                             'name': '%s-%s' % (items.name, ipAddress),
@@ -1467,7 +1467,7 @@ Automatic Backupv2 failed for %s on %s.
 
 
 def main():
-    parser = argparse.ArgumentParser(description='Popo PowerPanel Installer')
+    parser = argparse.ArgumentParser(description='CyberPanel Installer')
     parser.add_argument('function', help='Specific a function to call!')
     parser.add_argument('--planName', help='Plan name for AWS!')
     args = parser.parse_args()

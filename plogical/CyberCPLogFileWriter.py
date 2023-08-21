@@ -65,7 +65,7 @@ class CyberCPLogFileWriter:
 
             try:
                 if os.path.exists(emailPath):
-                    SUBJECT = "Popo PowerPanel log reporting"
+                    SUBJECT = "PopoPanellog reporting"
                     adminEmailPath = '/home/cyberpanel/adminEmail'
                     adminEmail = open(adminEmailPath, 'r').read().rstrip('\n')
                     sender = 'root@%s' % (socket.gethostname())

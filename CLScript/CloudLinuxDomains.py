@@ -48,7 +48,7 @@ class CloudLinuxDomains(CLMain):
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Popo PowerPanel CloudLinux Manager')
+    parser = argparse.ArgumentParser(description='CyberPanel CloudLinux Manager')
     parser.add_argument('-o', '--owner', help='Owner')
     parser.add_argument('-n', '--name', help='Owner')
 

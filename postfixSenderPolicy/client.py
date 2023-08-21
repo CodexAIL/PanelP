@@ -23,7 +23,7 @@ class cacheClient:
 
 def main():
 
-    parser = argparse.ArgumentParser(description='Popo PowerPanel Email Policy Cache Cleaner')
+    parser = argparse.ArgumentParser(description='CyberPanel Email Policy Cache Cleaner')
     parser.add_argument('function', help='Specific a function to call!')
 
 

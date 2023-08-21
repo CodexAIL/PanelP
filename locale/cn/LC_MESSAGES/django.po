@@ -1,6 +1,6 @@
-# Popo PowerPanel Translation File.
+# CyberPanel Translation File.
 # Copyright (C) 2017 LiteSpeedTech
-# This file is distributed under the same license as the Popo PowerPanel package.
+# This file is distributed under the same license as the CyberPanel package.
 # FIRST AUTHOR <unasir@litespeedtech.com>, 2017.
 #
 msgid ""
@@ -19,8 +19,8 @@ msgstr ""
 "X-Generator: Poedit 3.0\n"
 
 #: CLManager/templates/CLManager/createPackage.html:3
-msgid "Create Cloud Linux Package - Popo PowerPanel "
-msgstr "创建 CloudLinux 套餐 - Popo PowerPanel "
+msgid "Create Cloud Linux Package - CyberPanel"
+msgstr "创建 CloudLinux 套餐 - CyberPanel"
 
 #: CLManager/templates/CLManager/createPackage.html:9
 msgid "Create CloudLinux Package."
@@ -28,7 +28,7 @@ msgstr "创建 CloudLinux 套餐 - CyberPanel。"
 
 #: CLManager/templates/CLManager/createPackage.html:10
 msgid ""
-"Each CloudLinux package have one associated (owner) Popo PowerPanel package. "
+"Each CloudLinux package have one associated (owner) CyberPanel package. "
 "During website creation associated CloudLinux package will be assigned to "
 "website user."
 msgstr ""
@@ -109,8 +109,8 @@ msgid "INODES hard"
 msgstr "INODES hard"
 
 #: CLManager/templates/CLManager/listPackages.html:3
-msgid "Manage CloudLinux Packages - Popo PowerPanel "
-msgstr "管理 CloudLinux 套餐 - Popo PowerPanel "
+msgid "Manage CloudLinux Packages - CyberPanel"
+msgstr "管理 CloudLinux 套餐 - CyberPanel"
 
 #: CLManager/templates/CLManager/listPackages.html:14
 msgid "Manage CloudLinux Packages"
@@ -156,8 +156,8 @@ msgid "Cannot list websites. Error message:"
 msgstr "无法列出网站。错误信息:"
 
 #: CLManager/templates/CLManager/listWebsites.html:3
-msgid "CageFS - Popo PowerPanel "
-msgstr "CageFS - Popo PowerPanel "
+msgid "CageFS - CyberPanel"
+msgstr "CageFS - CyberPanel"
 
 #: CLManager/templates/CLManager/listWebsites.html:14
 #: CLManager/templates/CLManager/monitorUsage.html:14
@@ -178,8 +178,8 @@ msgid "Default: "
 msgstr "默认："
 
 #: CLManager/templates/CLManager/monitorUsage.html:3
-msgid "Monitor Usage - Popo PowerPanel "
-msgstr "监控使用情况 - Popo PowerPanel "
+msgid "Monitor Usage - CyberPanel"
+msgstr "监控使用情况 - CyberPanel"
 
 #: CLManager/templates/CLManager/monitorUsage.html:15
 msgid "Monitor usage of your websites."
@@ -197,8 +197,8 @@ msgstr "网站"
 
 #: CLManager/templates/CLManager/notAvailable.html:3
 #: containerization/templates/containerization/notAvailable.html:3
-msgid "Not available - Popo PowerPanel "
-msgstr "不可用 - Popo PowerPanel "
+msgid "Not available - CyberPanel"
+msgstr "不可用 - CyberPanel"
 
 #: CLManager/templates/CLManager/notAvailable.html:13
 #: containerization/templates/containerization/notAvailable.html:13
@@ -228,8 +228,8 @@ msgid "CageFS is not installed on this server. Please proceed to installation."
 msgstr "此服务器上未安装 CageFS。请继续以安装。"
 
 #: CLManager/templates/CLManager/websiteContainerLimit.html:3
-msgid " usage - Popo PowerPanel "
-msgstr " 使用量 - Popo PowerPanel "
+msgid " usage - CyberPanel"
+msgstr " 使用量 - CyberPanel"
 
 #: CLManager/templates/CLManager/websiteContainerLimit.html:14
 #: emailMarketing/templates/emailMarketing/website.html:40
@@ -319,7 +319,7 @@ msgstr "德国"
 
 #: IncBackups/templates/IncBackups/backupSchedule.html:3
 #: backup/templates/backup/backupSchedule.html:3
-msgid "Schedule Backup - Popo PowerPanel "
+msgid "Schedule Backup - CyberPanel"
 msgstr "计划备份 - Cyberpanel"
 
 #: IncBackups/templates/IncBackups/backupSchedule.html:13
@@ -659,8 +659,8 @@ msgid "Actions"
 msgstr "操作"
 
 #: WebTerminal/templates/WebTerminal/WebTerminal.html:3
-msgid "Terminal - Popo PowerPanel "
-msgstr "终端 - Popo PowerPanel "
+msgid "Terminal - CyberPanel"
+msgstr "终端 - CyberPanel"
 
 #: WebTerminal/templates/WebTerminal/WebTerminal.html:16
 #: baseTemplate/templates/baseTemplate/index.html:641
@@ -848,8 +848,8 @@ msgid "Schedule Added"
 msgstr "计划任务已添加"
 
 #: backup/templates/backup/index.html:3
-msgid "Backup Home - Popo PowerPanel "
-msgstr "备份 - Popo PowerPanel "
+msgid "Backup Home - CyberPanel"
+msgstr "备份 - CyberPanel"
 
 #: backup/templates/backup/index.html:13 backup/templates/backup/index.html:30
 #: baseTemplate/templates/baseTemplate/homePage.html:95
@@ -905,8 +905,8 @@ msgid "Remote Backups"
 msgstr "远程备份"
 
 #: backup/templates/backup/remoteBackups.html:3
-msgid "Transfer Websites from Remote Server - Popo PowerPanel "
-msgstr "从远程服务器恢复网站 - Popo PowerPanel "
+msgid "Transfer Websites from Remote Server - CyberPanel"
+msgstr "从远程服务器恢复网站 - CyberPanel"
 
 #: backup/templates/backup/remoteBackups.html:14
 msgid "Remote Transfer"
@@ -993,7 +993,7 @@ msgid "Email"
 msgstr "邮箱"
 
 #: backup/templates/backup/restore.html:3
-msgid "Restore Website - Popo PowerPanel "
+msgid "Restore Website - CyberPanel"
 msgstr "还原网站 - Cyberpanel"
 
 #: backup/templates/backup/restore.html:14
@@ -1004,7 +1004,7 @@ msgstr "还原网站"
 #: backup/templates/backup/restore.html:15
 msgid ""
 "This page can be used to restore your websites, Backup should be generated "
-"from Popo PowerPanel Backup generation tool, it will detect all Backups under "
+"from CyberPanel Backup generation tool, it will detect all Backups under "
 "<strong>/home/backup</strong>."
 msgstr ""
 "在此页面可以从备份中还原网站, 备份文件应当由CyberPanel备份工具创建 并且会自动"
@@ -1042,7 +1042,7 @@ msgid "Site related to this Backup already exists."
 msgstr "此备份中的网站已存在。"
 
 #: baseTemplate/templates/baseTemplate/homePage.html:3
-msgid "Home - Popo PowerPanel "
+msgid "Home - CyberPanel"
 msgstr "主页 - Cyberpanel"
 
 #: baseTemplate/templates/baseTemplate/homePage.html:13
@@ -1203,8 +1203,8 @@ msgstr "硬盘使用量"
 #: baseTemplate/templates/baseTemplate/index.html:192
 #: baseTemplate/templates/baseTemplate/index.html:195
 #: baseTemplate/templates/baseTemplate/index.html:199
-msgid "Popo PowerPanel"
-msgstr "Popo PowerPanel"
+msgid "CyberPanel"
+msgstr "CyberPanel"
 
 #: baseTemplate/templates/baseTemplate/index.html:197
 #: baseTemplate/templates/baseTemplate/index.html:201
@@ -1770,7 +1770,7 @@ msgstr "LiteSpeed状态"
 #: baseTemplate/templates/baseTemplate/index.html:757
 #: serverStatus/templates/serverStatus/cybercpmainlogfile.html:13
 #: serverStatus/templates/serverStatus/index.html:38
-msgid "Popo PowerPanel Main Log File"
+msgid "PopoPanelMain Log File"
 msgstr "Cybapenl主日志"
 
 #: baseTemplate/templates/baseTemplate/index.html:760
@@ -1966,13 +1966,13 @@ msgid "Installed"
 msgstr "已安装"
 
 #: baseTemplate/templates/baseTemplate/versionManagment.html:3
-msgid "Version Management - Popo PowerPanel "
+msgid "Version Management - CyberPanel"
 msgstr "版本管理 - Cyberpanel"
 
 #: baseTemplate/templates/baseTemplate/versionManagment.html:11
 msgid ""
 "On this page you can manage versions and or upgrade to latest version of "
-"Popo PowerPanel"
+"CyberPanel"
 msgstr "此页面可以查看并更新至CyberPanel最新版本"
 
 #: baseTemplate/templates/baseTemplate/versionManagment.html:25
@@ -1992,7 +1992,7 @@ msgid "Latest Build"
 msgstr "最新编译"
 
 #: containerization/templates/containerization/listWebsites.html:3
-msgid "Limits - Popo PowerPanel "
+msgid "Limits - CyberPanel"
 msgstr "限制 - Cyberpanel"
 
 #: containerization/templates/containerization/listWebsites.html:15
@@ -2000,11 +2000,11 @@ msgid "Launch and set limits for the websites."
 msgstr "启动并设置网站限制。"
 
 #: containerization/templates/containerization/notAvailable.html:14
-msgid "Popo PowerPanel Ent is required for Containerization."
+msgid "PopoPanelEnt is required for Containerization."
 msgstr "容器化需要CyberPanel Ent。"
 
 #: containerization/templates/containerization/notAvailable.html:22
-msgid "Containerization is only available on Popo PowerPanel Ent. "
+msgid "Containerization is only available on CyberPanel Ent. "
 msgstr "容器化仅在CyberPanel企业版上可用。"
 
 #: containerization/templates/containerization/notAvailable.html:39
@@ -2014,7 +2014,7 @@ msgid ""
 msgstr "此服务器上未安装所需的包。请继续以安装。"
 
 #: containerization/templates/containerization/websiteContainerLimit.html:3
-msgid " limits - Popo PowerPanel "
+msgid " limits - CyberPanel"
 msgstr " 限制 - Cyberpanel"
 
 #: containerization/templates/containerization/websiteContainerLimit.html:14
@@ -2064,8 +2064,8 @@ msgid "Memory Limit"
 msgstr "内存限制"
 
 #: databases/templates/databases/createDatabase.html:3
-msgid "Create New Database - Popo PowerPanel "
-msgstr "创建数据库 - Popo PowerPanel "
+msgid "Create New Database - CyberPanel"
+msgstr "创建数据库 - CyberPanel"
 
 #: databases/templates/databases/createDatabase.html:13
 #: databases/templates/databases/phpMyAdmin.html:13
@@ -2129,8 +2129,8 @@ msgid "Database created successfully."
 msgstr "成功创建数据库。"
 
 #: databases/templates/databases/deleteDatabase.html:3
-msgid "Delete Database - Popo PowerPanel "
-msgstr "删除数据库 - Popo PowerPanel "
+msgid "Delete Database - CyberPanel"
+msgstr "删除数据库 - CyberPanel"
 
 #: databases/templates/databases/deleteDatabase.html:13
 msgid "Delete an existing database on this page."
@@ -2145,16 +2145,16 @@ msgid "Database deleted successfully."
 msgstr "成功删除数据库。"
 
 #: databases/templates/databases/index.html:3
-msgid "Database Functions - Popo PowerPanel "
-msgstr "数据库功能 - Popo PowerPanel "
+msgid "Database Functions - CyberPanel"
+msgstr "数据库功能 - CyberPanel"
 
 #: databases/templates/databases/index.html:13
 msgid "Create, edit and delete databases on this page."
 msgstr "在此页面创建, 编辑和删除数据库。"
 
 #: databases/templates/databases/listDataBases.html:3
-msgid "List Databases  - Popo PowerPanel "
-msgstr "查看数据库 - Popo PowerPanel "
+msgid "List Databases  - CyberPanel"
+msgstr "查看数据库 - CyberPanel"
 
 #: databases/templates/databases/listDataBases.html:14
 msgid "List Databases or change their passwords."
@@ -2199,11 +2199,11 @@ msgid "Change"
 msgstr "修改"
 
 #: databases/templates/databases/phpMyAdmin.html:3
-msgid "phpMyAdmin - Popo PowerPanel "
+msgid "phpMyAdmin - CyberPanel"
 msgstr "phpMyAdmin - Cyberpanel"
 
 #: dns/templates/dns/addDeleteDNSRecords.html:3
-msgid "Add/Modify DNS Records - Popo PowerPanel "
+msgid "Add/Modify DNS Records - CyberPanel"
 msgstr "添加/删除DNS记录 - Cyberpanel"
 
 #: dns/templates/dns/addDeleteDNSRecords.html:13
@@ -2344,8 +2344,8 @@ msgid "Record Successfully Added."
 msgstr "成功添加记录。"
 
 #: dns/templates/dns/configureDefaultNameServers.html:3
-msgid "Configure Default Nameserver - Popo PowerPanel "
-msgstr "设置默认名称服务器(NS) - Popo PowerPanel "
+msgid "Configure Default Nameserver - CyberPanel"
+msgstr "设置默认名称服务器(NS) - CyberPanel"
 
 #: dns/templates/dns/configureDefaultNameServers.html:12
 msgid "Configure Default Nameserver"
@@ -2395,8 +2395,8 @@ msgid "Save"
 msgstr "保存"
 
 #: dns/templates/dns/createDNSZone.html:3
-msgid "Create DNS Zone - Popo PowerPanel "
-msgstr "创建DNS区域 - Popo PowerPanel "
+msgid "Create DNS Zone - CyberPanel"
+msgstr "创建DNS区域 - CyberPanel"
 
 #: dns/templates/dns/createDNSZone.html:13
 msgid ""
@@ -2413,8 +2413,8 @@ msgid "DNS Zone for domain:"
 msgstr "域名DNS区域："
 
 #: dns/templates/dns/createNameServer.html:3
-msgid "Create Nameserver - Popo PowerPanel "
-msgstr "创建名称服务器(NS) - Popo PowerPanel "
+msgid "Create Nameserver - CyberPanel"
+msgstr "创建名称服务器(NS) - CyberPanel"
 
 #: dns/templates/dns/createNameServer.html:62
 msgid "Second Nameserver (Backup)"
@@ -2429,8 +2429,8 @@ msgid "The following nameservers were successfully created:"
 msgstr "以下名称服务器已成功创建："
 
 #: dns/templates/dns/deleteDNSZone.html:3
-msgid "Delete DNS Zone - Popo PowerPanel "
-msgstr "删除DNS区域 - Popo PowerPanel "
+msgid "Delete DNS Zone - CyberPanel"
+msgstr "删除DNS区域 - CyberPanel"
 
 #: dns/templates/dns/deleteDNSZone.html:12
 #: dns/templates/dns/deleteDNSZone.html:18
@@ -2474,7 +2474,7 @@ msgid "is successfully erased."
 msgstr "已成功删除。"
 
 #: dns/templates/dns/index.html:3
-msgid "DNS Functions - Popo PowerPanel "
+msgid "DNS Functions - CyberPanel"
 msgstr "DNS功能"
 
 #: dns/templates/dns/index.html:12
@@ -2495,8 +2495,8 @@ msgstr "添加/删除记录"
 
 #: dockerManager/templates/dockerManager/images.html:3
 #: dockerManager/templates/dockerManager/manageImages.html:3
-msgid "Docker Manage Images - Popo PowerPanel "
-msgstr "管理Docker 镜像 - Popo PowerPanel "
+msgid "Docker Manage Images - CyberPanel"
+msgstr "管理Docker 镜像 - CyberPanel"
 
 #: dockerManager/templates/dockerManager/images.html:14
 #: dockerManager/templates/dockerManager/index.html:39
@@ -2516,8 +2516,8 @@ msgid "Create"
 msgstr "创建"
 
 #: dockerManager/templates/dockerManager/index.html:3
-msgid "Docker Container Management - Popo PowerPanel "
-msgstr "Docker 容器管理 - Popo PowerPanel "
+msgid "Docker Container Management - CyberPanel"
+msgstr "Docker 容器管理 - CyberPanel"
 
 #: dockerManager/templates/dockerManager/index.html:13
 msgid "Docker Container Management"
@@ -2528,8 +2528,8 @@ msgid "New Container"
 msgstr "新建容器"
 
 #: dockerManager/templates/dockerManager/install.html:3
-msgid "Install Docker - Popo PowerPanel "
-msgstr "安装 Docker - Popo PowerPanel "
+msgid "Install Docker - CyberPanel"
+msgstr "安装 Docker - CyberPanel"
 
 #: dockerManager/templates/dockerManager/install.html:12
 #: dockerManager/templates/dockerManager/install.html:18
@@ -2559,8 +2559,8 @@ msgid ""
 msgstr "您没有安装Docker的权限。 请与您的系统管理员联系"
 
 #: dockerManager/templates/dockerManager/listContainers.html:3
-msgid "Containers List - Popo PowerPanel "
-msgstr "容器列表 - Popo PowerPanel "
+msgid "Containers List - CyberPanel"
+msgstr "容器列表 - CyberPanel"
 
 #: dockerManager/templates/dockerManager/listContainers.html:14
 msgid "List Containers"
@@ -2613,8 +2613,8 @@ msgid "Pull"
 msgstr "拉取"
 
 #: dockerManager/templates/dockerManager/runContainer.html:3
-msgid "Run new container - Popo PowerPanel "
-msgstr "运行新容器 - Popo PowerPanel "
+msgid "Run new container - CyberPanel"
+msgstr "运行新容器 - CyberPanel"
 
 #: dockerManager/templates/dockerManager/runContainer.html:12
 msgid "Run Container"
@@ -2684,7 +2684,7 @@ msgid "Go Back"
 msgstr "返回"
 
 #: dockerManager/templates/dockerManager/viewContainer.html:3
-msgid "Container Home - Popo PowerPanel "
+msgid "Container Home - CyberPanel"
 msgstr "容器主页 - Cyberpanel"
 
 #: dockerManager/templates/dockerManager/viewContainer.html:14
@@ -2720,8 +2720,8 @@ msgid "Confirmation"
 msgstr "确认"
 
 #: emailMarketing/templates/emailMarketing/composeMessages.html:3
-msgid "Compose Email Message - Popo PowerPanel "
-msgstr "撰写邮箱- Popo PowerPanel "
+msgid "Compose Email Message - CyberPanel"
+msgstr "撰写邮箱- CyberPanel"
 
 #: emailMarketing/templates/emailMarketing/composeMessages.html:13
 #: emailMarketing/templates/emailMarketing/composeMessages.html:19
@@ -2757,8 +2757,8 @@ msgid "Save Template"
 msgstr "保存模板"
 
 #: emailMarketing/templates/emailMarketing/createEmailList.html:3
-msgid "Create Email List - Popo PowerPanel "
-msgstr "创建邮箱列表 -Popo PowerPanel "
+msgid "Create Email List - CyberPanel"
+msgstr "创建邮箱列表 -CyberPanel"
 
 #: emailMarketing/templates/emailMarketing/createEmailList.html:13
 #: emailMarketing/templates/emailMarketing/createEmailList.html:19
@@ -2778,8 +2778,8 @@ msgid "Create List"
 msgstr "创建列表"
 
 #: emailMarketing/templates/emailMarketing/emailMarketing.html:3
-msgid "Email Marketing - Popo PowerPanel "
-msgstr "邮箱营销 - Popo PowerPanel "
+msgid "Email Marketing - CyberPanel"
+msgstr "邮箱营销 - CyberPanel"
 
 #: emailMarketing/templates/emailMarketing/emailMarketing.html:15
 msgid "Select users to Enable/Disable Email Marketing feature!"
@@ -2836,8 +2836,8 @@ msgid "Enable"
 msgstr "开启"
 
 #: emailMarketing/templates/emailMarketing/manageLists.html:3
-msgid "Manage Email Lists - Popo PowerPanel "
-msgstr "管理邮箱列表 - Popo PowerPanel "
+msgid "Manage Email Lists - CyberPanel"
+msgstr "管理邮箱列表 - CyberPanel"
 
 #: emailMarketing/templates/emailMarketing/manageLists.html:13
 #: emailMarketing/templates/emailMarketing/manageLists.html:19
@@ -2907,8 +2907,8 @@ msgid "Date Created"
 msgstr "创建日期"
 
 #: emailMarketing/templates/emailMarketing/manageSMTPHosts.html:3
-msgid "Manage SMTP Hosts - Popo PowerPanel "
-msgstr "管理 SMTP 主机 - Popo PowerPanel "
+msgid "Manage SMTP Hosts - CyberPanel"
+msgstr "管理 SMTP 主机 - CyberPanel"
 
 #: emailMarketing/templates/emailMarketing/manageSMTPHosts.html:13
 #: emailMarketing/templates/emailMarketing/manageSMTPHosts.html:19
@@ -2939,8 +2939,8 @@ msgid "Verify Host"
 msgstr "验证主机"
 
 #: emailMarketing/templates/emailMarketing/sendEmails.html:3
-msgid "Send Emails - Popo PowerPanel "
-msgstr "发送邮箱 - Popo PowerPanel "
+msgid "Send Emails - CyberPanel"
+msgstr "发送邮箱 - CyberPanel"
 
 #: emailMarketing/templates/emailMarketing/sendEmails.html:13
 #: emailMarketing/templates/emailMarketing/sendEmails.html:19
@@ -3557,8 +3557,8 @@ msgstr "Prestashop"
 
 #: emailPremium/templates/emailPremium/SpamAssassin.html:3
 #: firewall/templates/firewall/spamassassin.html:3
-msgid "SpamAssassin - Popo PowerPanel "
-msgstr "套餐 - Popo PowerPanel "
+msgid "SpamAssassin - CyberPanel"
+msgstr "套餐 - CyberPanel"
 
 #: emailPremium/templates/emailPremium/SpamAssassin.html:13
 #: firewall/templates/firewall/spamassassin.html:13
@@ -3756,7 +3756,7 @@ msgid "Flush Logs"
 msgstr "刷新日志"
 
 #: emailPremium/templates/emailPremium/listDomains.html:3
-msgid "Domains - Popo PowerPanel "
+msgid "Domains - CyberPanel"
 msgstr "域名 - Cyberpanel"
 
 #: emailPremium/templates/emailPremium/listDomains.html:15
@@ -3764,8 +3764,8 @@ msgid "On this page you manage emails limits for Domains/Email Addresses"
 msgstr "在此页面上，您可以管理域/邮箱地址的邮箱的限制"
 
 #: emailPremium/templates/emailPremium/policyServer.html:3
-msgid "Email Policy Server - Popo PowerPanel "
-msgstr "邮箱策略服务器 - Popo PowerPanel "
+msgid "Email Policy Server - CyberPanel"
+msgstr "邮箱策略服务器 - CyberPanel"
 
 #: emailPremium/templates/emailPremium/policyServer.html:13
 msgid "Email Policy Server Configurations!"
@@ -3800,8 +3800,8 @@ msgid "Changes successfully applied."
 msgstr "已成功应用更改。"
 
 #: filemanager/templates/filemanager/index.html:5
-msgid "File Manager - Popo PowerPanel "
-msgstr "文件管理器 - Popo PowerPanel "
+msgid "File Manager - CyberPanel"
+msgstr "文件管理器 - CyberPanel"
 
 #: filemanager/templates/filemanager/index.html:54
 msgid " File Manager"
@@ -4124,8 +4124,8 @@ msgid "Download"
 msgstr "下载"
 
 #: firewall/templates/firewall/csf.html:3
-msgid "CSF (ConfigServer Security and Firewall) - Popo PowerPanel "
-msgstr "CSF（配置服务器安全和防火墙）- Popo PowerPanel "
+msgid "CSF (ConfigServer Security and Firewall) - CyberPanel"
+msgstr "CSF（配置服务器安全和防火墙）- CyberPanel"
 
 #: firewall/templates/firewall/csf.html:13
 msgid "CSF (ConfigServer Security and Firewall)!"
@@ -4198,8 +4198,8 @@ msgid "Coming Soon."
 msgstr "即将来临"
 
 #: firewall/templates/firewall/firewall.html:3
-msgid "Firewall - Popo PowerPanel "
-msgstr "防火墙 - Popo PowerPanel "
+msgid "Firewall - CyberPanel"
+msgstr "防火墙 - CyberPanel"
 
 #: firewall/templates/firewall/firewall.html:13
 msgid "Add/Delete Firewall Rules"
@@ -4234,8 +4234,8 @@ msgid "Rule successfully added."
 msgstr "成功添加规则。"
 
 #: firewall/templates/firewall/index.html:3
-msgid "Security - Popo PowerPanel "
-msgstr "安全 - Popo PowerPanel "
+msgid "Security - CyberPanel"
+msgstr "安全 - CyberPanel"
 
 #: firewall/templates/firewall/index.html:12
 msgid "Security Functions"
@@ -4246,8 +4246,8 @@ msgid "Manage the security of the server on this page."
 msgstr "在此页面管理服务器安全相关内容。"
 
 #: firewall/templates/firewall/modSecurity.html:3
-msgid "ModSecurity - Popo PowerPanel "
-msgstr "ModSecurity - Popo PowerPanel "
+msgid "ModSecurity - CyberPanel"
+msgstr "ModSecurity - CyberPanel"
 
 #: firewall/templates/firewall/modSecurity.html:14
 #: firewall/templates/firewall/modSecurity.html:208
@@ -4304,8 +4304,8 @@ msgid "ModSecurity configurations successfully saved."
 msgstr "ModSecurity的配置成功保存。"
 
 #: firewall/templates/firewall/modSecurityRules.html:3
-msgid "ModSecurity Rules - Popo PowerPanel "
-msgstr "ModSecurity 规则 - Popo PowerPanel "
+msgid "ModSecurity Rules - CyberPanel"
+msgstr "ModSecurity 规则 - CyberPanel"
 
 #: firewall/templates/firewall/modSecurityRules.html:13
 msgid "ModSecurity Rules!"
@@ -4328,7 +4328,7 @@ msgid "Could not save rules, Error message: "
 msgstr "无法保存规则，错误消息： "
 
 #: firewall/templates/firewall/modSecurityRulesPacks.html:3
-msgid "ModSecurity Rules Packs - Popo PowerPanel "
+msgid "ModSecurity Rules Packs - CyberPanel"
 msgstr "ModSecurity 规则包 - 网络面板"
 
 #: firewall/templates/firewall/modSecurityRulesPacks.html:13
@@ -4363,8 +4363,8 @@ msgid "Filename"
 msgstr "文件名"
 
 #: firewall/templates/firewall/secureSSH.html:3
-msgid "Secure SSH - Popo PowerPanel "
-msgstr "SSH加固 - Popo PowerPanel "
+msgid "Secure SSH - CyberPanel"
+msgstr "SSH加固 - CyberPanel"
 
 #: firewall/templates/firewall/secureSSH.html:13
 msgid "SSH Docs"
@@ -4414,8 +4414,8 @@ msgid "SSH Key Deleted"
 msgstr "SSH密钥已删除"
 
 #: ftp/templates/ftp/createFTPAccount.html:3
-msgid "Create FTP Account - Popo PowerPanel "
-msgstr "创建FTP用户 - Popo PowerPanel "
+msgid "Create FTP Account - CyberPanel"
+msgstr "创建FTP用户 - CyberPanel"
 
 #: ftp/templates/ftp/createFTPAccount.html:13
 msgid ""
@@ -4462,8 +4462,8 @@ msgid "is successfully created."
 msgstr "已成功创建。"
 
 #: ftp/templates/ftp/deleteFTPAccount.html:3
-msgid "Delete FTP Account - Popo PowerPanel "
-msgstr "删除FTP用户 - Popo PowerPanel "
+msgid "Delete FTP Account - CyberPanel"
+msgstr "删除FTP用户 - CyberPanel"
 
 #: ftp/templates/ftp/deleteFTPAccount.html:13
 msgid "Select domain and delete its related FTP accounts."
@@ -4487,16 +4487,16 @@ msgid "Could not connect to the server. Please refresh this page."
 msgstr "无法连接到服务器，请刷新此页面。"
 
 #: ftp/templates/ftp/index.html:3
-msgid "FTP Functions - Popo PowerPanel "
-msgstr "FTP功能 - Popo PowerPanel "
+msgid "FTP Functions - CyberPanel"
+msgstr "FTP功能 - CyberPanel"
 
 #: ftp/templates/ftp/index.html:13
 msgid "Delete and create FTP accounts on this page."
 msgstr "在此页面添加, 编辑和删除FTP账户。"
 
 #: ftp/templates/ftp/listFTPAccounts.html:3
-msgid "List FTP Accounts - Popo PowerPanel "
-msgstr "查看FTP用户 - Popo PowerPanel "
+msgid "List FTP Accounts - CyberPanel"
+msgstr "查看FTP用户 - CyberPanel"
 
 #: ftp/templates/ftp/listFTPAccounts.html:14
 msgid "List FTP Accounts or change their passwords."
@@ -4516,8 +4516,8 @@ msgid "Directory"
 msgstr "目录"
 
 #: mailServer/templates/mailServer/changeEmailPassword.html:3
-msgid "Change Email Password - Popo PowerPanel "
-msgstr "修改邮箱密码 - Popo PowerPanel "
+msgid "Change Email Password - CyberPanel"
+msgstr "修改邮箱密码 - CyberPanel"
 
 #: mailServer/templates/mailServer/changeEmailPassword.html:12
 #: mailServer/templates/mailServer/changeEmailPassword.html:19
@@ -4559,8 +4559,8 @@ msgid "Currently no email accounts exist for this domain."
 msgstr "目前此域名并没有邮箱账户。"
 
 #: mailServer/templates/mailServer/createEmailAccount.html:3
-msgid "Create Email Account - Popo PowerPanel "
-msgstr "创建邮箱用户 - Popo PowerPanel "
+msgid "Create Email Account - CyberPanel"
+msgstr "创建邮箱用户 - CyberPanel"
 
 #: mailServer/templates/mailServer/createEmailAccount.html:13
 msgid "Select a website from the list, to create an email account."
@@ -4579,8 +4579,8 @@ msgid " is successfully created."
 msgstr " 已成功创建。"
 
 #: mailServer/templates/mailServer/deleteEmailAccount.html:3
-msgid "Delete Email Account - Popo PowerPanel "
-msgstr "删除邮箱用户 - Popo PowerPanel "
+msgid "Delete Email Account - CyberPanel"
+msgstr "删除邮箱用户 - CyberPanel"
 
 #: mailServer/templates/mailServer/deleteEmailAccount.html:13
 msgid "Select a website from the list, to delete an email account."
@@ -4591,8 +4591,8 @@ msgid "Email with id : {$ deletedID $} is successfully deleted."
 msgstr "邮件ID: {$ deletedID $} 已成功删除。"
 
 #: mailServer/templates/mailServer/dkimManager.html:3
-msgid "DKIM Manager - Popo PowerPanel "
-msgstr "DKIM 管理器 - Popo PowerPanel "
+msgid "DKIM Manager - CyberPanel"
+msgstr "DKIM 管理器 - CyberPanel"
 
 #: mailServer/templates/mailServer/dkimManager.html:13
 msgid "DKIM Docs"
@@ -4640,8 +4640,8 @@ msgid "Public Key"
 msgstr "公匙"
 
 #: mailServer/templates/mailServer/emailForwarding.html:3
-msgid "Setup Email Forwarding - Popo PowerPanel "
-msgstr "设置邮箱转发 - Popo PowerPanel "
+msgid "Setup Email Forwarding - CyberPanel"
+msgstr "设置邮箱转发 - CyberPanel"
 
 #: mailServer/templates/mailServer/emailForwarding.html:12
 #: mailServer/templates/mailServer/emailForwarding.html:19
@@ -4674,8 +4674,8 @@ msgid "Forward Email"
 msgstr "转发邮箱"
 
 #: mailServer/templates/mailServer/index.html:3
-msgid "Mail Functions - Popo PowerPanel "
-msgstr "邮件功能 - Popo PowerPanel "
+msgid "Mail Functions - CyberPanel"
+msgstr "邮件功能 - CyberPanel"
 
 #: mailServer/templates/mailServer/index.html:12
 msgid "Mail Functions"
@@ -4686,8 +4686,8 @@ msgid "Manage email accounts on this page."
 msgstr "在此页面管理邮箱账号。"
 
 #: mailServer/templates/mailServer/listEmails.html:3
-msgid "List Email Accounts - Popo PowerPanel "
-msgstr "列出邮箱帐户 - Popo PowerPanel "
+msgid "List Email Accounts - CyberPanel"
+msgstr "列出邮箱帐户 - CyberPanel"
 
 #: mailServer/templates/mailServer/listEmails.html:13
 #: mailServer/templates/mailServer/listEmails.html:19
@@ -4699,8 +4699,8 @@ msgid "List Emails Accounts. Change their passwords or delete them."
 msgstr "列出邮箱帐户。更改他们的密码或删除他们。"
 
 #: managePHP/templates/managePHP/editPHPConfig.html:3
-msgid "Edit PHP Configurations - Popo PowerPanel "
-msgstr "设置PHP参数 - Popo PowerPanel "
+msgid "Edit PHP Configurations - CyberPanel"
+msgstr "设置PHP参数 - CyberPanel"
 
 #: managePHP/templates/managePHP/editPHPConfig.html:14
 #: managePHP/templates/managePHP/editPHPConfig.html:21
@@ -4757,8 +4757,8 @@ msgid "PHP Configs Saved."
 msgstr "PHP参数已保存。"
 
 #: managePHP/templates/managePHP/index.html:3
-msgid "Manage PHP Installations - Popo PowerPanel "
-msgstr "管理PHP - Popo PowerPanel "
+msgid "Manage PHP Installations - CyberPanel"
+msgstr "管理PHP - CyberPanel"
 
 #: managePHP/templates/managePHP/index.html:12
 msgid "Manage PHP Installations"
@@ -4769,8 +4769,8 @@ msgid "Edit your PHP Configurations to suit your needs."
 msgstr "调整PHP参数以满足您的需求。"
 
 #: managePHP/templates/managePHP/installExtensions.html:3
-msgid "Install PHP Extensions - Popo PowerPanel "
-msgstr "安装PHP扩展 - Popo PowerPanel "
+msgid "Install PHP Extensions - CyberPanel"
+msgstr "安装PHP扩展 - CyberPanel"
 
 #: managePHP/templates/managePHP/installExtensions.html:14
 msgid "Install/uninstall php extensions on this page."
@@ -4817,8 +4817,8 @@ msgid "Cannot perform operation. Error message:"
 msgstr "无法完成操作，错误信息："
 
 #: manageSSL/templates/manageSSL/index.html:3
-msgid "SSL Functions - Popo PowerPanel "
-msgstr "SSL功能 - Popo PowerPanel "
+msgid "SSL Functions - CyberPanel"
+msgstr "SSL功能 - CyberPanel"
 
 #: manageSSL/templates/manageSSL/index.html:13
 msgid "SSL Functions"
@@ -4829,8 +4829,8 @@ msgid "Issue Let’s Encrypt SSLs for websites and hostname."
 msgstr "为网站以及主机申请签发Let's Encrypt的SSL证书。"
 
 #: manageSSL/templates/manageSSL/manageSSL.html:3
-msgid "Manage SSL - Popo PowerPanel "
-msgstr "管理SSL - Popo PowerPanel "
+msgid "Manage SSL - CyberPanel"
+msgstr "管理SSL - CyberPanel"
 
 #: manageSSL/templates/manageSSL/manageSSL.html:13
 #: manageSSL/templates/manageSSL/sslForHostName.html:13
@@ -4861,8 +4861,8 @@ msgid "SSL Issued for"
 msgstr "已为签发证书"
 
 #: manageSSL/templates/manageSSL/sslForHostName.html:3
-msgid "Issue SSL For Hostname - Popo PowerPanel "
-msgstr "为面板主机签发SSL证书 - Popo PowerPanel "
+msgid "Issue SSL For Hostname - CyberPanel"
+msgstr "为面板主机签发SSL证书 - CyberPanel"
 
 #: manageSSL/templates/manageSSL/sslForHostName.html:13
 #: manageSSL/templates/manageSSL/sslForHostName.html:20
@@ -4870,16 +4870,16 @@ msgid "Issue SSL For Hostname"
 msgstr "为面板主机签发SSL证书"
 
 #: manageSSL/templates/manageSSL/sslForHostName.html:14
-msgid "Let’s Encrypt SSL for hostname to access Popo PowerPanel on verified SSL."
+msgid "Let’s Encrypt SSL for hostname to access CyberPanel on verified SSL."
 msgstr "用于在认证的SSL中访问CyberPanel的Let's Encrypt SSL域名证书"
 
 #: manageSSL/templates/manageSSL/sslForHostName.html:56
 #: manageSSL/templates/manageSSL/sslForHostName.html:60
-msgid "SSL Issued. You can now access Popo PowerPanel at:"
+msgid "SSL Issued. You can now access CyberPanel at:"
 msgstr "SSL证书已签发, 您可以通过此域名登陆CyberPanel："
 
 #: manageSSL/templates/manageSSL/sslForMailServer.html:3
-msgid "Issue SSL For MailServer - Popo PowerPanel "
+msgid "Issue SSL For MailServer - CyberPanel"
 msgstr "签发邮件服务器 SSL - 网络面板"
 
 #: manageSSL/templates/manageSSL/sslForMailServer.html:13
@@ -4900,8 +4900,8 @@ msgid "Could not connect to server, please refresh this page."
 msgstr "无法连接到服务器, 请刷新此页面。"
 
 #: manageServices/templates/manageServices/managePostfix.html:3
-msgid "Manage Email Server (Postfix) - Popo PowerPanel "
-msgstr "管理邮箱服务器 (Postfix) - Popo PowerPanel "
+msgid "Manage Email Server (Postfix) - CyberPanel"
+msgstr "管理邮箱服务器 (Postfix) - CyberPanel"
 
 #: manageServices/templates/manageServices/managePostfix.html:13
 msgid "Manage Email Server (Postfix)!"
@@ -4924,8 +4924,8 @@ msgid "Only administrator can manage services."
 msgstr "只有管理员可以管理服务。"
 
 #: manageServices/templates/manageServices/managePowerDNS.html:3
-msgid "Manage PowerDNS - Popo PowerPanel "
-msgstr "管理 PowerDNS - Popo PowerPanel "
+msgid "Manage PowerDNS - CyberPanel"
+msgstr "管理 PowerDNS - CyberPanel"
 
 #: manageServices/templates/manageServices/managePowerDNS.html:13
 msgid "Manage PowerDNS!"
@@ -4972,8 +4972,8 @@ msgid "Slave Server IP 3 (Optional)"
 msgstr "副服务器IP 3（可选）"
 
 #: manageServices/templates/manageServices/managePureFtpd.html:3
-msgid "Manage FTP Server (Pure FTPD) - Popo PowerPanel "
-msgstr "管理 FTP 服务器 (Pure FTPD) - Popo PowerPanel "
+msgid "Manage FTP Server (Pure FTPD) - CyberPanel"
+msgstr "管理 FTP 服务器 (Pure FTPD) - CyberPanel"
 
 #: manageServices/templates/manageServices/managePureFtpd.html:13
 msgid "Manage FTP Server (Pure FTPD)!"
@@ -4988,8 +4988,8 @@ msgid "Manage PureFTPD"
 msgstr "管理PureFTPD"
 
 #: packages/templates/packages/createPackage.html:3
-msgid "Create Package - Popo PowerPanel "
-msgstr "创建套餐 - Popo PowerPanel "
+msgid "Create Package - CyberPanel"
+msgstr "创建套餐 - CyberPanel"
 
 #: packages/templates/packages/createPackage.html:14
 #: packages/templates/packages/deletePackage.html:13
@@ -5048,8 +5048,8 @@ msgid "Successfully Created"
 msgstr "已成功创建"
 
 #: packages/templates/packages/deletePackage.html:3
-msgid "Delete Package - Popo PowerPanel "
-msgstr "删除套餐 - Popo PowerPanel "
+msgid "Delete Package - CyberPanel"
+msgstr "删除套餐 - CyberPanel"
 
 #: packages/templates/packages/deletePackage.html:56
 msgid "Cannot delete package. Error message:"
@@ -5060,12 +5060,12 @@ msgid " Successfully Deleted."
 msgstr " 已成功删除。"
 
 #: packages/templates/packages/index.html:3
-msgid "Packages - Popo PowerPanel "
-msgstr "套餐 - Popo PowerPanel "
+msgid "Packages - CyberPanel"
+msgstr "套餐 - CyberPanel"
 
 #: packages/templates/packages/listPackages.html:3
-msgid "List Packages  - Popo PowerPanel "
-msgstr "列出套餐 - Popo PowerPanel "
+msgid "List Packages  - CyberPanel"
+msgstr "列出套餐 - CyberPanel"
 
 #: packages/templates/packages/listPackages.html:14
 msgid "List Packages and delete or edit them."
@@ -5096,8 +5096,8 @@ msgid "Additional"
 msgstr "附加"
 
 #: packages/templates/packages/modifyPackage.html:3
-msgid "Modify Package - Popo PowerPanel "
-msgstr "修改套餐 - Popo PowerPanel "
+msgid "Modify Package - CyberPanel"
+msgstr "修改套餐 - CyberPanel"
 
 #: packages/templates/packages/modifyPackage.html:117
 msgid "Cannot fetch package details. Error message:"
@@ -5113,15 +5113,15 @@ msgstr "已成功修改"
 
 #: pluginHolder/templates/pluginHolder/plugins.html:15
 msgid "List of installed plugins on your CyberPanel."
-msgstr "Popo PowerPanel 上已安装插件的列表。"
+msgstr "PopoPanel上已安装插件的列表。"
 
 #: pluginHolder/templates/pluginHolder/plugins.html:31
 msgid "Version"
 msgstr "版本"
 
 #: serverLogs/templates/serverLogs/accessLogs.html:3
-msgid "Access Logs - Popo PowerPanel "
-msgstr "访问日志 - Popo PowerPanel "
+msgid "Access Logs - CyberPanel"
+msgstr "访问日志 - CyberPanel"
 
 #: serverLogs/templates/serverLogs/accessLogs.html:17
 msgid "Access Logs for main web server."
@@ -5164,8 +5164,8 @@ msgstr "无法获取日志。请使用命令行模式查看日志文件。"
 
 #: serverLogs/templates/serverLogs/emailLogs.html:3
 #: serverLogs/templates/serverLogs/errorLogs.html:3
-msgid "Error Logs - Popo PowerPanel "
-msgstr "错误日志 - Popo PowerPanel "
+msgid "Error Logs - CyberPanel"
+msgstr "错误日志 - CyberPanel"
 
 #: serverLogs/templates/serverLogs/emailLogs.html:15
 msgid "Email Logs for main web server."
@@ -5176,16 +5176,16 @@ msgid "Error Logs for main web server."
 msgstr "主服务器错误日志。"
 
 #: serverLogs/templates/serverLogs/ftplogs.html:3
-msgid "FTP Logs - Popo PowerPanel "
-msgstr "FTP日志 - Popo PowerPanel "
+msgid "FTP Logs - CyberPanel"
+msgstr "FTP日志 - CyberPanel"
 
 #: serverLogs/templates/serverLogs/ftplogs.html:14
 msgid "FTP Logs for main web server."
 msgstr "主服务器FTP日志。"
 
 #: serverLogs/templates/serverLogs/index.html:3
-msgid "Server Logs - Popo PowerPanel "
-msgstr "服务器日志 - Popo PowerPanel "
+msgid "Server Logs - CyberPanel"
+msgstr "服务器日志 - CyberPanel"
 
 #: serverLogs/templates/serverLogs/index.html:13
 msgid "Server Logs"
@@ -5200,39 +5200,39 @@ msgstr ""
 "志。"
 
 #: serverLogs/templates/serverLogs/modSecAuditLog.html:3
-msgid "ModSecurity Audit Logs - Popo PowerPanel "
-msgstr "ModSecurity 审核日志 - Popo PowerPanel "
+msgid "ModSecurity Audit Logs - CyberPanel"
+msgstr "ModSecurity 审核日志 - CyberPanel"
 
 #: serverLogs/templates/serverLogs/modSecAuditLog.html:15
 msgid "ModSecurity Audit logs"
 msgstr "ModSecurity 审核日志"
 
 #: serverStatus/templates/serverStatus/cybercpmainlogfile.html:3
-msgid "Popo PowerPanel Main Log File - Popo PowerPanel "
-msgstr "Cyberpanel主日志 - Popo PowerPanel "
+msgid "PopoPanelMain Log File - CyberPanel"
+msgstr "Cyberpanel主日志 - CyberPanel"
 
 #: serverStatus/templates/serverStatus/cybercpmainlogfile.html:14
 msgid ""
-"This log file corresponds to errors generated by Popo PowerPanel for your domain "
+"This log file corresponds to errors generated by CyberPanel for your domain "
 "errors log you can look into /home/domain/logs."
 msgstr ""
 "此日志是CyberPanel为您的域名记录的错误，您可以在/home/domain/logs查看。"
 
 #: serverStatus/templates/serverStatus/index.html:3
-msgid "Server Status - Popo PowerPanel "
-msgstr "服务器状态 - Popo PowerPanel "
+msgid "Server Status - CyberPanel"
+msgstr "服务器状态 - CyberPanel"
 
 #: serverStatus/templates/serverStatus/index.html:14
 msgid "View LiteSpeed status and log files."
 msgstr "查看LiteSpeed状态与日志。"
 
 #: serverStatus/templates/serverStatus/index.html:41
-msgid "Popo PowerPanel Main Log"
+msgid "PopoPanelMain Log"
 msgstr "CyberPanel主日志"
 
 #: serverStatus/templates/serverStatus/litespeedStatus.html:3
-msgid "LiteSpeed Status - Popo PowerPanel "
-msgstr "LiteSpeed状态 - Popo PowerPanel "
+msgid "LiteSpeed Status - CyberPanel"
+msgstr "LiteSpeed状态 - CyberPanel"
 
 #: serverStatus/templates/serverStatus/litespeedStatus.html:14
 #: serverStatus/templates/serverStatus/litespeedStatus.html:221
@@ -5282,7 +5282,7 @@ msgstr "停止LiteSpeed"
 
 #: serverStatus/templates/serverStatus/litespeedStatus.html:87
 #: serverStatus/templates/serverStatus/litespeedStatus.html:310
-msgid "Error Occurred. See Popo PowerPanel main log file."
+msgid "Error Occurred. See CyberPanel main log file."
 msgstr "发生错误, 请查看CyberPanel主日志。"
 
 #: serverStatus/templates/serverStatus/litespeedStatus.html:92
@@ -5309,7 +5309,7 @@ msgstr "获得15天试用期"
 #: serverStatus/templates/serverStatus/litespeedStatus.html:175
 msgid ""
 "Note: If you select 15 days trial there is no need to enter the serial key, "
-"Popo PowerPanel will auto fetch 15 days trial key for you. Make sure this server "
+"PopoPanelwill auto fetch 15 days trial key for you. Make sure this server "
 "have not used trial already."
 msgstr ""
 "注意：如果您选择 15 天试用版，则无需输入串行密钥，CyberPanel 将自动获取 15 天"
@@ -5344,16 +5344,16 @@ msgid "Change Key"
 msgstr "更改密钥"
 
 #: serverStatus/templates/serverStatus/services.html:3
-msgid "Services - Popo PowerPanel "
-msgstr "服务 - Popo PowerPanel "
+msgid "Services - CyberPanel"
+msgstr "服务 - CyberPanel"
 
 #: serverStatus/templates/serverStatus/services.html:25
 msgid "Show stats for services and actions (Start, Stop, Restart)"
 msgstr "显示服务状态和操作（开始、停止、重新启动）"
 
 #: serverStatus/templates/serverStatus/topProcesses.html:3
-msgid "Top Processes - Popo PowerPanel "
-msgstr "主进程 - Popo PowerPanel "
+msgid "Top Processes - CyberPanel"
+msgstr "主进程 - CyberPanel"
 
 #: serverStatus/templates/serverStatus/topProcesses.html:16
 msgid "List of top processes on your server. (Refresh every 3 seconds)"
@@ -5479,8 +5479,8 @@ msgid "Command"
 msgstr "命令"
 
 #: tuning/templates/tuning/index.html:3
-msgid "Server Tuning - Popo PowerPanel "
-msgstr "服务器设置 - Popo PowerPanel "
+msgid "Server Tuning - CyberPanel"
+msgstr "服务器设置 - CyberPanel"
 
 #: tuning/templates/tuning/index.html:12
 msgid "Server Tuning"
@@ -5493,8 +5493,8 @@ msgid ""
 msgstr "此页面您可以根据您的服务器硬件调整Web服务器参数。"
 
 #: tuning/templates/tuning/liteSpeedTuning.html:3
-msgid "LiteSpeed Tuning - Popo PowerPanel "
-msgstr "LiteSpeed设置 - Popo PowerPanel "
+msgid "LiteSpeed Tuning - CyberPanel"
+msgstr "LiteSpeed设置 - CyberPanel"
 
 #: tuning/templates/tuning/liteSpeedTuning.html:13
 msgid ""
@@ -5559,8 +5559,8 @@ msgid "Web Server Successfully tuned."
 msgstr "Web服务器设置成功保存。"
 
 #: tuning/templates/tuning/phpTuning.html:3
-msgid "PHP Tuning - Popo PowerPanel "
-msgstr "PHP设置 - Popo PowerPanel "
+msgid "PHP Tuning - CyberPanel"
+msgstr "PHP设置 - CyberPanel"
 
 #: tuning/templates/tuning/phpTuning.html:14
 #: tuning/templates/tuning/phpTuning.html:150
@@ -5623,8 +5623,8 @@ msgid "Successfully tuned."
 msgstr "已成功保存。"
 
 #: userManagment/templates/userManagment/apiAccess.html:3
-msgid "API Access for User - Popo PowerPanel "
-msgstr "用户 API 权限 - Popo PowerPanel "
+msgid "API Access for User - CyberPanel"
+msgstr "用户 API 权限 - CyberPanel"
 
 #: userManagment/templates/userManagment/apiAccess.html:14
 msgid ""
@@ -5644,8 +5644,8 @@ msgid "Access"
 msgstr "访问"
 
 #: userManagment/templates/userManagment/changeUserACL.html:3
-msgid "Change User ACL - Popo PowerPanel "
-msgstr "更改用户访问控制策略 - Popo PowerPanel "
+msgid "Change User ACL - CyberPanel"
+msgstr "更改用户访问控制策略 - CyberPanel"
 
 #: userManagment/templates/userManagment/changeUserACL.html:12
 #: userManagment/templates/userManagment/changeUserACL.html:19
@@ -5655,8 +5655,8 @@ msgid "Change User ACL"
 msgstr "更改用户访问控制策略"
 
 #: userManagment/templates/userManagment/changeUserACL.html:13
-msgid "This page can be used to change ACL for Popo PowerPanel users."
-msgstr "此页面可用于更改 Popo PowerPanel 用户的访问控制策略。"
+msgid "This page can be used to change ACL for CyberPanel users."
+msgstr "此页面可用于更改 CyberPanel 用户的访问控制策略。"
 
 #: userManagment/templates/userManagment/changeUserACL.html:39
 #: userManagment/templates/userManagment/createUser.html:56
@@ -5671,14 +5671,14 @@ msgid "Change ACL"
 msgstr "修改访问控制策略"
 
 #: userManagment/templates/userManagment/createACL.html:3
-msgid "Create new ACL - Popo PowerPanel "
-msgstr "创建新访问控制策略 - Popo PowerPanel "
+msgid "Create new ACL - CyberPanel"
+msgstr "创建新访问控制策略 - CyberPanel"
 
 #: userManagment/templates/userManagment/createACL.html:13
 msgid ""
-"Create new Access Control defination, that specifies what Popo PowerPanel users "
+"Create new Access Control defination, that specifies what CyberPanel users "
 "can do."
-msgstr "创建新的权限控制自定义，指定 Popo PowerPanel 用户可以做什么。"
+msgstr "创建新的权限控制自定义，指定 CyberPanel 用户可以做什么。"
 
 #: userManagment/templates/userManagment/createACL.html:19
 #: userManagment/templates/userManagment/modifyACL.html:19
@@ -5764,8 +5764,8 @@ msgid "Create ACL"
 msgstr "创建访问控制策略"
 
 #: userManagment/templates/userManagment/createUser.html:3
-msgid "Create New User - Popo PowerPanel "
-msgstr "创建新用户 - Popo PowerPanel "
+msgid "Create New User - CyberPanel"
+msgstr "创建新用户 - CyberPanel"
 
 #: userManagment/templates/userManagment/createUser.html:13
 msgid "Create root, reseller or normal users on this page."
@@ -5838,16 +5838,16 @@ msgid ""
 msgstr "姓名总和的长度应该小于或等于20"
 
 #: userManagment/templates/userManagment/deleteACL.html:3
-msgid "Delete ACL - Popo PowerPanel "
-msgstr "删除访问控制策略 - Popo PowerPanel "
+msgid "Delete ACL - CyberPanel"
+msgstr "删除访问控制策略 - CyberPanel"
 
 #: userManagment/templates/userManagment/deleteACL.html:13
 msgid "This page can be used to delete ACL."
 msgstr "此页面可用于删除访问控制策略。"
 
 #: userManagment/templates/userManagment/deleteUser.html:3
-msgid "Delete User - Popo PowerPanel "
-msgstr "删除用户 - Popo PowerPanel "
+msgid "Delete User - CyberPanel"
+msgstr "删除用户 - CyberPanel"
 
 #: userManagment/templates/userManagment/deleteUser.html:14
 msgid "Websites owned by this user will automatically transfer to the root."
@@ -5866,16 +5866,16 @@ msgid " Successfully Deleted"
 msgstr " 已成功删除"
 
 #: userManagment/templates/userManagment/index.html:3
-msgid "User Functions - Popo PowerPanel "
-msgstr "用户功能 - Popo PowerPanel "
+msgid "User Functions - CyberPanel"
+msgstr "用户功能 - CyberPanel"
 
 #: userManagment/templates/userManagment/index.html:14
 msgid "Create, edit and delete users on this page."
 msgstr "在此页面创建, 编辑和删除用户。"
 
 #: userManagment/templates/userManagment/listUsers.html:3
-msgid "List Users  - Popo PowerPanel "
-msgstr "列出用户 - Popo PowerPanel "
+msgid "List Users  - CyberPanel"
+msgstr "列出用户 - CyberPanel"
 
 #: userManagment/templates/userManagment/listUsers.html:14
 msgid "List Users that you own."
@@ -5891,8 +5891,8 @@ msgid "New Owner"
 msgstr "新拥有者"
 
 #: userManagment/templates/userManagment/modifyACL.html:3
-msgid "Modify an ACL - Popo PowerPanel "
-msgstr "修改一个访问控制策略 - Popo PowerPanel "
+msgid "Modify an ACL - CyberPanel"
+msgstr "修改一个访问控制策略 - CyberPanel"
 
 #: userManagment/templates/userManagment/modifyACL.html:12
 msgid "Modify an ACL"
@@ -5903,8 +5903,8 @@ msgid "On this page you can modify an existing ACL."
 msgstr "在此页上，您可以修改现有的访问控制策略。"
 
 #: userManagment/templates/userManagment/modifyUser.html:3
-msgid "Modify User - Popo PowerPanel "
-msgstr "编辑用户 - Popo PowerPanel "
+msgid "Modify User - CyberPanel"
+msgstr "编辑用户 - CyberPanel"
 
 #: userManagment/templates/userManagment/modifyUser.html:13
 msgid "Modify existing user settings on this page."
@@ -5927,16 +5927,16 @@ msgid "Details fetched."
 msgstr "详情已更新。"
 
 #: userManagment/templates/userManagment/resellerCenter.html:3
-msgid "Reseller Center - Popo PowerPanel "
-msgstr "分销商中心 - Popo PowerPanel "
+msgid "Reseller Center - CyberPanel"
+msgstr "分销商中心 - CyberPanel"
 
 #: userManagment/templates/userManagment/resellerCenter.html:13
 msgid "Change owner of users and change websites limits."
 msgstr "改变用户的所有者和改变网站的限制。"
 
 #: userManagment/templates/userManagment/userProfile.html:3
-msgid "Account Details - Popo PowerPanel "
-msgstr "用户详情 - Popo PowerPanel "
+msgid "Account Details - CyberPanel"
+msgstr "用户详情 - CyberPanel"
 
 #: userManagment/templates/userManagment/userProfile.html:12
 #: userManagment/templates/userManagment/userProfile.html:18
@@ -5956,8 +5956,8 @@ msgid "( 0 = Unlimited )"
 msgstr "(0为无限制 )"
 
 #: websiteFunctions/templates/websiteFunctions/applicationInstaller.html:3
-msgid "Application Installer - Popo PowerPanel "
-msgstr "应用程序安装程序 - Popo PowerPanel "
+msgid "Application Installer - CyberPanel"
+msgstr "应用程序安装程序 - CyberPanel"
 
 #: websiteFunctions/templates/websiteFunctions/applicationInstaller.html:15
 msgid "One-click application install."
@@ -5968,8 +5968,8 @@ msgid "Install Joomla with(?) LSCache"
 msgstr "安装 Joomla 伴随(?) LSCache"
 
 #: websiteFunctions/templates/websiteFunctions/createWebsite.html:3
-msgid "Create New Website - Popo PowerPanel "
-msgstr "创建新网站 - Popo PowerPanel "
+msgid "Create New Website - CyberPanel"
+msgstr "创建新网站 - CyberPanel"
 
 #: websiteFunctions/templates/websiteFunctions/createWebsite.html:13
 #: websiteFunctions/templates/websiteFunctions/index.html:14
@@ -5988,8 +5988,8 @@ msgid "Do not enter WWW, it will be auto created!"
 msgstr "不要使用WWW，这将是自动创建的！"
 
 #: websiteFunctions/templates/websiteFunctions/deleteWebsite.html:3
-msgid "Delete Website - Popo PowerPanel "
-msgstr "删除网站 - Popo PowerPanel "
+msgid "Delete Website - CyberPanel"
+msgstr "删除网站 - CyberPanel"
 
 #: websiteFunctions/templates/websiteFunctions/deleteWebsite.html:13
 msgid ""
@@ -6006,8 +6006,8 @@ msgid "Successfully Deleted."
 msgstr "成功删除。"
 
 #: websiteFunctions/templates/websiteFunctions/domainAlias.html:3
-msgid "Domain Aliases - Popo PowerPanel "
-msgstr "域别名 - Popo PowerPanel "
+msgid "Domain Aliases - CyberPanel"
+msgstr "域别名 - CyberPanel"
 
 #: websiteFunctions/templates/websiteFunctions/domainAlias.html:12
 #: websiteFunctions/templates/websiteFunctions/domainAlias.html:19
@@ -6066,8 +6066,8 @@ msgid "Operation Successfull."
 msgstr "操作成功。"
 
 #: websiteFunctions/templates/websiteFunctions/index.html:3
-msgid "Website Functions - Popo PowerPanel "
-msgstr "网站功能 - Popo PowerPanel "
+msgid "Website Functions - CyberPanel"
+msgstr "网站功能 - CyberPanel"
 
 #: websiteFunctions/templates/websiteFunctions/index.html:33
 #: websiteFunctions/templates/websiteFunctions/index.html:57
@@ -6081,8 +6081,8 @@ msgid "Suspend/Unsuspend Website"
 msgstr "禁用/启用网站"
 
 #: websiteFunctions/templates/websiteFunctions/installJoomla.html:3
-msgid "Install Joomla - Popo PowerPanel "
-msgstr "安装 Joomla - Popo PowerPanel "
+msgid "Install Joomla - CyberPanel"
+msgstr "安装 Joomla - CyberPanel"
 
 #: websiteFunctions/templates/websiteFunctions/installJoomla.html:12
 msgid "Install Joomla"
@@ -6133,8 +6133,8 @@ msgid "Installation successful. Visit:"
 msgstr "安装成功。访问："
 
 #: websiteFunctions/templates/websiteFunctions/installMagento.html:3
-msgid "Install Magento - Popo PowerPanel "
-msgstr "安装 Magento - Popo PowerPanel "
+msgid "Install Magento - CyberPanel"
+msgstr "安装 Magento - CyberPanel"
 
 #: websiteFunctions/templates/websiteFunctions/installMagento.html:12
 #: websiteFunctions/templates/websiteFunctions/launchChild.html:724
@@ -6161,8 +6161,8 @@ msgstr ""
 "用。"
 
 #: websiteFunctions/templates/websiteFunctions/installPrestaShop.html:3
-msgid "Install PrestaShop - Popo PowerPanel "
-msgstr "安装 PrestaShop - Popo PowerPanel "
+msgid "Install PrestaShop - CyberPanel"
+msgstr "安装 PrestaShop - CyberPanel"
 
 #: websiteFunctions/templates/websiteFunctions/installPrestaShop.html:12
 msgid "Install PrestaShop"
@@ -6177,8 +6177,8 @@ msgid "Shop Name"
 msgstr "店铺名称"
 
 #: websiteFunctions/templates/websiteFunctions/installWordPress.html:3
-msgid "Install WordPress - Popo PowerPanel "
-msgstr "安装 WordPress - Popo PowerPanel "
+msgid "Install WordPress - CyberPanel"
+msgstr "安装 WordPress - CyberPanel"
 
 #: websiteFunctions/templates/websiteFunctions/installWordPress.html:12
 msgid "Install WordPress"
@@ -6208,7 +6208,7 @@ msgid "Magento"
 msgstr "马根托"
 
 #: websiteFunctions/templates/websiteFunctions/listCron.html:3
-msgid "Cron Management - Popo PowerPanel "
+msgid "Cron Management - CyberPanel"
 msgstr "Cron 管理器 - Cyberpanel"
 
 #: websiteFunctions/templates/websiteFunctions/listCron.html:12
@@ -6317,12 +6317,12 @@ msgid "Cron job saved"
 msgstr "定时任务以保存"
 
 #: websiteFunctions/templates/websiteFunctions/listWebsites.html:3
-msgid "Websites Hosted - Popo PowerPanel "
-msgstr "当前已创建的网站 - Popo PowerPanel "
+msgid "Websites Hosted - CyberPanel"
+msgstr "当前已创建的网站 - CyberPanel"
 
 #: websiteFunctions/templates/websiteFunctions/modifyWebsite.html:3
-msgid "Modify Website - Popo PowerPanel "
-msgstr "修改网站 - Popo PowerPanel "
+msgid "Modify Website - CyberPanel"
+msgstr "修改网站 - CyberPanel"
 
 #: websiteFunctions/templates/websiteFunctions/modifyWebsite.html:51
 msgid "Current Package:"
@@ -6341,8 +6341,8 @@ msgid "Website Details Successfully fetched"
 msgstr "网站详情已成功更新"
 
 #: websiteFunctions/templates/websiteFunctions/setupGit.html:3
-msgid "Git Management - Popo PowerPanel "
-msgstr "Git 管理器 - Popo PowerPanel "
+msgid "Git Management - CyberPanel"
+msgstr "Git 管理器 - CyberPanel"
 
 #: websiteFunctions/templates/websiteFunctions/setupGit.html:12
 msgid "Git Management"
@@ -6421,8 +6421,8 @@ msgid "Branch successfully changed."
 msgstr "分支改变成功。"
 
 #: websiteFunctions/templates/websiteFunctions/setupStaging.html:3
-msgid "Set up Staging Enviroment - Popo PowerPanel "
-msgstr "设置暂存环境 - Popo PowerPanel "
+msgid "Set up Staging Enviroment - CyberPanel"
+msgstr "设置暂存环境 - CyberPanel"
 
 #: websiteFunctions/templates/websiteFunctions/setupStaging.html:12
 msgid "Set up Staging Enviroment"
@@ -6452,8 +6452,8 @@ msgid "Start Cloning"
 msgstr "开始克隆"
 
 #: websiteFunctions/templates/websiteFunctions/sshAccess.html:3
-msgid "SSH and CageFS - Popo PowerPanel "
-msgstr "SSH 和 CageFS - Popo PowerPanel "
+msgid "SSH and CageFS - CyberPanel"
+msgstr "SSH 和 CageFS - CyberPanel"
 
 #: websiteFunctions/templates/websiteFunctions/sshAccess.html:12
 msgid "SSH Access"
@@ -6480,8 +6480,8 @@ msgid " is "
 msgstr "是"
 
 #: websiteFunctions/templates/websiteFunctions/suspendWebsite.html:3
-msgid "Suspend/Unsuspend Website - Popo PowerPanel "
-msgstr "禁用/启用网站 - Popo PowerPanel "
+msgid "Suspend/Unsuspend Website - CyberPanel"
+msgstr "禁用/启用网站 - CyberPanel"
 
 #: websiteFunctions/templates/websiteFunctions/suspendWebsite.html:14
 msgid "This page can be used to suspend/unsuspend website."
@@ -6512,8 +6512,8 @@ msgid "Successfully "
 msgstr "成功 "
 
 #: websiteFunctions/templates/websiteFunctions/syncMaster.html:3
-msgid "Sync to Master - Popo PowerPanel "
-msgstr "同步到 Master - Popo PowerPanel "
+msgid "Sync to Master - CyberPanel"
+msgstr "同步到 Master - CyberPanel"
 
 #: websiteFunctions/templates/websiteFunctions/syncMaster.html:12
 msgid "Sync your site to Master"
@@ -6562,7 +6562,7 @@ msgstr "如果您使用的是OpenLiteSpeed，则无需修改规则。"
 
 #~ msgid ""
 #~ "Could not fetch details, either LiteSpeed is not running or some error "
-#~ "occurred, please see Popo PowerPanel Main log file."
+#~ "occurred, please see CyberPanel Main log file."
 #~ msgstr "无法获取详情, LiteSpeed没有运行或者有错误发生 请检查CyberPnael日志."
 
 #, fuzzy

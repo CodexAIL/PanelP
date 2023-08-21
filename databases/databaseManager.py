@@ -192,7 +192,7 @@ class DatabaseManager:
             res = mysqlUtilities.changePassword(userName, dbPassword, None, host)
 
             if res == 0:
-                data_ret = {'status': 0, 'changePasswordStatus': 0,'error_message': "Please see Popo PowerPanel main log file."}
+                data_ret = {'status': 0, 'changePasswordStatus': 0,'error_message': "Please see CyberPanel main log file."}
                 json_data = json.dumps(data_ret)
                 return HttpResponse(json_data)
 
@@ -310,7 +310,7 @@ class DatabaseManager:
 
 def main():
 
-    parser = argparse.ArgumentParser(description='Popo PowerPanel Installer')
+    parser = argparse.ArgumentParser(description='CyberPanel Installer')
     parser.add_argument('function', help='Specific a function to call!')
 
     parser.add_argument('--userID', help='Logged in user ID')

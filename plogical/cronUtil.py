@@ -143,7 +143,7 @@ class CronUtil:
 
 def main():
 
-    parser = argparse.ArgumentParser(description='Popo PowerPanel Installer')
+    parser = argparse.ArgumentParser(description='CyberPanel Installer')
     parser.add_argument('function', help='Specific a function to call!')
 
     parser.add_argument("--externalApp", help="externalApp")

@@ -306,7 +306,7 @@ type=rpm-md
 
 def main():
 
-    parser = argparse.ArgumentParser(description='Popo PowerPanel Application Manager')
+    parser = argparse.ArgumentParser(description='CyberPanel Application Manager')
     parser.add_argument('--function', help='Function')
 
 

@@ -1,6 +1,6 @@
 {% extends "baseTemplate/index.html" %}
 {% load i18n %}
-{% block title %}{% trans "Change Popo PowerPanel Access Port - Popo PowerPanel " %}{% endblock %}
+{% block title %}{% trans "Change CyberPanel Access Port - CyberPanel" %}{% endblock %}
 {% block content %}
 
     {% load static %}
@@ -10,8 +10,8 @@
 
     <div class="container">
         <div id="page-title">
-            <h2>{% trans "Popo PowerPanel Port" %}</h2>
-            <p>{% trans "On this page you can change Popo PowerPanel port. Once port is change you will not be able to access this page, kindly open Popo PowerPanel via new port." %}</p>
+            <h2>{% trans "PopoPanelPort" %}</h2>
+            <p>{% trans "On this page you can change CyberPanel port. Once port is change you will not be able to access this page, kindly open CyberPanel via new port." %}</p>
         </div>
     </div>
 
@@ -20,7 +20,7 @@
             <div ng-controller="changePort" class="example-box-wrapper">
                 <div class="panel-body">
                     <h3 class="content-box-header">
-                        {% trans "Change Popo PowerPanel Port" %} <img ng-hide="cyberpanelLoading"
+                        {% trans "Change CyberPanel Port" %} <img ng-hide="cyberpanelLoading"
                                                                                      src="/static/images/loading.gif">
                     </h3>
 

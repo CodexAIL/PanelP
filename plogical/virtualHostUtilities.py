@@ -1471,7 +1471,7 @@ class virtualHostUtilities:
 
 
 def main():
-    parser = argparse.ArgumentParser(description='Popo PowerPanel Installer')
+    parser = argparse.ArgumentParser(description='CyberPanel Installer')
     parser.add_argument('function', help='Specific a function to call!')
     parser.add_argument('--virtualHostName', help='Domain name!')
     parser.add_argument('--administratorEmail', help='Administration Email!')

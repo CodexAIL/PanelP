@@ -1445,7 +1445,7 @@ milter_default_action = accept
 
     def fixCyberPanelPermissions(self):
 
-        ###### fix Core Popo PowerPanel permissions
+        ###### fix Core CyberPanel permissions
         command = "find /usr/local/CyberCP -type d -exec chmod 0755 {} \;"
         ProcessUtilities.executioner(command)
 

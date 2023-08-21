@@ -2721,7 +2721,7 @@ class CloudManager:
             data = {}
             data['status'] = 1
 
-            ## Popo PowerPanel DB Creds
+            ## CyberPanel DB Creds
             data['dbName'] = settings.DATABASES['default']['NAME']
             data['dbUser'] = settings.DATABASES['default']['USER']
             data['password'] = settings.DATABASES['default']['PASSWORD']

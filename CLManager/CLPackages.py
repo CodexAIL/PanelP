@@ -54,7 +54,7 @@ class CLinuxPackages:
 
 def main():
 
-    parser = argparse.ArgumentParser(description='Popo PowerPanel Container Manager')
+    parser = argparse.ArgumentParser(description='CyberPanel Container Manager')
     parser.add_argument('--userid', help='User ID')
     parser.add_argument('--package', help='Package')
     parser.add_argument('--function', help='Function')
