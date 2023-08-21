@@ -6246,7 +6246,7 @@ $parameters = array(
 
 
 def main():
-    parser = argparse.ArgumentParser(description='Popo PowerPanel Application Installer')
+    parser = argparse.ArgumentParser(description='CyberPanel Application Installer')
     parser.add_argument('function', help='Specify a function to call!')
     parser.add_argument('--tempStatusPath', help='')
     parser.add_argument('--appsSet', help='')

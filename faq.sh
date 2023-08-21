@@ -14,7 +14,7 @@ echo -e "Use Up/Down Arrow key to navigate\n"
 echo -e "press ${RED}q${NC} to exit\n"
 echo -e "Frequently Asked Question
 
-${PURPLE}1.${NC} How to reset Popo PowerPanel admin password?
+${PURPLE}1.${NC} How to reset CyberPanel admin password?
 
 execute command ${RED}adminPass YOUR_NEW_PASSWORD${NC}
 
@@ -46,7 +46,7 @@ ${RED}/etc/cyberpanel/mysqlPassword${NC}
 
 ${RED}/usr/local/CyberCP/CyberCP/settings.py${NC}
 
-otherwise Popo PowerPanel will not have access to database.
+otherwise CyberPanel will not have access to database.
 
 ${BLUE}------------------------------------------------------------${NC}
 
@@ -72,7 +72,7 @@ For LiteSpeed Enterprise, please check this post: ${GREEN}https://forums.cyberpa
 
 ${BLUE}------------------------------------------------------------${NC}
 
-${PURPLE}8.${NC} How to remove 8090 port in Popo PowerPanel URL ?
+${PURPLE}8.${NC} How to remove 8090 port in CyberPanel URL ?
 
 Please check this post ${GREEN}https://blog.cyberpanel.net/2018/12/25/how-to-remove-port-8090-from-cyberpanel/${NC}
 

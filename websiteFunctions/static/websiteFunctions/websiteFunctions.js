@@ -5583,42 +5583,42 @@ app.controller('websitePages', function ($scope, $http, $timeout, $window) {
 
     // REWRITE Template
 
-    const httpToHTTPS = `### Rewrite Rules Added by Popo PowerPanel Rewrite Rule Generator
+    const httpToHTTPS = `### Rewrite Rules Added by CyberPanel Rewrite Rule Generator
 
 RewriteEngine On
 RewriteCond %{HTTPS}  !=on
 RewriteRule ^/?(.*) https://%{SERVER_NAME}/$1 [R,L]
 
-### End Popo PowerPanel Generated Rules.
+### End CyberPanel Generated Rules.
 
 `;
 
-    const WWWToNonWWW = `### Rewrite Rules Added by Popo PowerPanel Rewrite Rule Generator
+    const WWWToNonWWW = `### Rewrite Rules Added by CyberPanel Rewrite Rule Generator
 
 RewriteEngine On
 RewriteCond %{HTTP_HOST} ^www\.(.*)$
 RewriteRule ^(.*)$ http://%1/$1 [L,R=301]
 
-### End Popo PowerPanel Generated Rules.
+### End CyberPanel Generated Rules.
 
 `;
 
-    const nonWWWToWWW = `### Rewrite Rules Added by Popo PowerPanel Rewrite Rule Generator
+    const nonWWWToWWW = `### Rewrite Rules Added by CyberPanel Rewrite Rule Generator
 
 RewriteEngine On
 RewriteCond %{HTTP_HOST} !^www\. [NC]
 RewriteRule ^(.*)$ http://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
-### End Popo PowerPanel Generated Rules.
+### End CyberPanel Generated Rules.
 
 `;
 
-    const WordpressProtect = `### Rewrite Rules Added by Popo PowerPanel Rewrite Rule Generator
+    const WordpressProtect = `### Rewrite Rules Added by CyberPanel Rewrite Rule Generator
 
 RewriteEngine On
 RewriteRule ^/(xmlrpc|wp-trackback)\.php - [F,L,NC]
 
-### End Popo PowerPanel Generated Rules.
+### End CyberPanel Generated Rules.
 
 `;
 

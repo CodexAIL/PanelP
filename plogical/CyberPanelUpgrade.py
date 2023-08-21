@@ -67,7 +67,7 @@ class UpgradeCyberPanel:
             self.PostStatus('Failed to upgrade, error %s.[404]' % (message))
             return 0
 
-        self.PostStatus('Popo PowerPanel is now on %s..,40' % (self.branch))
+        self.PostStatus('CyberPanel is now on %s..,40' % (self.branch))
 
         ##
 
@@ -107,11 +107,11 @@ class UpgradeCyberPanel:
         if not Upgrade.executioner(command, command, 1):
             self.PostStatus('Failed to execute %s. [404]' % (command))
 
-        self.PostStatus('Popo PowerPanel Upgraded/Downgraded to %s. [200]' % (self.branch))
+        self.PostStatus('CyberPanel Upgraded/Downgraded to %s. [200]' % (self.branch))
 
 
 def main():
-    parser = argparse.ArgumentParser(description='Popo PowerPanel Installer')
+    parser = argparse.ArgumentParser(description='CyberPanel Installer')
     parser.add_argument('--branch', help='Branch to install.')
     parser.add_argument('--mail', help='Upgrade mail services.')
     parser.add_argument('--dns', help='Upgrade dns services.')

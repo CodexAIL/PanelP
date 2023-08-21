@@ -12,7 +12,7 @@ class PanelInfo(CLMain):
     def emit(self):
 
         initial = {
-            "name": "Popo PowerPanel",
+            "name": "CyberPanel",
             "version": "%s.%s" % (self.version, self.build),
             "user_login_url": "https://%s:8090/" % (self.ipAddress)
         }

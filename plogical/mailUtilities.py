@@ -1146,7 +1146,7 @@ LogFile /var/log/clamav/clamav.log
                 return 1
             else:
                 writeToFile = open(mailUtilities.mailScannerInstallLogPath, 'a')
-                writeToFile.writelines("Please install SpamAssassin from Popo PowerPanel before installing MailScanner.[404]\n")
+                writeToFile.writelines("Please install SpamAssassin from CyberPanel before installing MailScanner.[404]\n")
                 writeToFile.close()
 
 
@@ -1917,7 +1917,7 @@ class MailServerManagerUtils(multi.Thread):
 
     def fixCyberPanelPermissions(self):
 
-        ###### fix Core Popo PowerPanel permissions
+        ###### fix Core CyberPanel permissions
         command = "find /usr/local/CyberCP -type d -exec chmod 0755 {} \;"
         ProcessUtilities.executioner(command)
 
@@ -2260,7 +2260,7 @@ milter_default_action = accept
 
 def main():
 
-    parser = argparse.ArgumentParser(description='Popo PowerPanel Installer')
+    parser = argparse.ArgumentParser(description='CyberPanel Installer')
     parser.add_argument('function', help='Specific a function to call!')
     parser.add_argument('--domain', help='Domain name!')
     parser.add_argument('--userName', help='Email Username!')

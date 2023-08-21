@@ -2159,7 +2159,7 @@ def getConnectionStatus(ipAddress):
 
 
 def main():
-    parser = argparse.ArgumentParser(description='Popo PowerPanel Backup Generator')
+    parser = argparse.ArgumentParser(description='CyberPanel Backup Generator')
     parser.add_argument('function', help='Specify a function to call!')
     parser.add_argument('--tempStoragePath', help='')
     parser.add_argument('--backupName', help='!')

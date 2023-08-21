@@ -3,27 +3,27 @@
 
 from django.dispatch import Signal
 
-## This event is fired before Popo PowerPanel core load the create ftp template, this special event is used
+## This event is fired before CyberPanel core load the create ftp template, this special event is used
 ## to create a beautiful names official plugin. Actual FTP account creation happens with event named preSubmitFTPCreation and postSubmitFTPCreation.
 preCreateFTPAccount = Signal(providing_args=["request"])
 
 ## See preCreateFTPAccount
 postCreateFTPAccount = Signal(providing_args=["request", "response"])
 
-## This event is fired before Popo PowerPanel core start creation of a FTP account.
+## This event is fired before CyberPanel core start creation of a FTP account.
 preSubmitFTPCreation = Signal(providing_args=["request"])
 
-## This event is fired after Popo PowerPanel core finished creation of a FTP account.
+## This event is fired after CyberPanel core finished creation of a FTP account.
 postSubmitFTPCreation = Signal(providing_args=["request", "response"])
 
-## This event is fired before Popo PowerPanel core start deletion of a FTP account.
+## This event is fired before CyberPanel core start deletion of a FTP account.
 preSubmitFTPDelete = Signal(providing_args=["request"])
 
-## This event is fired after Popo PowerPanel core finished deletion of website
+## This event is fired after CyberPanel core finished deletion of website
 postSubmitFTPDelete = Signal(providing_args=["request", "response"])
 
-## This event is fired before Popo PowerPanel core start deletion of child-domain
+## This event is fired before CyberPanel core start deletion of child-domain
 preChangePassword = Signal(providing_args=["request"])
 
-## This event is fired after Popo PowerPanel core finished deletion of child-domain
+## This event is fired after CyberPanel core finished deletion of child-domain
 postChangePassword = Signal(providing_args=["request", "response"])

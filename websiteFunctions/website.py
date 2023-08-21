@@ -3762,7 +3762,7 @@ RewriteRule .* - [F,L]
         if output.find("1,None") > -1:
             final_json = json.dumps(
                 {'status': 0, 'logstatus': 0,
-                 'error_message': "Not able to fetch logs, see Popo PowerPanel main log file, Error: %s" % (output)})
+                 'error_message': "Not able to fetch logs, see CyberPanel main log file, Error: %s" % (output)})
             return HttpResponse(final_json)
 
         ## get log ends here.
@@ -3829,7 +3829,7 @@ RewriteRule .* - [F,L]
 
         if output.find("1,None") > -1:
             final_json = json.dumps(
-                {'status': 0, 'logstatus': 0, 'error_message': "Not able to fetch logs, see Popo PowerPanel main log file!"})
+                {'status': 0, 'logstatus': 0, 'error_message': "Not able to fetch logs, see CyberPanel main log file!"})
             return HttpResponse(final_json)
 
         ## get log ends here.

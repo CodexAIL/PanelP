@@ -1,6 +1,6 @@
 {% extends "baseTemplate/index.html" %}
 {% load i18n %}
-{% block title %}{% trans "Package Manager - Popo PowerPanel " %}{% endblock %}
+{% block title %}{% trans "Package Manager - CyberPanel" %}{% endblock %}
 {% block content %}
 
     {% load static %}
@@ -425,12 +425,12 @@
                                                         <a ng-click="lockStatus(record.package, 1)" href=""><i style="margin-left: 45%;" ng-show="record.lock==0" class="glyph-icon tooltip-button demo-icon icon-unlock" title="Package is unlocked"></i></a>
                                                     </div>
                                                     <div class="col-md-3 content-box-header" id="backup-data">
-                                                        <a data-toggle="modal" data-target="#packageDetailsPopo PowerPanel "
+                                                        <a data-toggle="modal" data-target="#packageDetailsCyberPanel"
                                                            ng-click="fetchPackageDetails(record.package)"
                                                            class="btn btn-border btn-alt border-blue-alt btn-link font-blue-alt"
                                                            href="#"
                                                            title=""><span>Details</span></a>
-                                                        <div id="packageDetailsPopo PowerPanel " class="modal fade" role="dialog">
+                                                        <div id="packageDetailsCyberPanel" class="modal fade" role="dialog">
                                                             <div class="modal-dialog modal-lg">
 
                                                                 <!-- Modal content-->
@@ -474,11 +474,11 @@
                                                             </div>
                                                         </div>
                                                         <a ng-click="updatePackage(record.package)" data-toggle="modal"
-                                                           data-target="#updatePackagePopo PowerPanel " style="margin-left: 1%"
+                                                           data-target="#updatePackageCyberPanel" style="margin-left: 1%"
                                                            class="btn btn-border btn-alt border-azure btn-link font-azure"
                                                            href="#"
                                                            title=""><span>Update</span></a>
-                                                        <div id="updatePackagePopo PowerPanel " class="modal fade" role="dialog">
+                                                        <div id="updatePackageCyberPanel" class="modal fade" role="dialog">
                                                             <div class="modal-dialog modal-lg">
 
                                                                 <!-- Modal content-->

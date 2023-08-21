@@ -656,7 +656,7 @@ modsecurity_rules_file /usr/local/lsws/conf/modsec/owasp-modsecurity-crs-3.0-mas
 
 def main():
 
-    parser = argparse.ArgumentParser(description='Popo PowerPanel Installer')
+    parser = argparse.ArgumentParser(description='CyberPanel Installer')
     parser.add_argument('function', help='Specific a function to call!')
 
     parser.add_argument('--tempConfigPath', help='Temporary path to configurations data!')

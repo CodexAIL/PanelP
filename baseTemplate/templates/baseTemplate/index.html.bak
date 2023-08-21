@@ -868,7 +868,7 @@
                                                title="{% trans 'LiteSpeed Status' %}"><span>{% trans "LiteSpeed Status" %}</span></a>
                                         </li>
                                         <li><a href="{% url 'CyberPanelPort' %}"
-                                               title="{% trans 'Change Popo PowerPanel Port' %}"><span>{% trans "Change Port" %}</span></a>
+                                               title="{% trans 'Change CyberPanel Port' %}"><span>{% trans "Change Port" %}</span></a>
                                         </li>
                                         <li><a href="{% url 'packageManager' %}"
                                                title="{% trans 'Package Manager' %}"><span>{% trans "Package Manager" %}</span></a>
@@ -909,7 +909,7 @@
                                                title="{% trans 'Server Mail' %}"><span>{% trans "Server Mail" %}</span></a>
                                         </li>
                                         <li><a href="{% url 'cyberCPMainLogFile' %}"
-                                               title="{% trans 'Popo PowerPanel Main Log File' %}"><span>{% trans "Popo PowerPanel Main Log File" %}</span></a>
+                                               title="{% trans 'CyberPanel Main Log File' %}"><span>{% trans "PopoPanelMain Log File" %}</span></a>
                                         </li>
                                         <li><a href="{% url 'accessLogs' %}"
                                                title="{% trans 'Access Log' %}"><span>{% trans "Access Log" %}</span></a>
