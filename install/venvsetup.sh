@@ -851,7 +851,7 @@ if [[ $debug == "1" ]] ; then
 	/usr/local/CyberPanel/bin/python2 install.py $SERVER_IP $SERIAL_NO $LICENSE_KEY
 	fi
 	
-	if grep "PopoPanelinstallation successfully completed" /var/log/installLogs.txt > /dev/null; then 
+	if grep "PopoPanel installation successfully completed" /var/log/installLogs.txt > /dev/null; then 
 		echo -e "\nPopoPanel installation sucessfully completed..."
 else
 	echo -e "Oops, something went wrong..."
@@ -947,7 +947,7 @@ if grep "\[ERROR\] We are not able to run ./install.sh return code: 1.  Fatal er
 fi
 
 
-if grep "PopoPanelinstallation successfully completed" /var/log/installLogs.txt > /dev/null; then
+if grep "PopoPanel installation successfully completed" /var/log/installLogs.txt > /dev/null; then
 
 if [[ $DEV == "ON" ]] ; then
 python3.6 -m venv /usr/local/CyberCP

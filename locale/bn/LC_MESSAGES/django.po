@@ -1763,7 +1763,7 @@ msgstr "লাইটস্পিড স্ট্যাটাস"
 #: baseTemplate/templates/baseTemplate/index.html:757
 #: serverStatus/templates/serverStatus/cybercpmainlogfile.html:13
 #: serverStatus/templates/serverStatus/index.html:38
-msgid "PopoPanelMain Log File"
+msgid "PopoPanel Main Log File"
 msgstr "সাইবার প্যানেল মেইন লগ ফাইল"
 
 #: baseTemplate/templates/baseTemplate/index.html:760
@@ -1993,7 +1993,7 @@ msgid "Launch and set limits for the websites."
 msgstr ""
 
 #: containerization/templates/containerization/notAvailable.html:14
-msgid "PopoPanelEnt is required for Containerization."
+msgid "PopoPanel Ent is required for Containerization."
 msgstr ""
 
 #: containerization/templates/containerization/notAvailable.html:22
@@ -5217,7 +5217,7 @@ msgid "ModSecurity Audit logs"
 msgstr ""
 
 #: serverStatus/templates/serverStatus/cybercpmainlogfile.html:3
-msgid "PopoPanelMain Log File - CyberPanel"
+msgid "PopoPanel Main Log File - CyberPanel"
 msgstr ""
 
 #: serverStatus/templates/serverStatus/cybercpmainlogfile.html:14
@@ -5235,8 +5235,8 @@ msgid "View LiteSpeed status and log files."
 msgstr ""
 
 #: serverStatus/templates/serverStatus/index.html:41
-#| msgid "PopoPanelMain Log File"
-msgid "PopoPanelMain Log"
+#| msgid "PopoPanel Main Log File"
+msgid "PopoPanel Main Log"
 msgstr ""
 
 #: serverStatus/templates/serverStatus/litespeedStatus.html:3
@@ -5318,7 +5318,7 @@ msgstr "১৫ দিন ট্রায়াল পান"
 #: serverStatus/templates/serverStatus/litespeedStatus.html:175
 msgid ""
 "Note: If you select 15 days trial there is no need to enter the serial key, "
-"PopoPanelwill auto fetch 15 days trial key for you. Make sure this server "
+"PopoPanel will auto fetch 15 days trial key for you. Make sure this server "
 "have not used trial already."
 msgstr ""
 

@@ -41,6 +41,7 @@
                             </div>
                         </div>
 
+                        
 
                         <div ng-hide="sftpHide" class="form-group">
                             <label class="col-sm-3 control-label">{% trans "IP Address" %}</label>
@@ -74,7 +75,7 @@
                         </div>
 
         
-                        
+                       
 
                         <div ng-hide="sftpHide" class="form-group">
 
@@ -82,11 +83,11 @@
 
                                 <div class="div">
                                     <div>
-                                    <div>
+                                    <tr>
                                         <div>{% trans "IP" %}</div>
                                         <div>{% trans "Port" %}</div>
                                         <div>{% trans "Delete" %}</div>
-                                    </div>
+                                    </tr>
                                     </div>
                                     <tbody>
                                     <tr ng-repeat="record in records track by $index">
@@ -101,7 +102,7 @@
                             </div>
                         </div>
 
-                        
+                       
 
                         <div ng-hide="awsHide" class="form-group">
                             <label class="col-sm-3 control-label">{% trans "AWS_ACCESS_KEY_ID" %}</label>
@@ -127,13 +128,11 @@
                         </div>
                     </div>
                 </div>
-
-
-
+                        
 
                         <div ng-hide="awsHide" class="form-group">
 
-                            <div class="col-sm-12 list-database" style="margin-top: 3%;">
+                            <div class="col-sm-12" style="margin-top: 3%;">
 
                                 
                                     
@@ -144,14 +143,14 @@
                                     </div>
 
                                     
-                                    <div ng-repeat="record in records track by $index" class="panel col-md-12 email-col"
+                                    <div ng-repeat="record in records track by $index" class="panel col-md-12"
                                     style="padding: 0px; box-shadow: 0px 0px 1px 0px #888888;" >
                                         <div class="table-responsive no-gutter text-nowrap" style="overflow-x: hidden;"> 
                                         
                                          
-                                        <div class="col-md-8 content-box-header" ng-bind="record.AWS_ACCESS_KEY_ID" style="padding-left: 2%;"></div>
+                                        <div class="col-md-8 content-box-header" ng-bind="record.AWS_ACCESS_KEY_ID" style="padding-left: 3%;"></div>
                                         <div class="col-md-4 content-box-header" id="backup-data" ng-click="removeDestination('AWS', record.AWS_ACCESS_KEY_ID)"><img  src="{% static 'images/delete.png' %}"
-                                            style="display:inline-flex">
+                                            style="padding-left: 47%;">
                                        
                                          </div>
                                         </div>
@@ -163,9 +162,7 @@
                                 
                         </div>
 
-
-
-
+                        
 
                     </form>
 

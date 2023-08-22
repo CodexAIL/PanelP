@@ -94,6 +94,7 @@
                         </div>
 
 
+                        <!---- if Backup is running ----->
 
                         <div ng-hide="runningBackup" class="form-group">
                             <div class="col-sm-12">
@@ -104,6 +105,7 @@
                         </div>
 
 
+                        <!---- if Backup is running------>
 
                         <div ng-hide="backupButton" class="form-group">
                             <label class="col-sm-3 control-label"></label>
@@ -116,10 +118,11 @@
                     </div>
                 </div>
 
+                        <!------ List of records --------------->
 
                         <div class="form-group">
 
-                            <div class="col-md-12 mb-4 mt-5 list-database">
+                            <div class="col-md-12 mb-4 mt-5">
 
                                 
                                     
@@ -141,10 +144,11 @@
                                             <a class="col-md-3 content-box-header" id="backup-data" ng-click="restore(record.id)" data-toggle="modal" data-target="#settings"
                                                ng-click='deleteCLPackage()'
                                                class="btn btn-border btn-alt border-green btn-link font-green"
-                                               title=""><span id="backup-data">Restore Points</span></a>
+                                               title=""><span>Restore Points</span></a>
                                             <div id="settings" class="modal fade" role="dialog">
                                                 <div class="modal-dialog modal-lg">
 
+                                                    <!-- Modal content-->
                                                     <div class="modal-content">
                                                         <div class="modal-header">
                                                             <button type="button" class="close" data-dismiss="modal">
@@ -206,7 +210,7 @@
                                             </div>
                                         </div>
                                         <a href="" class="col-md-3 content-box-header" id="backup-data">
-                                            <div id="backup-data" ng-click="deleteBackup(record.id)"><img style="display:inline-flex"
+                                            <div ng-click="deleteBackup(record.id)"><img style="margin-left: 17rem;"
                                                     src="{% static 'images/delete.png' %}"></div>
                                         </a>
                                     
@@ -215,6 +219,7 @@
             </div>
                             
 
+                        <!------ List of records --------------->
 
 
                     </form>

@@ -1902,8 +1902,8 @@ msgstr "LiteSpeed Durumu"
 #: baseTemplate/templates/baseTemplate/index.html:757
 #: serverStatus/templates/serverStatus/cybercpmainlogfile.html:13
 #: serverStatus/templates/serverStatus/index.html:38
-msgid "PopoPanelMain Log File"
-msgstr "PopoPanelAna Günlük Dosyası"
+msgid "PopoPanel Main Log File"
+msgstr "PopoPanel Ana Günlük Dosyası"
 
 #: baseTemplate/templates/baseTemplate/index.html:760
 msgid "Services Status"
@@ -2163,7 +2163,7 @@ msgid "Launch and set limits for the websites."
 msgstr ""
 
 #: containerization/templates/containerization/notAvailable.html:14
-msgid "PopoPanelEnt is required for Containerization."
+msgid "PopoPanel Ent is required for Containerization."
 msgstr ""
 
 #: containerization/templates/containerization/notAvailable.html:22
@@ -5781,8 +5781,8 @@ msgid "ModSecurity Audit logs"
 msgstr "Güvenlik Fonksiyonları"
 
 #: serverStatus/templates/serverStatus/cybercpmainlogfile.html:3
-msgid "PopoPanelMain Log File - CyberPanel"
-msgstr "PopoPanelAna Günlük Dosyası - CyberPanel"
+msgid "PopoPanel Main Log File - CyberPanel"
+msgstr "PopoPanel Ana Günlük Dosyası - CyberPanel"
 
 #: serverStatus/templates/serverStatus/cybercpmainlogfile.html:14
 msgid ""
@@ -5802,9 +5802,9 @@ msgstr "LiteSpeed durumunu ve günlük dosyalarını görüntüleyin."
 
 #: serverStatus/templates/serverStatus/index.html:41
 #, fuzzy
-#| msgid "PopoPanelMain Log File"
-msgid "PopoPanelMain Log"
-msgstr "PopoPanelAna Günlük Dosyası"
+#| msgid "PopoPanel Main Log File"
+msgid "PopoPanel Main Log"
+msgstr "PopoPanel Ana Günlük Dosyası"
 
 #: serverStatus/templates/serverStatus/litespeedStatus.html:3
 msgid "LiteSpeed Status - CyberPanel"
@@ -5887,7 +5887,7 @@ msgstr ""
 #: serverStatus/templates/serverStatus/litespeedStatus.html:175
 msgid ""
 "Note: If you select 15 days trial there is no need to enter the serial key, "
-"PopoPanelwill auto fetch 15 days trial key for you. Make sure this server "
+"PopoPanel will auto fetch 15 days trial key for you. Make sure this server "
 "have not used trial already."
 msgstr ""
 
