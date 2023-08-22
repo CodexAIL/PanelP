@@ -995,7 +995,7 @@ msgstr "Ripristina sito web"
 #: backup/templates/backup/restore.html:15
 msgid ""
 "This page can be used to restore your websites, Backup should be generated from "
-"PopoPanelBackup generation tool, it will detect all Backups under <strong>/home/"
+"PopoPanel Backup generation tool, it will detect all Backups under <strong>/home/"
 "backup</strong>."
 msgstr ""
 "Questa pagina può essere utilizzata per ripristinare i siti web, il backup deve essere "
@@ -1753,7 +1753,7 @@ msgstr "Stato LiteSpeed"
 #: baseTemplate/templates/baseTemplate/index.html:757
 #: serverStatus/templates/serverStatus/cybercpmainlogfile.html:13
 #: serverStatus/templates/serverStatus/index.html:38
-msgid "PopoPanelMain Log File"
+msgid "PopoPanel Main Log File"
 msgstr "File di registro principale di Cyberpanel"
 
 #: baseTemplate/templates/baseTemplate/index.html:760
@@ -1979,8 +1979,8 @@ msgid "Launch and set limits for the websites."
 msgstr "Lancia e imposta i limiti per i siti web."
 
 #: containerization/templates/containerization/notAvailable.html:14
-msgid "PopoPanelEnt is required for Containerization."
-msgstr "PopoPanelEnt è richiesto per la containerizzazione."
+msgid "PopoPanel Ent is required for Containerization."
+msgstr "PopoPanel Ent è richiesto per la containerizzazione."
 
 #: containerization/templates/containerization/notAvailable.html:22
 msgid "Containerization is only available on CyberPanel Ent. "
@@ -5204,7 +5204,7 @@ msgid "ModSecurity Audit logs"
 msgstr "Registro di controllo di ModSecurity"
 
 #: serverStatus/templates/serverStatus/cybercpmainlogfile.html:3
-msgid "PopoPanelMain Log File - CyberPanel"
+msgid "PopoPanel Main Log File - CyberPanel"
 msgstr "Registro file principale di CyberPanel - CyberPanel"
 
 #: serverStatus/templates/serverStatus/cybercpmainlogfile.html:14
@@ -5224,7 +5224,7 @@ msgid "View LiteSpeed status and log files."
 msgstr "Visualizza lo stato LiteSpeed e i file di registro."
 
 #: serverStatus/templates/serverStatus/index.html:41
-msgid "PopoPanelMain Log"
+msgid "PopoPanel Main Log"
 msgstr "File di registro principale di CyberPanel"
 
 #: serverStatus/templates/serverStatus/litespeedStatus.html:3
@@ -5309,7 +5309,7 @@ msgid ""
 "already."
 msgstr ""
 "Nota: Se selezioni 15 giorni di prova non c'è bisogno di inserire la chiave seriale, "
-"PopoPanelrecupererà automaticamente la chiave di prova di 15 giorni per te. "
+"PopoPanel recupererà automaticamente la chiave di prova di 15 giorni per te. "
 "Assicurati che questo server non abbia già usato la prova."
 
 #: serverStatus/templates/serverStatus/litespeedStatus.html:193

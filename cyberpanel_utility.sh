@@ -28,7 +28,7 @@ check_OS() {
 	else
 	  echo -e "Unable to detect your system..."
 	  echo -e "\nPopoPanel is supported on x86_64 based Ubuntu 18.04, Ubuntu 20.04, Ubuntu 20.10, Ubuntu 22.04, CentOS 7, CentOS 8, AlmaLinux 8, RockyLinux 8, CloudLinux 7, CloudLinux 8, openEuler 20.03, openEuler 22.03...\n"
-  	#   Debug_Log2 "PopoPanelis supported on x86_64 based Ubuntu 18.04, Ubuntu 20.04, Ubuntu 20.10, Ubuntu 22.04, CentOS 7, CentOS 8, AlmaLinux 8, RockyLinux 8, CloudLinux 7, CloudLinux 8, openEuler 20.03, openEuler 22.03... [404]"
+  	#   Debug_Log2 "PopoPanel is supported on x86_64 based Ubuntu 18.04, Ubuntu 20.04, Ubuntu 20.10, Ubuntu 22.04, CentOS 7, CentOS 8, AlmaLinux 8, RockyLinux 8, CloudLinux 7, CloudLinux 8, openEuler 20.03, openEuler 22.03... [404]"
 	  exit
 	fi
 
@@ -156,10 +156,10 @@ if [[ $SERVER_COUNTRY == "CN" ]] ; then
 	GIT_CONTENT_URL="gitee.com/qtwrk/cyberpanel/raw"
 fi
 
-#echo -e "PopoPanelUpgrade will start in 10 seconds"
+#echo -e "PopoPanel Upgrade will start in 10 seconds"
 #echo -e "If you want to cancel, please press CTRL + C to cancel it"
 #sleep 10
-echo -e "PopoPanelupgrading..."
+echo -e "PopoPanel upgrading..."
 rm -f /usr/local/cyberpanel_upgrade.sh
 wget -O /usr/local/cyberpanel_upgrade.sh -q https://$GIT_CONTENT_URL/${BRANCH_NAME}/cyberpanel_upgrade.sh
 chmod 700 /usr/local/cyberpanel_upgrade.sh

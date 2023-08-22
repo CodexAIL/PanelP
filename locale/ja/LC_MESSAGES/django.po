@@ -1777,7 +1777,7 @@ msgstr "LiteSpeed の状態"
 #: baseTemplate/templates/baseTemplate/index.html:757
 #: serverStatus/templates/serverStatus/cybercpmainlogfile.html:13
 #: serverStatus/templates/serverStatus/index.html:38
-msgid "PopoPanelMain Log File"
+msgid "PopoPanel Main Log File"
 msgstr "Cyber​​Panel メインログファイル"
 
 #: baseTemplate/templates/baseTemplate/index.html:760
@@ -2009,8 +2009,8 @@ msgid "Launch and set limits for the websites."
 msgstr "Web サイトの起動と制限の設定をします。"
 
 #: containerization/templates/containerization/notAvailable.html:14
-msgid "PopoPanelEnt is required for Containerization."
-msgstr "PopoPanelEnt はコンテナ化に必要です。"
+msgid "PopoPanel Ent is required for Containerization."
+msgstr "PopoPanel Ent はコンテナ化に必要です。"
 
 #: containerization/templates/containerization/notAvailable.html:22
 msgid "Containerization is only available on CyberPanel Ent. "
@@ -5166,7 +5166,7 @@ msgstr "更新されました"
 
 #: pluginHolder/templates/pluginHolder/plugins.html:15
 msgid "List of installed plugins on your CyberPanel."
-msgstr "PopoPanelにインストールされているプラグインの一覧です。"
+msgstr "PopoPanel にインストールされているプラグインの一覧です。"
 
 #: pluginHolder/templates/pluginHolder/plugins.html:31
 msgid "Version"
@@ -5263,7 +5263,7 @@ msgid "ModSecurity Audit logs"
 msgstr "ModSecurity 監査ログ"
 
 #: serverStatus/templates/serverStatus/cybercpmainlogfile.html:3
-msgid "PopoPanelMain Log File - CyberPanel"
+msgid "PopoPanel Main Log File - CyberPanel"
 msgstr "Cyber​​Panel メインログファイル - Cyber​​Panel"
 
 #: serverStatus/templates/serverStatus/cybercpmainlogfile.html:14
@@ -5283,7 +5283,7 @@ msgid "View LiteSpeed status and log files."
 msgstr "LiteSpeed の状態とログファイルを表示します。"
 
 #: serverStatus/templates/serverStatus/index.html:41
-msgid "PopoPanelMain Log"
+msgid "PopoPanel Main Log"
 msgstr "Cyber​​Panel メインログ"
 
 #: serverStatus/templates/serverStatus/litespeedStatus.html:3
@@ -5366,11 +5366,11 @@ msgstr "15日間の試用版を取得する"
 #: serverStatus/templates/serverStatus/litespeedStatus.html:175
 msgid ""
 "Note: If you select 15 days trial there is no need to enter the serial key, "
-"PopoPanelwill auto fetch 15 days trial key for you. Make sure this server "
+"PopoPanel will auto fetch 15 days trial key for you. Make sure this server "
 "have not used trial already."
 msgstr ""
 "注：15日間の試用版を選択した場合、シリアルキーを入力する必要はありません。"
-"PopoPanelは15日間の試用版キーを自動的に取得します。 このサーバーがまだ試用"
+"PopoPanel は15日間の試用版キーを自動的に取得します。 このサーバーがまだ試用"
 "版を使用していないことを確認してください。"
 
 #: serverStatus/templates/serverStatus/litespeedStatus.html:193
@@ -5742,7 +5742,7 @@ msgid ""
 "Create new Access Control defination, that specifies what CyberPanel users "
 "can do."
 msgstr ""
-"PopoPanelユーザーが何ができるのかを指定する新しいアクセス制御定義を作成しま"
+"PopoPanel ユーザーが何ができるのかを指定する新しいアクセス制御定義を作成しま"
 "す。"
 
 #: userManagment/templates/userManagment/createACL.html:19

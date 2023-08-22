@@ -1500,7 +1500,7 @@ msgstr "Estado do LiteSpeed"
 #: baseTemplate/templates/baseTemplate/index.html:719
 #: serverStatus/templates/serverStatus/cybercpmainlogfile.html:13
 #: serverStatus/templates/serverStatus/index.html:38
-msgid "PopoPanelMain Log File"
+msgid "PopoPanel Main Log File"
 msgstr "Arquivo de log principal do CyberPanel"
 
 #: baseTemplate/templates/baseTemplate/index.html:722
@@ -1719,7 +1719,7 @@ msgid "Launch and set limits for the websites."
 msgstr "Criar e definir limites para os sites."
 
 #: containerization/templates/containerization/notAvailable.html:14
-msgid "PopoPanelEnt is required for Containerization."
+msgid "PopoPanel Ent is required for Containerization."
 msgstr "O CyberPanel Ent é necessário para Containerização."
 
 #: containerization/templates/containerization/notAvailable.html:22
@@ -5161,7 +5161,7 @@ msgid "ModSecurity Audit logs"
 msgstr "Funções de Segurança"
 
 #: serverStatus/templates/serverStatus/cybercpmainlogfile.html:3
-msgid "PopoPanelMain Log File - CyberPanel"
+msgid "PopoPanel Main Log File - CyberPanel"
 msgstr "Ficheiro de Log Principal do CyberPanel - CyberPanel"
 
 #: serverStatus/templates/serverStatus/cybercpmainlogfile.html:14
@@ -5182,8 +5182,8 @@ msgstr "Ver o status e arquivo de log do LiteSpeed."
 
 #: serverStatus/templates/serverStatus/index.html:41
 #, fuzzy
-#| msgid "PopoPanelMain Log File"
-msgid "PopoPanelMain Log"
+#| msgid "PopoPanel Main Log File"
+msgid "PopoPanel Main Log"
 msgstr "Principal Arquivo de Log do CyberPanel"
 
 #: serverStatus/templates/serverStatus/litespeedStatus.html:3

@@ -256,18 +256,17 @@
                                                 <div class="col-md-3 content-box-header" id="backup-data" ng-bind="record.package"></div>
                                                 <div class="col-md-3 content-box-header" id="backup-data" ng-bind="record.version"></div>
                                                 <div class="col-md-2 content-box-header" id="backup-data" ng-bind="record.upgrade"></div>
-                                                <div class="col-md-2 content-box-header" id="backups-data" style="display: flex; margin-top: 0%;">
-                                                    <a ng-click="lockStatus(record.package, 0)"  href=""><i ng-show="record.lock==1" class="glyph-icon tooltip-button demo-icon icon-lock" title="Packed is locked for upgrade."></i></a>
-                                                    <a ng-click="lockStatus(record.package, 1)"  href=""><i ng-show="record.lock==0" class="glyph-icon tooltip-button demo-icon icon-unlock" title="Package is unlocked"></i></a>
+                                                <div class="col-md-2 content-box-header" id="backup-data" style="margin-top: 0%;">
+                                                    <a ng-click="lockStatus(record.package, 0)" href=""><i style="margin-left: 45%;" ng-show="record.lock==1" class="glyph-icon tooltip-button demo-icon icon-lock" title="Packed is locked for upgrade."></i></a>
+                                                    <a ng-click="lockStatus(record.package, 1)" href=""><i style="margin-left: 45%;" ng-show="record.lock==0" class="glyph-icon tooltip-button demo-icon icon-unlock" title="Package is unlocked"></i></a>
                                                 </div>
-                                                
                                                 <div class="col-md-2 content-box-header" id="backup-data">
                                                     <a data-toggle="modal" data-target="#packageDetailsInstalled"
                                                        ng-click="fetchPackageDetails(record.package)"
                                                        class="btn btn-border btn-alt border-blue-alt btn-link font-blue-alt"
                                                        href="#"
                                                        title=""><span>Details</span></a>
-                                                    <div i  d="packageDetailsInstalled" class="modal fade" role="dialog">
+                                                    <div id="packageDetailsInstalled" class="modal fade" role="dialog">
                                                         <div class="modal-dialog modal-lg">
 
                                                             <!-- Modal content-->

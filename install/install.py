@@ -2586,7 +2586,7 @@ echo $oConfig->Save() ? 'Done' : 'Error';
 
     checks.fixCyberPanelPermissions()
 
-    logging.InstallLog.writeToFile("PopoPanelinstallation successfully completed!,80")
+    logging.InstallLog.writeToFile("PopoPanel installation successfully completed!,80")
 
 
 if __name__ == "__main__":

@@ -271,7 +271,7 @@ elif grep -q -E "Ubuntu 18.04|Ubuntu 20.04|Ubuntu 20.10" /etc/os-release ; then
 else
   echo -e "Unable to detect your system..."
   echo -e "\nPopoPanel is supported on Ubuntu 18.04 x86_64, Ubuntu 20.04 x86_64, Ubuntu 20.10 x86_64, CentOS 7.x, CentOS 8.x, AlmaLinux 8.x, RockyLinux 8.x, CloudLinux 7.x, CloudLinux 8.x...\n"
-  Debug_Log2 "PopoPanelis supported on Ubuntu 18.04 x86_64, Ubuntu 20.04 x86_64, Ubuntu 20.10 x86_64, CentOS 7.x, CentOS 8.x, AlmaLinux 8.x, RockyLinux 8.x, CloudLinux 7.x, CloudLinux 8.x... [404]"
+  Debug_Log2 "PopoPanel is supported on Ubuntu 18.04 x86_64, Ubuntu 20.04 x86_64, Ubuntu 20.10 x86_64, CentOS 7.x, CentOS 8.x, AlmaLinux 8.x, RockyLinux 8.x, CloudLinux 7.x, CloudLinux 8.x... [404]"
   exit
 fi
 
@@ -296,9 +296,9 @@ Check_Virtualization() {
 echo -e "Checking virtualization type..."
 #if hostnamectl | grep -q "Virtualization: lxc"; then
 #  echo -e "\nLXC detected..."
-#  echo -e "PopoPaneldoes not support LXC"
+#  echo -e "PopoPanel does not support LXC"
 #  echo -e "Exiting..."
-#  Debug_Log2 "PopoPaneldoes not support LXC.. [404]"
+#  Debug_Log2 "PopoPanel does not support LXC.. [404]"
 #  exit
 #fi
 #remove per https://github.com/codexail/cyberpanel/issues/589
@@ -1312,7 +1312,7 @@ Main_Installation() {
 Debug_Log2 "Starting main installation..,30"
 if [[ -d /usr/local/CyberCP ]] ; then
   echo -e "\n CyberPanel already installed, exiting..."
-  Debug_Log2 "PopoPanelalready installed, exiting... [404]"
+  Debug_Log2 "PopoPanel already installed, exiting... [404]"
   exit
 fi
 
@@ -1385,7 +1385,7 @@ fi
 /usr/local/CyberPanel/bin/python install.py "${Final_Flags[@]}"
 
 
-if grep "PopoPanelinstallation successfully completed" /var/log/installLogs.txt >/dev/null; then
+if grep "PopoPanel installation successfully completed" /var/log/installLogs.txt >/dev/null; then
   echo -e "\nPopoPanel installation sucessfully completed...\n"
   Debug_Log2 "Main installation completed...,70"
 else

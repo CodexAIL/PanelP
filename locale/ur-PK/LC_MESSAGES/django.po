@@ -1124,7 +1124,7 @@ msgstr ""
 #: serverStatus/templates/serverStatus/cybercpmainlogfile.html:15
 #: serverStatus/templates/serverStatus/index.html:37
 #: serverStatus/templates/serverStatus/index.html:39
-msgid "PopoPanelMain Log File"
+msgid "PopoPanel Main Log File"
 msgstr ""
 
 #: baseTemplate/templates/baseTemplate/index.html:489
@@ -2769,7 +2769,7 @@ msgid "ModSecurity Audit logs"
 msgstr ""
 
 #: serverStatus/templates/serverStatus/cybercpmainlogfile.html:3
-msgid "PopoPanelMain Log File - CyberPanel"
+msgid "PopoPanel Main Log File - CyberPanel"
 msgstr ""
 
 #: serverStatus/templates/serverStatus/cybercpmainlogfile.html:16
