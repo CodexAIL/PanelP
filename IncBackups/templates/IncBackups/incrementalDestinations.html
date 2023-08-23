@@ -41,7 +41,7 @@
                             </div>
                         </div>
 
-                        
+                        <!--- SFTP --->
 
                         <div ng-hide="sftpHide" class="form-group">
                             <label class="col-sm-3 control-label">{% trans "IP Address" %}</label>
@@ -75,7 +75,10 @@
                         </div>
 
         
-                       
+                        <!--- SFTP --->
+
+
+                        <!------ List of Destinations --------------->
 
                         <div ng-hide="sftpHide" class="form-group">
 
@@ -102,7 +105,12 @@
                             </div>
                         </div>
 
-                       
+                        <!------ List of records --------------->
+
+
+                        <!--- SFTP  End --->
+
+                        <!--- AWS Start --->
 
                         <div ng-hide="awsHide" class="form-group">
                             <label class="col-sm-3 control-label">{% trans "AWS_ACCESS_KEY_ID" %}</label>
@@ -128,7 +136,12 @@
                         </div>
                     </div>
                 </div>
-                        
+                        <!--- SFTP --->
+
+
+
+
+                        <!------ List of Destinations --------------->
 
                         <div ng-hide="awsHide" class="form-group">
 
@@ -143,18 +156,13 @@
                                     </div>
 
                                     
-                                    <div ng-repeat="record in records track by $index" class="panel col-md-12"
-                                    style="padding: 0px; box-shadow: 0px 0px 1px 0px #888888;" >
-                                        <div class="table-responsive no-gutter text-nowrap" style="overflow-x: hidden;"> 
-                                        
-                                         
+                                    <div ng-repeat="record in records track by $index" cCCCZZZ 
+                                         <div class="col-md-12">
                                         <div class="col-md-8 content-box-header" ng-bind="record.AWS_ACCESS_KEY_ID" style="padding-left: 3%;"></div>
                                         <div class="col-md-4 content-box-header" id="backup-data" ng-click="removeDestination('AWS', record.AWS_ACCESS_KEY_ID)"><img  src="{% static 'images/delete.png' %}"
                                             style="padding-left: 47%;">
-                                       
-                                         </div>
                                         </div>
-
+                                         </div>
                                         </div>
 
                                     </div>
@@ -162,7 +170,11 @@
                                 
                         </div>
 
-                        
+                        <!------ List of records --------------->
+
+
+                        <!--- AWS  End --->
+
 
                     </form>
 

@@ -8,8 +8,6 @@
     <!-- Current language: {{ LANGUAGE_CODE }} -->
 
     <div class="container">
-    </div>
-
         <div id="page-title">
             <h2 id="domainNamePage"><h2>{% trans "Configure Plugins" %}</h2>
                 <a class="pull-right btn btn-primary" href="{% url "Addnewplugin" %}">{% trans "Create New Bucket" %}</a>
@@ -23,51 +21,46 @@
                                                       src="{% static 'images/loading.gif' %}">
                 </h3>
                 <div class="example-box-wrapper">
-                </div>
-            </div>
 
                     <!------ List of records --------------->
 
-                    
-                        
-                        <div class="col-md-12 content-box-header" id="backup-data">
-                            <div class="col-md-4 content-box-header" id="backup-data"
+                    <table class="table table-hover dataTable no-footer" id="basicTable" role="grid">
+                        <thead>
+                        <tr role="row" class="plans-head">
+                            <th class="sorting_desc" tabindex="0"
                                 aria-controls="basicTable" rowspan="1" colspan="1"
                                 aria-sort="descending"
                                 aria-label="Title: activate to sort column ascending">ID
-                        </div>
-                            <div class="col-md-4 content-box-header" id="backup-data"
+                            </th>
+                            <th class="sorting" tabindex="0"
                                 aria-controls="basicTable" rowspan="1" colspan="1"
                                 aria-label="Places: activate to sort column ascending">File name
-                            </div>
+                            </th>
 
-                            <div class="col-md-4 content-box-header" id="backup-data"
+                            <th class="sorting" tabindex="0"
                                 aria-controls="basicTable" rowspan="1" colspan="1"
                                 aria-label="Places: activate to sort column ascending">Action
-                            </div>
+                            </th>
 
 
-                        </div>
-                        
+                        </tr>
+                        </thead>
 
-                        
+                        <tbody>
                         {% for sub in Selectedplugins %}
 
-                            <div class="panel col-md-12"
-                            style="padding: 0px; box-shadow: 0px 0px 1px 0px #888888;">
-                            <div class="table-responsive no-gutter text-nowrap" style="overflow-x: hidden;">
-                                <div class="col-md-4 content-box-header" id="backup-data">
+                            <tr role="row" class="odd">
+                                <td class="v-align-middle sorting_1">
                                     <p>{{ sub.id }}</p>
 
-                                </div>
-                                <div class="col-md-4 content-box-header" id="backup-data">
+                                </td>
+                                <td class="v-align-middle">
                                     <p>{{ sub.Name }}</p>
-                                </div>
-                                <div class="col-md-4 content-box-header" id="backup-data" >
-                                    <div class="col-md-2" style="margin-left: 30%;">
+                                </td>
+                                <td class="row">
+                                    <div class="col-md-2">
                                         <a href="{% url 'EidtPlugin' %}?ID={{ sub.id }}"
                                            type="button"
-                                           
                                            class="btn btn-border btn-alt border-green btn-link font-green">
                                             Edit
                                         </a>
@@ -85,21 +78,23 @@
                                         </button>
 
                                     </div>
-                                </div>
+                                </td>
 
 
-                            </div>
-                            </div>
+                            </tr>
                         {% endfor %}
 
-                        
-                    
+                        </tbody>
+                    </table>
 
                     <!------ List of records --------------->
 
+                </div>
+            </div>
         </div>
 
 
+    </div>
 
     <!------------Modal---->
 

@@ -12,7 +12,6 @@
         <div id="page-title">
             <h2>{% trans "List Databases" %}
                 <a class="pull-right btn btn-primary" href="{% url "createDatabase" %}">{% trans "Create Database" %}</a>
-                <a class="pull-right btn btn-primary" href="{% url "deleteDatabase" %}" style="margin-right: 1%;">{% trans "Delete Database" %}</a>
             </h2>
             <p>{% trans "List Databases or change diveir passwords." %}</p>
         </div>
@@ -101,7 +100,7 @@
 
                         <div ng-hide="dbAccounts" class="form-group">
                                 
-                                    <div class="col-md-12 list-database">
+                                    <div class="col-md-12">
                                     
                                         <div class="col-md-2 content-box-header" id="packages-data">{% trans "ID" %}</div>
                                         <div class="col-md-2 content-box-header" id="packages-data">{% trans "Database Name" %}</div>
@@ -114,7 +113,7 @@
                                 
                                     <div ng-repeat="record in records track by $index" style="padding: 0px; box-shadow: 0px 0px 1px 0px #888888; padding: 10px;" class="panel col-md-12">
                                         <div class="">
-                                        
+                                        <div class="table-responsive no-gutter text-nowrap" style="overflow-x: hidden;">
                                         <div ng-bind="record.id" class=" col-md-2 content-box-header" id="database-data" style="margin-left: -0.5%;"></div>
                                         <div ng-bind="record.dbName" class="col-md-2 content-box-header" id="database-data"></div>
                                         <div ng-bind="record.dbUser" class="col-md-2 content-box-header" id="database-data"></div>

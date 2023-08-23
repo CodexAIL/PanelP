@@ -46,7 +46,7 @@
                 </div>
 
             </div>
-
+            <!---- if Backup is running ----->
 
             <div ng-hide="runningBackup" class="form-group">
 
@@ -72,12 +72,12 @@
                 </div>
 
             
-           
+            <!---- if Backup is running------>
 
             <div class="form-group destinationHide">
                     <label class="col-sm-3 control-label"></label>
                     <div class="col-sm-4">
-                         <button type="button" ng-click="createBackup()" class="btn btn-primary btn-lg btn-block" id="createBackup">{% trans "Create Backup" %}</button>
+                         <button type="button" ng-click="createBackup()" class="btn btn-primary btn-lg btn-block">{% trans "Create Backup" %}</button>
                     </div>
             </div>
 
@@ -89,10 +89,10 @@
             </div>
         </div>
 
-             
+             <!------ List of records --------------->
 
                 <div class="form-group" style="margin-top: 1%;">
-                        <div class="col-md-12 list-database">                              
+                        <div class="col-md-12">                              
                                 <div class="col-md-2 content-box-header">{% trans "ID" %}</div>
                                 <div class="col-md-3 content-box-header" id="packages-data">{% trans "File" %}</div>
                                 <div class="col-md-2 content-box-header" id="packages-data">{% trans "Date" %}</div>
@@ -121,7 +121,7 @@
                 </div>
                 
 
-            
+            <!------ List of records --------------->
 
 
                 <div class="form-group">

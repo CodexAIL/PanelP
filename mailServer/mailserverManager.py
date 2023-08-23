@@ -666,9 +666,6 @@ class MailServerManager(multi.Thread):
                 command = 'chown cyberpanel:cyberpanel -R /usr/local/CyberCP/lib/python3.8/site-packages/tldextract/.suffix_cache'
                 ProcessUtilities.executioner(command)
 
-                command = 'chown cyberpanel:cyberpanel /usr/local/CyberCP/lib/python3.10/site-packages/tldextract/.suffix_cache/urls/*.tldextract.json'
-                ProcessUtilities.executioner(command, None, True)
-                
                 import tldextract
 
                 extractDomain = tldextract.extract(domainName)
@@ -734,9 +731,6 @@ class MailServerManager(multi.Thread):
                 command = 'chown cyberpanel:cyberpanel -R /usr/local/CyberCP/lib/python3.8/site-packages/tldextract/.suffix_cache'
                 ProcessUtilities.executioner(command)
 
-                command = 'chown cyberpanel:cyberpanel /usr/local/CyberCP/lib/python3.10/site-packages/tldextract/.suffix_cache/urls/*.tldextract.json'
-                ProcessUtilities.executioner(command, None, True)
-                
                 import tldextract
 
                 extractDomain = tldextract.extract(domainName)

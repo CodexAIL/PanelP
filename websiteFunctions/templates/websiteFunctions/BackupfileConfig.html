@@ -8,15 +8,13 @@
     <!-- Current language: {{ LANGUAGE_CODE }} -->
 
     <div class="container">
-    </div>
-
         <div id="page-title">
             <h2>{% trans "Backup File Configurations" %}</h2>
         </div>
 
 
-        <div ng-controller="BackupSchedule" >
-            <div class="panel-body panel">
+        <div ng-controller="BackupSchedule" class="panel">
+            <div class="panel-body">
                 <h3 class="content-box-header">
                     {% trans " Schedule Backups" %} <img ng-hide="BackupScheduleLoading"
                                                          src="{% static 'images/loading.gif' %}">
@@ -82,60 +80,55 @@
                         </div>
                     </div>
                 </form>
-            </div>
-
                 <h3 class="content-box-header">
                     {% trans "Configure Backup Schedules" %} </h3>
-                
-                    
-                    <div class="col-md-12 mb-5">
-                        <div class="col-md-1 content-box-header" id="backup-data">ID</div>
-                        <div class="col-md-2 content-box-header" id="backup-data">Schedule Name</div>
-                        <div class="col-md-2 content-box-header" id="backup-data">Backup Frequency</div>
-                        <div class="col-md-2 content-box-header" id="backup-data">Backup File Retention</div>
-                        <div class="col-md-1 content-box-header" id="backup-data">Last Run</div>
-                    
-                        <div class="col-md-2 content-box-header" id="backup-data">Remote Configuration</div>
-                        <div class="col-md-2 content-box-header" id="backup-data">Action</div>
-                    </div>
-                    
+                <table class="table-spacing" style="width: 100%">
+                    <thead style="color: white; background-color: #0a6ebd">
+                    <tr>
+                        <th style="padding: 18px; color: white; width: 161px; font-size: 12px;">ID</th>
+                        <th style="padding: 18px; color: white; width: 161px; font-size: 12px;">Schedule Name</th>
+                        <th style="padding: 18px; color: white; width: 161px; font-size: 12px;">Backup Frequency</th>
+                        <th style="padding: 18px; color: white; width: 161px; font-size: 12px;">Backup File Retention
+                        </th>
+                        <th style="padding: 18px; color: white; width: 161px; font-size: 12px;">Last Run</th>
+                        <th style="padding: 18px; color: white; width: 161px; font-size: 12px;">Remote Configuration
+                        </th>
+                        <th style="padding: 18px; color: white; width: 161px; font-size: 12px;">Action</th>
+                    </tr>
+                    </thead>
 
-                    
+                    <tbody>
                     {% for sub in Backupschedule %}
-                        <div class="panel col-md-12"
-                        style="padding: 0px; box-shadow: 0px 0px 1px 0px #888888;" >
-                            <div class="table-responsive no-gutter text-nowrap" style="overflow-x: hidden;"> 
-                            <div class="col-md-1 content-box-header" id="backup-data">{{ sub.id }}</div>
-                            <div class="col-md-2 content-box-header" id="backup-data">{{ sub.Name }}</div>
-                            <div class="col-md-2 content-box-header" id="backup-data">{{ sub.Frequency }}</div>
-                            <div class="col-md-2 content-box-header" id="backup-data">{{ sub.Retention }}</div>
-                            <div class="col-md-1 content-box-header" id="backup-data">{{ sub.LastRun }}</div>
-                            <div class="col-md-2 content-box-header" id="backup-data">{{ sub.RemoteConfiguration }}</div>
-                            <div class="col-md-2 content-box-header" id="backup-data">
+                        <tr>
+                            <td style="padding: 13px;">{{ sub.id }}</td>
+                            <td style="padding: 13px;">{{ sub.Name }}</td>
+                            <td style="padding: 13px;">{{ sub.Frequency }}</td>
+                            <td style="padding: 13px;">{{ sub.Retention }}</td>
+                            <td style="padding: 13px;">{{ sub.LastRun }}</td>
+                            <td style="padding: 13px;">{{ sub.RemoteConfiguration }}</td>
+                            <td style="padding: 13px;">
                                 <button
                                         aria-label=""
                                         onclick="DeleteBackupfileConfigNow('{% url 'BackupfileConfig' %}?ID={{ RemoteConfigID }}&DeleteID={{ sub.id }}')"
-                                        type="button" class="btn btn-border btn-alt btn-primary btn-link ">
+                                        type="button" class="btn btn-border btn-alt border-red btn-link font-red">
                                     Delete
                                 </button>
                                 <button ng-click="getupdateid({{ sub.id }})" data-toggle="modal" data-target="#EidtRemoteShedule"
                                         aria-label=""
-                                        type="button" class="btn btn-border btn-alt btn-primary btn-link ">
+                                        type="button" class="btn btn-border btn-alt border-yellow btn-link font-yellow">
                                     Eidt
                                 </button>
                                 <a href="{% url 'AddRemoteBackupsite' %}?ID={{ sub.id }}"
                                    aria-label=""
-                                   
-                                   type="button" class="btn btn-border btn-alt btn-primary btn-link ">
-                                    Add WP Sites
+                                   style="margin-top: 5px;"
+                                   type="button" class="btn btn-border btn-alt border-green btn-link font-green">
+                                    Add WordPress Sites
                                 </a>
-                            </div>
-                        </div>
-
-                        </div>
+                            </td>
+                        </tr>
                     {% endfor %}
-                    
-                
+                    </tbody>
+                </table>
 
                 <div id="EidtRemoteShedule" class="modal fade" role="dialog">
                     <div class="modal-dialog">
@@ -199,9 +192,11 @@
                     </div>
                 </div>
 
+            </div>
         </div>
 
 
+    </div>
 
 
 {% endblock %}

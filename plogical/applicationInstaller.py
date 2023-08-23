@@ -31,7 +31,7 @@ class ApplicationInstaller(multi.Thread):
     LOCALHOST = 'localhost'
     REMOTE = 0
     PORT = '3306'
-    MauticVersion = '4.4.9'
+    MauticVersion = '4.1.2'
     PrestaVersion = '1.7.8.3'
 
     def __init__(self, installApp, extraArgs):
@@ -99,29 +99,13 @@ class ApplicationInstaller(multi.Thread):
             password = self.extraArgs['password']
             email = self.extraArgs['email']
 
+            FNULL = open(os.devnull, 'w')
+
             ## Open Status File
 
             statusFile = open(tempStatusPath, 'w')
             statusFile.writelines('Setting up paths,0')
             statusFile.close()
-            
-            ### lets first find php path
-
-            from plogical.phpUtilities import phpUtilities
-
-            vhFile = f'/usr/local/lsws/conf/vhosts/{domainName}/vhost.conf'
-
-            phpPath = phpUtilities.GetPHPVersionFromFile(vhFile)
-            
-            ### basically for now php 8.0 is being checked
-
-            if not os.path.exists(phpPath):
-                statusFile = open(tempStatusPath, 'w')
-                statusFile.writelines('PHP 8.0 missing installing now..,20')
-                statusFile.close()
-                phpUtilities.InstallSaidPHP('80')
-            
-            FNULL = open(os.devnull, 'w')
 
             finalPath = ''
             self.permPath = ''
@@ -258,7 +242,7 @@ $parameters = array(
             command = 'cp %s %s/app/config/local.php' % (localDB, finalPath)
             ProcessUtilities.executioner(command, externalApp)
 
-            command = f"{phpPath} bin/console mautic:install http://%s -f" % (finalURL)
+            command = "/usr/local/lsws/lsphp74/bin/php bin/console mautic:install http://%s -f" % (finalURL)
             result = ProcessUtilities.outputExecutioner(command, externalApp, None, finalPath)
 
             if result.find('Install complete') == -1:
@@ -544,33 +528,6 @@ $parameters = array(
             statusFile.writelines('Setting up paths,0')
             statusFile.close()
 
-            #### Before installing wordpress change php to 8.0
-
-            from plogical.virtualHostUtilities import virtualHostUtilities
-
-            completePathToConfigFile = f'/usr/local/lsws/conf/vhosts/{domainName}/vhost.conf'
-
-            execPath = "/usr/local/CyberCP/bin/python " + virtualHostUtilities.cyberPanel + "/plogical/virtualHostUtilities.py"
-            execPath = execPath + " changePHP --phpVersion 'PHP 8.0' --path " + completePathToConfigFile
-            ProcessUtilities.executioner(execPath)
-
-            ### lets first find php path
-
-            from plogical.phpUtilities import phpUtilities
-
-            vhFile = f'/usr/local/lsws/conf/vhosts/{domainName}/vhost.conf'
-
-            phpPath = phpUtilities.GetPHPVersionFromFile(vhFile)
-
-            ### basically for now php 8.0 is being checked
-
-            if not os.path.exists(phpPath):
-                statusFile = open(tempStatusPath, 'w')
-                statusFile.writelines('PHP 8.0 missing installing now..,20')
-                statusFile.close()
-                phpUtilities.InstallSaidPHP('80')
-
-            
             finalPath = ''
             self.permPath = ''
 
@@ -627,8 +584,8 @@ $parameters = array(
                 dbName, dbUser, dbPassword = self.dbCreation(tempStatusPath, website)
                 self.permPath = '/home/%s/public_html' % (website.domain)
 
-            #php = PHPManager.getPHPString(website.phpSelection)
-            FinalPHPPath = phpPath
+            php = PHPManager.getPHPString(website.phpSelection)
+            FinalPHPPath = '/usr/local/lsws/lsphp%s/bin/php' % (php)
 
             ## Security Check
 
@@ -1735,21 +1692,20 @@ $parameters = array(
 
             DataToPass['domainName'] = self.data['domainName']
             DataToPass['adminEmail'] = self.data['adminEmail']
-            DataToPass['phpSelection'] = "PHP 8.0"
+            DataToPass['phpSelection'] = "PHP 7.4"
             DataToPass['websiteOwner'] = self.data['websiteOwner']
             DataToPass['package'] = self.data['package']
             DataToPass['ssl'] = 1
             DataToPass['dkimCheck'] = 0
             DataToPass['openBasedir'] = 0
             DataToPass['mailDomain'] = 0
-            DataToPass['apacheBackend'] = self.extraArgs['apacheBackend']
             UserID = self.data['adminID']
 
             try:
                 website = Websites.objects.get(domain=DataToPass['domainName'])
 
                 if website.phpSelection == 'PHP 7.3':
-                    website.phpSelection = 'PHP 8.0'
+                    website.phpSelection = 'PHP 7.4'
                     website.save()
 
                 if ACLManager.checkOwnership(website.domain, self.extraArgs['adminID'],

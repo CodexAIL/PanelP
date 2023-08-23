@@ -46,11 +46,6 @@ urlpatterns = [
     url(r'^WPCreateBackup', views.WPCreateBackup, name='WPCreateBackup'),
     url(r'^RestoreWPbackupNow', views.RestoreWPbackupNow, name='RestoreWPbackupNow'),
     url(r'^dataintegrity', views.dataintegrity, name='dataintegrity'),
-    url(r'^handleSuccessHttp', views.handleSuccessHttp, name='handleSuccessHttp'),
-    url(r'^handleSuccess', views.handleSuccess, name='handleSuccess'),
-    
-    
-    url(r'^handleCheckbox', views.handleCheckbox, name='handleCheckbox'),
     url(r'^installwpcore', views.installwpcore, name='installwpcore'),
     url(r'^SaveBackupConfig', views.SaveBackupConfig, name='SaveBackupConfig'),
     url(r'^SaveBackupSchedule', views.SaveBackupSchedule, name='SaveBackupSchedule'),
@@ -127,7 +122,7 @@ urlpatterns = [
     url(r'^changeOpenBasedir$', views.changeOpenBasedir, name="changeOpenBasedir"),
 
     ## WP Install
-    
+
     url(r'^(?P<domain>(.*))/wordpressInstall$', views.wordpressInstall, name='wordpressInstall'),
     url(r'^installWordpressStatus$', views.installWordpressStatus, name="installWordpressStatus"),
     url(r'^installWordpress$', views.installWordpress, name='installWordpress'),

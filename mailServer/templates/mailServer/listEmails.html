@@ -14,12 +14,10 @@
         <div id="page-title">
             <h2>{% trans "List Email Accounts" %} - <a  target="_blank" href="https://go.cyberpanel.net/DebugEmail" style="height: 23px;line-height: 21px;" class="btn btn-border btn-alt border-red btn-link font-red" title=""><span>{% trans "Debug Email Issues" %}</span></a>
                 <a class="pull-right btn btn-primary" href="{% url "createEmailAccount" %}">{% trans "Create Email" %}</a>
-                <a class="pull-right btn btn-primary mr-4" href="/email/deleteEmails">{% trans "Delete Email" %}</a>
-
             </h2>
             <p>{% trans "List Emails Accounts. Change diveir passwords or delete divem." %}</p>
         </div>
-        <div ng-controller="listEmails" class="">
+        <div ng-controller="listEmails" class="panel">
             <div class="panel-body">
                 <h3 class="title-hero">
                     {% trans "List Email Accounts" %} <img ng-hide="cyberpanelLoading"
@@ -60,9 +58,8 @@
                                 </div>
                             </div>
                         
-                        </form>
 
-                            
+                            <!------ List of records --------------->
 
                             <div ng-hide="emailsAccounts" class="form-group">
 
@@ -74,13 +71,13 @@
                                         <button style="margin-bottom: 2%"  ng-click='fixMailSSL()' class="btn btn-primary">Fix Now</button>
                                     </a>
                                 </div>
-                                <div class="custom-row" style="display: flex; ">
-                            <div class="col-md-12" style="display: flex; flex-wrap: wrap;">
-                                <div class="col-md-4 ">
+                                <div class="custom-row" >
+                            <div class="col-md-12" style="display: flex; ">
+                                <div class="col-md-4">
 
                                     <h4>{% trans "Details To Configure Mail Clients" %}</h4>
 
-                                    <table class="table email-col">
+                                    <table class="table">
                                         
                                         <!-- <div class="col-md-4"> -->
                                             <div class="col-md-6 content-box-header" id="backup-data">{% trans "POP3" %}</div>
@@ -88,38 +85,38 @@
                                         <!-- </div> -->
                                             
                                     
-                                    <div class="panel col-md-12 "
+                                    <div class="panel col-md-12"
                                     style="padding: 0px; box-shadow: 0px 0px 1px 0px #888888;" >
-                                        <div class="table-responsive no-gutter " style="overflow-x: auto;"> 
+                                        <div class="table-responsive no-gutter text-nowrap" style="overflow-x: hidden;"> 
                                         <div>
-                                            <div class="col-md-6 content-box-header " id="backup-data">{% trans "Server Hostname" %}</div>
-                                            <div class="col-md-6 content-box-header list-email" id="backup-data">{$ serverHostname $}</div>
+                                            <div class="col-md-6 content-box-header" id="backup-data">{% trans "Server Hostname" %}</div>
+                                            <div class="col-md-6 content-box-header" id="backup-data">{$ serverHostname $}</div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="panel col-md-12"
                                 style="padding: 0px; box-shadow: 0px 0px 1px 0px #888888;" >
-                                    <div class="table-responsive no-gutter " style="overflow-x: auto;"> 
-                                        <div>
-                                            <div class="col-md-6 content-box-header " id="backup-data">{% trans "Port" %}</div>
-                                            <div class="col-md-6 content-box-header list-email" id="backup-data">110</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="panel col-md-12"
-                                style="padding: 0px; box-shadow: 0px 0px 1px 0px #888888;" >
-                                    <div class="table-responsive no-gutter" style="overflow-x: auto;"> 
+                                    <div class="table-responsive no-gutter text-nowrap" style="overflow-x: hidden;"> 
                                         <div>
                                             <div class="col-md-6 content-box-header" id="backup-data">{% trans "Port" %}</div>
-                                            <div class="col-md-6 content-box-header list-email" id="backup-data">995 (SSL)</div>
+                                            <div class="col-md-6 content-box-header" id="backup-data">110</div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="panel col-md-12"
                                 style="padding: 0px; box-shadow: 0px 0px 1px 0px #888888;" >
-                                    <div class="table-responsive no-gutter" style="overflow-x: auto;"> 
+                                    <div class="table-responsive no-gutter text-nowrap" style="overflow-x: hidden;"> 
                                         <div>
-                                            <div class="col-md-6 content-box-header " id="backup-data">{% trans "SSL" %}</div>
+                                            <div class="col-md-6 content-box-header" id="backup-data">{% trans "Port" %}</div>
+                                            <div class="col-md-6 content-box-header" id="backup-data">995 (SSL)</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel col-md-12"
+                                style="padding: 0px; box-shadow: 0px 0px 1px 0px #888888;" >
+                                    <div class="table-responsive no-gutter text-nowrap" style="overflow-x: hidden;"> 
+                                        <div>
+                                            <div class="col-md-6 content-box-header" id="backup-data">{% trans "SSL" %}</div>
                                             <div class="col-md-6 content-box-header" id="backup-data">STARTTLS</div>
                                         </div>
                                         </div>
@@ -128,7 +125,7 @@
 
                                     <div class="col-md-12">
     
-                                        <table class="table email-col">
+                                        <table class="table">
                                             
                                             <!-- <div class="col-md-4"> -->
                                                 <div class="col-md-6 content-box-header" id="backup-data">{% trans "IMAP" %}</div>
@@ -138,41 +135,41 @@
                                         
                                         <div class="panel col-md-12"
                                         style="padding: 0px; box-shadow: 0px 0px 1px 0px #888888;" >
-                                            <div class="table-responsive no-gutter " style="overflow-x: auto;"> 
+                                            <div class="table-responsive no-gutter text-nowrap" style="overflow-x: hidden;"> 
                                              
                                         <div>
-                                            <div class="col-md-6 content-box-header " id="backup-data">{% trans "Server Hostname" %}</div>
-                                            <div class="col-md-6 content-box-header list-email" id="backup-data">{$ serverHostname $}</div>
+                                            <div class="col-md-6 content-box-header" id="backup-data">{% trans "Server Hostname" %}</div>
+                                            <div class="col-md-6 content-box-header" id="backup-data">{$ serverHostname $}</div>
                                         </div>
                                     </div>
                                 </div>
 
                                         <div class="panel col-md-12"
                                     style="padding: 0px; box-shadow: 0px 0px 1px 0px #888888;" >
-                                        <div class="table-responsive no-gutter " style="overflow-x: auto;"> 
+                                        <div class="table-responsive no-gutter text-nowrap" style="overflow-x: hidden;"> 
                                         <div>
 
-                                            <div class="col-md-6 content-box-header " id="backup-data">{% trans "Port" %}</div>
-                                            <div class="col-md-6 content-box-header list-email" id="backup-data">143</div>
+                                            <div class="col-md-6 content-box-header" id="backup-data">{% trans "Port" %}</div>
+                                            <div class="col-md-6 content-box-header" id="backup-data">143</div>
                                         </div>
                                     </div>
                                 </div>
 
                                         <div class="panel col-md-12"
                                     style="padding: 0px; box-shadow: 0px 0px 1px 0px #888888;" >
-                                        <div class="table-responsive no-gutter " style="overflow-x: auto;"> 
+                                        <div class="table-responsive no-gutter text-nowrap" style="overflow-x: hidden;"> 
                                         <div>
-                                            <div class="col-md-6 content-box-header " id="backup-data">{% trans "Port" %}</div>
-                                            <div class="col-md-6 content-box-header list-email" id="backup-data">993 (SSL)</div>
+                                            <div class="col-md-6 content-box-header" id="backup-data">{% trans "Port" %}</div>
+                                            <div class="col-md-6 content-box-header" id="backup-data">993 (SSL)</div>
                                         </div>
                                     </div>
                                 </div>
 
                                         <div class="panel col-md-12"
                                     style="padding: 0px; box-shadow: 0px 0px 1px 0px #888888;" >
-                                        <div class="table-responsive no-gutter " style="overflow-x: auto;"> 
+                                        <div class="table-responsive no-gutter text-nowrap" style="overflow-x: hidden;"> 
                                         <div>
-                                            <div class="col-md-6 content-box-header " id="backup-data">{% trans "SSL" %}</div>
+                                            <div class="col-md-6 content-box-header" id="backup-data">{% trans "SSL" %}</div>
                                             <div class="col-md-6 content-box-header" id="backup-data">STARTTLS</div>
                                         </div>
                                         </div>
@@ -180,7 +177,7 @@
                                     </table>
                                 </div>
                                     <div class="col-md-12">
-                                        <table class="table email-col">
+                                        <table class="table">
                                             
                                             <!-- <div class="col-md-4"> -->
                                                 <div class="col-md-6 content-box-header" id="backup-data">{% trans "SMTP" %}</div>
@@ -190,40 +187,10 @@
                                         </div>
                                         <div class="panel col-md-12"
                                         style="padding: 0px; box-shadow: 0px 0px 1px 0px #888888;" >
-                                            <div class="table-responsive no-gutter text-nowrap" style="overflow-x: auto;"> 
+                                            <div class="table-responsive no-gutter text-nowrap" style="overflow-x: hidden;"> 
                                         <div>
-                                            <div class="col-md-6 content-box-header " id="backup-data">{% trans "Server Hostname" %}</div>
-                                            <div class="col-md-6 content-box-header list-email" id="backup-data">{$ serverHostname $}</div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                    <div class="panel col-md-12"
-                                    style="padding: 0px; box-shadow: 0px 0px 1px 0px #888888;" >
-                                        <div class="table-responsive no-gutter text-nowrap" style="overflow-x: auto;"> 
-                                        <div>
-                                            <div class="col-md-6 content-box-header " id="backup-data">{% trans "Port" %}</div>
-                                            <div class="col-md-6 content-box-header list-email" id="backup-data">25</div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                    <div class="panel col-md-12"
-                                    style="padding: 0px; box-shadow: 0px 0px 1px 0px #888888;" >
-                                        <div class="table-responsive no-gutter text-nowrap" style="overflow-x: auto;"> 
-                                        <div>
-                                            <div class="col-md-6 content-box-header " id="backup-data">{% trans "Port" %}</div>
-                                            <div class="col-md-6 content-box-header list-email" id="backup-data">587 (SSL)</div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                    <div class="panel col-md-12"
-                                    style="padding: 0px; box-shadow: 0px 0px 1px 0px #888888;" >
-                                        <div class="table-responsive no-gutter text-nowrap" style="overflow-x:auto;"> 
-                                        <div>
-                                            <div class="col-md-6 content-box-header " id="backup-data">{% trans "Port" %}</div>
-                                            <div class="col-md-6 content-box-header list-email" id="backup-data">465 (SSL)</div>
+                                            <div class="col-md-6 content-box-header" id="backup-data">{% trans "Server Hostname" %}</div>
+                                            <div class="col-md-6 content-box-header" id="backup-data">{$ serverHostname $}</div>
                                         </div>
                                     </div>
                                 </div>
@@ -232,7 +199,37 @@
                                     style="padding: 0px; box-shadow: 0px 0px 1px 0px #888888;" >
                                         <div class="table-responsive no-gutter text-nowrap" style="overflow-x: hidden;"> 
                                         <div>
-                                            <div class="col-md-6 content-box-header " id="backup-data">{% trans "SSL" %}</div>
+                                            <div class="col-md-6 content-box-header" id="backup-data">{% trans "Port" %}</div>
+                                            <div class="col-md-6 content-box-header" id="backup-data">25</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                    <div class="panel col-md-12"
+                                    style="padding: 0px; box-shadow: 0px 0px 1px 0px #888888;" >
+                                        <div class="table-responsive no-gutter text-nowrap" style="overflow-x: hidden;"> 
+                                        <div>
+                                            <div class="col-md-6 content-box-header" id="backup-data">{% trans "Port" %}</div>
+                                            <div class="col-md-6 content-box-header" id="backup-data">587 (SSL)</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                    <div class="panel col-md-12"
+                                    style="padding: 0px; box-shadow: 0px 0px 1px 0px #888888;" >
+                                        <div class="table-responsive no-gutter text-nowrap" style="overflow-x: hidden;"> 
+                                        <div>
+                                            <div class="col-md-6 content-box-header" id="backup-data">{% trans "Port" %}</div>
+                                            <div class="col-md-6 content-box-header" id="backup-data">465 (SSL)</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                    <div class="panel col-md-12"
+                                    style="padding: 0px; box-shadow: 0px 0px 1px 0px #888888;" >
+                                        <div class="table-responsive no-gutter text-nowrap" style="overflow-x: hidden;"> 
+                                        <div>
+                                            <div class="col-md-6 content-box-header" id="backup-data">{% trans "SSL" %}</div>
                                             <div class="col-md-6 content-box-header" id="backup-data">STARTTLS</div>
                                         </div>
                                         </div>
@@ -240,9 +237,9 @@
                                     </table>
                                 </div>
                             </div>
-                                <div class="col-md-8 email-col" >
+                                <div class="col-md-8">
 
-                                    <div class="table" style="padding-bottom:3rem">
+                                    <table class="table">
                                         <div class="col-md-12">
                                         <div>
                                             <div class="col-md-4 content-box-header" id="backup-data">{% trans "Emails" %}</div>
@@ -251,20 +248,20 @@
                                         </div>
                                         </div>
                                         <div>
-                                        <div ng-repeat="record in records track by $index" class="panel col-md-12 email-data"
+                                        <div ng-repeat="record in records track by $index" class="panel col-md-12"
                                         style="padding: 0px; box-shadow: 0px 0px 1px 0px #888888;" >
-                                            <div class="table-responsive no-gutter text-nowrap " style="overflow-x: hidden;"> 
+                                            <div class="table-responsive no-gutter text-nowrap" style="overflow-x: hidden;"> 
                                                 <div>
                                             <div class="col-md-4 content-box-header" id="backup-data" ng-bind="record.email"></div>
                                             <div class="col-md-4 content-box-header" id="backup-data" ng-bind="record.DiskUsage"></div>
                                             <div class="col-md-4 content-box-header" id="backup-data">
                                                 <a data-toggle="modal" data-target="#settings"
                                                    ng-click="changePasswordInitial(record.email)"
-                                                   class="btn btn-primary"
+                                                   class="btn btn-border btn-alt border-purple btn-link font-purple"
                                                    href="#"
                                                    title=""><span>{% trans 'Change Password' %}</span></a>
                                                 <a ng-click="deleteEmailAccountFinal(record.email)"
-                                                   class="btn btn-primary" href="#"
+                                                   class="btn btn-border btn-alt border-red btn-link font-red" href="#"
                                                    title=""><span>{% trans 'Delete' %}</span></a>
 
                                                 <!--- Modal --->
@@ -328,22 +325,23 @@
                                                     
                                                 </div>
                                             
-                                                
+                                                <!--- Modal End--->
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                         </div>
-                                    </div>
+                                    </table>
                                 </div>
                             </div>
                             </div>
                                 
                             
                         
-                           
+                            <!------ List of records --------------->
 
 
+                        </form>
                     </div>
                     {% endif %}
 
